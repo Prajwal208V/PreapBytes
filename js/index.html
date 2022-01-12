@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("ready for coding");
+        
+        //HEADER these methods give A new array 
+        var arr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        // SUB reduce
+        var result=arr.reduce((a,b)=>a+b);// single value
+        console.log(result);
+        // O/P 120
+        // SUB map
+        var new_arr=arr.map((a)=>a*2);// new array
+        console.log(new_arr);
+        // O/P [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
+        // SUB filter
+        var new_arr2=arr.filter((a)=> a%2!=0);// new array
+        console.log(new_arr2);
+        // O/P [1, 3, 5, 7, 9, 11, 13, 15]
+        //SUB slice(start, end)
+        /*method returns a shallow copy of a portion of an array into a new array object 
+        selected from start to end (end not included) where start and end represent the index of 
+        items in that array. The original array will not be modified.*/
+        var new_arr3=arr.slice(4,10);
+        console.log(new_arr3);
+        // O/P [5, 6, 7, 8, 9, 10]
+        var new_arr4=arr.slice(10);
+        console.log(new_arr4);
+        // O/P [11, 12, 13, 14, 15]
+        var new_arr5=arr.slice(-5);
+        console.log(new_arr5);
+        // O/P [11, 12, 13, 14, 15]
+        
+        console.log('1.❌❌❌❌❌🔄❌❌❌❌❌');
 
+        //HEADER these methods To mutate original array
+        //SUB splice(start, deleteCount, item1, item2, itemN) Remove from original:
+        /**/
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice 
+        var arr2=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        //CODE      
+        /*arr2.splice(3,1)//Remove 1 element at index 3
+        console.log(arr2);
+        // O/P [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]*/
+        var value1=arr2.splice(4,1,15)// replaces 1 element at index 4
+        console.log(value1);// return gives as array
+        // O/P [5]
+        console.log(arr2);
+        //O/P [1, 2, 3, 4, 15, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        arr2.splice(5,2,16,17);
+        console.log(arr2);
+        //O/P [1, 2, 3, 4, 15, 16, 17, 8, 9, 10, 11, 12, 13, 14, 15]
+        arr2.splice(7,0,-8,-9);//Remove 0 elements before index 7, and insert -8 and -9
+        console.log(arr2);
+        //O/P [1, 2, 3, 4, 15, 16, 17, -8, -9, 8, 9, 10, 11, 12, 13, 14, 15]
+        //.-> Remove elements from negtive index number
+        /*[-6,-5,-4,-3,-2,-1] -> negtive indexing
+          [0, 1, 2, 3, 4, 5]  -> pastive indexing*/
+        arr2.splice(-1,1,51);//replaces 1 element at index -1
+        console.log(arr2);
+        // O/P [1, 2, 3, 4, 15, 16, 17, -8, -9, 8, 9, 10, 11, 12, 13, 14, 51]
+        arr2.splice(-3,2,31,41);//replaces 2 elements after at index -3 and insert 31,41
+        console.log(arr2);
+        // O/P [1, 2, 3, 4, 15, 16, 17, -8, -9, 8, 9, 10, 11, 12, 31, 41, 51]
+        arr2.splice(-5,0,-11,-12);
+        console.log(arr2);//Remove 0 elements before index -5, and insert -11 and -12
+        // O/P [1, 2, 3, 4, 15, 16, 17, -8, -9, 8, 9, 10, -11, -12, 11, 12, 31, 41, 51]
+        //SUB reverse()
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+        var arr21=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        arr21.reverse();
+        console.log(arr21);
+        // O/P [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        //SUB sort()
+        var arr22=[22,12,8,24,4,2,6,16];
+        arr22.sort();/*The sort() method sorts the elements of an array in place and returns the sorted array. 
+        The default sort order is ascending, built upon converting the elements into strings, then
+        comparing their sequences of UTF-16 code units values.*/
+        console.log(arr22);
+        // O/P [12, 16, 2, 22, 24, 4, 6, 8]
+        //SUB fill(value, start, end) /*method changes all elements in an array to a static value*/
+        var arr23=[1,2,3,4,5,6,7,8,9,10];
+        arr23.fill(0,3,5);//fill with 0 from position 3 until position 5 (before 5 ,index 5 not include)
+        console.log(arr23);
+        // O/P [1, 2, 3, 0, 5, 6, 7, 8, 9, 10]
+
+        console.log('2.❌❌❌❌❌🔄❌❌❌❌❌');
+
+        // HEADER An array index
+        var arr3=['ant', 'bison', 'camel', 'duck', 'bison'];
+
+        //SUB .indexOf(searchElement, fromIndex)
+        /*method returns the first index at which a given element can be found in the array, or -1 
+        if it is not present.*/
+        console.log(arr3.indexOf('bison'));//Based on value it gives index number
+        // O/P 1
+        console.log(arr3.indexOf('bison',2));
+        // O/P 4
+        //SUB findIndex((element, index, array)=>);
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+        
+        /*The findIndex() method returns the index of the first element in the array that satisfies the provided 
+        testing function. Otherwise, it returns -1, indicating that no element passed the test.*/
+        var arr33=[5, 12, 8, 130, 44];
+        console.log(arr33.findIndex((a)=>a>13));// O/P 3
+        //best example for findIndex() method
+        var isPrime=(num)=>{
+            for(let i=2;i<num;i++){
+                if(num%i==0) 
+                    return false;
+            }
+            return num>1;
+        }
+        console.log("findIndex example:",[4, 6, 8, 9, 12].findIndex(isPrime));// O/P -1
+        console.log("findIndex example:",[4, 6, 7, 9, 12].findIndex(isPrime));// O/P 2
+        
+
+        console.log('3.❌❌❌❌❌🔄❌❌❌❌❌');
+
+        // HEADER combination of methods
+        var new_arr6=arr.filter((a)=> a%2!=0).map((a)=> a+1);
+        console.log(new_arr6);
+        // O/P [2, 4, 6, 8, 10, 12, 14, 16]
+        var result1=arr.filter((a)=> a%2!=0).map((a)=> a+1).reduce((a,b)=>a+b);
+        console.log(result1);
+        // O/P 72 
+
+
+
+    </script>
+</body>
+</html>
