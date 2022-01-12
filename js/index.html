@@ -110,7 +110,7 @@
         testing function. Otherwise, it returns -1, indicating that no element passed the test.*/
         var arr33=[5, 12, 8, 130, 44];
         console.log(arr33.findIndex((a)=>a>13));// O/P 3
-        //best example for findIndex() method
+        //following is best example for findIndex() method
         var isPrime=(num)=>{
             for(let i=2;i<num;i++){
                 if(num%i==0) 
@@ -121,8 +121,53 @@
         console.log("findIndex example:",[4, 6, 8, 9, 12].findIndex(isPrime));// O/P -1
         console.log("findIndex example:",[4, 6, 7, 9, 12].findIndex(isPrime));// O/P 2
         
+        //SUB find((element, index, array) => { /* ... */ } )
+        /*The find() method returns the value of the first element in the provided array that satisfies the provided
+        testing function. If no values satisfy the testing function, undefined is returned.*/
+        console.log(arr33.find((a)=>a>13));// O/P 130
+        //following is best example for find() method
+        console.log("find example:",[4, 6, 8, 9, 12].find(isPrime));// O/P undefined
+        console.log("find example:",[4, 6, 7, 9, 12].find(isPrime));// O/P 7
 
         console.log('3.❌❌❌❌❌🔄❌❌❌❌❌');
+        
+        // HEADER Know if array includes
+        //SUB includes(searchElement, fromIndex)
+        /*determines whether an array includes a certain value among its entries, returning true or false 
+        as appropriate.*/
+        const pets = ['cat', 'dog', 'bat','rat','mat','mouse','mammal','cow'];
+        console.log("includes method:",pets.includes('dog'));// O/P true
+        console.log("includes method:",pets.includes('sheep'));// O/P false
+        // SUB some((element, index, array) => { /* ... */ } )
+        /*method tests whether at least one element in the array passes the test implemented by the provided 
+        function. It returns true if, in the array, it finds an element for which the provided function 
+        returns true; otherwise it returns false. It doesn't modify the array.*/
+        const arr4 = [1, 2, 3, 4, 5];
+        console.log("some method: ",arr4.some((a)=> a%2==0));// O/P true
+        //SUB every((element, index, array) => { /* ... */ } )
+        /*method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.*/
+        console.log("every method: ",arr4.every((a)=>a%2==0));// O/P flase
+        const arr42=[2,4,6,8,12,10,18,16];
+        console.log("every method: ",arr42.every((a)=>a%2==0));// O/P true
+
+        //SUB join(separator)
+        /*method creates and returns a new string by concatenating all of the elements in an array (or an array-like object),
+        separated by commas or a specified separator string. If the array has only one item, then that item will be returned 
+        without using the separator.*/
+        const var42=pets.join("💀")
+        console.log(var42);
+        // O/P cat💀dog💀bat💀rat💀mat💀mouse💀mammal💀cow
+        
+        console.log('4.❌❌❌❌❌🔄❌❌❌❌❌');
+
+        //HEADER  just loop array
+        //SUB forEach((element, index, array) => { /* ... */ } )
+        /*method executes a provided function once for each array element.*/
+        pets.forEach((a)=>{
+            console.log(a);
+        })
+
+        console.log('5.❌❌❌❌❌🔄❌❌❌❌❌');
 
         // HEADER combination of methods
         var new_arr6=arr.filter((a)=> a%2!=0).map((a)=> a+1);
@@ -131,9 +176,6 @@
         var result1=arr.filter((a)=> a%2!=0).map((a)=> a+1).reduce((a,b)=>a+b);
         console.log(result1);
         // O/P 72 
-
-
-
     </script>
 </body>
 </html>
