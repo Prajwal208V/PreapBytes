@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 'use strict'; ❌<copy the method to other object and outside varibale> these two are pending❌
+      /*we know that every "function execution context(FEC) has three components:
+           1.variable environment
+           2.Scope chain
+           3.this keyword 
+        Special variable that is created for every execution context (every function). 
+        Takes the value of (say points to) the “owner” of the function in which the this keyword is used
+        this is NOT static. It depends on how the function is called, and its value is only assigned
+        when the function is actually called 
+        
+        so we can call functions four different ways 
+            1.function attached to an object
+            2.Simple function call
+            3.arrow function call
+            4.Event listener
+            5. we can call a function, for example, using the new keyword or the call apply
+             and bind methods,*/
+        console.log(`in global execution context 'this keyword' points to window object: `,this);
+        //SUB function attached to an object
+        var obj={
+            firstName:"Prajwal",
+            lastName:"Veeresh",
+            method:function(){
+                console.log(`in function execution context 'this keyword' points to parent object of method: `,this);
+                console.log(`fullName: ${this.firstName} ${this.lastName}`);
+            }
+        }
+        obj.method();
+
+        //SUB Simple function call (method not attached to any object)
+        function fun(){
+            console.log(`in function execution context 'this keyword' points to parent object of method: `,this);
+            //O/P window object
+        }
+        fun();
+
+        /*SUB arrow function arrow functions do not get their own 'this keyword' (lexical this keyword,)
+           because it simply gets picked up from the outer lexical scope of the arrow function.*/
+        var obj2={
+            from:"Bangalore",
+            method:()=>{
+                console.log(this);// O/P window object
+            }
+        }
+        obj2.method();
+        var obj3={
+            to:'USA',
+            inside_obj:{
+                flightNo:145678,
+                inside_method:()=>{
+                    console.log(this);// O/P window object
+                }
+            }
+        }
+        obj3.inside_obj.inside_method();
+        
+        // .-> basically an arrow function inherits the this keyword from the parent scope.
+        var obj4={
+            address:"vidyaranayapura Banlaore",
+            ag:24,
+            method:function(){
+                console.log(this);
+                var nested_method=()=>{
+                    console.log("nested arrow method: ",this); // O/P obj4 object 
+                }
+                nested_method();
+                function nested_method2(){
+                    console.log("nested declration method: ",this);// O/P window object
+                }
+                nested_method2();
+            }
+        }
+        obj4.method();
+
+
+        //SUB Event listener
+        /*this keyword will always point to the DOM element that the handler function is attached to*/
+        
+
+        //SUB call a function using new keword(call,apply,bind)
+       
+
+      /*this keyword:
+            https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+            https://www.javascripttutorial.net/javascript-this/
+           "the this keyword represents the instance of the current object"
+           A function's this keyword behaves a little differently in JavaScript */
+    </script>
+  </body>
+</html>
