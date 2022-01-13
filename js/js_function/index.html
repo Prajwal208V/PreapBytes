@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+        /*HEADER There are 'several ways to define(declrtion) functions':
+            The function declaration ( function statement)
+                function name_fun(){///}
+            The function expression ( function expression)
+                We have two different way for doing function expression in JavaScript:
+                1.Named function expression (NFE):
+                  var boo = function boo (){///}
+                2.Anonymous function expression:
+                  var boo=function (){///}
+            The arrow function expression (=>)
+                  var boo=()=>{///}
+            The Function constructor.
+                  function Person(){///}  */
+        /*HEADER Immediately invoked function expression[IIFE] that runs as soon as it is defined. 
+              https://developer.mozilla.org/en-US/docs/Glossary/IIFE 
+              It is a design pattern which is also known as a Self-Executing Anonymous Function 
+              and contains two major parts:
+              1.The first is the anonymous function with lexical scope enclosed within the Grouping Operator ().
+                This prevents accessing variables within the IIFE idiom as well as polluting the global scope.
+              2.The second part creates the immediately invoked function expression () through which 
+                the JavaScript engine will directly interpret the function.
+        */
+        (()=>{
+            console.log("IIFE");
+        })();
+        /*HEADER  first-class function
+              https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+              https://medium.com/launch-school/javascript-weekly-an-introduction-to-first-class-functions-9d069e6fb137
+              
+              First-class functions when functions in that language are treated like any other variable
+              in js has first class function
+                😎 Be stored in a variable;
+                😎 Be passed as arguments to functions;
+                😎 Be returned by functions;
+                😎 Be stored in some data structure; and,
+                😎 Hold their own properties and methods.*/ 
+
+            //.-> Be stored in a variable;
+            var fun= function(e){
+                console.log("First class function",e);
+            };
+            fun(1);
+            //.-> Be passed as arguments to functions;
+            function main_function(fun1){
+                fun1(2);
+            }
+            main_function(fun);
+            //.-> Be returned by functions
+            function main_function2(){
+                let var1=10;
+                return function(){
+                    console.log("returned function",var1);
+                }
+            }
+            var fun2=main_function2();
+            fun2();// returned function 10
+            console.log(typeof fun2);//function 
+            //.-> Be stored in some data structure
+            var fun4=function (){
+                console.log("function 4");
+            }
+            var fun5=function (){
+                console.log("function 5");
+            }
+            var fun6=function (){
+                console.log("function 6");
+            }
+            var arr1=[fun4,fun5,fun6];//functions are stored in array data structure
+            for(let i=0;i<arr1.length;i++)
+                 arr1[i]();
+      /*HEADER Higher-Order Functions
+        https://blog.bitsrc.io/understanding-higher-order-functions-in-javascript-75461803bad
+        https://medium.com/launch-school/javascript-weekly-an-introduction-to-first-class-functions-9d069e6fb137
+
+        Higher order functions are functions that operate on other functions, either by taking them as 
+        arguments or by returning them.{A Higher-Order function is a function that receives a function 
+        as an argument or returns the function as output.}
+
+        For example:- Array.prototype.map, Array.prototype.filter and Array.prototype.reduce are some 
+        of the Higher-Order functions built into the language.*/
+        //SUB taking them as arguments    
+        var add=(a,b)=> a+b;
+        var caluclator=(logic,a,b)=>{
+            let result=logic(a,b);
+            console.log("now higer order function taking as argument:",result);
+        }
+        caluclator(add,10,5);
+        //SUB returns the function as output
+        var caluclator2=()=>{
+            return (a,b)=> console.log("now higer order function returns the function as output:",a+b);
+        }
+        var var3=caluclator2();
+        var3(10,5);
+    /*HEADER call-back function
+            https://developer.mozilla.org/en-US/docs/Glossary/Callback_function 
+            https://medium.com/@fotios.floros/explaining-javascript-callbacks-3d5a9ad52819
+            A callback function is a function passed into another function as an argument, which is then invoked inside
+            the outer function to complete some kind of routine or action.
+            In Javascript every function is a first class object, which means that every function is an
+            Object and can be used like any other object(String, Number etc.).
+            This allows the use of a function as a parameter in another function which is the fundamental
+            idea of callback functions.
+            when passing a callback function as a parameter to another function we are only passing the 
+            callback function definition.
+            These are the main aspects of callback function:
+                1.Use anonymous functions as callbacks
+                2.Use named functions as callbacks
+                3.Parameters to callback functions    ❌
+                4.Multiple callback functions        ❌
+            */
+            //SUB Use anonymous functions as callbacks
+            var fruits = ['apple','orange','painapple'];
+            fruits.forEach((fruit, index)=>{  // foreach takes callback function
+            console.log(index+1+". "+fruit);
+            }); 
+            //SUB Use named functions as callbacks
+            let sub=(a,b)=>{
+                return a-b;
+            }
+            let caluclator3=(callback,a,b)=>{
+                console.log("named functions as callbacks: ",callback(a,b));
+            }
+            caluclator3(sub,10,2);
+           //HEADER arrow function
+           /*An arrow function expression is a compact alternative to a 'traditional function expression', but is limited
+           and can't be used in all situations.*/
+           
+           //HEADER function constructor
+
+    </script>
+</body>
+</html>
