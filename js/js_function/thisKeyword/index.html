@@ -63,6 +63,25 @@
             }
         }
         obj3.inside_obj.inside_method();
+        
+        // .-> basically an arrow function inherits the this keyword from the parent scope.
+        var obj4={
+            address:"vidyaranayapura Banlaore",
+            ag:24,
+            method:function(){
+                console.log(this);
+                var nested_method=()=>{
+                    console.log("nested arrow method: ",this); // O/P obj4 object 
+                }
+                nested_method();
+                function nested_method2(){
+                    console.log("nested declration method: ",this);// O/P window object
+                }
+                nested_method2();
+            }
+        }
+        obj4.method();
+
 
         //SUB Event listener
         /*this keyword will always point to the DOM element that the handler function is attached to*/
