@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sets</title>
+</head>
+<body>
+    <script>
+        // SET
+        /*
+        The Set object, you store unique values of any type, whether primitive values or object references.
+
+        Set objects are collections of values. You can iterate through the elements of a set in insertion order.
+        A value in the Set may only occur once; it is unique in the Set's collection.
+        SUB Appends value to the Set object. Returns the Set object with added value.
+        var returnr=set_obj2.add(10);
+        set_obj2.add(15);
+        SUB Removes the element associated to the value and returns a boolean asserting whether an element 
+        was successfully removed or not
+        console.log(set_obj.delete(1));//true
+        console.log(set_obj.delete(10));//false
+        SUB Returns the number of values in the Set object.
+        console.log(set_obj.size);// O/P 5
+        SUB Removes all elements from the Set object.
+        set_obj.clear();
+        SUB Returns a boolean asserting whether an element is present with the given value in the Set object or not.
+        console.log(set_obj.has(1));//true
+        console.log(set_obj.has(10));//true
+        SUB Returns a new iterator object values for each element in the Set object in insertion order.
+         console.log(set_obj.values());// O/P {1, 2, 3, 4, 5}
+        */
+        let set_obj2=new Set();// create empty set object
+        let set_obj=new Set([1,2,3,4,5,1,2,3,4,5]);//unique set object
+        console.log(set_obj);// O/P {1, 2, 3, 4, 5}
+        set_obj.forEach((e)=>{
+            console.log(e);
+        })
+        for(let i of set_obj){
+            console.log(i);
+        }
+        //SUB Remove duplicate elements from the array
+        //method 1
+        var arr=[2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5];
+        let set_obj3=new Set(arr);
+        console.log(set_obj3);
+        //method 2
+        //SUB object as a value 
+        let obj={
+            phoneNumber:9848898989,
+            Gmail:'******@gmail.com'
+        }
+        set_obj2.add(obj);
+        console.log(set_obj2);
+        
+    </script>
+</body>
+</html>
