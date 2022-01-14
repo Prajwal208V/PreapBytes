@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+</head>
+<body>
+    <script>
+        /*for(let x of map_obj){
+           console.log(x[0]);
+        }
+        //SUB Returns a new Iterator object that contains the keys of Map object in insertion order.
+        console.log(map_obj.keys());
+        //SUB Returns a new Iterator object that contains the values of Map object in insertion order.
+        console.log(map_obj.values());
+        //SUB //Returns the number of key/value pairs in the Map object.
+        console.log(map_obj.size);
+        //SUB Returns a booleanwhether a value has been associated to the key in the Map object or not.
+        console.log(map_obj.has("first_name"));
+        //SUB Removes all key-value pairs from the Map object.
+        map_obj.clear();
+        //SUB Returns the value associated to the key, or undefined if there is none.
+        console.log(map_obj.get("first_name"));
+        //SUB method returns a new Iterator object that contains the [key, value] pairs  in the Map object 
+        console.log()
+        for(let [key,value] of map_obj.entries()) {
+            console.log(key,value);
+        } 
+        */
+        const map_obj=new Map();// create a empty map object
+        map_obj.set("first_name","Prajwal");// adding key value pair into map object using set-method
+        map_obj.set("last_name","Veeresh");
+        console.log(map_obj.get("first_name"));// getting value from map object using get-method
+        //SUB A Map's keys can be any value (including functions, objects, or any primitive).
+        //.-> primitive of number is a key 
+        map_obj.set(1,"Bangalore");
+        map_obj.set(2,"ChikkaMangalore");
+        //.-> object is a key/value
+        let obj={
+            phoneNumber:9848898989,
+            Gmail:'******@gmail.com'
+        }
+        map_obj.set(obj,"contact");// object as a key 
+        map_obj.set("contact",obj);// object as a value 
+        // .-> array is a key/value
+        let arr=[1,2,3,4,5,6,7,8,9,10];
+        map_obj.set("array",arr);// array as a value
+        //.-> function as a key/value
+        var fun=()=>{
+            console.log("function as a key/value");
+        };
+        map_obj.set("function",fun);
+        console.log(map_obj);
+    </script>
+</body>
+</html>
