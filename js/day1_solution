@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day1_solution</title>
+</head>
+<body>
+    <script >
+        //SUB hoisting
+        // https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+        //.-> varible hoisting
+        console.log(var1);//undefined
+        //console.log(var2);//error ReferenceError Cannot access 'var2' before initialization
+        // console.log(var6);//error var6 is not defined
+        var var1=20;
+        let var2=30
+        var var3;
+        let var4;
+        // const var5;
+        // var6;
+        console.log(var3,var4)//undefied  undefied 
+        //console.log(var5,var6) //error SyntaxError (Missing initializer in const declaration) error ReferenceError(not defined)
+        //.-> function hoisting
+        fun1("Prajwal","Veeresh");// we wouldn't get any ERRORS 
+        console.log(fun1);// fun1 holds the hole function as value
+        function fun1(first,last){
+             console.log(first,last);
+        }
+        // fun2("Prajwal","Veeresh");// error TypeError: fun2 is not a function
+        console.log(fun2);//undefined
+        var fun2=(first,last)=>{
+          
+        }
+        // fun3("Prajwal","Veeresh");//// error TypeError: fun3 is not a function
+        console.log(fun3);//undefined
+        var fun3=function(first,last){
+
+        }
+        //console.log(fun4);//error ReferenceError Cannot access 'fun4' before initialization
+        let fun4=function(first,last){
+
+        }
+        //SUB TDZ temporal dead zone
+        /*there is a period between entering scope and being declared where they cannot be accessed. This period is the temporal dead zone (TDZ).
+        Accessing let and const varibles  in the inner scope still causes a ReferenceError. If let were not hoisted, it would log outer value.
+        
+        The TDZ is a good thing because it helps to highlight bugs—accessing a value before it has been declared is rarely intentional.
+        */
+         
+        /*https://www.freecodecamp.org/news/what-is-the-temporal-dead-zone/
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+          https://stackoverflow.com/questions/33198849/what-is-the-temporal-dead-zone
+        */
+        //
+        {
+        // This is the temporal dead zone for the age variable!
+        // This is the temporal dead zone for the age variable!
+        // This is the temporal dead zone for the age variable!
+        // This is the temporal dead zone for the age variable!
+        let age = 25; // Whew, we got there! No more TDZ
+        console.log(age);
+        }
+        /*The TDZ also applies to default function arguments. Arguments are evaluated left to right, and each argument is in the TDZ until it is assigned:*/
+        /*function testDefaults(a = b, b) { }
+        testDefaults(undefined, 1);*/
+
+        //SUB let const var
+        //.-> let v/s var
+        var var7;
+        //let var7;//error SyntaxError: Identifier 'var7' has already been declared
+        let var8;
+        //let var8;//error SyntaxError: Identifier 'var8' has already been
+        // var var8; //error SyntaxError: Identifier 'var8' has already been
+        var var7;// no Error
+        //.-> const v/s let
+        let var9=10;
+        var9 =20;
+        const var10=10;
+        //var10=20;// error TypeError
+        //SUB data types in js
+        /*Data types basically specify what kind of data can be stored and manipulated within a program.
+        There are 7 Primitive data types and Object, Array, and Function (which are all types of objects) are composite data types in JavaScript
+        */
+        //.-> primitive data types
+        //1.The Boolean data type can hold only two values: true or false. 
+        var isReading = true;   
+        var isSleeping = false;
+        console.log(typeof isReading);
+        //Boolean values also come as a result of comparisons in a program. 
+        var a = 2, b = 5, c = 10;
+        console.log(b > a) // Output: true
+        console.log(b > c) // Output: false
+        /*JavaScript, there are only five falsy values.
+          zero, 
+          the empty string,
+          undefined, 
+          null,
+          and not a number,*/
+        //.->  Undefined type
+        /*The undefined data type can only have one value-the special value undefined. If a variable has been declared, 
+        but has not been assigned a value, has the value undefined.*/
+        console.log(typeof var21);//undefined
+        var var21;
+        if(undefined===var21){
+            console.log(true,21);//true
+        }
+        if("undefined"!==var21){
+            console.log(true,21);//true
+        }
+        //.->null type
+        /*that can have only one value-the null value. A null value means 
+        that there is no value. It is not equivalent to an empty string ("") or 0, it is simply nothing.
+        
+        https://www.tutorialsteacher.com/javascript/javascript-null-and-undefined
+        You can assign null to a variable to denote that currently that variable does not have any value 
+        but it will have later on. A null means absence of a value.*/
+        let var22=null;
+        console.log(var22,typeof var22);//null object
+        /*In the above example, null is assigned to a variable myVar. It means we have defined a variable 
+        but have not assigned any value yet, so value is absence.*/
+        if(var22==undefined)
+         console.log(true,22);// true 22
+        if(var22!==undefined)
+          console.log(true,22);// true 22
+        //.-> The String Data Type 
+        /*JavaScript's String type is used to represent textual data. It is a set of "elements" of 16-bit unsigned 
+        integer values.
+        Each element in the String occupies a position in the String. The first element is at index 0, the next at 
+        index 1, and so on. The length of a String is the number of elements in it.
+        Strings are created using single or double quotes.
+
+        ****JavaScript strings are immutable. This means that once a string is created, it is not possible to modify it.****
+        */
+        let str="Prajwal";
+        let str_1=str[0]="p";
+        console.log(str,str[0],str_1);//Prajwal P p
+        let str_2=str.toUpperCase();
+        console.log(str,str_2)// Prajwal PRAJWAL
+         //.-> number type
+         /*in Js The number data type is used to represent positive or negative  or decimal place */
+         var a1 = 25;         // integer
+         var b2 = 80.5;       // floating-point number
+         var c3 = 4.25e+6;    // exponential notation, same as 4.25e6 or 4250000
+         var d4 = 4.25e-6;    // exponential notation, same as 0.00000425
+         console.log(a1,b2,c3,d4);//25 80.5 4250000 0.00000425
+         /*The Number data type also includes some special values which are: Infinity, -Infinity and NaN*/
+         console.log(10/0,typeof Infinity);// +ve Infinity,number
+         console.log(-10/0,typeof -Infinity)//-ve Infinity,number
+         //.-> SUB NaN not a number
+         /*It is a result of an invalid or an undefined mathematical operation,
+          like taking the 1.square root of -1 or 2.dividing 0 by 0, or 3.math operation b/w number and alphatical not an addition operation  etc.*/ 
+          console.log("text"/10,typeof NaN);//NaN 'number'
+          console.log(Math.sqrt(-1))//NaN
+          console.log(0/0)//NaN
+          console.log(NaN===NaN,23);//NaN
+          console.log(Number.NaN === NaN,23); // false
+          console.log(Number.isNaN(NaN),23);//true
+          var fun23=(v)=> v !== v;
+          console.log(fun23(1));// false
+          console.log(fun23(NaN));// true
+          //<- in-complete
+          
+          //SUB Strict equality (===) and equality(==)
+          
+        //SUB JavaScript is a loosely typed and dynamic language 
+        /*means we don’t have to explicitly specify types of variables and objects. but in A strongly typed language we should 
+        specified what kind of data/value we are storing it
+        but TypeScript is a superset of JavaScript it is strongly typed language*/
+        let foo = 42;    // foo is now a number
+        foo     = 'bar'; // foo is now a string
+        foo     = true;  // foo is now a boolean
+
+        //SUB difference between type conversion and type coercion/ 
+        // https://betterprogramming.pub/implicit-and-explicit-coercion-in-javascript-b23d0cb1a750
+        //.-> coercion or implicit  type conversion 
+         /*Type coercion is the automatic or implicit conversion of values from one data type to another 
+         such as strings to numbers). is a implicit  type conversion */
+         let var32=88;
+         let str3="10";
+         console.log(var32+str3,typeof (var32+str3));//var32 automatically converted to into string
+         console.log(var32-str3,typeof (var32-str3));//str3 automatically converted to into number
+        //.-> Explicit  type conversion in js 
+        /*Type conversion is done explicitly in code using the inbuilt functions like Number(), String(), Boolean(), etc.*/
+        let var33=88;
+        let str4="10";
+        str4=Number(str4);//explicitly converting string into number
+        console.log(var33+str4,typeof (var33+str4));//98 'number'
+
+    </script>
+</body>
+</html>
