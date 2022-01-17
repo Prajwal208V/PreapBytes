@@ -188,6 +188,112 @@
         str4=Number(str4);//explicitly converting string into number
         console.log(var33+str4,typeof (var33+str4));//98 'number'
 
+
+        //SUB pass by value and pass by reference
+        //https://stackoverflow.com/questions/518000/is-javascript-a-pass-by-reference-or-pass-by-value-language#:~:text=It's%20always%20pass%20by%20value,look%20like%20pass%20by%20reference.
+        /*The primitive types (number, string, etc.) are passed by value, but objects are unknown, because they can be both 
+        passed-by-value (in case we consider that a variable holding an object is in fact a reference to the object) and 
+        passed-by-reference (when we consider that the variable to the object holds the object itself).*/
+        //.-> pass-by-value(primitive data type)
+        var var41=10;
+        var var42=20;
+        console.log("prim before swap:",var41,var42);//10 20
+        fun41(var41,var42);
+        function fun41(para1,para2){
+            para1=para1+para2;//10+20=30
+            para2=para1-para2;//30-10=20
+            para1=para1-para2;//30-20=10
+            console.log("prim after swap:",para1,para2);//20 10
+            console.log("prim after swap:",var41,var42);//10 20
+        }
+        
+        /*in pass by value each varible allocating thire new memory allocation*/
+
+
+        //.-> pass-by-reference (objects)
+        var obj41={
+          var1:10,
+          var2:20
+        }
+        console.log("main-obj before swap:",obj41.var1,obj41.var2);//10 20
+        fun42(obj41);//pass by reference
+        function fun42(obj){
+          obj.var1=obj.var1+obj.var2;
+          obj.var2=obj.var1-obj.var2;
+          obj.var1=obj.var1-obj.var2;
+          console.log("refr-obj after swap:",obj.var1,obj.var2);//20 10
+          console.log("main-obj after swap:",obj41.var1,obj41.var2);//20 10
+        }
+        /*in pass by reference adding one more name for the varible so it will pointing to the same varible and 
+        new name dosn't take new memory location
+        In fact, when passing an object to a function, we are passing the reference of that object, not the actual 
+        object. Therefore, the function can modify the properties of the object via its reference.
+        */
+        //.-> pass-by-value (objects)
+        //1..->  actual pass-by-reference
+        /*when you pass an object and change its members, those changes doesn't change the actual  outside of the function. This makes
+         it look like pass by reference. But if you actually change the value of the object variable you will see that 
+         the change does not persist, proving it's really pass by value.*/
+         var obj43={
+          var1:10,
+          var2:20
+         };
+         console.log("obj3 before swap:",obj43.var1, obj43.var2);//10 20
+         fun44(obj43);
+         function fun44(obj){
+          obj={var1:20,var2:10};
+          console.log("sub-obj3 after swap:",obj.var1, obj.var2);//20 10
+          console.log("obj3 after swap:",obj43.var1, obj43.var2);//10 20
+         }
+
+        //2..-> actual passing by value
+        var obj42={
+          var1:10,
+          var2:20
+        }
+        console.log("obj2 before swap:",obj42.var1, obj42.var2);//10 20
+        fun43(obj42.var1, obj42.var2);// pass-by-value even object
+        function fun43(para1,para2){
+            para1=para1+para2;//10+20=30
+            para2=para1-para2;//30-10=20
+            para1=para1-para2;//30-20=10
+            console.log("prim after swap:",para1,para2);//20 10
+            console.log("obj2 after swap:",obj42.var1, obj42.var2);//10 20
+        } 
+
+        //SUB deep and shallow copies
+        //https://www.freecodecamp.org/news/copying-stuff-in-javascript-how-to-differentiate-between-deep-and-shallow-copies-b6d8c1ef09cd/
+        //Primitive data types
+        /*tightly coupled with the variable they are assigned to. They only exist once. That means you 
+        do not really have to worry about copying primitive data types in JavaScript.*/
+        var var5="Prajwal V";
+        let var51=var5;
+        var51="Veeresh";
+        console.log(var5,var51);//Prajwal V Veeresh
+
+        //Composite data types — Objects and Arrays
+        /*These values are actually stored just once when instantiated, and assigning a variable 
+        just creates a pointer (reference) to that value.*/
+        //.-> shallow copy like(by refrence/adr)
+        /*A shallow copy means that certain (sub-)values are still connected to the original variable.*/
+        var obj6={
+          name:"Prajwal",
+          from:'Bengaluru',
+          phoneNo:636200000000
+        }
+        var new_obj6=obj6;
+        new_obj6.from="Mysore";
+        console.log(obj6.from,new_obj6.from);//Mysore Mysore
+
+        /*There are multiple ways to make copies of objects in deep copy
+          1.Spread operator
+          2.*/
+        //.-> deep copy  like(by value)
+        /*A deep copy means that all of the values of the new variable are copied and disconnected from the original variable. */
+        //1.Spread operator
+        var new_obj7={...obj6};
+        new_obj7.from="Chikkamangalore";
+        console.log(new_obj7.from,new_obj6.from);//Chikkamangalore mysore
     </script>
 </body>
 </html>
