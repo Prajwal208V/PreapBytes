@@ -165,6 +165,8 @@
           //<- in-complete
           
           //SUB Strict equality (===) and equality(==)
+          /*Abstract Equality Comparison (==)
+          Strict Equality Comparison (===)*/
           
         //SUB JavaScript is a loosely typed and dynamic language 
         /*means we don’t have to explicitly specify types of variables and objects. but in A strongly typed language we should 
