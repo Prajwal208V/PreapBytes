@@ -9,6 +9,8 @@
 <body>
     <script >
         //SUB hoisting
+        /*use functions and variables before they're declared.
+        the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, */
         // https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
         //.-> varible hoisting
         console.log(var1);//undefined
