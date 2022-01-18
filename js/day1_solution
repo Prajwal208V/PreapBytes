@@ -150,13 +150,25 @@
          /*The Number data type also includes some special values which are: Infinity, -Infinity and NaN*/
          console.log(10/0,typeof Infinity);// +ve Infinity,number
          console.log(-10/0,typeof -Infinity)//-ve Infinity,number
+
          //.-> SUB NaN not a number
-         /*It is a result of an invalid or an undefined mathematical operation,
-          like taking the 1.square root of -1 or 2.dividing 0 by 0, or 3.math operation b/w number and alphatical not an addition operation  etc.*/ 
+         /*NaN stands for Not a Number. It represents a value which is not a valid number.
+
+          NaN is a property of the global object. The initial value of NaN is Not-A-Number — 
+          the same as the value of Number.NaN. and typeof NaN is “number”.
+          NaN is unequal to every other value in JavaScript, including itself
+          
+          It doesn’t make a difference if use Strict equality (===) and equality(==) for NaN.
+
+          if you want check NaN with itself, so we can use Object.is() method,Object.is() 
+          method is used to determine whether two values are the same or not. 
+          
+          NaN, It is a result of an invalid or an undefined mathematical operation,
+          like taking example the 1.square root of -1 or 2.dividing 0 by 0, or 3.math operation b/w number and alphatical not an addition operation  etc.*/ 
           console.log("text"/10,typeof NaN);//NaN 'number'
           console.log(Math.sqrt(-1))//NaN
           console.log(0/0)//NaN
-          console.log(NaN===NaN,23);//NaN
+          console.log(NaN===NaN,23);//flase NaN
           console.log(Number.NaN === NaN,23); // false
           console.log(Number.isNaN(NaN),23);//true
           var fun23=(v)=> v !== v;
@@ -165,8 +177,6 @@
           //<- in-complete
           
           //SUB Strict equality (===) and equality(==)
-          /*Abstract Equality Comparison (==)
-          Strict Equality Comparison (===)*/
           
         //SUB JavaScript is a loosely typed and dynamic language 
         /*means we don’t have to explicitly specify types of variables and objects. but in A strongly typed language we should 
@@ -185,6 +195,7 @@
          let str3="10";
          console.log(var32+str3,typeof (var32+str3));//var32 automatically converted to into string
          console.log(var32-str3,typeof (var32-str3));//str3 automatically converted to into number
+         console.log(str3-5,typeof(str3-5))//5 'number'
         //.-> Explicit  type conversion in js 
         /*Type conversion is done explicitly in code using the inbuilt functions like Number(), String(), Boolean(), etc.*/
         let var33=88;
@@ -192,12 +203,28 @@
         str4=Number(str4);//explicitly converting string into number
         console.log(var33+str4,typeof (var33+str4));//98 'number'
 
-
+        
         //SUB pass by value and pass by reference
         //https://stackoverflow.com/questions/518000/is-javascript-a-pass-by-reference-or-pass-by-value-language#:~:text=It's%20always%20pass%20by%20value,look%20like%20pass%20by%20reference.
         /*The primitive types (number, string, etc.) are passed by value, but objects are unknown, because they can be both 
-        passed-by-value (in case we consider that a variable holding an object is in fact a reference to the object) and 
-        passed-by-reference (when we consider that the variable to the object holds the object itself).*/
+        passed-by-value and passed-by-reference.
+
+        In JavaScript, all function arguments are always passed by value. It means that JavaScript copies the values of the 
+        variables into the function arguments.
+        Any changes that you make to the arguments inside the function do not reflect the passing variables outside of the function.
+        In other words,the changes made to the arguments are not reflected outside of the function.
+
+
+        If function arguments are passed by reference, the changes of variables that we pass into
+        the function will be reflected outside the function.
+        (when we consider that the variable to the object holds the object itself).
+        means adding one more name for the varible so it will pointing to the same varible and 
+        new name dosn't take new memory location.
+        In fact, when passing an object to a function, we are passing the reference of that object, not the actual 
+        object. Therefore, if in  function can modify the properties of the object via its reference.
+        
+        
+        */
         //.-> pass-by-value(primitive data type)
         var var41=10;
         var var42=20;
@@ -235,8 +262,7 @@
         */
         //.-> pass-by-value (objects)
         //1..->  actual pass-by-reference
-        /*when you pass an object and change its members, those changes doesn't change the actual  outside of the function. This makes
-         it look like pass by reference. But if you actually change the value of the object variable you will see that 
+        /*if you actually change the value of the object variable you will see that 
          the change does not persist, proving it's really pass by value.*/
          var obj43={
           var1:10,
@@ -298,6 +324,119 @@
         var new_obj7={...obj6};
         new_obj7.from="Chikkamangalore";
         console.log(new_obj7.from,new_obj6.from);//Chikkamangalore mysore
+         
+
+        /*Function :is a A block of code which we can use multiple times, so you define or 
+        declare it once, and then  use it wherever we want as many times .*/
+        //SUB IIFE immediately-invoked-function-expression
+        /*Jit is a way to execute functions immediately, as soon as they are created.
+        It is a designd for  Self-Executing Anonymous Function. it cannot be invoked again after execution:
+  
+        there is a major use cases of this
+        they don’t pollute the global object
+        measns  that:When we define a function, the JavaScript engine adds the function to the global object.In web browsers
+        Likewise, if we declare a variable outside of a function using the var keyword, the JavaScript engine also adds 
+        the variable to the global object,
+        If you have many global variables and functions, the JavaScript engine will only release the memory allocated 
+        for them until the global object loses its scopes.
+
+        As a result, the script may use the memory inefficiently. On top of that, having global variables and 
+        functions will likely cause the name collisions also.important to limit the number of global variables.
+        
+        One way to prevent the functions and variables from polluting the global object so we use immediately 
+        invoked function expressions.
+        
+         We basically have a function defined inside parentheses, and then we append ()
+         to execute that function:
+        */
+        (function (){
+          console.log("IIFE");
+        })();
+        
+        //SUB Higher Order Functions
+        /*A higher order function is a function that takes a function as an argument, or returns a function.
+        we are using higher-order functions when passing callback functions.
+
+        we know some pre-defined methods are map,filter,settimout,Eventlistener these methods take a function as an argument. 
+        They're example for higher order functions.
+        */
+
+        //SUB this keyword
+        /*every "function execution context(FEC) has three components:
+           1.variable environment
+           2.Scope chain
+           3.this keyword 
+        this keyword  is Special variable that is created for every execution context (every function). 
+        Takes the value of (say points to) the “owner” of the function in which the this keyword is used
+        this is NOT static. It depends on how the function is called, and its value is only assigned
+        when the function is actually called. 
+        
+        example
+        1.Simple function call (simple function call method not attached to any object) in this case this keword refer to window object in browser
+        and global object in node-js
+        2.function attached to an object, in this case this keyword' points to parent object of fucntion
+        3.but in arrow functions do not get their own 'this keyword' (lexical this keyword,)
+           because it simply gets picked up from the outer lexical scope of the arrow function.
+           basically an arrow function inherits the this keyword from the parent scope.*/
+        console.log(`in global execution context 'this keyword' points to window object: `,this);
+        //SUB function attached to an object
+        var obj={
+            firstName:"Prajwal",
+            lastName:"Veeresh",
+            method:function(){
+                console.log(`in function execution context 'this keyword' points to parent object of method: `,this);
+                console.log(`fullName: ${this.firstName} ${this.lastName}`);
+            }
+        }
+        obj.method();
+
+        //SUB Simple function call (method not attached to any object)
+        function fun(){
+            console.log(`in function execution context 'this keyword' points to parent object of method: `,this);
+            //O/P window object
+        }
+        fun();
+
+        /*SUB arrow function arrow functions do not get their own 'this keyword' (lexical this keyword,)
+           because it simply gets picked up from the outer lexical scope of the arrow function.*/
+        var obj2={
+            from:"Bangalore",
+            method:()=>{
+                console.log(this);// O/P window object
+            }
+        }
+        obj2.method();
+        var obj3={
+            to:'USA',
+            inside_obj:{
+                flightNo:145678,
+                inside_method:()=>{
+                    console.log(this);// O/P window object
+                }
+            }
+        }
+        obj3.inside_obj.inside_method();
+        
+        // .-> basically an arrow function inherits the this keyword from the parent scope.
+        var obj4={
+            address:"vidyaranayapura Banlaore",
+            ag:24,
+            method:function(){
+                console.log(this);
+                var nested_method=()=>{
+                    console.log("nested arrow method: ",this); // O/P obj4 object 
+                }
+                nested_method();
+                function nested_method2(){
+                    console.log("nested declration method: ",this);// O/P window object
+                }
+                nested_method2();
+            }
+        }
+        obj4.method();
+        
+
+
     </script>
 </body>
 </html>
