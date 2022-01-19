@@ -223,7 +223,7 @@
         In fact, when passing an object to a function, we are passing the reference of that object, not the actual 
         object. Therefore, if in  function can modify the properties of the object via its reference.
         
-        
+
         */
         //.-> pass-by-value(primitive data type)
         var var41=10;
@@ -434,7 +434,125 @@
             }
         }
         obj4.method();
+      
+        //SUB call,bind,apply
+        /*Javascript provides wide variety of inbuilt methods to help in achieving reusable code.
+          call, apply, and bind are few of such methods in JavaScript to achieving resuable code
+          
+          that allow a single function to be used on multiple objects.
+
+          example we have two objects and inside that with same methods
+           */
+          let prepBytes1={
+            name:'Elevation Academy ',
+            course:'Full Stack Web Development Programs',
+            // display:function(){
+            //   console.log(`${this.name} for ${this.course}`);
+            // }
+
+          }
+         let prepBytes2={
+          name:'ZENITH',
+          course:'Personalised Coding Programs',
+          // display:function(){
+          //     console.log(`${this.name} for ${this.course}`);
+          //   }
+         }
+        //  prepBytes1.display();
+        //  prepBytes2.display();
+        /*.-> 1.usecase instead of adding display property in both prepBytes1 and prepBytes2, we can just add
+         it in prepBytes1 and borrow it for prepBytes2.
+
+         We are invoking display method for prepBytes2 by borrowing that method from prepBytes1 by using call keyword.
+
+         Here this keyword inside display method refers to the current object from which it gets invoked. That’s 
+         why when we pass prepBytes2 object as first argument in call method, this.name and this.course refers to name and 
+         course properties of prepBytes2 object.*/
+        //  prepBytes1.display.call(prepBytes2);
+         
+         /*.-> 2.usecase declear display function as independent function */
+        //  let display=function (){
+        //   console.log(`${this.name} for ${this.course}`);
+        //  }
+        //  display.call(prepBytes1);
+        //  display.call(prepBytes2);
+
+        //.-> 3.usecase if We have add  new arguments to the display function, 
+        /*call: We can pass further comma separated arguments to call method
+          1st argument to call method should always be the object from which are accessing the values. And after 
+          that we can pass any number of arguments which gets directly accessible by display function
+
+          apply: but in apply method does the exact same job as call method, we pass arguments in the form of array.  */
+          let display=function(no_student,no_getJoj){
+            console.log(`${this.name} for ${this.course}, ${no_student} students have done this course & ${no_getJoj} students got job`);
+          }
+          display.call(prepBytes1,"*****","#####");
+          display.apply(prepBytes2,["****","####"]);
+          //call and apply methods are immediately calling method 
+
+          /*bind:it is same as call method but bind method binds the  method with object and returns the copy of that method.
+          we are storing the return method in a variable and we can invoke it later*/
+          let bindr=display.bind(prepBytes2,"^^^^^","*****");
+          bindr();
+          
+          //SUB lexical scope
+          /*A lexical scope in JavaScript means that a variable defined outside a function can be accessible inside 
+          inside function defined after the variable declaration. But the opposite is not true*/
+          /*var a = 10; // variable a assigned to 10
+          var par_func = function (){ // outermost function
+            var b = 20;
+            console.log("a and b is accessible (outer):", a, b);
+            var innerFunc= function (){ // innermost function
+              var c = 30;
+              console.log("a and b and c is accessible (innner):", a, b, c);
+            }
+            innerFunc();
+          }
+          par_func();*/
+
+
+        //SUB Closures 
+        /*A closure is the combination of a function and the lexical environment 
+         which measn that function was declared. 
+        an inner function can access to the outer function’s variables.
+
+        The closure has three scope chains
+          1.Own scope where variables defined between its curly brackets
+          2.Outer function’s variables
+          3.Global variables
+        */ 
+        var a = 10; // variable a assigned to 10
+        var par_func = function (){ // outermost function
+          var b = 20;
+          console.log("a and b is accessible (outer):", a, b);
+          var innerFunc= function (){ // innermost function
+            var c = 30;
+            console.log("a and b and c is accessible (innner):", a, b, c);
+           }
+           return innerFunc;
+        }
+        var var2= par_func();
+        var2();
         
+        //SUB scopes
+        /*
+         Scope: in JavaScript defines accessibility of variables, objects and functions.
+         There are two types of scope in JavaScript.
+          1.Global scope: Variables declared outside of any function become global variables.
+            so we can be access and modified from any function.
+          2.Local scope :
+            a.Block Scope, it will apply only for let and const varibles but doesn't apply var varible
+            b.Functional Scope, it will apply for let const and var
+         
+         scope-chain:the JavaScript engine will try to find the variable’s value in the current scope. 
+         If it could not find the variable, it will look into the outer scope and will continue to do
+         so until it finds the variable or reaches global scope.
+         
+         If it’s still could not find the variable, it will either implicitly declare the variable 
+         in the global scope (if not in strict mode) or return an error.
+        */
+
+
 
 
     </script>
