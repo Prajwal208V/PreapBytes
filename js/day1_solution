@@ -361,6 +361,13 @@
         They're example for higher order functions.
         */
 
+        //SUB callback functions
+        /**/
+
+
+
+        
+
         //SUB this keyword
         /*every "function execution context(FEC) has three components:
            1.variable environment
@@ -531,8 +538,8 @@
            }
            return innerFunc;
         }
-        var var2= par_func();
-        var2();
+        var var25= par_func();
+        var25();
         
         //SUB scopes
         /*
@@ -547,12 +554,150 @@
          scope-chain:the JavaScript engine will try to find the variable’s value in the current scope. 
          If it could not find the variable, it will look into the outer scope and will continue to do
          so until it finds the variable or reaches global scope.
-         
+
          If it’s still could not find the variable, it will either implicitly declare the variable 
          in the global scope (if not in strict mode) or return an error.
         */
+         //SUB ways of create object in JavaScript
+       /*there are 5 ways to create object in js
+         1.Object Literal
+         2.using new Object() method 
+         3.using Object.create(proto,propertiesObject)
+         4.uinsg Constructor Function
+         5.using ES6 Classes */
 
 
+       //.-> Object Literal Way
+       /*The Simplest and easiest way to create an object is using Object Literal “{}”. Just define properties and values
+       inside curly braces */
+       let obj51={name:"Prajwal"};
+        console.log(obj51.name);
+        //.-> new Object() Way
+        /*way to create an Object is by using new Object().
+         For simplicity, readability and execution speed, use object literal way.*/
+        let obj52=new Object({name:"Prajwal"});
+        console.log(obj52.name);
+        //.-> Object.create(proto,propertiesObject) Way
+        /*this method creates a new object, using an existing object as the prototype of the newly created object.
+        it takes two parameters. The first parameter is a mandatory object that serves as the prototype of the new
+        object to be created. The second parameter is an optional object which contains the properties to be added
+        to the new object .*/
+        let object53=Object.create(obj51,{new_property:{value:23}});//<- in completed
+        console.log(object53);
+        //.-> Constructor Function Way
+        /*The constructor function is a function allows to create multiple objects of the same constructor function with the help
+        of new keyword
+        Technically speaking, a constructor function is a regular function with the following convention:
+           * The name of a constructor function starts with a capital letter like Person, Document, etc.
+           * A constructor function should be called only with the new operator.*/
+        function Constructor_fun(name,age,phone){
+            this.name=name;
+            this.age=age;
+            this.phone=phone;
+        }
+        let obj54=new Constructor_fun("Prajwal");
+        console.log(obj54);
+        obj54.age=23;
+        console.log(obj54);
+        //SUB ES6 Classes 
+        /*By using classes we can create a new objects.The constructor method is a special method of a class for creating and 
+        initializing an object instance of that class.
+        constructor(argument0, argument1, ... , argumentN) { //////// } */
+        class cls_Obj{
+          constructor(name, age, phone){
+            this.name=name;
+            this.age=age;
+            this.phone=phone;
+          }
+        }
+        let obj55=new cls_Obj("Prajwal",23);
+        console.log(obj55);
+        obj55.phone='656345***';
+        console.log(obj55);
+        //.-> Object.assign() //<- in completed
+
+        
+        //SUB Prototypes
+        /*Prototypes: are the mechanism by which JavaScript objects inherit features from one another.
+        Every object in JavaScript has a built-in property called prototype.The prototype is itself an object.
+        
+        When we try to access a property of an object: if the property can't be found in the object itself, the prototype 
+        is searched for the property. If the property still can't be found, then the prototype's prototype is searched, 
+        and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.
+        */
+        const obj8={
+          city:"Bangalore",
+          greet:function (){
+            console.log(`Greetings from ${this.city}`);
+          }
+        }
+        obj8.greet();3
+        console.log(obj8)//list of all the properties available to this object.
+        /*these extra properties come from prototype*/
+        console.log(obj8.hasOwnProperty('city'));//true
+        console.log(obj8.hasOwnProperty('name'));//true
+        /*Object.prototype, is the most basic prototype, that all objects have by default. The prototype of 
+        Object.prototype is null, so it's at the end of the prototype chain:*/
+        console.log(Object.getPrototypeOf(obj8));//Object {...}
+        console.log(Object.getPrototypeOf(Object.getPrototypeOf(obj8)));//null
+
+        //.-> Shadowing properties
+        const myDate = new Date();
+        console.log(myDate);
+        console.log(myDate.getDate());//today date
+
+        myDate.getDate = function() {
+        console.log("Shadowing properties");
+        };
+        myDate.getDate();
+        let arr=[10,20,30];
+        function fun(){};
+        let mapr=new Map();
+        let setr=new Set();
+        console.log(arr);
+
+
+        //.-> create prototype
+        // Using Object.create
+        let person_obj={
+          name:"Veeresh",
+          college:"B.M.S.C.E"
+        }
+        console.log(person_obj);
+        let person_obj2=Object.create(person_obj,{age:{value:"23"}});
+        console.log(person_obj2);
+        console.log(person_obj2.hasOwnProperty('age'));//true
+        console.log(person_obj2.hasOwnProperty('name'));//false
+        let person_obj3=Object.create(person_obj2,{number:{value:"9148302***"}});
+        console.log(person_obj3);
+
+        console.log(person_obj3.__proto__.__proto__.__proto__);
+        console.log(Object.prototype);//Object.prototype is the most basic prototype
+        console.log(person_obj3.__proto__.__proto__.__proto__.__proto__);
+        console.log(Object.prototype.__proto__);
+        
+        //using constructor
+        function Person_construct(name,from){
+          this.name=name;
+          this.from=from;
+        }
+        let person1=new Person_construct("Prajwal","Bengaluru");
+        console.log(person1);
+        person1.phone='636286*****';
+        console.log(person1);
+        Person_construct.prototype.display=function(){//property method
+          console.log(`${this.name} from ${this.from}`);
+        }
+        Person_construct.prototype.age='18';//property value
+        console.log(person1.hasOwnProperty("name"));//true
+        console.log(person1.hasOwnProperty("display"));//false
+        console.log(Person_construct.prototype);
+        console.log(Person_construct.prototype.__proto__);
+        console.log(Person_construct.prototype.__proto__.__proto__);
+
+
+      
+        
 
 
     </script>
