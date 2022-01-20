@@ -362,11 +362,33 @@
         */
 
         //SUB callback functions
-        /**/
+        /*A callback function is a function passed into another function as an argument. This function is invoked inside the 
+        outer function to complete an action.
 
+        this callback function uesd in many inbuild methods:
+        like,filter,map,addEventListener
 
-
+        usecase of callback function
+        */
+        //example:
+        function callBackFun(message) {
+           console.log(message);
+        }
+        function outerFun(callback, message){
+          callback(message);
+        }
+        outerFun(callBackFun, "Hello PreBytes");
         
+        //inbuild methods for callback
+        // <button type="button" class="button">click</button>
+        /*let click=document.querySelector(".button");
+        click.addEventListener("click",()=>{
+        console.log("hello everyone");
+        })*/
+        let arr=[1,2,3,4,5,6,7,8,9,10];
+        let eve_arr=arr.filter((a)=>a%2==0);
+        
+        //SUB recurstion
 
         //SUB this keyword
         /*every "function execution context(FEC) has three components:
