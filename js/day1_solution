@@ -388,7 +388,35 @@
         let arr=[1,2,3,4,5,6,7,8,9,10];
         let eve_arr=arr.filter((a)=>a%2==0);
         
-        //SUB recurstion
+           //SUB  recurstion
+         /*recurstion is a method of solving problems by breaking them  into smaller subsets of the main problem, so we can use
+         this samll subset to find solustion.
+
+         in programming we can achive this by calling a function itself, usually with a different input passed to the child function.
+         It calls itself over and over until an exit condition is reached, and then passes the results back up the call stack
+
+         if we doing with recurstion in programming we should keep two things in mind
+         1.base condition 
+         2.what is the return type
+
+         there are many different way to do recurstion
+         1.tail recurstion- when a recursive call is the last thing
+         2.Head Recursion- when a recursive call is the first thing
+         3.Tree Recursion-
+         4.Indirect Recursion-
+         5.Nested Recursion-
+         */
+         //examples 1.find out Factorial of number 2.find Sum of Natural Number 3.exponet function means M^n  
+         function factorial(n){
+           if(n===1){
+             return 1;
+           }
+           else{
+             return n*factorial(n-1);// tail Recursion
+           }
+         }
+         console.log(factorial(5));
+     
 
         //SUB this keyword
         /*every "function execution context(FEC) has three components:
