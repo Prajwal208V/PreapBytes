@@ -810,7 +810,122 @@
         fun3(10,20);//2
 
         
+         //SUB promise
+        /*promise is an object  that may produce a single value some time in the future with either a resolved value or a 
+        reason that it’s not resolved(for example, network error). 
+        It will be in one of the 3 possible states: 
+        pending:initial state, neither fulfilled nor rejected.
+        fulfilled: meaning that the operation was completed successfully.
+        or rejected:meaning that the operation failed.
+        
+        A pending promise can either be fulfilled with a value or rejected with a reason (error)
 
+        Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing 
+        the callback hell and writing the cleaner code.
+        
+        Creating a promise:create a promise in JavaScript, you use the Promise constructor:
+        */
+        /*let complete=true;
+        let my_promise=new Promise((resolve,reject)=>{
+          if(complete){
+            resolve("operation was completed successfully");
+          }
+          else{
+            reject("operation was rejected");
+          }
+        })*/
+        /*The Promise constructor accepts a function as an argument(callback functon) This function is called the executor,
+         this executor takes two arguments as callback functions 1.resolve,2.reject
+
+         When you call the new Promise(executor), the executor is called automatically. 
+         Inside the executor, you manually call the resolve() function if the executor is completed successfully and 
+         invoke the reject() function in case of an error occurs.*/
+
+        // To see the pending state of the promise, we wrap the code of the executor in the setTimeout() function
+        /*complete = false;
+        let my_promise2 = new Promise((resolve, reject) =>{
+          setTimeout(()=>{
+              if(complete){
+                resolve("operation was completed successfully");
+                console.log(my_promise2);//PromiseState is fulfilled,PromiseResult is "operation was completed successfully"
+              }
+              else{
+                reject("operation was rejected");
+                console.log(my_promise2);//PromiseState is rejected, PromiseResult is "operation was rejected"
+              }
+          },3*1000);
+        })
+        console.log(my_promise2);//PromiseState is pending, PromiseResult is "undefined" */
+        /*processes steps
+        1.promise starts with the pending state with the value is undefined. The promise value will be 
+        returned later once the promise is completed
+        2.After about 3 seconds, the state of the promise becomesresolved and the promise value is the string that we passed 
+        to the resolve() function.
+        3.So calling the resolve() function moves the promise object to the fulfilled state.
+        4.In other words, calling the reject() method moves the promise object to the rejected state. 
+        and error message and the state of the promise becomes rejected after 3 seconds
+
+        Once the promise reaches either fulfilled state or rejected state, it stays in that state and can’t switch.
+        */
+       //SUB Consuming a Promise 
+       /*by using then, catch, finally methods to further action with a promise that becomes settled.
+         then():method is used to schedule a callback to be executed when the promise is successfully resolved.
+         this method takes two callback functions:- promiseObject.then(onFulfilled, onRejected);
+         catch():
+       */
+       /*my_promise2.then((message) =>{
+        console.log(message);
+       }).catch((message)=>{
+        console.log(message);
+       })*/
+
+
+       //SUB promise chaining 
+       /*The instance method of the Promise object such as then(), catch(), or finally() returns a separate "promise object".
+       Therefore, you can call the promise’s instance method on the return Promise. The successively calling methods in this 
+       way is referred to as the promise chaining.
+
+       The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.*/
+       
+       //.-> whithout asynchronous dealy in promise Multiple handlers for a promise
+       let my_promise3=new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+             resolve(1);
+          },1*1000)
+       })
+       my_promise3.then((result)=>{
+         console.log(result);
+         return result*2
+       }).then((result)=>{
+        console.log(result);
+        return result*3
+       }).then((result)=>{
+        console.log(result);
+       })
+       //.-> with asynchronous dealy in promise Multiple handlers for a promise (Returning a Promise)
+       let my_promise4=new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+             resolve(1);
+          },2*1000)
+       })
+
+       my_promise4.then((result)=>{
+         console.log(`this exicuted after ${result} seconds of page open`);
+         return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+             resolve(result+2);
+          },2*1000)
+         })
+       }).then((result)=>{
+        console.log(`this exicuted after ${result} seconds of page open`);
+         return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+             resolve(result+2);
+          },2*1000)
+         })
+       }).then((result)=>{
+        console.log(`this exicuted after ${result} seconds of page open`);
+       })
 
     </script>
 </body>
