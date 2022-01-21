@@ -926,7 +926,27 @@
        }).then((result)=>{
         console.log(`this exicuted after ${result} seconds of page open`);
        })
+       
+       //SUB Object Destructuring
+        /* OavaScript Object Destructuring is the syntax for extracting values from an object property and assigning them 
+        to a variable.
+        */
+        let person={
+            name:"Prajwal V",
+            // age:23,
+            from:"Bengaluru"
+        }
+        /*let name=person.name;
+        let age=person.age;
+        let from=person.from;*/
+        /*We have to explicitly mention the name and age property with the user object in dot(.) notation, then declare 
+        variables accordingly and assign them. */
+        // let{name,age,from}=person;
 
+        //Setting default values and also we assign the age property to the age variable with the default value of 18.
+        let{name,age:currentAge=18,from,contactNo='63628***',}=person;
+        // if property not there in object it will take defult value in this case age property not there so it takes defult value as 18
+        console.log(name,currentAge,from,contactNo);
     </script>
 </body>
 </html>
