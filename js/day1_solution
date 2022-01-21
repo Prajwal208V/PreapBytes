@@ -105,6 +105,18 @@
         but has not been assigned a value, has the value undefined.*/
         console.log(typeof var21);//undefined
         var var21;
+
+PreapBytes/js/
+in
+master
+
+1
+
+<!DOCTYPE html>
+
+2
+
+<html lang="en">
         if(undefined===var21){
             console.log(true,21);//true
         }
@@ -947,6 +959,32 @@
         let{name,age:currentAge=18,from,contactNo='63628***',}=person;
         // if property not there in object it will take defult value in this case age property not there so it takes defult value as 18
         console.log(name,currentAge,from,contactNo);
+        
+        
+        //SUB create an array 
+        /*An array in JavaScript can be defined and initialized in two ways, array literal and Array constructor syntax.
+        */
+       //.-> Array Literal syntax is simple. It takes a list of values separated by a comma and enclosed in square brackets. 
+        let arr=["a","b","c","d","e","f"];
+       
+        console.log(arr);
+       //.-> Array Constructor initialize an array with Array constructor syntax using new keyword.
+       //var arrayName = new Array(element1, element2, element3,... elementN);
+       let arr2=new Array();
+
+       //SUB ways t oempty the array 
+       /*4 Ways to Empty an Array in JavaScript
+           1.Assigning it to a new empty array
+             let arr=[];
+           2.set its length to zero
+             arr.length=0;
+           3.Using splice() method:  arr.splice(0,arr.length);
+             splice method removing or replacing existing elements
+           4.Using pop() method:remove each element of the array one by one using the while loop and pop()
+                while(arr.length){
+                    arr.pop();
+                }
+         */
     </script>
 </body>
 </html>
