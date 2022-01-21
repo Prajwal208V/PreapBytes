@@ -761,7 +761,54 @@
         A web page is a document that can be either displayed in the browser window or as the HTML source. In both cases,
         it is the same document,but Document Object Model (DOM) representation allows it to be manipulated. As an object-oriented
         representation of the web page, it can be modified with a scripting language such as JavaScript,pyton, php,ruby,bash 
-      
+        
+       //SUB rest parameter and spread operator
+        /*spread operator:allows you to spread out elements of an iterable object such as an array,a  map, or a set.
+         (The spread operator unpacks elements.)
+         https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax 
+
+         https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters 
+         rest parameter:allows a function to accept an indefinite number of arguments as an array (The rest parameter packs elements into an array.)
+          The difference between rest parameters and the arguments object
+            1.The arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, 
+            forEach or pop can be applied on it directly
+            2.The ...restParam bundles all the  parameters into a single array so we wouldn't define many paraments */
+        //spread operator usecases
+        //.-> literal
+          //1.use case1 (array literal) when concat two or more arrys into a single array
+          let arr1=[1,2,3,4,5,6,7];
+          let arr2=[11,12,13,14,15,16,17];
+          let arr3;
+          // arr3=[arr1,arr2];//[Array(7), Array(7)]
+          // arr3=[...arr1,...arr2];//1,2,3,4,5,6,7,11,12,13,14,15,16,17
+          console.log(arr3);
+          //2. Spread in object literals
+          let obj1={name:"prajwal",age:23};
+          let obj2={from:"bengaluru",concatNo:"63628****"};
+          let obj3;
+          //obj3={obj1,obj2};//{obj1: {…}, obj2: {…}}
+          obj3={...obj1,...obj2};//{name: 'prajwal', age: 23, from: 'bengaluru', concatNo: '63628****'}
+          console.log(obj3);
+        //.-> use case2 if we want only first two elemnts of array to do something example
+        function fun(a,b,c){
+          console.log(a,b+c);// here a takes null value and b,c takes first and second elements of array respectively
+        }
+        let arr0=[1,2,3,4,5,6,7];
+        fun(null,...arr0);
+        //rest parameter usecases
+        //.-> 
+        function fun2(...para){// rest parameter
+          console.log(para);
+        }
+        fun2(...arr0);//spread operator
+        //.-> 
+        function fun3(...para){
+          console.log(para.length);
+        }
+        fun3(1,2,3,4,5);//5
+        fun3();//0
+        fun3(10,20);//2
+
         
 
 
