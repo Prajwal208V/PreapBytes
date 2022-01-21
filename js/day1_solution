@@ -446,6 +446,13 @@
             }
         }
         obj.method();
+        //SUB arrow function
+        /* arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+          Limitations when we use arrow function expression:
+           1.functions do not get their own 'this keyword' basically an arrow function inherits the this keyword from the parent scope.
+           2.Can not be used as constructors.
+           3.Not suitable for call, apply and bind methods, which generally rely on establishing a scope. 
+            */
 
         //SUB Simple function call (method not attached to any object)
         function fun(){
