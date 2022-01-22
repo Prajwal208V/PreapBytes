@@ -983,8 +983,65 @@ master
            4.Using pop() method:remove each element of the array one by one using the while loop and pop()
                 while(arr.length){
                     arr.pop();
-                }
-         */
+                }*/
+                
+        //SUB weakSet: 
+        /*WeakSet objects are collections of objects. Just as with Sets, each object in a WeakSet may occur only once; 
+         all objects in a WeakSet's collection are unique. 
+
+         WeakSets are collections of objects only ,They cannot contain prmitive values like string,numbers,null,undfined
+         If you try to add anything else than an object JavaScript will throw an error.
+
+         The WeakSet is weak,means {weakset objects loses all references it will be “marked”} for garbage collection.
+         we know javascript has  garbage collection algorithm inside the JavaScript engine,which automatically removes old, 
+         unused objects from the computer memory.
+         When this garbage collection happens this object is released from the memory. It is gone.
+         we can’t predict when it will happen.
+
+         WeakSets are not iterable.(No iteration and size property) in weakSet and wekMap objects
+
+         in weakSet  weak pat means that all objects you store inside a WeakSet are held weakly. 
+
+         creating weakSet: use the WeakSet() constructor to weakSets
+         example: 
+         adding objects to weakSet using add() method It actually accepts only one object, not more. If you try to pass in multiple 
+         objects only the first will be added to the WeakSet. 
+          
+          let obj2={
+              name:'rajesh',
+              age:23
+          }
+          let obj3={
+            name:'ullash',
+            age:23
+          }
+          // .-> adding objects to weakSet using add() method It actually accepts only one object, not more. If you try to pass in multiple 
+          let my_weakSet=new WeakSet([obj2,obj3]);
+          let obj={name:"prajwal",age:23}
+          my_weakSet.add(obj);
+          console.log(my_weakSet)
+         //.->Removing objects from WeakSets using delete() method It will return true if the object was
+         // successfully removed. If the object is not stored in the WeakSet it will return false. This method accepts one parameter, 
+         //name of the object 
+         //my_weakSet.delete([obj2,obj3]);// in delete method array is not works if we trying delete multiple objetcs 
+         my_weakSet.delete(obj3);
+         console.log(my_weakSet);
+         //.-> Checking if object exists in a WeakSet
+         console.log(my_weakSet.has(obj),my_weakSet.has(obj3));//true false */
+         
+        //SUB weakMap 
+        /**/
+        
+
+        //sSUB object to array method
+        /*To convert an object to an array we can use one of three methods: 
+        1.Object.keys(), :returns "keys form as string" an array of a given object's  [value]
+        2.Object.values():returns "values" an array of a given object's  [value]
+        3.Object.entries():returns an array of a given object's  string-keyed property form as[key, value] pairs.*/
+        // let keys_Obj=Object.keys(obj);
+        // let values_Obj=Object.values(obj);
+        // let key_value_Pairs=Object.entries(obj);
+        // console.log(keys_Obj,values_Obj,key_value_Pairs);
     </script>
 </body>
 </html>
