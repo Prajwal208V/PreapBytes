@@ -985,7 +985,7 @@ master
                     arr.pop();
                 }*/
                 
-        //SUB weakSet: 
+        //SUB weakSet: (its methods WeakSet(),add(value),delete(value),has(value))
         /*WeakSet objects are collections of objects. Just as with Sets, each object in a WeakSet may occur only once; 
          all objects in a WeakSet's collection are unique. 
 
@@ -1042,6 +1042,34 @@ master
         // let values_Obj=Object.values(obj);
         // let key_value_Pairs=Object.entries(obj);
         // console.log(keys_Obj,values_Obj,key_value_Pairs);
+        
+         
+        //SUB weakMap (its methods WeakMap(),set(key,value),delete(key),get(key),hs(key))
+        /*.-> WeakMaps allow you to create keys only with objects, not with any other data type.
+
+        .-> all keys in a WeakMap are weakly referenced. This means that objects used as key for a WeakMap
+        can still be garbage collected. This will happen when all references to those objects are gone.
+        When these objects are no longer used by any part of the program,garbage collection will free them from memory.
+        Only when the next “cycle” of garbage collected happens, they will actually be freed. 
+        
+        not iterable. You can’t iterate over them using a loop or forEach() method like you can over Maps.
+        WeakMaps also don’t have any size property.
+        
+        How to create WeakMaps:use WeakMap() constructor. This constructor will create new WeakMap object.
+
+        Adding elements:When you want to add new key-value pair to WeakMaps the set(key,value)
+        This method allows you to add only one key-value pair at the time.
+
+        Retrieving values:get() method is what you are looking for when you want to retrieve values from WeakMaps.
+        Otherwise, it will return undefined.
+
+        Removing elements:delete() method. This methods takes one parameter, a key. This is the object you used as the key
+        to store the value associated with it. This method will return either true or false. true if the pair in the WeakMap 
+        object has been removed successfully.
+
+        Checking for existing keys: You can do this with the has() method. This method takes one parameter, some object 
+        we want to know if it is used as a key. If the key exists the has() method will return true. Otherwise, false.
+        */
     </script>
 </body>
 </html>
