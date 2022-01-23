@@ -121,15 +121,17 @@
     and columns respectively.*/
     //SUB position an HTML element
     /*There are mainly 7 values of position attribute that can be used to position an HTML element:
-      1.static: Default value. Here the element is positioned according to the normal flow of the document.
+      1.static:Default value. Here the element is positioned according to the normal flow of the document.
       2.absolute: Here the element is positioned relative to its parent element. The final position is 
-      determined by the values of left, right, top, bottom.
-      3.relative: Here the element is positioned according to the normal flow of the document and 
+      determined by the values of left, right, top, bottom.if no parent is available then the relative place to the page itself
+      3.relative:"Relative to itself" Here the element is positioned according to the normal flow of the document and 
       positioned relative to its original/ normal position.
-      4.
-
-
-
+      4.Fixed:The element is positioned relative to the viewport or the browser window itself.viewport doesn't change if we scroll and hence the fixed element will 
+      stay right in the same position. 
+      5.Sticky: Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold,
+      at which point it is treated as fixed positioned.
+      
+      
     */
     //SUB display HTML elements
     /*1.inline: Using this we can display any block-level element as an inline element. The height and width 
