@@ -1,0 +1,220 @@
+SUB Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup 
+language such as HTML or XML,CSS describes how elements should be rendered on screen
+
+SUB Box model in CSS:
+A rectangle box is wrapped around every HTML element. The box model is used to determine the height and width of the 
+rectangular box.The CSS Box consists of Width and height (or in the absence of that, default values and the content inside),
+padding, borders, margin.
+    Content:  Actual Content of the box where the text or image is placed.
+    Padding: Area surrounding the content (Space between the border and content).
+    Border: Area surrounding the padding.
+    Margin: Area surrounding the border.
+
+SUB advantages of using CSS:
+    CSS provides a way to present the same content in multiple presentation formats in mobile or desktop or laptop.
+
+SUB different ways to include a CSS
+    inline styles
+    internal styles
+    external styles
+SUB different types of Selectors in CSS
+    .->Simple selectors (select elements based on name of the tag, id, class)
+    .->Combinators Selectors : something relationship between the selectors.
+        -> div,p{} -This selector implies selecting all div elements and all p elements.
+        ->descendant selector(space): "matches all elements that are descendants of a specified element".
+            example: div p{background-color: yellow; }
+            <div>
+                <p>Paragraph 1 in the div.</p>
+                <p>Paragraph 2 in the div.</p>
+                <section><p>Paragraph 3 in the div.</p></section>
+            </div>
+        ->child selector (>):The child selector "selects all elements that are the children of a specified element".
+           example: div>p{background-color: yellow; }
+            <div>
+                <p>Paragraph 1 in the div.</p>
+                <p>Paragraph 2 in the div.</p>
+                <!-- not Child but Descendant -->
+                <section><p>Paragraph 3 in the div.</p></section>
+                <p>Paragraph 4 in the div.</p>
+            </div>
+        ->Adjacent Sibling Selector(+):is used to select an element that is directly after another specific element.
+        example: div+p{background-color: yellow; }
+        (selects the first p(Paragraph 3 and Paragraph 7)   element that are placed immediately after div elements:)
+            <div>
+                <p>Paragraph 1 in the div.</p>
+                <p>Paragraph 2 in the div.</p>      
+            </div>
+            <p>Paragraph 3. After a div.</p>
+            <p>Paragraph 4. After a div.</p>
+            <div>
+                <p>Paragraph 5 in the div.</p>
+                <p>Paragraph 6 in the div.</p>
+            </div>
+            <p>Paragraph 7. After a div.</p>
+        ->General Sibling Selector (~):The general sibling selector selects all elements that are next siblings of a specified element.
+        example: div~p{background-color: yellow; }
+        (it will selects Paragraph 3 and Paragraph 4 elemets)
+            <div>
+                <p>Paragraph 2.</p>
+            </div>
+            <p>Paragraph 3.</p>
+            <code>Some code.</code>
+            <p>Paragraph 4.</p>
+    .->Pseudo-selectors: is used to define a special state of an element.
+       ->Anchor Pseudo:Links can be displayed in different ways
+               1.a:link
+               2.a:visited
+               3.a:hover
+               4.a:active 
+        ->Match Pseudo-selectors:
+                1.p:first-child -
+                2.p:last-child -
+                3.nth-of-type(number/odd/even) -
+                4.p::after - Insert some text after the content of each <p> element
+                5.p::before -Insert some text before the content of each <p> element
+                6.p::first-letter - Select and style the first letter of every <p> element
+                7.p::first-line -Select and style the first line of every <p> element:
+                8.::selection - Make the selected text red on a yellow background:
+
+    .->Attribute Selector:Style HTML Elements With Specific Attributes
+        ->a[]:matches elements based on the presence or value of a given attribute.
+SUB VH/VW (viewport height/ viewport width) in CSS
+used to measure the height and width in percentage with respect to the viewport. It is used mainly in responsive design 
+techniques.
+   The measure VH is equal to 1/100 of the height of the viewport.
+   example:If the height of the browser is 1000px, 1vh is equal to 10px.
+           Similarly, if the width is 1000px, then 1 vw is equal to 10px.
+
+SUB units in the CSS
+There are different ways to specify units in CSS like:
+    1.px(Pixel) -
+    2.em -
+    3.rem -
+    4.percentage (%) -
+    5.vh -
+    6.vw -
+SUB opacity in CSS3
+Opacity refers to the "degree to which the content is transparent value should 0 to 1.0 using property is opacity"
+
+SUB float property in CSS
+The float property is used for positioning the HTML elements horizontally either towards the left or right of the container.
+
+SUB z-index property in CSS: 
+The z-index property specifies the stack order of an element.(vertical stacking of the overlapping elements )
+An element with greater stack order is always in front of an element with a lower stack order.
+Note: z-index only works on positioned elements (position: absolute, position: relative, position: fixed, or position: sticky) 
+and flex items (elements that are direct children of display:flex elements).
+
+z-index: auto|number|initial|inherit;
+auto:Sets the stack order equal to its parents. This is default
+number:The number can be positive or negative. It defines the stack order
+initial:the default value of 0 is set to the property.
+inherit:The properties are inherited from the parent.
+
+SUB properties of flexbox
+->Flexbox stands for flexible box,
+->the purpose of providing an efficient way to handle layouts, align elements within them and distribute spaces amongst the items 
+in dynamic/responsive conditions.
+->It provides an enhanced ability to alter the dimensions of the items and make use of the available space in the container 
+efficiently. 
+
+properties of flexbox are :
+  flex-direction:This property helps in defining the direction the container should stack the items values of this property can be
+         row: Stacks items horizontally from left to right in the flex container.
+         row-reverse: Stacks items horizontally from right to left in the flex container.
+         column: Stacks items vertically from top to bottom in the flex container.
+         column-reverse: Stacks items vertically from bottom to top in the flex container.
+  flex-wrap:This property specifies of the flex items should be wrapped or not.    
+        wrap: The flex items would be wrapped if needed.
+        nowrap: This is the default value that says the items won’t be wrapped.
+        wrap-reverse: This specifies that the items will be wrapped if needed but in reverse order.
+  flex-flow:This property is used for setting both flex-direction and flex-wrap properties in one statement.(direction flex)
+  justify-content:(horizontally) sed for aligning the flex items            
+        center: all the flex items are present at the center of the container.
+        flex-start:items are aligned at the start of the container. This is the default value.
+        flex-end: items are aligned at the end of the container.
+        space-around: displays the items having space between, before, around the items.
+        space-between:This value displays items with spaces between the lines.
+  align-content:his is used for "aligning the flex lines" along the cross-axis.
+  align-items: (vertically) This is used for "aligning flex items" along the cross-axis.
+
+SUB Difference between CSS grid vs flexbox:
+    CSS Grid Layout is a two-dimensional system, meaning it can handle both columns and rows.
+    Flexbox is largely a one-dimensional system (either in a column or a row). 
+
+SUB grid is a two-dimensional system
+CSS Grid Layout Module offers a grid-based layout system,with rows and columns, making it easier to design web pages 
+without having to use floats and positioning.
+
+Grid Elements:
+A grid layout consists of a parent element, with one or more child elements.
+Display Property:
+An HTML element becomes a grid container when its display property is set to grid or inline-grid.
+inline-grid will make the element inline while grid will make it a block-level element.
+
+
+ 1.grid-template-columns:use To specify the number of columns of the grid and the widths of each column
+   each width value can be either in pixels(px) or percentages(%) or fr unit is a fraction of the grid’s 
+ 2.grid-template-rows:use To specify the number of rows of the grid and hight of each row
+ 3.Grid Gap:shorthand way of setting the two properties grid-row-gap and grid-column-gap
+    It is used to determine the size of the gap between each row and each column.
+    The first value sets the size of the gap between rows and while the second value sets the size of the gap between columns.
+4.grid-row or grid-column property is shorthand for the grid-row/column-start and grid-row/column-end
+  properties specifying a grid "item’s size and location" within the grid row.
+  example: .item { grid-row: 1 / span 2; } :- Make "item1" start on row 1 and span 2 rows;
+5.minmax():If the content is between minimum and maximum, it will applied. 
+function accepts two parameters:the first parameter is the minimum size of a row or column.
+                                The second parameter is the maximum size. 
+6.grid-row-start & grid-row-end/ grid-column-start & grid-column-end: 
+7.CSS grid-row-gap
+8.CSS grid-area
+9.CSS grid-template-areas
+10.CSS grid-auto-flow
+
+SUB media query:
+When we are designing a website,it is really important to it looks good on all screen sizes. this is done by 
+using media-query,means Responsive Design it makes contents looks good on all screen sizes.
+
+media query is used to apply a set of styles based on the browser's characteristics including width, 
+height, or screen resolution
+
+Media Query Syntax:A media query consists of a media type and can contain one or more expressions,which resolve to either 
+true or false.
+The result of the query is true if the specified media type matches the type of device the document is being displayed,
+the corresponding style sheet or style rules are applied
+
+so we can also have different stylesheets for different media,
+
+Media Types:
+all 	->Used for all media type devices
+print 	->Used for printers
+screen 	->Used for computer screens, tablets, smart-phones etc.
+speech 	->Used for screenreaders that "reads" the page out loud
+
+Example:
+        @media screen and (min-width: 480px) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+example changes the background-color to lightgreen if the viewport is 480 pixels wide or wider 
+(if the viewport is less than 480 pixels, the background-color normal color only),
+
+example2:
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: olive;
+            }
+        }
+On screens that are 600px or less, set the background color to olive
+
+Example3:
+        @media screen and (max-width: 900px) and (min-width: 600px) {
+            div.example {
+                font-size: 50px;
+                padding: 50px;
+                border: 8px solid black;
+                background: yellow;
+            }
+        }
+when the browser's width is between 600 and 900px, change the appearance of a <div> element:
