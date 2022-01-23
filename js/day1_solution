@@ -1068,8 +1068,177 @@ master
         object has been removed successfully.
 
         Checking for existing keys: You can do this with the has() method. This method takes one parameter, some object 
-        we want to know if it is used as a key. If the key exists the has() method will return true. Otherwise, false.
+        we want to know if it is used as a key. If the key exists the has() method will return true. Otherwise, false.*/
+        
+        //SUB CALLBACK hell
+        /*we tries to execute multiple asynchronous operations one after the other. By nesting callbacks
+
+        The use of callbacks makes the code difficult to write and maintain. It also increases the difficulty
+        of identifying the flow of the application, */
+
+        //Example
+        function func1(table,num,callback) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            setTimeout(()=>{
+                callback(table,++num,func3);
+            },1500);
+        }
+        function func2(table,num,callback){
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            setTimeout(()=>{
+                callback(table,++num,func4);
+            },1500);
+        }
+        function func3(table,num,callback){
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            setTimeout(()=>{
+                callback(table,++num,func5);
+            },1500);
+        }
+        function func4(table,num,callback){
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            setTimeout(()=>{
+                callback(table,++num);
+            },1500);
+        }
+        function func5(table,num){
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+        }
+        func1(10,1,func2)
+
+        function func01(table,num) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            return ++num;
+        }
+        function func02(table,num) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            return ++num;
+        }
+        function func03(table,num) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            return ++num;
+        }
+        function func04(table,num) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+            return ++num;
+        }
+        function func05(table,num) {
+            let result=table*num;
+            console.log(`${table} * ${num} = ${result}`);
+        }
+
+
+        function promise_fun(table){
+            let my_promise=new Promise((resolve,reject)=>{
+                if(table){
+                resolve([table,1]);
+                }
+            })
+            my_promise.then((arr)=>{
+              arr[1]=func01(arr[0],arr[1]);
+              return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(arr);
+                },1500); 
+              })
+            }).then((arr)=>{
+              arr[1]=func02(arr[0],arr[1]);
+              return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(arr);
+                },1500); 
+              })
+            }).then((arr)=>{
+              arr[1]=func03(arr[0],arr[1]);
+              return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(arr);
+                },1500); 
+              })
+            }).then((arr)=>{
+                arr[1]=func04(arr[0],arr[1]);
+                return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(arr);
+                },1500); 
+              })
+            }).then((arr)=>{
+                func05(arr[0],arr[1]);
+            })
+        }
+        promise_fun(10);
+        
+        //SUB classes
+        /*Classes are a template for creating objects. this is the one way to create a objetcs in javascript. 
+        classe is  blueprint for creating objects. A class encapsulates data and functions  
+        ES6 classes are just special functions.
+        
+        note:-An important difference between function declarations and class declarations is that while functions 
+        can be called in code that appears before they are defined, classes must be defined before they can be constructed.
+        if we trying to do it will trow the refence error 
+
+        two ways to create javscript classes 
+        1.class declaration.
+        2.Class expressions
         */
+       //.-> class declaration
+        //Public field declarations
+        /*class Cls_preson{
+            static pincode=560097;
+            constructor(name,from,age,pincode){
+                this.name = name;
+                this.from = from;
+                this.age = age;
+                this.pincode = pincode;
+            }
+            //methods
+            display(){
+                return (`name: ${this.name},from: ${this.from}, age: ${this.age}, pincode: ${this.pincode}`)
+            }
+        }
+        let person1=new Cls_preson("Prahwal","Bengaluru",23,560020);
+        console.log(person1.display());
+        //Private field declarations
+        class Cls_preson2{
+            pincode=560097;
+            constructor(name,from,age,pincode){
+                this.name = name;
+                this.from = from;
+                this.age = age;
+                this.pincode=pincode;
+            }
+            //privatemethods
+            #privateMethod(){
+                return (`name: ${this.name},from: ${this.from}, age: ${this.age}, pincode: ${this.pincode}`)
+            }
+        }
+        let person2=new Cls_preson2("Prahwal","Bengaluru",23,560020);
+        console.log(person2.#privateMethod());
+
+        //.-> class expressions
+        var Cls_person1=class{
+            constructor(name,from,age){
+                this.name = name;
+                this.from = from;
+                this.age = age;
+            }
+        }
+        console.log(Cls_person1.name);//Cls_person1
+
+        //.-> Class body and method definitions
+        */
+        
+        
+        
     </script>
 </body>
 </html>
