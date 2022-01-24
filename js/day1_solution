@@ -1088,7 +1088,8 @@ master
          console.log(my_weakSet.has(obj),my_weakSet.has(obj3));//true false */
 
         //SUB weakMap (its methods WeakMap(),set(key,value),delete(key),get(key),hs(key))
-        /*.-> WeakMaps allow you to create keys only with objects, not with any other data type.
+        /*is a collection of key/value pairs whose keys must be objects,
+        .-> WeakMaps allow you to create keys only with objects, not with any other data type.
 
         .-> all keys in a WeakMap are weakly referenced. This means that objects used as key for a WeakMap
         can still be garbage collected. This will happen when all references to those objects are gone.
