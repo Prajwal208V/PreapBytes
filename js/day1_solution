@@ -730,7 +730,7 @@ master
         let setr=new Set();
         console.log(arr);
 
-
+        //SUB prototype chaining
         //.-> create prototype
         // Using Object.create
         let person_obj={
