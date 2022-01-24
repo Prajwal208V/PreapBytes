@@ -765,14 +765,67 @@ master
         console.log(Person_construct.prototype.__proto__.__proto__);
 
          //SUB DOM 
-        /*The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs 
-        can change the document structure, style, and content.
+    /*The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs 
+    can change the document structure, style, and content.
+    
+    The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+    
+    A web page is a document that can be either displayed in the browser window or as the HTML source. In both cases,
+    it is the same document,but Document Object Model (DOM) representation allows it to be manipulated. As an object-oriented
+    representation of the web page, it can be modified with a scripting language such as JavaScript,pyton, php,ruby,bash 
+    */
+    //SUB DOM selectors 
+    /*used to select HTML elements within a document using JavaScript
+    There are 5 ways in which we can select elements in a DOM using selectors.
+        1.getElementsByTagName():This method returns all the elements that matches the specified Tag name.
+        2.getElementsByClassName()
+        3.getElementById()
+        4.querySelector()
+        5.querySelectorAll() 
 
-        The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+    .-> queryselector: is css selector,retrieve Element nodes from the DOM, This is much faster than past techniques,
+    for example, use a loop in JavaScript code to locate the specific items you needed to find.
 
-        A web page is a document that can be either displayed in the browser window or as the HTML source. In both cases,
-        it is the same document,but Document Object Model (DOM) representation allows it to be manipulated. As an object-oriented
-        representation of the web page, it can be modified with a scripting language such as JavaScript,pyton, php,ruby,bash 
+    querySelector():Returns the first matching Element node subtree. If no matching node is found, null is returned.
+    querySelectorAll(): Returns a NodeList containing all matching Element nodes subtree, or an empty NodeList if no matches 
+    are found.
+    document.getElementsByTagName('h1') returns a collection of items matching the tag name h1. And since we got only 
+    one h1 element, the list contains only one elements.
+    Using [0] as index, we can access the first element in the list which is 
+    document.getElementsByTagName('li')[0]
+    
+    .-> getElementsByClassName():method of Document returns an array-like object of all child elements which have all of the given class name()
+        getElementsByTagName():method of Document returns an array-like object of all child elements which have all of the given tagname()
+        getElementById():method returns the element that has the ID attribute with the specified value. [....] 
+        Returns null if no element
+    document.querySelectorAll('.heading') returns a list of all elements that matches the specified CSS selector. Since we have only one element 
+    under the class name .heading, the list contains one element. And it can be accessed by it’s index.
+    */
+   //SUB window vs document
+   /*document: is a property of the window object, and it is the top most object in the document
+     document represents the DOM of the page. The DOM represents the HTML markup,With document , we have methods to 
+     traverse the DOM like getElementById , querySelector , removeChild, appendChild and more.
+
+     window:window is the  global object in the browser, it is the top most object in browser window
+     that has everything including global functions, location, history, web components, setTimeout , XMLHttpRequest , console , localStorage and much more.*/
+    //SUB window.onload vs document.onload
+    /*window.onload: is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc.
+     finish loaded, It means that everything is loaded.
+     document.onload: is fired when the DOM is ready, which can be before images and other external content is loaded.
+     Document.readyState: property describes the loading state of the document.
+     When the value of this property changes, when event fires on the document object. 
+     
+    loading:The document is still loading.
+    interactive:The document has finished loading and the document has been parsed but sub-resources such as scripts, images, 
+    stylesheets and frames are still loading.
+    complete:The document and all sub-resources have finished loading. The state indicates that the load event is about to fire.
+    //SUB attribute and a property
+    /*Attributes represent the attributes in HTML elements inside the starting tag,
+    They’re exposed to the DOM via a property, Properties of the JavaScript DOM objects are created when the DOM is parsed for 
+    each attribute in the HTML tag.
+    If an attribute is changed, the value of the property will change. On the other hand, if we change the property in the 
+    JavaScript DOM object, the attribute will stay the same.
+    */
         
        //SUB rest parameter and spread operator
         /*spread operator:allows you to spread out elements of an iterable object such as an array,a  map, or a set.
