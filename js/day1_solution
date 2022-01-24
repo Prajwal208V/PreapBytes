@@ -1086,22 +1086,7 @@ master
          console.log(my_weakSet);
          //.-> Checking if object exists in a WeakSet
          console.log(my_weakSet.has(obj),my_weakSet.has(obj3));//true false */
-         
-        //SUB weakMap 
-        /**/
-        
 
-        //sSUB object to array method
-        /*To convert an object to an array we can use one of three methods: 
-        1.Object.keys(), :returns "keys form as string" an array of a given object's  [value]
-        2.Object.values():returns "values" an array of a given object's  [value]
-        3.Object.entries():returns an array of a given object's  string-keyed property form as[key, value] pairs.*/
-        // let keys_Obj=Object.keys(obj);
-        // let values_Obj=Object.values(obj);
-        // let key_value_Pairs=Object.entries(obj);
-        // console.log(keys_Obj,values_Obj,key_value_Pairs);
-        
-         
         //SUB weakMap (its methods WeakMap(),set(key,value),delete(key),get(key),hs(key))
         /*.-> WeakMaps allow you to create keys only with objects, not with any other data type.
 
@@ -1322,7 +1307,16 @@ master
         //SUB setTimeOut(()=>{},duriation_in_miliseconds)
         /* setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires.
         */ 
-
+       
+       //SUB object to array method
+        /*To convert an object to an array we can use one of three methods: 
+        1.Object.keys(), :returns "keys form as string" an array of a given object's  [value]
+        2.Object.values():returns "values" an array of a given object's  [value]
+        3.Object.entries():returns an array of a given object's  string-keyed property form as[key, value] pairs.*/
+        // let keys_Obj=Object.keys(obj);
+        // let values_Obj=Object.values(obj);
+        // let key_value_Pairs=Object.entries(obj);
+        // console.log(keys_Obj,values_Obj,key_value_Pairs);
         
         
         
