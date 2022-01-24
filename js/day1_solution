@@ -1318,6 +1318,57 @@ master
         // let key_value_Pairs=Object.entries(obj);
         // console.log(keys_Obj,values_Obj,key_value_Pairs);
         
+        SUB:
+        JavaScript engine executes a script, it creates execution contexts. Each execution context has two phases: 
+        the creation phase and the execution phase.
+
+    .-> creation phase:
+        When a script executes for the first time, the JavaScript engine creates a Global Execution Context. During this 
+        creation phase it performs,
+
+        1.Create a global object i.e., window in the web browser or global in Node.js.
+        2.creates special variable called this  which points to the global object.
+        3.Setup a memory heap for storing variables and function references.
+        4.Store the function declarations in the memory heap and variables within the global execution context with the 
+        initial values as undefined.
+
+    .-> The execution phase:
+        During the execution phase, the JavaScript engine executes the code line by line. In this phase, it assigns values to variables 
+        and executes the function calls.
+        For every function call, the JavaScript engine creates a new Function Execution Context. The Function Execution Context 
+        is similar to the Global Execution Context, but instead of creating the global object, it creates the arguments object 
+        that contains a reference to all the parameters passed into the function.
+
+    To keep track of all the execution contexts, including the Global Execution Context and Function Execution Contexts,
+    the JavaScript engine uses a data structure named call stack,
+
+    SUB call stack:
+        JavaScript engine uses a call stack to manage execution contexts: the Global Execution Context and Function 
+        Execution Contexts.
+        The call stack works based on the LIFO principle i.e., last-in-first-out.
+        When we execute a script, the JavaScript engine creates a Global Execution Context and pushes it on top of the call stack.
+        Whenever a function is called, the JavaScript engine creates a Function Execution Context for the function, pushes it
+        on top of the Call Stack, and starts executing the function.
+        If a function calls another function, the JavaScript engine creates a new Function Execution Context for the new function that 
+        is being called and pushes it on top of the call stack.
+        When the current function completes, the JavaScript engine pops it from the call stack and resumes the execution where it 
+        left off in the last code listing.
+        The script will stop when the call stack is empty.
+
+    SUB event-loop:
+        JavaScript is a single-threaded programming language. measns, JavaScript can do only one thing at a single point in time.
+
+        but When we call the setTimeout() function, make a fetch request or click a button, the web browser can do these activities 
+        concurrently and asynchronously.
+        The setTimeout(), fetch requests, and DOM events are parts of the Web APIs of the web browser.
+        browesr has js-engine,threadpool,callbackqueue,eventloop
+
+
+        javaScript engine place the setTimeout() return, fetch requests return, and DOM events into a callback queue.
+        The event loop is a constantly running process that monitors both the callback queue and the call stack.
+
+        If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback 
+        queue to the call stack. If the callback queue is empty
         
         
     </script>
