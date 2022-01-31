@@ -1,0 +1,203 @@
+h1{
+    font-size:1.63rem;
+    text-transform:uppercase; /* for converting upper case to lower case vice-varsa */ 
+    font-style:italic; /*normal,oblique,italic,initial,inherit */
+    font-weight:;
+    letter-spacing:;
+    text-decoration:;
+    line-height:;
+}
+
+body{
+    padding: 0;margin: 0;
+    width:56.25rem;
+    margin:0 auto;
+    position:relative;
+}
+h2{
+    font-size:1.95rem;
+}
+h3{
+    font-size:1.88rem;
+}
+h4{
+    font-size:1.25rem;
+    text-transform:uppercase;
+    text-align:center;/* is to align the text to the center.(left,right,center) moves only horozontally of the its parent element*/
+}
+
+p{
+    font-size:1.25rem;
+    line-height:1.5;/*1.5 simply means line height will be 1.5 times the font size. defult is (1)*/
+}
+li{
+  list-style-type:;/*types(decimal,decimal-leading-zero,disc,circle,square)*/
+  
+  font-size:1.25rem;
+  margin-bottom:0.65rem;
+}
+
+/* combining selectors */
+
+/* common selector this for common styling for all */
+nav,li,h1,h2,h3,h4,p,footer{
+    font-family:sans-serif;
+    color:#444444;
+}
+/* Descendant selector*/
+body footer p{
+    font-size:0.9rem;
+    color:red;
+    text-align:center;
+}
+/* id selector in this id name not repeat it should unique */
+#author{
+    font-style: italic;
+    font-size:1.125rem;
+}
+/* class selector in this we can use same name multiple elements */
+.related-author{
+    font-size:1.125rem;
+    font-weight:bold;
+}
+.related{
+    list-style:none;
+    padding-left:0;
+}
+h1,h2,h3{
+    color:#1098ad;
+}
+.main-header{
+    background-color:#f7f7f7;
+    border-bottom:10px solid #1098ad;
+    padding:1.25rem;
+    padding-left:2.1rem;
+    height:4rem;
+}
+/* border */
+aside{
+    background-color:#f7f7f7;
+    border-top:6px solid #1098ad;
+    border-bottom: 6px solid #1098ad;
+    width:31rem;
+    padding:1.2rem;
+
+    /* box-sizing */
+    box-sizing: border-box;
+}
+/* pseudo classes: in this we have to select all elements, out of those we we have to select
+using these properties(nth-child(),first-child,last-child)
+   li:nth-child() */
+/* pseudo-elements ::-it's select only one and we can modify 
+   (after,before,first-letter,last-letter,first-line,last-line) */
+
+/* styling hyperlinks */
+a{
+    color:#1098ad;
+    text-decoration:none;
+}
+a:visited {
+    /* color:green; */
+}
+a:hover {
+    color:orangered;
+    font-weight:bold;
+    text-decoration: underline solid orangered;
+}
+a:active{
+  background-color:black;
+  color:white;
+  text-decoration: none;
+  border-radius:8px;
+}
+/* order shoudl be link,visit,hover,active{LVHA} */
+
+/* priority of selector 
+-2.declarations marked !important
+-1.inline style
+0.internal style
+1.id selector (#)
+2.class selector (.)
+3.element selector (tag names:p,h1,h2,h3,h4,h5,h6,span,div,a,header,aside,artical,ul,li,ol,............................)
+4.universal selector (*) 
+5.inheritance is lowest priority   */
+
+/* inheritance 
+is a mechanism by which some styles so some properties get their values inherited from parent elements to child elements.
+
+Not all properties get inherited. It’s mostly ones related to text: font-family, font-size, font-weight, fontstyle, color, 
+line-height, letter-spacing, text-align, text-transform, text-shadow, list-style, etc.
+ */
+
+ .post-img{
+     width:100%;
+     height:auto;
+ }
+ /* centering page 
+ child elements not bigger than parent container*/
+ footer{
+     position: relative;
+ }
+ .lyk-btn{
+     width:6rem;
+     height:2.5rem;
+     font-size:1.2rem;
+     letter-spacing:1px;
+     border-radius:10px;
+     color:#0c6775;
+     background-color:#f7f7f7;
+     position:absolute; /*relative,absolute,sticky,fixed,static*/
+     right:3rem;
+     bottom:3rem;
+     display:;          /*block,ilnine,inline-block,flex,grid */
+ }
+ h2{
+     position: relative;
+ }
+ h2::after{
+     content:"TOP";
+     background-color:#ffe70e;
+     color:#444;
+     font-size:1rem;
+     font-weight:bold;
+     display:inline-block;
+     padding:5px 10px;
+     position:absolute;
+     top:-20px;
+     right:-2px;
+ }
+/* box-sizing */
+
+
+/* Layouts:it's way text, images and other 
+content is placed and arranged on a webpage 
+1.floats
+2.flex
+3.grid*/
+
+/* using flex-box */
+.main-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1.5rem;
+}
+.profile{
+    display:flex;
+    gap:1.5rem;
+    align-items:center;
+}
+.continer{
+    display:flex;
+    gap:2rem;
+    margin-top:3rem;
+}
+aside{
+  align-self:flex-start;
+  margin-top:9.3rem;
+}
