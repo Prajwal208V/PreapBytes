@@ -1,1 +1,62 @@
+-> CSS stands for Cascading Style Sheets. CSS is used to define styles for web pages, including the design, layout and variations in display for different devices and screen sizes.
 
+-> css ruleset
+   CSS is a rule or set of rules that describe the formatting of individual elements on a web page. The rule consists of two parts: the selector and the next declaration block.
+   * The first is always the selector, it tells the browser which element or elements of the web page will be styled.
+   * Next is the declaration block, between the curly braces are specified formatting commands which are used by the browser to stylize the selected selector element.
+-> possible ways to apply CSS styles to a web page
+   There are three ways to apply CSS to HTML: Inline, internal, and external.
+   
+   1.Inline CSS- Inline CSS is specified directly in the opening html tags of the elements,It is entered into the style-attribute within HTML
+     Ex: <p style="font-weight:bold;">Bold Font</p>
+   2.Internal CSS- internal styles are used for the whole page. Inside the head element of html, using style-tags styles for the page.
+     Ex: <!DOCTYPE html>
+            <html>
+              <head>
+                <title>Internal CSS Example</title>
+                <style>
+                  p {
+                      color: red;
+                  }
+
+                  a {
+                      color: blue;
+                  }
+              </style>
+              ...
+   3.In external CSS- style-sheet stored in a separate file.To refer to that file from the HTML page,add the link element to the head element.
+     <!DOCTYPE html>
+        <html>
+        <head>
+            <title>External CSS Example</title>
+            <link rel="stylesheet" type="text/css" href="style.css">
+        ...
+   
+   ->new features in CSS3:
+      1.CSS3 Selectors
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
