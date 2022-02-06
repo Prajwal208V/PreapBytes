@@ -25,8 +25,7 @@ p {
 
 ## Q. ***What is the use of css ruleset?***
 
-CSS is a rule or set of rules that describe the formatting (change of appearance) of individual elements on a web page. The rule consists of two parts: the selector and the next declaration block. The image below shows the structure (syntax) of the rule:
-
+CSS is a rule or set of rules that describe the formatting of individual elements on a web page. The rule consists of two parts: the selector and the next declaration block.
 ```css
 div {
   color: blue;
@@ -39,9 +38,8 @@ div {
 </p>
 
 * The first is always the **selector**, it tells the browser which element or elements of the web page will be styled.
-* Next is the **declaration block**, which begins with the opening curly brace { and ends with the closing }, between the curly braces are specified formatting commands (declarations), which are used by the browser to stylize the selected selector element.
-* Each **declaration** consists of two parts: the property and its value. The declaration must always end with a semicolon (;). You can omit the ; only at the end of the last declaration before the closing curly brace.
-* A **property** is a formatting command that defines a specific style effect for an element. Each property has its own predefined set of values. After the property name, a colon is specified, which separates the property name from the valid value.
+* Next is the **declaration block**, between the curly braces are specified formatting commands which are used by the browser to stylize the selected selector element.
+
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
