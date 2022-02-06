@@ -187,7 +187,7 @@
               <p>And maybe just one more.</p>
            </article>
         
-        ->CSS “box model”:-  CSS box model is a rectangular layout for every HTML elements
+        ->CSS “box model”:-is a rectangular layout for HTML elements,this wraps around every HTML element. It consists of: borders, padding, margins, and the actual content.
         box-consitis:
                       Content: The content of the box, where text and images appear.
                       Padding: A transparent area surrounding the content (i.e.,space between the border and the content)
@@ -195,6 +195,12 @@
                       Margin: A transparent area surrounding the border (i.e.,space between the border and any neighboring elements)
          size of the box calculated like : total-Width= width-content + padding-left + padding-right + border-left + border-right
                                            total-height=height-content + padding-top + padding-bottom + border-top + border-bottom
+         
+       ->difference between border-box and content-box:
+        *content-box:–Default box-sizing property.The width and height properties includes only the content.Border and padding are not included.
+        *border-box – The width and height properties includes content, padding and border.
+        
+       ->purpose of the box-sizing property:
         
         
        
