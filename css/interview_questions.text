@@ -167,8 +167,36 @@
          d) General Sibling Combinator (~): The general sibling selector selects all elements that are siblings of a specified element.
          
        ->difference between the “nth-child()” and “nth-of-type()” selectors
+         :nth-child(n)- use to select an interval of a selector regardless of the type of element it is.
+         :nth-type-chid(n)- to select a specific type only and apply an interval selection from there.
+         ex:   article p:nth-child(odd) {                                                   
+               }
+               
+               article p:nth-of-type(odd) {
+               }
          
-
+          <article>
+              <h1>Here's a Header</h1>                                                   <-------interval of nth-child start from here  
+              <p>I'm a paragraph with all kinds of information.</p>                      <-------interval of nth-type-child start from here 
+              <p>Let's add another paragraph for fun.</p>
+              <p>yadda yadda yadda</p>
+              <p>blah blah blah</p>
+              <p>yadda yadda yadda</p>
+              <h3>Here's a Subheader</h3>
+              <p>blah blah blah</p>
+              <p>And maybe just one more.</p>
+           </article>
+        
+        ->CSS “box model”:-  CSS box model is a rectangular layout for every HTML elements
+        box-consitis:
+                      Content: The content of the box, where text and images appear.
+                      Padding: A transparent area surrounding the content (i.e.,space between the border and the content)
+                      Border: A border surrounding the padding 
+                      Margin: A transparent area surrounding the border (i.e.,space between the border and any neighboring elements)
+         size of the box calculated like : total-Width= width-content + padding-left + padding-right + border-left + border-right
+                                           total-height=height-content + padding-top + padding-bottom + border-top + border-bottom
+        
+        
        
        
    
