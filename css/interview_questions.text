@@ -32,13 +32,69 @@
             <link rel="stylesheet" type="text/css" href="style.css">
         ...
    
-   ->new features in CSS3:
-      1.CSS3 Selectors
-   
-   
-   
-   
-   
+   -> New features in CSS3:
+      1.Advanced Selectors- CSS3 introduced a number of powerful selectors like (:last-child,:nth-child(n),:nth-of-type(n) in Pseudo-classes),
+      (::placeholder in Pseudo Elements), General Sibling. 
+      2.The color keyword list has been extended in the CSS3 color module to include 147 additional keyword colors,
+      CSS3 also provides us with a number of other options RGBA and Opacity.
+      3.Rounded Corners: border-radius
+      4.box-shadow,Text Shadow
+      5.Background Gradients- both Linear Gradients, Radial Gradients
+      6.Multiple Background Images- it provides us with the ability to add more than one background 
+      7.Flexbox gaps in flex gap, row-gap, and column-gap properties
+      
+   -> css selectors:CSS selectors are used to select the content for add styles to them
+   i) Universal Selector: The universal selector works like a wild card character, selecting all elements on a page.
+    ex:this selector used for override defult values like-removing defult padding and marging
+       *{
+         padding:0;
+         margging:0;
+        }
+   ii) Element Type Selector: This selector match one or more HTML elements of the same name using tag names.
+         ul {
+            list-style: none;
+            border: solid 1px #ccc;
+         }
+    iii) ID Selector: This selector matches any HTML element that has an ID attribute with the same value as that of the selector.
+        in ID selector is a name preceded by a asterisk character (“#”)
+              #container {
+               width: 960px;
+               margin: 0 auto;
+              }
+     iv) Class Selector: The class selector also matches all elements on the page that have their class attribute set to the same value as the class.
+        In the CSS, a class selector is a name preceded by a full stop (“.”)
+               .container {
+                  width: 960px;
+                  margin: 0 auto;
+              }
+  
+      v) Combinator selector
+      a) Descendant Combinator:it combines two or more selectors,typically represented by a single space (" ")
+      ex:This declaration block will apply to all elements that have a class of box that are inside an element with an ID of container
+         #container .box {
+            float: left;
+            padding-bottom: 15px;
+         }
+                                    <div id="container">
+                                      <div class="box"></div>        <- selected both 
+                                      <div class="box-2">                  |
+                                          <div class="box"></div>    <-----|
+                                      </div>
+                                   </div>
+      b) Child Combinator:A selector that uses the child combinator is similar to a selector that uses a descendant combinator, except it only targets immediate child elements.
+      typically represented by a greter chacter(">")
+      ex:The selector will match all elements that have a class of box and that are immediate children of the #container element. 
+             #container > .box {
+               float: left;
+               padding-bottom: 15px;
+             }
+                                    <div id="container">
+                                      <div class="box"></div>        <- selected this one only 
+                                      <div class="box-2">                 
+                                          <div class="box"></div>    
+                                      </div>
+                                   </div>
+       c) General Sibling Combinator: 
    
    
    
