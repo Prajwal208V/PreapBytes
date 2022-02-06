@@ -61,7 +61,7 @@ internal styles are used for the whole page. Inside the head element of html, us
 ...
 ```
 ### **3. External CSS**
-In external CSS rules are stored in a separate file.To refer to that file from the HTML page,add the link element to the head element.
+In external CSS rules are stored in a separate file.To refer to that file from the HTML page,add the link element to the head element.<br/>
 **style.css**
 ```css
   p {
