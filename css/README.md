@@ -1,21 +1,10 @@
 # CSS Interview Questions
-
-*Click <img src="assets/images/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
-
-## Table of Contents
-
-* *[CSS Coding Practice](css-practice.md)*
-* *[CSS3 Properties](css3-properties.md)*
-* *[SCSS Interview Questions and Answers](scss-questions.md)*
-* *[CSS Multiple Choice Questions](css-multiple-choice-questions.md)*
-
 <br/>
 
 ## Q. ***What is CSS?***
 
-**CSS** stands for **Cascading Style Sheets**. CSS is used to define styles for web pages, including the design, layout and variations in display for different devices and screen sizes. CSS was intended to allow web professionals to separate the content and structure of a website\'s code from the visual design.
+**CSS** stands for **Cascading Style Sheets**. CSS is used to define styles for web pages, including the design, layout and variations in display for different devices and screen sizes.
 
-CSS can be used for document text styling — for example changing the color and size of headings and links. It can be used to create layout — for example turning a single column of text into a layout with a main content area and a sidebar for related information. It can even be used for effects such as animation.
 
 **Example**
 
