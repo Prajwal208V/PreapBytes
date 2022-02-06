@@ -126,12 +126,51 @@
                            <p>Paragraph example.</p>
    
          vi) Attribute Selector:
-         vii)Pseudo-class:
+         vii)Pseudo-class: 
          viii)Pseudo-element:
          
      ->difference between Pseudo-classes and pseudo-elements
+        * A pseudo-class is a selector,the selection of something that cannot be expressed by a simple selector,pseudo-class always consists of a "colon"(:)
+         for example- :hover used to select elements when is mouse over them
+         
+        *pseudo-element allows us to create items that do not normally exist in the document tree,pseudo-element always consists of a "double colon"(::)
+         for ex:-Insert content before, or after, the content of an element using conetent property, by defult is inline 
+         and used to style specified parts of an element ex:Style the first letter, last-letter, or line, of an element
+            
+          ~~list of pseudo-classes in CSS3
+          i)Tree-structural pseudo-classes
+            These pseudo-classes relate to the location of an element within the document tree.
+            :first-child
+            :nth-child(n)
+            :last-child
+            :only-child
+         ii) Dynamic pseudo-classes for links
+             :link
+             :visited
+             :hover
+             :active
+             :focus
+         iii)UI element states pseudo-classes          
+             :enabled
+             :disabled
+             :checked
+        ~~list of Pseudo-elements in css3
+            ::before
+            ::after
+            ::first-letter
+            ::first-line
+      
+      ->Combinator selector, A combinator is the character in a selector that connects two selectors together. There are four types of combinators.
+         a) Descendant Combinator (space): The descendant selector matches all elements that are descendants of a specified element.
+         b) Child Combinator (>): The child selector selects all elements that are the children of a specified element.
+         c) Adjacent Sibling Combinator (+): The adjacent sibling selector selects all elements that are the adjacent siblings of a specified element.
+         d) General Sibling Combinator (~): The general sibling selector selects all elements that are siblings of a specified element.
+         
+       ->difference between the “nth-child()” and “nth-of-type()” selectors
+         
+
        
-   
+       
    
    
    
