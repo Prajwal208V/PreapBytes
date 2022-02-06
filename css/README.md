@@ -1,19 +1,14 @@
 # CSS Interview Questions
-<br/>
 
 ## Q. ***What is CSS?***
-
 **CSS** stands for **Cascading Style Sheets**. CSS is used to define styles for web pages, including the design, layout and variations in display for different devices and screen sizes.
 
-
 **Example**
-
 ```css
 h1 {
   color: red;
   font-size: 5em;
 }
-
 p {
   color: black;
 }
@@ -24,7 +19,6 @@ p {
 </div>
 
 ## Q. ***What is the use of css ruleset?***
-
 CSS is a rule or set of rules that describe the formatting of individual elements on a web page. The rule consists of two parts: the selector and the next declaration block.
 ```css
 div {
@@ -32,14 +26,8 @@ div {
   text-align: justify;
 }
 ```
-
-<p align="center">
-  <img src="assets/images/css-rule.png" alt="CSS rule" width="500px;" />
-</p>
-
 * The first is always the **selector**, it tells the browser which element or elements of the web page will be styled.
 * Next is the **declaration block**, between the curly braces are specified formatting commands which are used by the browser to stylize the selected selector element.
-
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
