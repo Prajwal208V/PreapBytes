@@ -94,9 +94,38 @@
                                           <div class="box"></div>    
                                       </div>
                                    </div>
-       c) General Sibling Combinator: 
+       c) General Sibling Combinator:selects all elements that are next siblings of a specified element.(not necessarily immediately),
+       typically represented by chacter("~")
+       ex:this example, all paragraph elements (<p>) will be styled with the specified rules, but only if they are siblings of <h2> elements.
+       There could be other elements in between the <h2> and <p>, and the styles would still apply.
+       h2 ~ p {
+         margin-bottom: 20px;
+      }  
+                           <h2>Title</h2>
+                           <p>Paragraph example.</p>-----------|
+                           <p>Paragraph example.</p>-----------|
+                           <p>Paragraph example.</p>-----------|   <- selected these all elements 
+                           <div class="box">                   |
+                             <p>Paragraph example.</p>         |
+                           </div>                              |
+                           <p>Paragraph example.</p>-----------|
+                           
+        d)Adjacent Sibling Combinator:uses the plus symbol (+), and is almost the same as the general sibling selector.The difference is that the targeted element
+        must be an immediate sibling, not just a general sibling.
+        ex:In this example will apply the specified styles only to paragraph elements that immediately follow other paragraph elements                   
+           h2 ~ p {
+            margin-bottom: 20px;
+           }  
+                           <h2>Title</h2>
+                           <p>Paragraph example.</p>-----------|<- selected these all elements 
+                           <p>Paragraph example.</p>
+                           <p>Paragraph example.</p>   
+                           <div class="box">                   
+                             <p>Paragraph example.</p>        
+                           </div>                             
+                           <p>Paragraph example.</p>
    
-   
+         vi) Attribute Selector: 
    
    
    
