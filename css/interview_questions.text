@@ -125,7 +125,12 @@
                            </div>                             
                            <p>Paragraph example.</p>
    
-         vi) Attribute Selector: 
+         vi) Attribute Selector:
+         vii)Pseudo-class:
+         viii)Pseudo-element:
+         
+     ->difference between Pseudo-classes and pseudo-elements
+       
    
    
    
