@@ -34,27 +34,16 @@ div {
 </div>
 
 ## Q. ***What are the possible ways to apply CSS styles to a web page?***
-
 There are three ways to apply CSS to HTML: Inline, internal, and external.
-
 ### **1. Inline CSS**
-
-Inline CSS is specified directly in the opening tag of the element you want it to apply to. It is entered into the style attribute within HTML. This allows CSS properties on a "per tag" basis.
-
+Inline CSS is specified directly in the opening html tags of the elements,It is entered into the style-attribute within HTML.
 **Example**
-
 ```html
 <p style="font-weight:bold;">Bold Font</p>
 ```
-
-This CSS type is not really recommended, as each HTML tag needs to be styled individually. However, inline CSS in HTML can be useful in some situations. For example, in cases where you don\'t have access to CSS files or need to apply styles for a single element only.
-
 ### **2. Internal CSS**
-
-Internal or Embedded, styles are used for the whole page. Inside the head element, the style tags surround all of the styles for the page.
-
+internal styles are used for the whole page. Inside the head element of html, using style-tags styles for the page.
 **Example**
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -71,15 +60,9 @@ Internal or Embedded, styles are used for the whole page. Inside the head elemen
 </style>
 ...
 ```
-
-This CSS style is an effective method of styling a single page. However, using this style for multiple pages is time-consuming as you need to put CSS rules to every page of your website.
-
 ### **3. External CSS**
-
-In external CSS rules are stored in a separate file. To refer to that file from the HTML page, add the link element (and its closing element within XHTML) to the head element. This CSS type is a more efficient method, especially for styling a large website. By editing one **.css** file, you can change your entire site at once.
-
+In external CSS rules are stored in a separate file.To refer to that file from the HTML page,add the link element to the head element.
 **style.css**
-
 ```css
   p {
       color: red;
@@ -89,7 +72,6 @@ In external CSS rules are stored in a separate file. To refer to that file from 
       color: blue;
   }
 ```
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -98,8 +80,6 @@ In external CSS rules are stored in a separate file. To refer to that file from 
     <link rel="stylesheet" type="text/css" href="style.css">
 ...
 ```
-
-The link element in the example has three attributes. The first, `rel`, tells the browser the type of the target of the link. The second, `type`, tells the browser what type of stylesheet it is. And the third, `href`, tells the browser under which URL to find the stylesheet.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
