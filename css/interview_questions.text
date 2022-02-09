@@ -4,6 +4,7 @@
    CSS is a rule or set of rules that describe the formatting of individual elements on a web page. The rule consists of two parts: the selector and the next declaration block.
    * The first is always the selector, it tells the browser which element or elements of the web page will be styled.
    * Next is the declaration block, between the curly braces are specified formatting commands which are used by the browser to stylize the selected selector element.
+   
 -> possible ways to apply CSS styles to a web page
    There are three ways to apply CSS to HTML: Inline, internal, and external.
    
@@ -264,7 +265,59 @@
         * Inline-block:
              Inline-block elements are similar to inline elements, except they can have padding and margins added on all four sides.
         
+->specify units in the CSS
+            There are various units in CSS to express the measurement and length.
+            The length unit in CSS is of two types:
+               * Absolute length units:absolute length units have a fixed size. They don’t inherit from a parent element or change along with the viewport’s dimensions.
+               Therefore they’re not recommended for use on screens, because they vary much in size, height, and width.absolute length units have a fixed size.
+               They don’t inherit from a parent element or change along with the viewport’s dimensions. Therefore they’re not recommended for use on screens,
+               because they vary much in size, height, and width.
+               Example for absolute length:
+                     -px:Pixels 1px is equal to a single point (“dot”) on a screen.
+                     -in,cm,mm:in (inches) cm (centimeters), and mm (millimeters) are not very typical in use on the web
+      
+               * Relative length units:Relative length units are beneficial for making responsive and accessible websites. They scale relative to a parent or the viewport,
+               and style sheets written with relative units can more easily scale from one environment to another, like fram a desktop to a mobile screen.
+               Example for Relative length:
+                     -em:rem (“root em” and em units are practical for creating entirely scalable and flexible layouts.If a user resizes their text or changes the font size in the stylesheets 
+                        to something larger or smaller, the em unit will scale proportionally.
+                     Basically that both rem and em are scalable and relative units of size, but with em, the unit is relative to the font size of its parent element, 
+                     while the rem unit is only relative to the root font size of the HTML document
+                     
+                    -Viewport length units:Viewport units can be helpful in cases where percentage (%) is hard to make it work. 
+                          "The viewport is defined by the size of a browser window." viewport == browser window size
+                          **Viewport Height (vh)
+                              The vh unit is relative to 1% of the viewport height.
+                              1vh   = 1% of viewport height
+                              100vh = 100% of viewport height
+                          **Viewport Width (vw)
+                             The vw unit is the similar to vh,vw is relative to 1% of the viewport width.
+                               1vw   = 1% of viewport width
+                               100vw = 100% of viewport width
+   
+                    -percentage(%) define a size as relative to an element's parent object.
+                    
+->Viewport vs. Percentage
+      Viewport sizes are similar to percentage units, but work differently.
+      Percentage(%) units always inherit the size of their parent element, not the viewport. Viewport units are always calculated by the size of the viewport size, 
+      which means it can extend the size of it’s parent.
+      Example: https://user-images.githubusercontent.com/92531202/153199108-174dadac-27b1-4e36-bfef-0a745fb7145d.png
+      
+->Viewport Maximum (vmax) and Viewport Minimum (vmin)
+   *vmin (“viewport minimum”) is relative 1% of the minimum browser viewport‘s dimensions.
+    1vmin = 1vh or 1vw, based on whichever dimension of the viewport who is smallest.
+      1vmin   = 1% of viewport height or width, whichever is smaller
+   *vmax (“viewport maximum”) is relative to 1% of the maximum browser viewport‘s dimensions,based on whichever dimension of the viewport who is largest. 
+      1vmax   = 1% of viewport height or width, whichever is larger
+      
 ->
+   
+   
+   
+   
+   
+   
+   
    
    
    
