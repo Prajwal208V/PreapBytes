@@ -310,10 +310,18 @@
    *vmax (“viewport maximum”) is relative to 1% of the maximum browser viewport‘s dimensions,based on whichever dimension of the viewport who is largest. 
       1vmax   = 1% of viewport height or width, whichever is larger
       
+-> difference between RGBa, HEX and HSLa
+      **rgba() function define colors using the Red-green-blue-alpha (RGBA) model.
+            RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity of the color.
+   
+      **HEX (Hexadecimal color values)  hexadecimal color is specified with: #RRGGBB.hexadecimal integers between 00 and FF specifying the intensity of the color.
+      **HSLa (Hue Saturation Lightness alpha) stands for hue, saturation, and lightness.
+              1.Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, and 240 is blue.
+              2.Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color.
+              3.Lightness is also a percentage value, 0% is black, and 100% is white.
+              4.alpha channel - which specifies the opacity of the color.
+             
 ->
-   
-   
-   
    
    
    
