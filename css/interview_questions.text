@@ -206,7 +206,62 @@
        
        
        
-       ->z-index
+       ->z-index: 
+       The z-index helps "specify the stack order of positioned elements" that may overlap one another. The z-index default value is zero, and can take on either
+       a positive or negative number. An element with a higher z-index is always stacked above than a lower index.
+       z-index can take 4 kind of values:
+                                         Initial:it Sets default value(0).
+                                         Number:Orders the stack order.(either a positive or negative number).
+                                         Inherit:means Inherits property from its parent element.
+                                         Auto:it Sets the stack order equal to its parents.
+       ex: https://learning-zone.github.io/css-interview-questions/assets/files/z-index.html
+                                  <style>
+                                    img {
+                                      position: absolute;
+                                      left: 0px;
+                                      top: 0px;
+                                      padding: 5px 2px;
+                                      margin: 5px 1px 2px;
+                                      z-index: -1;
+                                    }
+
+                                    p {
+                                      color: red;
+                                      font-size: 20px;
+                                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                                    }
+                               </style>
+                                <body>
+                                  <h1>The z-index Property</h1>
+                                  <img src="../images/horse.jpg" alt="Horse Image" />
+                                  <p>Because the image has a z-index of -1, it will be placed behind the heading.</p>
+                                </body>
+        
+        ->difference between visibility: hidden; and display: none?
+            * visibility:hidden, 'simply hides the element' but it will occupy space and affect the layout of the document.
+            * display:none,removes the element from the normal layout flow (causes DOM reflow). It will not affect the layout of the document nor occupy space.
+         
+        ->CSS position Property: 
+        
+        
+        
+        
+        
+        ->between relative and absolute position
+        
+        
+        
+        -> difference between block, inline and inline-block element
+        *Block Elements
+            The block elements always start on a new line. They will also take space of an entire row or width.
+            we can add space to the left,right,top or bottom  padding or margin of an block element.
+            List of block elements are <p>, <h1>, <div>, <header>,<li>,<form>,<aside>,<hr>,<nav>,<main>,<table>,<ul>,<ol>,<dl>
+        *Inline Elements 
+            An inline element does not start on a new line. An inline element only takes up as much width as necessary.
+            we can add space to the left and right on an inline element, but we add height to the top or bottom  padding or margin of an inline element.
+            examples of inline elements are <a>,<b>,<big>,<button> <span> ,<strong>,<sub>,<sup>
+        * Inline-block:
+             Inline-block elements are similar to inline elements, except they can have padding and margins added on all four sides.
         
         
        
