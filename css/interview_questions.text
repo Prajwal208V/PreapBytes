@@ -40,8 +40,24 @@
       CSS3 also provides us with a number of other options RGBA and Opacity.
       3.Rounded Corners: border-radius
       4.box-shadow,Text Shadow
-      5.Background Gradients- both Linear Gradients, Radial Gradients
-      6.Multiple Background Images- it provides us with the ability to add more than one background 
+      5.Background Gradients- display smooth transitions between two or more specified colors.
+         i) Linear Gradients:creates an image consisting of a progressive transition between two or more colors along a straight line
+            background-image:linear-gradient(axis, color color-stop1% , color color-stop2%, ...)
+               linear gradient is defined by an axis—the gradient line—and two or more color-stop points
+         ii)Radial Gradients:creates an image consisting of a progressive transition between two or more colors that radiate from an origin
+            A radial gradient is defined by its center.
+            background-image:radial-gradient(circle at center,color color-stop1% , color color-stop2%, ...) 
+      6.Multiple Background Images- it provides us with the ability to add more than one background
+                              body {
+                                background-image: 
+                                  url("image-one.jpg"),
+                                  url("image-two.jpg");
+                                background-position:
+                                  top right, /* this positions the first image */
+                                  bottom left; /* this positions the second image */
+                                background-repeat:
+                                  no-repeat; /* this applies to both images */
+                              }
       7.Flexbox gaps in flex gap, row-gap, and column-gap properties
       
 -> css selectors:CSS selectors are used to select the content for add styles to them
