@@ -295,8 +295,8 @@
                * Relative length units:Relative length units are beneficial for making responsive and accessible websites. They scale relative to a parent or the viewport,
                and style sheets written with relative units can more easily scale from one environment to another, like fram a desktop to a mobile screen.
                Example for Relative length:
-                     -em:rem (“root em” and em units are practical for creating entirely scalable and flexible layouts.If a user resizes their text or changes the font size in the stylesheets 
-                        to something larger or smaller, the em unit will scale proportionally.
+                     -em:rem (“root em” and em units are practical for creating entirely scalable and flexible layouts.If a user resizes their text or changes the 
+                        font size in the stylesheets to something larger or smaller, the em unit will scale proportionally.
                      Basically that both rem and em are scalable and relative units of size, but with em, the unit is relative to the font size of its parent element, 
                      while the rem unit is only relative to the root font size of the HTML document
                      
@@ -347,8 +347,41 @@
              To create a flex container, we set the value of display property to flex or inline-flex.
            *flex items:the direct children of that container become "flex items".
    
-   
-   
+            I)Properties of Flexbox Container:
+               1)display:which defines the flex container.(values flexbox, inline-flex).
+                  display: inline-flex does not make flex items display inline. It makes the flex container display inline. That is the only difference 
+                  between display: inline-flex and display: flex.
+                        https://i.stack.imgur.com/mns2H.jpg
+                        
+               2)flex-direction:which defines the direction in which the flex items are placed in the container.(row,row-reverse,column,column-reverse).
+                   flex-direction:row; this is the default value of flex-direction.(This sets the main axis from left to the right.)
+                   flex-direction:row-reverse; (This sets the main access direction from right to left),which results in the flex items being placed from right to left.
+                   flex-direction: column;(This sets the main access direction from top to bottom),so the items are now stacked on top of each other.
+                   flex-direction: column-reverse;(This sets the main access direction from bottom to top),which stacks the items in the reverse order.
+               3)flex-wrap:is used to control the wrapping of items within a container.
+               -If we reduce the browser width, we lose some items but use this "flex-wrap property" we can wrap items within a container.(nowrap,wrap,wrap-reverse)
+                   flex-wrap:nowrap;this is default value,
+                   flex-wrap:wrap;if we reduce the browser width that the items have wrapped in the container.
+                   flex-wrap: wrap-reverse; in this case Wrapping occurs from the last item.
+               4)flex-flow:is shorthand for the "combination of flex-direction and flex-wrap".
+                  flex-flow:flex-direction flex-wrap;
+               5)justified-content:which defines the 'alignment of the items' along the main-axis.(flex-start,flex-end,center,space-between,space-around,space-evenly)
+                     justified-content:flex-start;(default value) places the flex items at the beginning of the main axis.
+                     flex-end; places the flex items at the end  of the main axis.
+                     center; which aligns all items at the center of the main axis.
+                     space-between; helps to "evenly split extra space and add it in between the flex items".
+                     space-around; splits the extra space at the beginning and the end,"these space is equal to half of the space between the flex items".
+                     space-evenly; This value distributes the extra space in the container.
+                6)align-items:which defines the 'alignment of the items' along the cross-axis.(stretch,flex-start,flex-end,center,baseline)
+                     align-items:stretch;is the default value,which stretch the items the entire length of the cross axis.
+                     align-items:flex-start;places the flex items at the beginning of the cross-axis.The cross-axis flows from top to bottom,
+                                             This is the starting point of the cross axis.
+                     align-items:flex-end;places the flex items at the end of the cross-axis.
+                     align-items:center;which aligns all items at the center of the cross-axis.
+                     align-items:baseline; items will align themselves in order to have the baseline of their text,(The baseline is the line upon which most letters sit)
+                7)align-content:
+                 
+                   
    
    
    
