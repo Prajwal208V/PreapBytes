@@ -347,7 +347,7 @@
              To create a flex container, we set the value of display property to flex or inline-flex.
            *flex items:the direct children of that container become "flex items".
    
-            I)Properties of Flexbox Container:
+            I)Properties of Flexbox Container:(1.display,flex-direction,flex-wrap,flex-flow,justified-content,align-items,7.align-content)
                1)display:which defines the flex container.(values flexbox, inline-flex).
                   display: inline-flex does not make flex items display inline. It makes the flex container display inline. That is the only difference 
                   between display: inline-flex and display: flex.
@@ -374,12 +374,42 @@
                      space-evenly; This value distributes the extra space in the container.
                 6)align-items:which defines the 'alignment of the items' along the cross-axis.(stretch,flex-start,flex-end,center,baseline)
                      align-items:stretch;is the default value,which stretch the items the entire length of the cross axis.
-                     align-items:flex-start;places the flex items at the beginning of the cross-axis.The cross-axis flows from top to bottom,
+                     align-items:flex-start;which places the flex items at the beginning of the cross-axis.The cross-axis flows from top to bottom,
                                              This is the starting point of the cross axis.
                      align-items:flex-end;places the flex items at the end of the cross-axis.
                      align-items:center;which aligns all items at the center of the cross-axis.
                      align-items:baseline; items will align themselves in order to have the baseline of their text,(The baseline is the line upon which most letters sit)
-                7)align-content:
+                7)align-content:align-content is similar to justify-content but which defines the 'alignment of the items' along the cross-axis instead of the main axis.
+                     -align-content works only when there are "multiple rows of flex items in the container".
+                     -The container must have a "height and also wrapping".
+                     (align-content: stretch,flex-start,flex-end,center,space-between,space-around)
+                     align-content:stretch; is a default value,which stretch the items the entire length of the cross axis.
+                     align-content:flex-start; which places the flex items at the beginning of the cross-axis.The cross-axis flows from top to bottom,
+                     align-content:flex-end; places the flex items at the end of the cross-axis.
+                     align-content:center; which aligns all items at the center of the cross-axis.
+                     align-content:space-between; helps to "evenly split extra space and add it in between the flex items".
+                     align-content:space-around;splits the extra space at the beginning and the end,"these space is equal to half of the space between the flex items".
+                     
+           II)Properties of Flexbox-items:(1.order,flex-grow,flex-shrink,flex-basis,flex,6.align-self)
+                1)order:The order property manages the order in which the item arrives in the flex container. All item defaults have an order of zero:(values will be pastive,zero,negtive).
+                     order:-n,......-5,-4,-3,-2,-1,0,1,2,3,4,5,...........n;
+                2)flex-grow:allows a flex-item to grow if necessary,This property specifies "what amount of space inside the flex container the item should take up if necessary."
+                  (values will be numbers)
+                  All flex items have a flex-grow of zero (defult value).
+                3)flex-shrink: It specifies the “flex shrink factor” which determines how much the flex item will shrink relative to the rest of the flex items-
+                  -in the flex container(values will be numbers)
+                  All flex items have a flex-grow of one (defult value).
+                4)flex-basis:It specifies the initial size of the flex-item, before any available space is distributed according to the flex factors(values will be px,rem,em)
+                  All flex items have a flex-basis of auto(defult auto).
+                5)flex:is shorthand for "flex-grow, flex-shrink, and flex-basis".
+                    flex:flex-grow flex-shrink flex-basis;
+                6)align-self:It makes override the align-items,property allows the alignment of individual flex items.
+                    align-self:stretch;
+                    align-self:flex-start;
+                    align-self:flex-end;
+                    align-self:center;
+          
+   
                  
                    
    
