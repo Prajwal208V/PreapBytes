@@ -336,11 +336,16 @@
               2.Saturation is a percentage value, 0% means a shade of gray, and 100% is the full color.
               3.Lightness is also a percentage value, 0% is black, and 100% is white.
               4.alpha channel - which specifies the opacity of the color.
-             
-->
-   
-   
-   
+              
+-> CSS flexbox:CSS flexbox is a one-dimensional layout pattern,that makes easy to "designf 'flexible and effective layouts' ".
+         **we can make "Divide space between items" and control their alignment in a given container flex layout.
+         **It also provides a lot of flexibility. With flexbox, we can organize items from (left to right or right to left), (top to bottom or bottom to top),
+            and at the same time we can control the spacing and order of the items in the container.
+      -In flexbox, there are mainly two entities: i)a parent container (the flex container) and 
+                                                  ii)children elements (flex items).
+           *flex container:"An area of a document laid out using flexbox" is called a flex container.
+             To create a flex container, we set the value of display property to flex or inline-flex.
+           *flex items:the direct children of that container become "flex items".
    
    
    
