@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25th</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="box1">
+        <p>
+          <b>border-box:</b> The width and height properties (and min/max
+          properties) includes content, padding and border
+          {Width and height apply to all parts of the element: content, padding and borders}
+            
+        </p>
+      </div>
+      <div class="box2">
+        <p>
+          <b>content-box:</b> its is the Default property of box-sizing The
+          width and height properties (and min/max properties) includes only the
+          content. Border and padding are not included
+          {Width and height only apply to the content of the element}
+            <pre></pre>
+            example: width=320px, But the total-width is 300px + (32px*2) (left and right padding) + (5px*2) (left and right border)
+                     total-width=300px + 64px + 10 = 374px;
+            
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
