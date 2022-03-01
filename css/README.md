@@ -1,4 +1,15 @@
 # CSS Interview Questions
+1.What is CSS? (#What is CSS?)
+
+
+
+
+
+
+
+
+
+
 
 ## Q. ***What is CSS?***
 **CSS** stands for **Cascading Style Sheets**. CSS is used to define styles for web pages, including the design, layout and variations in display for different devices and screen sizes.
