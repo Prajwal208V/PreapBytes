@@ -516,59 +516,31 @@ master
         }
         obj4.method();
       
-        //SUB call,bind,apply
-        /*Javascript provides wide variety of inbuilt methods to help in achieving reusable code.
-          call, apply, and bind are few of such methods in JavaScript to achieving resuable code
-          
-          that allow a single function to be used on multiple objects.
-
-          example we have two objects and inside that with same methods
-           */
+        //SUB call,bind,apply methods to tie a function into an object and call the function as if it belonged to that object
           let prepBytes1={
             name:'Elevation Academy ',
             course:'Full Stack Web Development Programs',
-            // display:function(){
-            //   console.log(`${this.name} for ${this.course}`);
-            // }
-
+            console.log(`${this.name} for ${this.course}`);
           }
+          
          let prepBytes2={
-          name:'ZENITH',
-          course:'Personalised Coding Programs',
-          // display:function(){
-          //     console.log(`${this.name} for ${this.course}`);
-          //   }
+              name:'ZENITH',
+              course:'Personalised Coding Programs',
+              console.log(`${this.name} for ${this.course}`);
          }
-        //  prepBytes1.display();
-        //  prepBytes2.display();
-        /*.-> 1.usecase instead of adding display property in both prepBytes1 and prepBytes2, we can just add
-         it in prepBytes1 and borrow it for prepBytes2.
-
-         We are invoking display method for prepBytes2 by borrowing that method from prepBytes1 by using call keyword.
-
-         Here this keyword inside display method refers to the current object from which it gets invoked. That’s 
-         why when we pass prepBytes2 object as first argument in call method, this.name and this.course refers to name and 
-         course properties of prepBytes2 object.*/
-        //  prepBytes1.display.call(prepBytes2);
-         
-         /*.-> 2.usecase declear display function as independent function */
-        //  let display=function (){
-        //   console.log(`${this.name} for ${this.course}`);
-        //  }
-        //  display.call(prepBytes1);
-        //  display.call(prepBytes2);
-
-        //.-> 3.usecase if We have add  new arguments to the display function, 
         /*call: We can pass further comma separated arguments to call method
           1st argument to call method should always be the object from which are accessing the values. And after 
           that we can pass any number of arguments which gets directly accessible by display function
 
           apply: but in apply method does the exact same job as call method, we pass arguments in the form of array.  */
+          
           let display=function(no_student,no_getJoj){
             console.log(`${this.name} for ${this.course}, ${no_student} students have done this course & ${no_getJoj} students got job`);
           }
+          
           display.call(prepBytes1,"*****","#####");
           display.apply(prepBytes2,["****","####"]);
+          
           //call and apply methods are immediately calling method 
 
           /*bind:it is same as call method but bind method binds the  method with object and returns the copy of that method.
@@ -632,6 +604,7 @@ master
          If it’s still could not find the variable, it will either implicitly declare the variable 
          in the global scope (if not in strict mode) or return an error.
         */
+        
          //SUB ways of create object in JavaScript
        /*there are 5 ways to create object in js
          1.Object Literal
@@ -813,9 +786,11 @@ master
 
      window:window is the  global object in the browser, it is the top most object in browser window
      that has everything including global functions, location, history, web components, setTimeout , XMLHttpRequest , console , localStorage and much more.*/
+     
     //SUB window.onload vs document.onload
     /*window.onload: is fired when the DOM is ready and all the content including images, CSS, scripts, subframes, etc.
      finish loaded, It means that everything is loaded.
+     
      document.onload: is fired when the DOM is ready, which can be before images and other external content is loaded.
      Document.readyState: property describes the loading state of the document.
      When the value of this property changes, when event fires on the document object. 
@@ -1030,7 +1005,7 @@ master
        //var arrayName = new Array(element1, element2, element3,... elementN);
        let arr2=new Array();
 
-       //SUB ways t oempty the array 
+       //SUB ways to empty the array 
        /*4 Ways to Empty an Array in JavaScript
            1.Assigning it to a new empty array
              let arr=[];
