@@ -1362,15 +1362,35 @@ master
         but When we call the setTimeout() function, make a fetch request or click a button, the web browser can do these activities 
         concurrently and asynchronously.
         The setTimeout(), fetch requests, and DOM events are parts of the Web APIs of the web browser.
+        
         browesr has js-engine,threadpool,callbackqueue,eventloop
-
-
         javaScript engine place the setTimeout() return, fetch requests return, and DOM events into a callback queue.
         The event loop is a constantly running process that monitors both the callback queue and the call stack.
-
         If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback 
-        queue to the call stack. If the callback queue is empty
+        queue to the call stack. If the callback queue is empty.
         
+   SUB threadpool:
+   SUB Browser API:
+   
+   SUB callback queue: javaScript maintains a queue of callback functions. It is called a callback queue or task queue. A queue data structure is 
+        First-In-First-Out(FIFO). So, the callback function that first gets into the queue has the opportunity to go out first.
+        Callback Queue gets the ordinary callback functions coming from the setTimeout() API after the timer expires.
+        Callback Queue has lesser priority than Microtask Queue of fetching the callback functions to Event Loop.
+        
+   SUB micro-task: Microtask Queue is like the Callback Queue, but Microtask Queue has higher priority. All the callback functions coming through Promises.
+      Promise handling always has higher priority so the JavaScript engine executes all the tasks from Microtask Queue and then moves to the Callback Queue.
+      Microtask Queue has higher priority than Callback Queue of fetching the callback functions to Event Loop.
+        
+   SUB In a synchronous , things happen one at a time. every statement of the code gets executed one by one. So, basically a statement has to wait for
+        the earlier statement to get executed.
+    
+   SUB asynchronous An asynchronous model allows multiple things to happen at the same time.basically a statement hasn't to wait for
+        the earlier statement to get executed.
+        
+       We can classify most asynchronous JavaScript operations with two primary triggers:
+        Browser API/Web API events or functions. These include methods like setTimeout, or event handlers like click, mouse over, scroll, and many more.
+        Promises. A unique JavaScript object that allows us to perform asynchronous operations.
+    
         
     </script>
 </body>
