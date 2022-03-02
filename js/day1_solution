@@ -1391,6 +1391,37 @@ master
         Browser API/Web API events or functions. These include methods like setTimeout, or event handlers like click, mouse over, scroll, and many more.
         Promises. A unique JavaScript object that allows us to perform asynchronous operations.
     
+    SUB AJAX:Ajax stands for Asynchronous Javascript And Xml. Ajax is just a means of loading data from the server and selectively updating parts of a web page
+    without reloading the whole page. 
+    Basically, what Ajax does is make use of the browser's built-in XMLHttpRequest (XHR) object to send and receive information to and from a web server asynchronously,
+    in the background, without blocking the page or interfering with the user's experience.
+    
+    SUB:JQUERY is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, 
+    as well as event handling, CSS animation, and Ajax.[3] It is free, open-source software
+        
+    SUB Async & await:These features basically act as syntactic sugar on top of promises, making asynchronous code easier to write and to read.
+        The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+        
+        > async makes a function return a Promise ,the async keyword, which we put in front of a function declaration to turn it into an async function. 
+        > await makes a function wait for a Promise, Await function is used to wait for the promise. It could be used within the async block only. 
+            It makes the code wait until the promise returns a result. It only makes the async block wait.
+        
+                    function resolveAfter2Seconds() {
+                          return new Promise(resolve => {
+                             setTimeout(() => {
+                             resolve('resolved');
+                             }, 2000);
+                         });
+                    }
+
+                async function asyncCall() {
+                    console.log('calling');
+                    const result = await resolveAfter2Seconds();
+                    console.log(result);
+                    // expected output: "resolved"
+               }
+        SUB 
+
         
     </script>
 </body>
