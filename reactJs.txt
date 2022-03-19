@@ -16,4 +16,5 @@ What are its features?
         
         4.->a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is           transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its             parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of         one-way data binding. This keeps everything modular and fast.
         
-        5.->Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a             part of the UI design which has its own logic and design,
+        5.->Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a             part of the UI design which has its own logic and design, 
+        
