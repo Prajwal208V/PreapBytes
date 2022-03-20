@@ -148,9 +148,67 @@ in function-Component "component is wrapped in React.memo()".
                                       };
                                       export default App;
  
-          3.useContext:-
-                   
-          
+          3.useContext:-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+                        -solving one major problem React problem — prop drilling.
+                        Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React                           components. Component will receive props indirectly and you.
+                        -wide-state storge and directly pass that to the components without building a long propchain directly change it from any comoponents in                              application and directly pass it to any component in application 
+                         
+                         🦖 import {createContext} from 'react'
+                             const myContext=createContext(); //calling it for create context object 
+                             export const StudentProvider = ( props ) => {
+                                 const [students, setStudents] = useState([])
+                                    return (
+                                            <StudentContext.Provider value={ [students,setStudents] }>  //we wraping in jsx code so all the compoents that should be                                                                              abel to tap into that conext if any compoent not wrapped will not be able to listen them
+                                                { props.children }
+                                            </StudentContext.Provider>
+                                        )
+                             }
+                        🦖  import { myContext } from 'react';
+                             const StudentList = () => {
+                                const [students, setStudents] = useContext(myContext);
+                             }
 
+         limitation of context:is not optimized for high frequncey changes  ex:state change every second or multple times /seconds
+         
+         4.useReducer:The useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when we have                               complex state-building logic or when the next state value depends upon its previous value or when the components are needed to be optimized.
+            
+            The useReducer hook takes two arguments including reducer, initial state; 
+            🦖 const [state, dispatch] = useReducer(reducer, initialArg, init);
+            
+                    import React, { useReducer } from "react";
+                    const initialState = 0;
+                    const reducer = (state, action) => {
+                        switch (action) {
+                          case "add":
+                          return state + 1;
+                          case "subtract":
+                          return state - 1;
+                          case "reset":
+                          return 0;
+                          default:
+                          throw new Error("Unexpected action");
+                        }
+                    };
 
-  
+                    const App = () => {
+                      // Initialising useReducer hook
+                    const [count, dispatch] = useReducer(reducer, initialState);
+                    return (
+                      <div>
+                      <h2>{count}</h2>
+                      <button onClick={() => dispatch("add")}>
+                        add
+                      </button>
+                      <button onClick={() => dispatch("subtract")}>
+                        subtract
+                      </button>
+                      <button onClick={() => dispatch("reset")}>
+                        reset
+                      </button>
+                      </div>
+                    );
+                    };
+
+                    export default App;
+
+         
