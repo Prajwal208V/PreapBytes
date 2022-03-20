@@ -115,7 +115,7 @@ in function-Component "component is wrapped in React.memo()".
                                    3.Only call Hooks from React functional components
                                    4.Never call a Hook from a regular function
                                    5.Hooks can call other Hooks
-     Basic Hooks are:  <a herf="https://reactjs.org/docs/hooks-reference.html">LINK</a>
+     Basic Hooks are:  <a href="https://reactjs.org/docs/hooks-reference.html">LINK</a>
           1.useState:-
            🦖 const [state, setState] = useState(initialState);
             -Returns a stateful value, and a function to update it.
