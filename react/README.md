@@ -19,3 +19,22 @@ What are its features?
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
 React v/s angular?
+
+
+
+
+client v/s server-side rendering ?
+ server-side rendering:
+    -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in mere milliseconds.
+    -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
+ client-side rendering:
+    -client-side rendering, it’s about rendering content in the browser using JavaScript. So instead of getting all the content from the HTML document itself, a          bare-bones HTML document with a JavaScript file in initial loading itself is received, which renders the rest of the site using the browser.
+    -With client-side rendering, the initial page load is naturally a bit slow. However, after that, every subsequent page load is very fast. In this approach,            communication with server happens only for getting the run-time data. Moreover, there is no need to reload the entire UI after every call to the server. The          client-side framework manages to update UI with changed data by re-rendering only that particular DOM element.
+    -Angular and React.js are some of the best examples of libraries used in client-side rendering.
+  application of each:
+        -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
+        -An application has less dynamic data                                          |   An application has large and dynamic data
+        -
+        
+  
+
