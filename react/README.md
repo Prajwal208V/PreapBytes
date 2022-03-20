@@ -62,6 +62,8 @@
    -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
     Note: but Outside Constructor() Both will display same value for 'this.props'.
 
-👉🏻What are Higher Order Components(HOC)?
-  
-
+👉🏻What are Higher Order Components(HOC)? To share common functionality between components
+  -A HOC is an advanced technique for reusing logic in React components.were inspired by higher-order functions in JavaScript.Higher-order functions in JavaScript      take some functions as arguments and return another function.
+  -same in HOCS Components take one or more components as arguments, and return a new upgraded component.
+    Facts About HOCs:
+                     A HOC is a pure function. It has no side effects, returning only a new component.
