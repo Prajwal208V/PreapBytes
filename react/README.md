@@ -1,7 +1,7 @@
-what is react?
+👉🏻what is react?
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
 
-What are its features?
+👉🏻What are its features?
 1.-> it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
 
 2.-> it uses special dom insted of "real-DOM" called virtual DOM means 
@@ -18,12 +18,12 @@ What are its features?
 
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
-React v/s angular?
+👉🏻React v/s angular?
 
 
 
 
-client v/s server-side rendering ?
+👉🏻client v/s server-side rendering ?
  server-side rendering:
     -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in mere milliseconds.
     -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
@@ -35,6 +35,33 @@ client v/s server-side rendering ?
         -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
         -An application has less dynamic data                                          |   An application has large and dynamic data
         -
-        
+ 👉🏻super() v/s super(props) ?
+ 
+ -In JavaScript, super refers to the parent class constructor. (In react class compoents, it points to the React.Component implementation.)
+ -JavaScript enforces that if we want to use "this" keyword in a constructor, we have to call super first  
+ -The super keyword is used to access and call functions on an object's parent.
+ -this limitation applies to React components defined as classes too.
+ -passing props down to super is necessary so that the base React.Component constructor can initialize this.props
+ 
+ 
+ 🦖 super() is used to call the parent constructor. 
+       class MyComponent extends React.Component {
+        constructor(props) {
+          super()
+          console.log(this.props) // Undefined 
+          console.log(props)     // Defined Props Will Be Logged 
+        }
+  
+  🦖 super(props) would pass props to the parent constructor.
+         class MyComponent extends React.Component {
+            constructor(props) {
+              super(props)
+              console.log(this.props) // {name:'Bob' , .....} Props Will Be Logged 
+            }
+   conclude: when we are not using props in super() then, when doing console.log(this.props) in console, we will get an "undefined" because we are using this.props      inside the constructor. But if we just console.log(props) this will give us a proper message in the console on the webpage.
+   -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
+    Note: but Outside Constructor() Both will display same value for 'this.props'.
+
+👉🏻What are Higher Order Components(HOC)?
   
 
