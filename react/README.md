@@ -104,3 +104,27 @@ in function-Component "component is wrapped in React.memo()".
       );
     }
     export const MemoizedMovie = React.memo(Movie);
+    
+ 👉🏻 React Hooks:
+     -Hooks were added to React in version 16.8.
+     -Hooks allow function components to have access to state and other React features.means Hooks bring to functional components the things we once were only able         to do with classes, like being able to work with React local state, effects and context through useState, useEffect and useContext.
+     -an alternative to writing class-based components, and offer an alternative approach to state management and lifecycle methods.
+    Five Important Rules for Hooks:
+                                   1.Never call Hooks from inside a loop, condition or nested function
+                                   2.Hooks should sit at the top-level of your component
+                                   3.Only call Hooks from React functional components
+                                   4.Never call a Hook from a regular function
+                                   5.Hooks can call other Hooks
+     Basic Hooks are:  <a herf="https://reactjs.org/docs/hooks-reference.html">LINK</a>
+          1.useState:-
+           🦖 const [state, setState] = useState(initialState);
+            -Returns a stateful value, and a function to update it.
+            -During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
+            -The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
+            🦖setState(newState);
+            
+          useEffect:-
+          useContext:-
+
+
+  
