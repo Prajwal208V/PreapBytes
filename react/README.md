@@ -122,9 +122,35 @@ in function-Component "component is wrapped in React.memo()".
             -During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
             -The setState function is used to update the state. It accepts a new state value and enqueues a re-render of the component.
             🦖setState(newState);
+            Functional updates:If the new state is computed using the previous state, you can pass a function to setState. The function will receive the previous                 value, and return an updated value.
+            🦖 <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
             
-          useEffect:-
-          useContext:-
+          2.useEffect:-carries out an effect each time there is a state change. By default, it runs after the first render and every time the state is updated. 
+          -React useEffect is a function that gets executed for 3 different React component lifecycles.
+          Those lifecycles are componentDidMount, componentDidUpdate, and componentWillUnmount lifecycles.
+          -useEffect() fuction takes two arguments- 1.what are things we have to exicute and 2.dependencies 
+                 dependencies:-1.empty 2. empty array[] & 3. states list form as array
+            >If you want to run an effect on mount and unmount, you can pass an empty array ([])
+            >
+          Basic usage of useEffect:
+                                  1.I want to useEffect to change the message a second after the component has mounted.
+                            
+                                  🦖 import React, { useState, useEffect } from 'react';
+                                      const App = () => {
+                                        const [message, setMessage] = useState('Hi there, how are you?');
+                                        useEffect(() => {
+                                          console.log('trigger use effect hook');
+                                          setTimeout(() => {
+                                            setMessage("I'm fine, thanks for asking.");
+                                          }, 1000)
+                                        })
+                                        return <h1>{message}</h1>
+                                      };
+                                      export default App;
+ 
+          3.useContext:-
+                   
+          
 
 
   
