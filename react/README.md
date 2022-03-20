@@ -79,5 +79,28 @@
                          4.providing components with specific styles.
                         
 👉🏻What are Pure Components?
- 
-                         
+ -React has provided us a Pure Component. If we extend a class with Pure Component, there is no need for "shouldComponentUpdate()" Lifecycle Method. ReactJS Pure       Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
+ -In simple words, If the previous value of state or props and the new value of state or props is the same, the component will not re-render itself. Since Pure         Components restricts the re-rendering when there is no use of re-rendering of the component. 
+ -Extending React Class Components with Pure Components ensures the higher performance of the Component and ultimately makes an application faster, While in the       case of Regular Component, it will always re-render either value of State and Props changes or not.
+ in class-  "PureComponent"
+    🦖class PureComp extends PureComponent {
+          render() {
+              console.log("PURE component render");
+              return (
+                  <div>
+                      Pure Component {this.props.name}
+                  </div>
+              )
+          }
+      }
+     export default PureComp; 
+in function-Component "component is wrapped in React.memo()".
+  🦖export function Movie({ title, releaseDate }) {
+      return (
+        <div>
+          <div>Movie title: {title}</div>
+          <div>Release date: {releaseDate}</div>
+        </div>
+      );
+    }
+    export const MemoizedMovie = React.memo(Movie);
