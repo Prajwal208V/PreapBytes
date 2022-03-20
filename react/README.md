@@ -67,3 +67,17 @@
   -same in HOCS Components take one or more components as arguments, and return a new upgraded component.
     Facts About HOCs:
                      A HOC is a pure function. It has no side effects, returning only a new component.
+         HOC can be used for many use cases:
+                                           Code reuse, State abstraction and manipulation, Props manipulation.
+                    
+          real world use of HOC:
+                         1.showing a loader, while a component waits for data.
+                           -app is to show a loader while a component is waiting for data to be passed into it’s props.
+                         2.Conditionally rendering components.
+                           -we can have a reusable HOC that conditionally renders the component based on the data provided.
+                         3.managing common user-interaction states.
+                         4.providing components with specific styles.
+                        
+👉🏻What are Pure Components?
+ 
+                         
