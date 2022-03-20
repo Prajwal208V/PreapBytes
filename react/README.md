@@ -1,7 +1,7 @@
-👉🏻what is react?
+👉 what is react?
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
 
-👉🏻What are its features?
+👉 What are its features?
 1.-> it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
 
 2.-> it uses special dom insted of "real-DOM" called virtual DOM means 
@@ -18,12 +18,12 @@
 
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
-👉🏻React v/s angular?
+👉 React v/s angular?
 
 
 
 
-👉🏻client v/s server-side rendering ?
+👉 client v/s server-side rendering ?
  server-side rendering:
     -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in mere milliseconds.
     -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
@@ -35,7 +35,7 @@
         -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
         -An application has less dynamic data                                          |   An application has large and dynamic data
         -
- 👉🏻super() v/s super(props) ?
+ 👉 super() v/s super(props) ?
  
  -In JavaScript, super refers to the parent class constructor. (In react class compoents, it points to the React.Component implementation.)
  -JavaScript enforces that if we want to use "this" keyword in a constructor, we have to call super first  
@@ -62,7 +62,7 @@
    -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
     Note: but Outside Constructor() Both will display same value for 'this.props'.
 
-👉🏻What are Higher Order Components(HOC)? To share common functionality between components
+👉 What are Higher Order Components(HOC)? To share common functionality between components
   -A HOC is an advanced technique for reusing logic in React components.were inspired by higher-order functions in JavaScript.Higher-order functions in JavaScript      take some functions as arguments and return another function.
   -same in HOCS Components take one or more components as arguments, and return a new upgraded component.
     Facts About HOCs:
@@ -78,7 +78,7 @@
                          3.managing common user-interaction states.
                          4.providing components with specific styles.
                         
-👉🏻What are Pure Components?
+👉 What are Pure Components?
  -React has provided us a Pure Component. If we extend a class with Pure Component, there is no need for "shouldComponentUpdate()" Lifecycle Method. ReactJS Pure       Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
  -In simple words, If the previous value of state or props and the new value of state or props is the same, the component will not re-render itself. Since Pure         Components restricts the re-rendering when there is no use of re-rendering of the component. 
  -Extending React Class Components with Pure Components ensures the higher performance of the Component and ultimately makes an application faster, While in the       case of Regular Component, it will always re-render either value of State and Props changes or not.
@@ -105,7 +105,7 @@ in function-Component "component is wrapped in React.memo()".
     }
     export const MemoizedMovie = React.memo(Movie);
     
- 👉🏻 React Hooks:
+👉 React Hooks:
      -Hooks were added to React in version 16.8.
      -Hooks allow function components to have access to state and other React features.means Hooks bring to functional components the things we once were only able         to do with classes, like being able to work with React local state, effects and context through useState, useEffect and useContext.
      -an alternative to writing class-based components, and offer an alternative approach to state management and lifecycle methods.
@@ -211,4 +211,45 @@ in function-Component "component is wrapped in React.memo()".
 
                     export default App;
 
-         
+   👉  controlled v/s uncontrolled components:
+        2 ways to handle the input value, the first one is the Controlled Component and the second is Uncontrolled component
+        controlled:
+             The controlled component is a way that we can handle the form input value using the "state" and to change the input value there is only one way to                    change it is using "setState or useState" if you are using React Hooks and you can change this state using one of the events like onChange and when                  the user starts writing any character setState or useState will be called and update the state of this input then it will add the new value inside the                input.
+             
+             - most cases, devlopers using controlled components to implement forms. In a controlled component, form data is handled by a React component. The                      alternative is uncontrolled components, where form data is handled by the DOM itself.
+             
+                 🦖 import React, { useState } from "react";
+                     export default function App() {
+                          const [inputValue, setInputValue] = useState("");
+                          const handleInputChange = (e) => {
+                            setInputValue(e.target.value)
+                          }
+                          const handleSubmitButton = () => {
+                            alert(inputValue);
+                          };
+                          return (
+                            <div className="App">
+                              <input value={inputValue} onChange={handleInputChange} />
+                              <input type="submit" value="submit" onClick={handleSubmitButton} />
+                            </div>
+                          );
+                     }
+             
+        Uncontrolled:The uncontrolled component is like traditional HTML form inputs that we will not be able to handle the value by yourself but the DOM will take                      care of handling the value of the input and save it then we can get this value using React Ref
+                    
+                    🦖 import React, { useRef } from "react";
+                        export default function App() {
+                          const inputRef = useRef(null);
+                          const handleSubmitButton = () => {
+                            alert(inputRef.current.value);
+                          };
+                          return (
+                            <div className="App">
+                              <input type="text" ref={inputRef} />
+                              <input type="submit" value="submit" onClick={handleSubmitButton} />
+                            </div>
+                          );
+                        }
+     
+     
+👉
