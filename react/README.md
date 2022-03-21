@@ -252,4 +252,13 @@ in function-Component "component is wrapped in React.memo()".
                         }
      
      
-👉
+👉react router? 🦖  The react-router-dom is the package that is used in React apps for routing. 
+        -react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
+        -React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
+        -React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
+        -Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
+     The main Components of React Router are:
+         -BrowserRouter:
+         -Routes:
+         -Route:
+         -Link & NavLink:
