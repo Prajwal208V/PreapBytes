@@ -283,6 +283,50 @@ in function-Component "component is wrapped in React.memo()".
         -Redux is a state managing library used in JavaScript apps. It simply manages the state of an application  
         -Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that            needs to be used across  entire application, with rules ensuring that the state can only be updated in a predictable fashion.
         
-   👉Building Parts of redux
-        
+   👉Building Parts of redux  <a href="https://redux.js.org/understanding/thinking-in-redux/three-principles">Link</a> 
+        Redux can be described in three fundamental principles
+        1.(​ Single source ) global state of an application is stored in an object-tree within a single store.
+          -This makes it easy to create universal apps, as the state from your server can be serialized and hydrated into the client with no extra coding effort. A              single state tree also makes it easier to debug or inspect an application; it also enables you to persist your app's state in development, for a faster              development cycle.
+          
+        2.(​ State is read-only) The only way to change the state is to emit an action, an object describing what happened.
+         -This ensures that neither the views nor the network callbacks will ever write directly to the state. Instead, they express an intent to transform the                 state. Because all changes are centralized and happen one by one in a strict order, there are no subtle race conditions to watch out for. As actions are             just plain objects, they can be logged, serialized, stored, and later replayed for debugging or testing purposes.
+         
+        3.(​ Changes are made with pure functions)To specify how the state tree is transformed by actions, we have to write pure reducers.
+          -Reducers are just pure functions that take the previous state and an action, and return the next state. Remember to return new state objects, instead of              mutating the previous state. You can start with a single reducer, and as your app grows, split it off into smaller reducers that manage specific parts of            the state tree. Because reducers are just functions, you can control the order in which they are called, pass additional data, or even make reusable                  reducers for common tasks such as pagination.
+          
+    👉What do you understand by “Single source of truth” in redux?
+      Redux consists of a single store, which is a JavaScript value containing the entire state of your application. A single source of truth comes with a lot of           benefits:
+              ​In traditional applications, the state is stored in different places across the whole application. With a single source of truth, debugging becomes                  easy, as you simply have one value to look at.
+              ​It is easy to create universal apps, as you can serialize the application state on the server and send it to the client without much effort.
+              ​Generalized functionalities, such as undo/redo, become easy to implement. For example, you can simply drop in a library that turns (a part of) your                  state into an undoable state.
+              
+   👉List down the components of Redux. and explain?
+     
+     
+     
+    👉context v/s React Redux?
+       
+ 
+              
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
            
