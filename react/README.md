@@ -105,6 +105,7 @@ in function-Component "component is wrapped in React.memo()".
     }
     export const MemoizedMovie = React.memo(Movie);
     
+👽Hooks    
 👉 React Hooks:
      -Hooks were added to React in version 16.8.
      -Hooks allow function components to have access to state and other React features.means Hooks bring to functional components the things we once were only able         to do with classes, like being able to work with React local state, effects and context through useState, useEffect and useContext.
@@ -251,14 +252,37 @@ in function-Component "component is wrapped in React.memo()".
                           );
                         }
      
-     
+👽router    
 👉react router? 🦖  The react-router-dom is the package that is used in React apps for routing. 
         -react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
         -React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
         -React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
         -Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
+     
      The main Components of React Router are:
-         -BrowserRouter:
-         -Routes:
-         -Route:
-         -Link & NavLink:
+         -BrowserRouter:BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState and the popstate event) to keep your UI in                           sync with the URL. It is the parent component that is used to store all of the other components.
+         
+         -Routes:The Routes component looks through all of its child routes and it displays ranks  routes and picks the best one one whose path matches the                             current URL.
+                  -switch v/s routes:Routes are chosen based on the best match instead of being traversed in order.
+                                      The switch component looks through all of its child routes and it displays the first one whose path matches the current URL.
+                                      
+         -Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
+         
+         -Link & NavLink: Link component is used to create links to different routes and implement navigation around the application. It works like HTML anchor tag.
+             >When we use the NavLink as a tag, it automatically inherit an active class when clicked. On the other hand, the Link tag does now have an active class                when clicked.
+             >The Link component is used to navigate the different routes on the site. But NavLink is used to add the style attributes to the active routes.
+             >ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
+                🦖 <Link to="/">Home</Link>
+                🦖 <NavLink exact activeClassName="active" activeStyle={{color:'red',background:'red',}} to="/">Home </NavLink>
+ 
+ 👉 router hooks:
+                  1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
+                  2.
+ 👽REDUX:
+   👉what is redux?
+        -Redux is a state managing library used in JavaScript apps. It simply manages the state of an application  
+        -Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that            needs to be used across  entire application, with rules ensuring that the state can only be updated in a predictable fashion.
+        
+   👉Building Parts of redux
+        
+           
