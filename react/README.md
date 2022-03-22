@@ -18,10 +18,99 @@
 
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
-👉 React v/s angular?
+👉React v/s angular?
+   React: 
+       Type- React is a JavaScript library
+       Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
+       Data binding- React language uses one-way data binding, which means that the Ul elements can’t be changed without updating the corresponding model state.
+       Written in- JavaScript
+       Model- It is based on Virtual DOM
+       Use of code- React allows we have to manage the code according to your desired format.
+       Testing & Debugging- It requires a set of tools to perform different types of testing. 
+       
+   Angular:
+      -Angular is a complete framework.
+      -It offers a limited amount of freedom and flexibility. 
+      -Angular Supports both one way and two way  data binding. It helps you to ensure that the model state automatically changes when any change is made.
+        (means that if we modify the UI input, the model state will change, and vice versa)
+      -Typescript
+      -Based on MVC (Model View Controller)
+      -Angular comes with many ready to use elements. However, it mainly comes from a specific provider. So, there are priority collisions and namesDaces.
+      -The testing and debugging for a complete project is possible with a single tool.
+        
+👉Library vs Framework?
+ Library:
+        -is a collection of functions
+        -In case of library the Execution of code will be decided by the developers Means  developers are in charge of the flow of the whole application.
+        -We are choosing when and where to call the library.
+        -in case of library its developers duty to design the structure.
+        -library follows View model
+ Framework:
+        -Framework is a collection of multiple other libraries.
+        -in case of framework the execution is already defined or decided.the framework is in charge of the flow of the whole application.
+        -It provides some places for we have to plug in our code, but it calls the code you   plugged in as needed.
+        -Framework provides you a structure in which we just put down the code our functionality.
+        -it follows MVC structure (model view controller)
+        
+👉Why can’t browsers read JSX?
+   React uses JSX that allows us to write JavaScript objects inside the HTMLelements. It is a syntax extension of JavaScript. JSX makes code easy and understandable.    As JSX is a combination of HTML and JavaScript it is not supported by Browsers. Because there is no inherent implementation for the browser engines to read and      understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which            transform these JSX into valid JavaScript code.
 
 
+👉What is the purpose of render() in React?
+   
 
+👉states v/s props?
+  Both props and state are plain JavaScript objects. While both of them hold information Props
+  props:
+       -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
+       -Props are also objects that hold information to control the behavior of that particular component.
+ state:
+      -the State of a component is an object that holds some information that may change over the lifetime of the component.
+      -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
+
+👉How can you update the state of a component?
+  -The State is an instance of React Component that can be defined as an object of a set of observable properties that control the behavior of the component. In        other words, the State of a component is an object that holds some information that may change over the lifetime of the component. 
+   
+   Update the State of Class-Based Components using ‘this.setState()’ method.Pass the state object in a JSX element and call the method to update the state on a        specific event like button click.
+                    🦖 class App extends Component {
+                          constructor(){
+                            super()
+                            this.state={
+                              text : 'Welcome to Geeksforgeeks'
+                            }
+                          }
+                          goPremium(){
+                            this.setState({
+                              text:'Subscription successful'
+                            })
+                       }
+   Update the State of functional Components:React functional components are plain JavaScript functions.It is not possible to persist state in local variables, to      maintain state inside the function, React provides several hooks:
+   like useState() hook allows you create and mange a state variable that can be a simple JavaScript primitive or an object.
+     🦖const [varible, setFun] = useState(false);
+     The only way to mutate the state and its binding is to call the function setFun()
+     Update the state on a specific event like button click using the ‘setFun’ method.
+     🦖setFun({text:'Updated Content'});
+  
+  
+👉Explain the lifecycle methods of React components in detail?
+
+👉stateful v/s stateless components?
+   -In React, a stateful component is a component that holds some state.  Stateless components, by contrast, have no state. but that both types of components can use     props.
+   -They are also known as Container vs Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
+   
+👉conditionally render components?
+
+👉 functional v/s class components?
+
+👉How to prevent re-renders in React?
+
+👉Element v/s Component?
+
+👉What is CRA and its benefits?
+
+👉Can you force a component to re-render without calling setState?
+
+👉What are fragments? Why fragments are better than container divs?
 
 👉 client v/s server-side rendering ?
  server-side rendering:
@@ -35,6 +124,8 @@
         -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
         -An application has less dynamic data                                          |   An application has large and dynamic data
         -
+        
+        
  👉 super() v/s super(props) ?
  
  -In JavaScript, super refers to the parent class constructor. (In react class compoents, it points to the React.Component implementation.)
@@ -278,6 +369,7 @@ in function-Component "component is wrapped in React.memo()".
  👉 router hooks:
                   1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
                   2.
+                  
  👽REDUX: https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
           
    👉what is redux?
