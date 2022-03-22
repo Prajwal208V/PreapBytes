@@ -309,7 +309,7 @@ in function-Component "component is wrapped in React.memo()".
               🦖createStore(rootReducer);
     
     👉Show how the data flows through Redux? 
-       <img src="https://celestialsys.com/blog/wp-content/uploads/2019/12/data-flow.jpg" alt="img" />
+       <img src="https://celestialsys.com/blog/wp-content/uploads/2019/12/data-flow.jpg" alt="img" width="500" height="600" >
     
     
     
