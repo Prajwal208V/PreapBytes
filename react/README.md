@@ -99,8 +99,95 @@
    -They are also known as Container vs Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
    
 👉conditionally render components?
-
+     -we can build Single Page Applications (SPA) that are dynamic and highly interactive with React.One feature that allows, that is conditional rendering.
+     -Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. In React, it allows us       to render different elements or components based on a condition.
+     6 Ways to Implement Conditional Rendering in React Applications:
+       1.Using an if…else Statement:
+         An if…else statement will execute the actions contained in the if block when the condition is satisfied. Otherwise, it will execute the actions contained in          the else block.
+         In JSX, we can able to use JavaScript code with markup to render dynamic values within your application. JSX uses curly braces {console.log("Prajwal)}
+                                   
+                                   🦖const AuthButton = props => {
+                                      let { isLoggedIn } = props;
+                                      if (isLoggedIn) {
+                                        return <button>Logout</button>;
+                                      } else {
+                                        return <button>Login</button>;
+                                      }
+                                    };
+                                    export default AuthButton;
+        2.Using a switch Statement:
+                                  🦖 const AuthButton = props => {
+                                          let { isLoggedIn } = props;
+                                          switch (isLoggedIn) {
+                                            case true:
+                                              return <button>Logout</button>;
+                                              break;
+                                            case false:
+                                              return <button>Login</button>;
+                                              break;
+                                            default:
+                                              return null;
+                                          }
+                                        };
+                                        export default AuthButton;
+        3.Using Element Variables:Element variables are similar to the approach to extract the conditional rendering into a function. Element variables are variables                                   that hold JSX elements. You can conditionally assign elements or components to these variables outside the JSX and only render the                                   variable within JSX.                       
+                       🦖class App extends Component {
+                            constructor(props) {
+                              super(props);
+                              this.state = {
+                                isLoggedIn: true
+                              };
+                            }
+                            render() {
+                              let { isLoggedIn } = this.state;
+                              let AuthButton;
+                              if (isLoggedIn) {
+                                AuthButton = <button>Logout</button>;
+                              } else {
+                                AuthButton = <button>Login</button>;
+                              }
+                              return (
+                                <div className="App">
+                                  <h1>
+                                    This is a Demo showing several ways to implement Conditional Rendering in React.
+                                  </h1>
+                                  {AuthButton}
+                                </div>
+                              );
+                            }
+                       }
+                       export default App;
+         
+         4.Using Ternary Operators:The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as                                    a shortcut for the if statement.
+                        🦖let { isLoggedIn } = this.state;
+                           {isLoggedIn ? <button>Logout</button> : <button>Login</button>}
+                           
+         5.Using Logical && (Short Circuit Evaluation):The logical && helps you specify that an action should be taken only on one condition, otherwise, it would be                                                        ignored entirely.
+                        🦖let { isLoggedIn } = this.state;
+                           {isLoggedIn && <button>Logout</button>}
+         
+         6.Using Immediately Invoked Function Expressions (IIFEs)
+                        🦖{(function() {
+                            if (isLoggedIn) {
+                              return <button>Logout</button>;
+                            } else {
+                              return <button>Login</button>;
+                            }
+                          })()}
+         
 👉 functional v/s class components?
+    functional:
+              -Functional Components are Stateless component. but we can make it as statefull compoent by using react hooks like useState() by this method we can                     make it statefull compoents
+              -It is simple javascript functions that simply returns jsx 
+              -There is no render method used in functional components.
+              -Component lifecycle method do not exist in functional component,because a functional component is just a plain JavaScript function.
+                We can use React Hooks in functional component,useEffect() hook can be used to replicate lifecycle behaviour, and useState can be used to store state                 in a functional component.
+              -
+     class:
+            -It is regular ES6 classes that extends component class form react library
+            -Also known as “stateful” components because they implement logic and state.
+            -It must have render() method returning jsx
+            -we can pass props to class components and access them with this.props
 
 👉How to prevent re-renders in React?
 
@@ -123,7 +210,6 @@
   application of each:
         -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
         -An application has less dynamic data                                          |   An application has large and dynamic data
-        -
         
         
  👉 super() v/s super(props) ?
