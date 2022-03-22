@@ -190,14 +190,78 @@
             -we can pass props to class components and access them with this.props
 
 👉How to prevent re-renders in React?
-
+   
 👉Element v/s Component?
-
+   React Elements:
+             -An Element is a plain object describing what we want to appear on the screen in terms of the DOM nodes, A React Element is what gets returned from                   components.making it light and faster to render than components.
+             -React Element contains both type and property. It may contain other Elements in its props, but React Element does not have any methods.
+             -React elements are not what we see in the browser. They are just objects in memory and we can’t change anything about them.
+             -Elements are immutable i,e once created cannot be changed.
+             -We cannot use React Hooks with elements as elements are immutable.
+             -creating an element "React.createElement()" it will take up three parameters:- type of the element, properties, and children for creating an element.
+             
+                 🦖import React from 'react';
+                    import ReactDOM from 'react-dom';
+                    const ele1 = React.createElement("h1",null,"Hey Geek");
+                    ReactDOM.render(ele1,document.getElementById("root"));
+                 ​ In index.js, we are creating an element with h1 args, keeping its property as null and for the children, we are passing a string “Hey Geek”.
+                 
+                 
+   Component Elements: 
+             -A React Component is a template. A blueprint. A global definition. This can be either a function or a class (with a render function).
+             -It is comparatively slower than elements.
+             -Each component has its life cycle methods.
+             -We can render many instances of the same component.
+             -The state in a component is mutable.
+             -React hooks can be used with both functional and class components
+             -A component can be declared in different ways like it can be an element class with render() method or can be defined as a function.
+             
+               🦖import React from 'react';
+                  import ReactDOM from 'react-dom';
+                  function Welcome(user){
+                  return <div>
+                    <h3>Welcome {user.name}</h3>
+                  </div>
+                  }
+                  const ele = <Welcome name="Geek"/>
+                  ReactDOM.render(ele,document.getElementById("root"));
+                 
 👉What is CRA and its benefits?
+   -The create-react-app  tool allows you to quickly create & run React applications with no configuration step.
+   -Create React App (CRA) is the easiest way to get started building React applications. It provides a default setup with a number of core features baked in,           including a build system containing a module bundler (webpack) and a transpiler (Babel).
+    It includes everything we need to build a React app:
+      1.React, JSX, ES6, and Flow syntax support.
+      2.Language extras beyond ES6 like the object spread operator.
+      3.Autoprefixed CSS, so you don’t need -webkit- or other prefixes.
+      4.A fast interactive unit test runner with built-in support for coverage reporting.
+      5.A live development server that warns about common mistakes.
+      6.A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
 
+   
 👉Can you force a component to re-render without calling setState?
-
+  -The components in React will re-render only if the state of the component or the props passed to it changes but if we need to re-render the component if some data    changes then we will use forceUpdate() method of React. Calling the forceUpdate() will forcibly re-render the component and thus calls the render() method of the    component skipping the shouldComponentUpdate() method.
+    component.forceUpdate(callback)
+    
+  this.forceUpdate() Method v/s this.setState() Method:
+    forceUpdate:
+                -It re-render the component without even changing the state or props.
+                -It skips the lifecycle shouldComponentUpdate method.
+                -
+    setState:
+              -It re-render the component if some state or props of that component changed.
+              -It calls the lifecycle shouldComponentUpdate method.
+              
+              
+    
 👉What are fragments? Why fragments are better than container divs?
+     Fragments:"<> </> or <React.Fragment> </React.Fragment>" to return multiple elements. Fragments let you group a list of children without adding extra nodes to        the  DOM.
+     benfit of fragments:
+                        1.use of div Increases the size of the DOM: DOM sizes get large when there are too many DOM nodes or HTML tags on your page or when these                              nodes are nested too deeply. As a result, the user’s browser consumes additional power to process your website, resulting in slow page load                         time and low page speed scores.()
+                        2.fragment Using divs creates extra nodes, resulting in a high memory usage.
+                        3.Oversized DOMs cause memory usage to increase, style processing to lag, and layout reflows to be costly.
+                        4.Debugging and tracing the origin of the extra nodes become more challenging as the component tree nests deeper.
+                        5.It difficult to maintain the desired layout: Flexbox and Grid have a unique parent-child relationship, and adding divs breaks the markup.
+   
 
 👉 client v/s server-side rendering ?
  server-side rendering:
