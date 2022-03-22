@@ -278,7 +278,8 @@ in function-Component "component is wrapped in React.memo()".
  👉 router hooks:
                   1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
                   2.
- 👽REDUX:
+ 👽REDUX: https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
+          
    👉what is redux?
         -Redux is a state managing library used in JavaScript apps. It simply manages the state of an application  
         -Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that            needs to be used across  entire application, with rules ensuring that the state can only be updated in a predictable fashion.
@@ -315,10 +316,23 @@ in function-Component "component is wrapped in React.memo()".
     
     
     👉context v/s React Redux?
-       
+       context:
+               -Context provides a way to pass data through the component tree without manually passing props down through each nested component.
+               -any updateds are made with the Context value.
+               -We can change the state in it, very simple.
+               -Excellent for more static data Context is NOT designed for handling high-frequency updates.(means not optimized for high frequncy changes ex:state                   changes every seconds or multi times per second)
+               -Only little setup is required - create context and sometimes wrapper component
+               -There could be more difficult maintenance in more complex-applications.
+               -therfore It is better to use with small applications.
  
-              
-           
+       Redux:
+              -Redux is a state managing library used in JavaScript apps.It simply manages the state and data of an application.
+              -any updateds are made with pure functions i.e. reducers.
+              -The state is read-only. We cannot change them directly.(Redux passes down the Action to the Reducer. Then, the Reducer updates the state depending                    upon the Action that was passed)
+              -redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
+              -More setup than Context API (and more terms to understand)
+              -esay  maintenance in more complex-applications.
+              -	It is perfect for larger applications. 
            
            
            
