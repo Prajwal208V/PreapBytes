@@ -96,7 +96,7 @@
 
 👉stateful v/s stateless components?
    -In React, a stateful component is a component that holds some state.  Stateless components, by contrast, have no state. but that both types of components can use     props.
-   -They are also known as Container vs Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
+   -They are also known as Container and Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
    
 👉conditionally render components?
      -we can build Single Page Applications (SPA) that are dynamic and highly interactive with React.One feature that allows, that is conditional rendering.
@@ -130,7 +130,7 @@
                                           }
                                         };
                                         export default AuthButton;
-        3.Using Element Variables:Element variables are similar to the approach to extract the conditional rendering into a function. Element variables are variables                                   that hold JSX elements. You can conditionally assign elements or components to these variables outside the JSX and only render the                                   variable within JSX.                       
+        3.Using Element Variables:Element variables are similar to the approach to extract the conditional rendering into a function. Element variables                                     hold JSX elements. You can conditionally assign elements or components to these variables outside the JSX and only render the                                         variable within JSX.                       
                        🦖class App extends Component {
                             constructor(props) {
                               super(props);
@@ -193,7 +193,7 @@
    
 👉Element v/s Component?
    React Elements:
-             -An Element is a plain object describing what we want to appear on the screen in terms of the DOM nodes, A React Element is what gets returned from                   components.making it light and faster to render than components.
+             -An Element is a plain object, describing what we want to appear on the screen in terms of the DOM nodes, A React Element returned from                   components.making it light and faster to render than components.
              -React Element contains both type and property. It may contain other Elements in its props, but React Element does not have any methods.
              -React elements are not what we see in the browser. They are just objects in memory and we can’t change anything about them.
              -Elements are immutable i,e once created cannot be changed.
@@ -202,9 +202,9 @@
              
                  🦖import React from 'react';
                     import ReactDOM from 'react-dom';
-                    const ele1 = React.createElement("h1",null,"Hey Geek");
+                    const ele1 = React.createElement("h1",null,"Hey hello");
                     ReactDOM.render(ele1,document.getElementById("root"));
-                 ​ In index.js, we are creating an element with h1 args, keeping its property as null and for the children, we are passing a string “Hey Geek”.
+                 ​ we are creating an element with h1 tags, keeping its property as null and for the children, we are passing a string “Hey hello”.
                  
                  
    Component Elements: 
@@ -227,8 +227,8 @@
                   ReactDOM.render(ele,document.getElementById("root"));
                  
 👉What is CRA and its benefits?
-   -The create-react-app  tool allows you to quickly create & run React applications with no configuration step.
-   -Create React App (CRA) is the easiest way to get started building React applications. It provides a default setup with a number of core features baked in,           including a build system containing a module bundler (webpack) and a transpiler (Babel).
+   -The create-react-app  it is a tool or(boilerplate) allows you to quickly create & run React applications with no configuration step.
+   -Create React App (CRA) is the easiest way to get started building React applications. It provides a default setup with a number of core features in,                 including a build system containing a module bundler (webpack) and a transpiler (Babel).
     It includes everything we need to build a React app:
       1.React, JSX, ES6, and Flow syntax support.
       2.Language extras beyond ES6 like the object spread operator.
@@ -254,9 +254,9 @@
               
     
 👉What are fragments? Why fragments are better than container divs?
-     Fragments:"<> </> or <React.Fragment> </React.Fragment>" to return multiple elements. Fragments let you group a list of children without adding extra nodes to        the  DOM.
+     Fragments:"<> </> or <React.Fragment> </React.Fragment>" to return multiple elements. Fragments allows to group a list of children without adding extra nodes to        the  DOM.
      benfit of fragments:
-                        1.use of div Increases the size of the DOM: DOM sizes get large when there are too many DOM nodes or HTML tags on your page or when these                              nodes are nested too deeply. As a result, the user’s browser consumes additional power to process your website, resulting in slow page load                         time and low page speed scores.()
+                        1.use of div Increases the size of the DOM: DOM sizes get large when there are too many DOM nodes or HTML tags on your page or when these                              nodes are nested too deeply. As a result, the user’s browser consumes additional power to process an website, resulting in slow page load                         time and low page speed scores.()
                         2.fragment Using divs creates extra nodes, resulting in a high memory usage.
                         3.Oversized DOMs cause memory usage to increase, style processing to lag, and layout reflows to be costly.
                         4.Debugging and tracing the origin of the extra nodes become more challenging as the component tree nests deeper.
@@ -265,7 +265,7 @@
 
 👉 client v/s server-side rendering ?
  server-side rendering:
-    -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in mere milliseconds.
+    -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in  milliseconds.
     -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
  client-side rendering:
     -client-side rendering, it’s about rendering content in the browser using JavaScript. So instead of getting all the content from the HTML document itself, a          bare-bones HTML document with a JavaScript file in initial loading itself is received, which renders the rest of the site using the browser.
