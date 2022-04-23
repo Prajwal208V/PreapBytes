@@ -10,7 +10,10 @@
   So Manipulating the virtual DOM is much faster, thats way  A virtual DOM object is a representation of a DOM object, like a lightweight copy.
 
 3.-> react use JSX(JavaScript Syntax Extension)
-  JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.But JSX is not supported by the browsers, as a result             Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
+  JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
+  ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
+  https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png
+
 
 4.-> a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is           transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its             parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of         one-way data binding. This keeps everything modular and fast.
 
@@ -578,9 +581,35 @@ in function-Component "component is wrapped in React.memo()".
            
            
    👉keys in React
-      ![image](https://user-images.githubusercontent.com/92531202/164876607-0f6d069a-a678-48d5-9bdd-891c4f1bca4c.png)
-
-           
+   <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164876607-0f6d069a-a678-48d5-9bdd-891c4f1bca4c.png" >
+        const ids = [1,2,3,4,5];
+        const listElements = ids.map((id)=>{
+        return(
+        <li key={id.toString()}>
+          {id}
+        </li>
+        )
+        })
+       
+       Importance of keys -
+                            Keys help react identify which elements were added, changed or removed.
+                            Keys should be given to array elements for providing a unique identity for each element.
+                            Without keys, React does not understand the order or uniqueness of each element.
+                            With keys, React has an idea of which particular element was deleted, edited, and added.
+                            Keys are generally used for displaying a list of data coming from an API.
+ 
+    👉differences between functional and class components?
+       Before the introduction of Hooks in React, functional components were called stateless components and were behind class components on a feature basis. After the            introduction of Hooks, functional components are equivalent to class components.
+        -Declaration fun(Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword)
+                     cls(Class components, on the other hand, are declared using the ES6 class)
+        -Handling props fun(In functional components, the handling of props is pretty straightforward. Any prop provided as an argument to a functional component can be                                 directly used inside HTML elements)
+                        cls(this keyword is used in the case of class components)
+      <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164879335-3c40179c-5fd9-40f7-ae39-de2c8797a039.png" >
+                
+        -Handling state fun(Functional components use React hooks to handle state. It uses the useState hook to set the state of a variable inside the component
+                            Since useState hook returns an array of two items, the first item contains the current state, and the second item is a function used to update                              the state.)
+                            
+        
            
            
            
