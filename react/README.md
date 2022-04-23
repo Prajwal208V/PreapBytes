@@ -577,7 +577,9 @@ in function-Component "component is wrapped in React.memo()".
               -	It is perfect for larger applications. 
            
            
-           
+   👉keys in React
+      ![image](https://user-images.githubusercontent.com/92531202/164876607-0f6d069a-a678-48d5-9bdd-891c4f1bca4c.png)
+
            
            
            
