@@ -9,6 +9,22 @@
   Instead, react uses virtual DOM. So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it is a copy of         our real dom. Another virtual dom is the dom which contains the new changes, updated state variables values. Now these two virtual doms will get compared with         each other and will check for the new changes. this complete procedure is known as “diffing algorithm”. Now the new changes will be updated in your Real dom.           this procedure is known as "Reconciliation".
   So Manipulating the virtual DOM is much faster, thats way  A virtual DOM object is a representation of a DOM object, like a lightweight copy.
 
+scaler(As stated by the react team, virtual DOM is a concept where a virtual representation of the real DOM is kept inside the memory and is synced with the real DOM by a library such as ReactDOM 
+Why was virtual DOM introduced? 
+DOM manipulation is an integral part of any web application, but DOM manipulation is quite slow when compared to other operations in JavaScript. The efficiency of the application gets affected when several DOM manipulations are being done. Most JavaScript frameworks update the entire DOM even when a small part of the DOM changes.
+
+For example, consider a list that is being rendered inside the DOM. If one of the items in the list changes, the entire list gets rendered again instead of just rendering the item that was changed/updated. This is called inefficient updating.
+
+To address the problem of inefficient updating, the react team introduced the concept of virtual DOM.
+How does it work?
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164884238-0d49e0c2-630c-40b5-bb68-3206e81441fa.png" >
+For every DOM object, there is a corresponding virtual DOM object(copy), which has the same properties. The main difference between the real DOM object and the virtual DOM object is that any changes in the virtual DOM object will not reflect on the screen directly. Consider a virtual DOM object as a blueprint of the real DOM object. Whenever a JSX element gets rendered, every virtual DOM object gets updated.
+**Note- One may think updating every virtual DOM object might be inefficient, but that’s not the case. Updating the virtual DOM is much faster than updating the real DOM since we are just updating the blueprint of the real DOM.
+
+React uses two virtual DOMs to render the user interface. One of them is used to store the current state of the objects and the other to store the previous state of the objects. Whenever the virtual DOM gets updated, react compares the two virtual DOMs and gets to know about which virtual DOM objects were updated. After knowing which objects were updated, react renders only those objects inside the real DOM instead of rendering the complete real DOM. This way, with the use of virtual DOM, react solves the problem of inefficient updating
+)
+
+
 3.-> react use JSX(JavaScript Syntax Extension)
   JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
   ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
@@ -496,6 +512,23 @@ in function-Component "component is wrapped in React.memo()".
                           );
                         }
      
+⚖️scaler(Controlled and uncontrolled components are just different approaches to handling input from elements in react. 
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164884461-1cc466de-537e-4207-adb0-3af5931715b9.png" >
+
+Controlled component: In a controlled component, the value of the input element is controlled by React. We store the state of the input element inside the code, and by using event-based callbacks, any changes made to the input element will be reflected in the code as well.
+When a user enters data inside the input element of a controlled component, onChange function gets triggered and inside the code, we check whether the value entered is valid or invalid. If the value is valid, we change the state and re-render the input element with the new value.
+the value of the input element is determined by the state of the inputValue variable. Any changes made to the input element is handled by the updateInput function.
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164885850-1804bb3d-3cd4-4b43-9296-9fbe43494498.png" >
+
+Uncontrolled component: In an uncontrolled component, the value of the input element is handled by the DOM itself. Input elements inside uncontrolled components work just like normal HTML input form elements.The state of the input element is handled by the DOM. Whenever the value of the input element is changed, event-based callbacks are not called. Basically, react does not perform any action when there are changes made to the input element.
+Whenever use enters data inside the input field, the updated data is shown directly. To access the value of the input element, we can use ref.
+we are not using onChange function to govern the changes made to the input element. Instead, we are using ref to access the value of the input element.
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164885850-1804bb3d-3cd4-4b43-9296-9fbe43494498.png" >
+
+
+
+)
+
 👽router    
 👉react router? 🦖  The react-router-dom is the package that is used in React apps for routing. 
         -react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
@@ -598,16 +631,17 @@ in function-Component "component is wrapped in React.memo()".
                             With keys, React has an idea of which particular element was deleted, edited, and added.
                             Keys are generally used for displaying a list of data coming from an API.
  
-    👉differences between functional and class components?
-       Before the introduction of Hooks in React, functional components were called stateless components and were behind class components on a feature basis. After the            introduction of Hooks, functional components are equivalent to class components.
-        -Declaration fun(Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword)
-                     cls(Class components, on the other hand, are declared using the ES6 class)
-        -Handling props fun(In functional components, the handling of props is pretty straightforward. Any prop provided as an argument to a functional component can be                                 directly used inside HTML elements)
-                        cls(this keyword is used in the case of class components)
-      <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164879335-3c40179c-5fd9-40f7-ae39-de2c8797a039.png" >
-                
-        -Handling state fun(Functional components use React hooks to handle state. It uses the useState hook to set the state of a variable inside the component
-                            Since useState hook returns an array of two items, the first item contains the current state, and the second item is a function used to update                              the state.)
+👉differences between functional and class components?
+Before the introduction of Hooks in React, functional components were called stateless components and were behind class components on a feature basis. After the            introduction of Hooks, functional components are equivalent to class components.
+-Declaration fun(Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword)
+             cls(Class components, on the other hand, are declared using the ES6 class)
+-Handling props fun(In functional components, the handling of props is pretty straightforward. Any prop provided as an argument to a functional component can be                                 directly used inside HTML elements)
+                cls(this keyword is used in the case of class components)
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164879335-3c40179c-5fd9-40f7-ae39-de2c8797a039.png" >
+-Handling state fun(Functional components use React hooks to handle state. It uses the useState hook to set the state of a variable inside the component
+                    Since useState hook returns an array of two items, the first item contains the current state, and the second item is a function used to update                              the state.)
+                cls(We cannot use React Hooks inside class components, therefore state handling is done very differently in a class component,For updating the state, we                     need to first bind the addStudent function to this. Only then, we will be able to use the setState function which is used to update the state. )
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164883758-ca2fa94f-cc71-410f-ba39-4c41d53fb89f.png" >
                             
         
            
