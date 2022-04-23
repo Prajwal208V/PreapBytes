@@ -711,8 +711,9 @@ The major components of React Router
               -redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
               -More setup than Context API (and more terms to understand)
               -esay  maintenance in more complex-applications.
-              -	It is perfect for larger applications. 
-           
+              -	It is perfect for larger applications.    
+⚖️scaler(The React Hook cannot be considered as a replacement for Redux (It is an open-source, JavaScript library useful in managing the application state) when it comes to the management of the global application state tree in large complex applications, even though the React will provide a useReducer hook that manages state transitions similar to Redux. Redux is very useful at a lower level of component hierarchy to handle the pieces of a state which are dependent on each other, instead of a declaration of multiple useState hooks.
+In commercial web applications which is larger, the complexity will be high, so using only React Hook may not be sufficient. Few developers will try to tackle the challenge with the help of React Hooks and others will combine React Hooks with the Redux.)
            
    👉keys in React
    <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164876607-0f6d069a-a678-48d5-9bdd-891c4f1bca4c.png" >
