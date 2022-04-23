@@ -83,6 +83,24 @@ React uses two virtual DOMs to render the user interface. One of them is used to
   props:
        -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
        -Props are also objects that hold information to control the behavior of that particular component.
+ scaler(
+    What is prop drilling in React?
+    Sometimes while developing React applications, there is a need to pass data from a component that is higher in the hierarchy to a component that is deeply nested. To       pass data between such components, we pass props from a source component and keep passing the prop to the next component in the hierarchy till we reach the deeply           nested component.
+  The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have access to the data.
+  ![image](https://user-images.githubusercontent.com/92531202/164887113-d8cc7470-1261-4216-888e-967fb48ff5e1.png)
+ )      
+ 
+ Scaler(The props: in React are the inputs to a component of React. They can be single-valued or objects having a set of values that will be passed to components of React     during creation by using a naming convention that almost looks similar to HTML-tag attributes. We can say that props are the data passed from a parent component into a     child component.
+   The main purpose of props is to provide different component functionalities such as:
+      Passing custom data to the React component.
+      Using through this.props.reactProp inside render() method of the component.
+      Triggering state changes.
+  
+  React State:
+  Every component in react has a built-in state object, which contains all the property values that belong to that component.
+  In other words, the state object controls the behaviour of a component. Any change in the property values of the state object leads to the re-rendering of the component.
+  Note- State object is not available in functional components but, we can use React Hooks to add state to a functional component
+ )
  state:
       -the State of a component is an object that holds some information that may change over the lifetime of the component.
       -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
@@ -111,7 +129,30 @@ React uses two virtual DOMs to render the user interface. One of them is used to
      🦖setFun({text:'Updated Content'});
   
   
-👉Explain the lifecycle methods of React components in detail?
+
+👉different phases of the component lifecycle:
+There are four different phases in the lifecycle of React component. They are:
+
+![image](https://user-images.githubusercontent.com/92531202/164892281-6f5dc928-4de8-467a-90b2-c35a35fd9b41.png)
+
+-Initialization: During this phase, React component will prepare by setting up the default props and initial state for the upcoming tough journey.
+-Mounting: Mounting refers to putting the elements into the browser DOM. Since React uses VirtualDOM, the entire browser DOM which has been currently rendered would not      be refreshed. This phase includes the lifecycle methods componentWillMount and componentDidMount.
+-Updating: In this phase, a component will be updated when there is a change in the state or props of a component. This phase will have lifecycle methods like                componentWillUpdate, shouldComponentUpdate, render, and componentDidUpdate.
+-Unmounting: In this last phase of the component lifecycle, the component will be removed from the DOM or will be unmounted from the browser DOM. This phase will have the    lifecycle method named componentWillUnmount.
+
+👉lifecycle methods of React components
+React lifecycle hooks will have the methods that will be automatically called at different phases in the component lifecycle and thus it provides good control over what happens at the invoked point. It provides the power to effectively control and manipulate what goes on throughout the component lifecycle.
+For example, if you are developing the YouTube application, then the application will make use of a network for buffering the videos and it consumes the power of the battery (assume only these two). After playing the video if the user switches to any other application, then you should make sure that the resources like network and battery are being used most efficiently. You can stop or pause the video buffering which in turn stops the battery and network usage when the user switches to another application after video play.
+So we can say that the developer will be able to produce a quality application with the help of lifecycle methods and it also helps developers to make sure to plan what and how to do it at different points of birth, growth, or death of user interfaces.
+The various lifecycle methods are:
+-constructor(): This method will be called when the component is initiated before anything has been done. It helps to set up the initial state and initial values.
+-getDerivedStateFromProps(): This method will be called just before element(s) rendering in the DOM. It helps to set up the state object depending on the initial props. The -getDerivedStateFromProps() method will have a state as an argument and it returns an object that made changes to the state. This will be the first method to be called on     an updating of a component.
+-render(): This method will output or re-render the HTML to the DOM with new changes. The render() method is an essential method and will be called always while the           remaining methods are optional and will be called only if they are defined.
+-componentDidMount(): This method will be called after the rendering of the component. Using this method, you can run statements that need the component to be already kept   in the DOM.
+-shouldComponentUpdate(): The Boolean value will be returned by this method which will specify whether React should proceed further with the rendering or not. The default     value for this method will be True.
+-getSnapshotBeforeUpdate(): This method will provide access for the props as well as for the state before the update. It is possible to check the previously present value     before the update, even after the update.
+-componentDidUpdate(): This method will be called after the component has been updated in the DOM.
+-componentWillUnmount(): This method will be called when the component removal from the DOM is about to happen
 
 👉stateful v/s stateless components?
    -In React, a stateful component is a component that holds some state.  Stateless components, by contrast, have no state. but that both types of components can use     props.
@@ -209,6 +250,11 @@ React uses two virtual DOMs to render the user interface. One of them is used to
             -we can pass props to class components and access them with this.props
 
 👉How to prevent re-renders in React?
+Reason for re-renders in React:
+    -Re-rendering of a component and its child components occur when props or the state of the component has been changed.
+    -Re-rendering components that are not updated, affects the performance of an application.
+to prevent re-rendering:
+   
    
 👉Element v/s Component?
    React Elements:
@@ -337,6 +383,12 @@ React uses two virtual DOMs to render the user interface. One of them is used to
                            -we can have a reusable HOC that conditionally renders the component based on the data provided.
                          3.managing common user-interaction states.
                          4.providing components with specific styles.
+ scaler(
+ Higher-Order Component(HOC) is a function that takes in a component and returns a new component.
+ ![image](https://user-images.githubusercontent.com/92531202/164891358-7b1c3550-3048-4b5f-951c-cbf2d43f0408.png)
+  need a Higher Order Component
+   While developing React applications, we might develop components that are quite similar to each other with minute differences. In most cases, developing similar            components might not be an issue but, while developing larger applications we need to keep our code DRY, therefore, we want an abstraction that allows us to define this    logic in a single place and share it across components. HOC allows us to create that abstraction.
+ )
                         
 👉 What are Pure Components?
  -React has provided us a Pure Component. If we extend a class with Pure Component, there is no need for "shouldComponentUpdate()" Lifecycle Method. ReactJS Pure       Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
@@ -377,6 +429,35 @@ in function-Component "component is wrapped in React.memo()".
                                    4.Never call a Hook from a regular function
                                    5.Hooks can call other Hooks
      Basic Hooks are:  <a href="https://reactjs.org/docs/hooks-reference.html">LINK</a>
+ scaler(React Hooks are the built-in functions that permit developers for using the state and lifecycle methods within React components. These are newly added features made available in React 16.8 version. Each lifecycle of a component is having 3 phases which include mount, unmount, and update. Along with that, components have properties and states. Hooks will allow using these methods by developers for improving the reuse of code with higher flexibility navigating the component tree.
+ 
+Using Hook, all features of React can be used without writing class components. For example, before React version 16.8, it required a class component for managing the state of a component. But now using the useState hook, we can keep the state in a functional component.
+
+**What are the rules that must be followed while using React Hooks?   
+
+  There are 2 rules which must be followed while you code with Hooks:
+  React Hooks must be called only at the top level. It is not allowed to call them inside the nested functions, loops, or conditions.
+  It is allowed to call the Hooks only from the React Function Components
+  
+**types of Hooks in React.
+   ![image](https://user-images.githubusercontent.com/92531202/164894079-3b626562-25d8-4b79-9191-3e354482a0dd.png)
+   
+  There are two types of Hooks in React. They are:
+   1.Built-in Hooks: The built-in Hooks are divided into 2 parts
+     Basic Hooks:
+        useState(): This functional component is used to set and retrieve the state.
+        useEffect(): It enables for performing the side effects in the functional components.
+        useContext(): It is used for creating common data that is to be accessed by the components hierarchy without having to pass the props down to each level.
+     Additional Hooks:
+        useReducer() : It is used when there is a complex state logic that is having several sub-values or when the upcoming state is dependent on the previous state. It             will also enable you to optimization of component performance that will trigger deeper updates as it is permitted to pass the dispatch down instead of callbacks.
+        useMemo() : This will be used for recomputing the memoized value when there is a change in one of the dependencies. This optimization will help for avoiding                    expensive calculations on each render.
+        useCallback() : This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded              renders.
+        useImperativeHandle():  It will enable modifying the instance that will be passed with the ref object.
+        useDebugValue(): It is used for displaying a label for custom hooks in React DevTools.
+        useRef() : It will permit creating a reference to the DOM element directly within the functional component.
+        useLayoutEffect(): It is used for the reading layout from the DOM and re-rendering synchronously.
+   2.Custom Hooks: A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom      Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover,        developing custom Hooks will enable you for extracting component logic from within reusable functions.
+   )
           1.useState:-
            🦖 const [state, setState] = useState(initialState);
             -Returns a stateful value, and a function to update it.
@@ -408,7 +489,17 @@ in function-Component "component is wrapped in React.memo()".
                                         return <h1>{message}</h1>
                                       };
                                       export default App;
- 
+          scaler(
+          The useEffect React Hook is used for performing the side effects in functional components. With the help of useEffect, you will inform React that your component requires something to be done after rendering the component or after a state change. The function you have passed(can be referred to as “effect”) will be remembered by React and call afterwards the performance of DOM updates is over. Using this, we can perform various calculations such as data fetching, setting up document title, manipulating DOM directly, etc, that don’t target the output value. The useEffect hook will run by default after the first render and also after each update of the component. React will guarantee that the DOM will be updated by the time when the effect has run by it.
+The useEffect React Hook will accept 2 arguments: useEffect(callback[, dependencies]);
+
+Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. The second argument dependencies represent an optional array of dependencies. The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+
+             There are two types of side effects in React component. They are:
+               Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser from screen update. It also improves the                            responsiveness of an application. A few common examples are network requests, Logging, manual DOM mutations, etc.
+               
+               Effects with Cleanup: Some of the Hook effects will require the cleanup after updating of DOM is done. For example, if you want to set up an external data                  source subscription, it requires cleaning up the memory else there might be a problem of memory leak. It is a known fact that React will carry out the                      cleanup of memory when the unmounting of components happens. But the effects will run for each render() method rather than for any specific method. Thus we                  can say that, before execution of the effects succeeding time the React will also cleanup effects from the preceding render.
+          )
           3.useContext:-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
                         -solving one major problem React problem — prop drilling.
                         Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React                           components. Component will receive props indirectly and you.
@@ -518,12 +609,14 @@ in function-Component "component is wrapped in React.memo()".
 Controlled component: In a controlled component, the value of the input element is controlled by React. We store the state of the input element inside the code, and by using event-based callbacks, any changes made to the input element will be reflected in the code as well.
 When a user enters data inside the input element of a controlled component, onChange function gets triggered and inside the code, we check whether the value entered is valid or invalid. If the value is valid, we change the state and re-render the input element with the new value.
 the value of the input element is determined by the state of the inputValue variable. Any changes made to the input element is handled by the updateInput function.
+
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164885850-1804bb3d-3cd4-4b43-9296-9fbe43494498.png" >
 
 Uncontrolled component: In an uncontrolled component, the value of the input element is handled by the DOM itself. Input elements inside uncontrolled components work just like normal HTML input form elements.The state of the input element is handled by the DOM. Whenever the value of the input element is changed, event-based callbacks are not called. Basically, react does not perform any action when there are changes made to the input element.
 Whenever use enters data inside the input field, the updated data is shown directly. To access the value of the input element, we can use ref.
 we are not using onChange function to govern the changes made to the input element. Instead, we are using ref to access the value of the input element.
-<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164885850-1804bb3d-3cd4-4b43-9296-9fbe43494498.png" >
+
+<img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164886613-a313d0b0-c663-43a1-b57a-3fe9e073965b.png" >
 
 
 
@@ -551,7 +644,15 @@ we are not using onChange function to govern the changes made to the input eleme
              >ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
                 🦖 <Link to="/">Home</Link>
                 🦖 <NavLink exact activeClassName="active" activeStyle={{color:'red',background:'red',}} to="/">Home </NavLink>
- 
+ Scaler(
+React Router refers to the standard library used for routing in React. It permits us for building a single-page web application in React with navigation without even  refreshing the page when the user navigates. It also allows to change the browser URL and will keep the user interface in sync with the URL. React Router will make use of the component structure for calling the components, using which appropriate information can be shown. Since React is a component-based framework, it’s not necessary to include and use this package. Any other compatible routing library would also work with React.
+The major components of React Router
+  -BrowserRouter: It is a router implementation that will make use of the HTML5 history API (pushState, popstate, and event replaceState) for keeping your UI to be in sync     with the URL. It is the parent component useful in storing all other components.
+  -Routes: It is a newer component that has been introduced in the React v6 and an upgrade of the component.
+  -Route: It is considered to be a conditionally shown component and some UI will be rendered by this whenever there is a match between its path and the current URL.
+  -Link: It is useful in creating links to various routes and implementing navigation all over the application. It works similarly to the anchor tag in HTML
+
+ )
  👉 router hooks:
                   1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
                   2.
@@ -643,8 +744,78 @@ Before the introduction of Hooks in React, functional components were called sta
                 cls(We cannot use React Hooks inside class components, therefore state handling is done very differently in a class component,For updating the state, we                     need to first bind the addStudent function to this. Only then, we will be able to use the setState function which is used to update the state. )
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164883758-ca2fa94f-cc71-410f-ba39-4c41d53fb89f.png" >
                             
-        
-           
+👉What are the different ways to style a React component?
+  There are many different ways through which one can style a React component. Some of the ways are :
+   -Inline Styling: We can directly style an element using inline style attributes. Make sure the value of style is a JavaScript object:
+      class RandomComponent extends React.Component {
+         render() {
+           return (
+             <div>
+               <h3 style={{ color: "Yellow" }}>This is a heading</h3>
+               <p style={{ fontSize: "32px" }}>This is a paragraph</p>
+             </div>
+           );
+         }
+       }
+       
+    -Using JavaScript object: We can create a separate JavaScript object and set the desired style properties. This object can be used as the value of the inline style          attribute.
+        class RandomComponent extends React.Component {
+               paragraphStyles = {
+                 color: "Red",
+                 fontSize: "32px"
+               };
+
+               headingStyles = {
+                 color: "blue",
+                 fontSize: "48px"
+               };
+
+               render() {
+                 return (
+                   <div>
+                     <h3 style={this.headingStyles}>This is a heading</h3>
+                     <p style={this.paragraphStyles}>This is a paragraph</p>
+                   </div>
+                 );
+               }
+          }
+          
+      -CSS Stylesheet: We can create a separate CSS file and write all the styles for the component inside that file. This file needs to be imported inside the component          file.
+           import './RandomComponent.css';
+              class RandomComponent extends React.Component {
+               render() {
+                 return (
+                   <div>
+                     <h3 className="heading">This is a heading</h3>
+                     <p className="paragraph">This is a paragraph</p>
+                   </div>
+                 );
+               }
+            }
+            
+      -CSS Modules: We can create a separate CSS module and import this module inside our component. Create a file with “.module.css”‘ extension, styles.module.css:
+       ![image](https://user-images.githubusercontent.com/92531202/164889853-9b37f827-e1ca-400b-b8c6-38f251cfc10f.png)
+    
+👉Name a few techniques to optimize React app performance.
+  There are many ways through which one can optimize the performance of a React app,
+  Using useMemo( ) -
+    -it is a React hook that is used for caching CPU-Expensive functions.
+    -Sometimes in a React app, a CPU-Expensive function gets called repeatedly due to re-renders of a component, which can lead to slow rendering.
+    -useMemo( ) hook can be used to cache such functions. By using useMemo( ), the CPU-Expensive function gets called only when it is needed.
+  Using React.PureComponent -
+     -It is a base component class that checks the state and props of a component to know whether the component should be updated.
+     -Instead of using the simple React.Component, we can use React.PureComponent to reduce the re-renders of a component unnecessarily.
+  Maintaining State Colocation -
+   -This is a process of moving the state as close to where you need it as possible.
+   -Sometimes in React app, we have a lot of unnecessary states inside the parent component which makes the code less readable and harder to maintain. Not to forget, having    -many states inside a single component leads to unnecessary re-renders for the component.
+   -It is better to shift states which are less valuable to the parent component, to a separate component.
+  Lazy Loading -
+   -It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum
+   
+👉Differentiate React Hooks vs Classes
+  ![image](https://user-images.githubusercontent.com/92531202/164894217-deb65fa2-4a43-4e90-ac88-75a913c60e11.png)
+
+👉
            
            
            
