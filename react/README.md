@@ -657,25 +657,98 @@ The major components of React Router
                   1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
                   2.
                   
- 👽REDUX: https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
+ 👽REDUX: 
+ https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
+ 
+ 
           
    👉what is redux?
+     Redux is an open-source library made using the scripting language JavaScript. Redux's primary use lies in managing and centralizing application state and it is      usually used along with JavaScript libraries, for instance, React or Angular in order to build UIs (User Interfaces). It is a predictable state container for        applications built using JavaScript. It is based on the Flux design pattern. Redux is very small in size (around 2 kilobytes) and has no dependencies.
+     
+     Redux in React js?
+     Redux in React is the official React binding for Redux which allows the components in React to read data from a Redux Store, and dispatch Actions to the Store        for updating the data. The purpose of Redux is to help applications scale well by providing means to manage the state via a unidirectional data flow model.
+     
         -Redux is a state managing library used in JavaScript apps. It simply manages the state of an application  
         -Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that            needs to be used across  entire application, with rules ensuring that the state can only be updated in a predictable fashion.
         
-   👉Redux can be described in three fundamental principles?  
+👉State the core principles of Redux:
+   -Single source of truth: The global state of our application is always put away in an object tree inside one store.
+   -The state is read-only: The only way to change the state of our application is by emitting an action, an object explaining what has happened.
+   -Changes are made with pure functions: This principle means that in order to define how the state tree is being transformed by the actions, we have to write pure     reducers
+   
+👉example depicting the usage of a Redux store.
+  ![image](https://user-images.githubusercontent.com/92531202/165001332-4f0a65de-b7ee-43d3-92d6-133ee43160d0.png)
+
+👉action in Redux's architecture:
+   In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to        describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened
+       example of the usage of Actions in Redux's architecture 
+                                                         const addingTodoAction = {
+                                                             type: 'ADD',
+                                                             payload: 'Do-homework'
+                                                        }
+👉reducers in Redux's architecture: Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next     state.
+      (previous_state, action) => new_state
+   example how reducers are used in Redux:-
+                                          ![image](https://user-images.githubusercontent.com/92531202/164999808-a5cb45d9-db77-4f87-a5f9-e08c6c0d3624.png)
+                                          
+👉What are the things which we should never do inside a reducer?
+  -Modify the argument of the reducer
+  -We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
+  -We should not call non-pure functions, for instance Date.now(), Math.random(), etc
+
+👉"store" in Redux is used to carry together all the states.reducers, and actions which create the app.
+    responsibilities of the store are:-
+       The state of the current application from inside is held by the Redux Store.
+       We can access the current state using store.getState().
+       We can update the state using store.dispatch(action).
+       We can also register listener callbacks using the store.subscriber(listener)
+       
+👉how to set the initial state in Redux?
+  In order to set the initial state in Redux, we have to pass the initial state as the second argument to createStore.
+  ![image](https://user-images.githubusercontent.com/92531202/165001538-031c4ff5-2701-46dd-9d0e-f1ed3772fd04.png)
+
+👉Redux Store methods.   
+    getState()
+    subscribe(listener)
+    dispatch(action)
+    replaceReducer(nextReducer)
+
+👉Redux Lifecycle for an application:Redux starts with a call back from the User Interface component which dispatches an action with a payload. After that, the         reducers intercept and receive the dispatched actions, generating a new application state. After that, the actions are propagated down through a hierarchy of         components from the Redux store.
+ ![image](https://user-images.githubusercontent.com/92531202/165000424-78da5561-7938-4042-ae62-75445d975250.png)
+
+👉advantages of using Redux:
+   -Redux provides extremely easy state transfer between the components.
+   -The states are always predictable in Redux and its maintenance is relatively easy.
+   -Debugging and testing code in Redux is simple through logging behaviour and status.
+   -Redux provides great performance. It might occur to us that keeping the application's state global would result in bad performance. However, usually, that is not      the case as React Redux implements a lot of performance optimizations internally so that our own connected component only re-renders when it actually needs to.
+   -Redux also offers state persistence by storing the application's state to local storage and restoring it after a refresh
+
+👉Redux can be described in three fundamental principles?  
         ​ Single source of truth: The only state of the whole application is stored in an object tree within a single store. A single state tree makes it easier to             debug or inspect an application.
           -In other words, one app — one store — one state.
         ​State Immutability: The state is read-only, and it cannot be changed directly. Instead, the state should be updated through an action, i.e., an object                describing what has happened. This ensures that neither the views nor the network callbacks will ever be able to write directly to the state.
         ​Changes are made with pure function: Pure functions here are the reducers, where the state gets updated without mutating the previous state by actions.
           
-    👉What do you understand by “Single source of truth” in redux?
+👉What do you understand by “Single source of truth” in redux?
       Redux consists of a single store, which is a JavaScript value containing the entire state of your application. A single source of truth comes with a lot of           benefits:
               ​it makes traditional applications, the state is stored in different places across the whole application. With a single source of truth, debugging                    becomes easy, as you simply have one value to look at.
               ​It is easy to create universal apps, as you can serialize the application state on the server and send it to the client without much effort.
               ​Generalized functionalities, such as undo/redo, become easy to implement. For example, you can simply drop in a library that turns (a part of) your                  state into an undoable state.
               
-   👉List down the components of Redux. and explain?
+👉Redux Thunk:-
+        Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or           do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator             returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to           have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to           dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is               enabled, the middleware will call that function with the dispatch method itself as the first argument.
+        
+👉Redux Saga:- 
+      Redux Saga is a middleware library that can be useful for allowing a Redux store to interact with the resources outside of itself in an asynchronous manner,         for example, making HTTP requests to external services, accessing browser storage, executing Input/Output operations and many more. These operations are also         called side effects
+👉How can the addition of multiple middlewares to Redux be done?
+     In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
+   In the example given below, we have added Redux Thunk and logger middlewares as an argument:
+      import { createStore, applyMiddleware } from 'redux'
+      const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
+      
+
+
+👉List down the components of Redux. and explain?
       Redux has 4 components namely Store, Reducer, Action, and UI.
       1.action:Actions are plain JavaScript objects that describe what happens but don’t describe how the app state changes. Their job is to describe an event that                  took place in the application and to transport the new data to the stores. Each Action must have a type and an optional payload key that contains the                data.
                🦖 {
