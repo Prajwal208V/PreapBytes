@@ -5,9 +5,9 @@
 1.-> it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
 
 2.-> it uses special dom insted of "real-DOM" called virtual DOM means 
-  In realDom, JavaScript Frameworks update the whole DOM at once, which makes the web application slow. But React uses virtual DOM, whenever any React                   application gets loaded on the screen for the first time., or React components get mounted on the screen for the first time. Now when any user makes any               changes on the screen like button click because of which the state variable will get updated so in this case the changes will not directly go to Real DOM.
-  Instead, react uses virtual DOM. So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it is a copy of         our real dom. Another virtual dom is the dom which contains the new changes, updated state variables values. Now these two virtual doms will get compared with         each other and will check for the new changes. this complete procedure is known as “diffing algorithm”. Now the new changes will be updated in your Real dom.           this procedure is known as "Reconciliation".
-  So Manipulating the virtual DOM is much faster, thats way  A virtual DOM object is a representation of a DOM object, like a lightweight copy.
+In realDom, JavaScript Frameworks update the whole DOM at once, which makes the web application slow. But React uses virtual DOM, whenever any React             application gets loaded on the screen for the first time., or React components get mounted on the screen for the first time. Now when any user makes any             changes on the screen like button click because of which the state variable will get updated so in this case the changes will not directly go to Real DOM.
+Instead, react uses virtual DOM. So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it is a copy of       our real dom. Another virtual dom is the dom which contains the new changes, updated state variables values. Now these two virtual doms will get compared with       each other and will check for the new changes. this complete procedure is known as “diffing algorithm”. Now the new changes will be updated in your Real dom.         this procedure is known as "Reconciliation".
+So Manipulating the virtual DOM is much faster, thats way  A virtual DOM object is a representation of a DOM object, like a lightweight copy.
 
 scaler(As stated by the react team, virtual DOM is a concept where a virtual representation of the real DOM is kept inside the memory and is synced with the real DOM by a library such as ReactDOM 
 Why was virtual DOM introduced? 
@@ -26,80 +26,79 @@ React uses two virtual DOMs to render the user interface. One of them is used to
 
 
 3.-> react use JSX(JavaScript Syntax Extension)
-  JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
-  ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
-  https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png
+JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
+![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
 
+4.-> a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is       transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its           parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of       one-way data binding. This keeps everything modular and fast.
 
-4.-> a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is           transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its             parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of         one-way data binding. This keeps everything modular and fast.
-
-5.-> Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a                part of the UI design which has its own logic and design
+5.-> Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
 
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
 👉React v/s angular?
-   React: 
-       Type- React is a JavaScript library
-       Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
-       Data binding- React language uses one-way data binding, which means that the Ul elements can’t be changed without updating the corresponding model state.
-       Written in- JavaScript
-       Model- It is based on Virtual DOM
-       Use of code- React allows we have to manage the code according to your desired format.
-       Testing & Debugging- It requires a set of tools to perform different types of testing. 
+React: 
+Type- React is a JavaScript library
+Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
+Data binding- React language uses one-way data binding, which means that the Ul elements can’t be changed without updating the corresponding model state.
+Written in- JavaScript
+Model- It is based on Virtual DOM
+Use of code- React allows we have to manage the code according to your desired format.
+Testing & Debugging- It requires a set of tools to perform different types of testing. 
        
-   Angular:
-      -Angular is a complete framework.
-      -It offers a limited amount of freedom and flexibility. 
-      -Angular Supports both one way and two way  data binding. It helps you to ensure that the model state automatically changes when any change is made.
-        (means that if we modify the UI input, the model state will change, and vice versa)
-      -Typescript
-      -Based on MVC (Model View Controller)
-      -Angular comes with many ready to use elements. However, it mainly comes from a specific provider. So, there are priority collisions and namesDaces.
-      -The testing and debugging for a complete project is possible with a single tool.
+Angular:
+-Angular is a complete framework.
+-It offers a limited amount of freedom and flexibility. 
+-Angular Supports both one way and two way  data binding. It helps you to ensure that the model state automatically changes when any change is made.
+  (means that if we modify the UI input, the model state will change, and vice versa)
+-Typescript
+-Based on MVC (Model View Controller)
+-Angular comes with many ready to use elements. However, it mainly comes from a specific provider. So, there are priority collisions and namesDaces.
+-The testing and debugging for a complete project is possible with a single tool.
         
 👉Library vs Framework?
- Library:
-        -is a collection of functions
-        -In case of library the Execution of code will be decided by the developers Means  developers are in charge of the flow of the whole application.
-        -We are choosing when and where to call the library.
-        -in case of library its developers duty to design the structure.
-        -library follows View model
- Framework:
-        -Framework is a collection of multiple other libraries.
-        -in case of framework the execution is already defined or decided.the framework is in charge of the flow of the whole application.
-        -It provides some places for we have to plug in our code, but it calls the code you   plugged in as needed.
-        -Framework provides you a structure in which we just put down the code our functionality.
-        -it follows MVC structure (model view controller)
+Library:
+-is a collection of functions
+-In case of library the Execution of code will be decided by the developers Means  developers are in charge of the flow of the whole application.
+-We are choosing when and where to call the library.
+-in case of library its developers duty to design the structure.
+-library follows View model
+Framework:
+-Framework is a collection of multiple other libraries.
+-in case of framework the execution is already defined or decided.the framework is in charge of the flow of the whole application.
+-It provides some places for we have to plug in our code, but it calls the code you   plugged in as needed.
+-Framework provides you a structure in which we just put down the code our functionality.
+-it follows MVC structure (model view controller)
         
 👉Why can’t browsers read JSX?
-   React uses JSX that allows us to write JavaScript objects inside the HTMLelements. It is a syntax extension of JavaScript. JSX makes code easy and understandable.    As JSX is a combination of HTML and JavaScript it is not supported by Browsers. Because there is no inherent implementation for the browser engines to read and      understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which            transform these JSX into valid JavaScript code.
+React uses JSX that allows us to write JavaScript objects inside the HTMLelements. It is a syntax extension of JavaScript. JSX makes code easy and understandable.    As JSX is a combination of HTML and JavaScript it is not supported by Browsers. Because there is no inherent implementation for the browser engines to read and      understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which            transform these JSX into valid JavaScript code.
 
 
 👉What is the purpose of render() in React?
    
 
 👉states v/s props?
-  Both props and state are plain JavaScript objects. While both of them hold information Props
-  props:
-       -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
-       -Props are also objects that hold information to control the behavior of that particular component.
- scaler(
-    What is prop drilling in React?
-    Sometimes while developing React applications, there is a need to pass data from a component that is higher in the hierarchy to a component that is deeply nested. To       pass data between such components, we pass props from a source component and keep passing the prop to the next component in the hierarchy till we reach the deeply           nested component.
-  The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have access to the data.
+Both props and state are plain JavaScript objects. While both of them hold information Props
+props:
+ -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
+ -Props are also objects that hold information to control the behavior of that particular component.
+
+scaler(
+What is prop drilling in React?
+Sometimes while developing React applications, there is a need to pass data from a component that is higher in the hierarchy to a component that is deeply nested. To  pass data between such components, we pass props from a source component and keep passing the prop to the next component in the hierarchy till we reach the deeply    nested component.
+The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have access to the data.
   ![image](https://user-images.githubusercontent.com/92531202/164887113-d8cc7470-1261-4216-888e-967fb48ff5e1.png)
- )      
+)      
  
- Scaler(The props: in React are the inputs to a component of React. They can be single-valued or objects having a set of values that will be passed to components of React     during creation by using a naming convention that almost looks similar to HTML-tag attributes. We can say that props are the data passed from a parent component into a     child component.
-   The main purpose of props is to provide different component functionalities such as:
-      Passing custom data to the React component.
-      Using through this.props.reactProp inside render() method of the component.
-      Triggering state changes.
+Scaler(The props: in React are the inputs to a component of React. They can be single-valued or objects having a set of values that will be passed to components of React during creation by using a naming convention that almost looks similar to HTML-tag attributes. We can say that props are the data passed from a parent component into a child component.
+The main purpose of props is to provide different component functionalities such as:
+  Passing custom data to the React component.
+  Using through this.props.reactProp inside render() method of the component.
+  Triggering state changes.
   
-  React State:
-  Every component in react has a built-in state object, which contains all the property values that belong to that component.
-  In other words, the state object controls the behaviour of a component. Any change in the property values of the state object leads to the re-rendering of the component.
-  Note- State object is not available in functional components but, we can use React Hooks to add state to a functional component
+React State:
+Every component in react has a built-in state object, which contains all the property values that belong to that component.
+In other words, the state object controls the behaviour of a component. Any change in the property values of the state object leads to the re-rendering of the component.
+Note- State object is not available in functional components but, we can use React Hooks to add state to a functional component
  )
  state:
       -the State of a component is an object that holds some information that may change over the lifetime of the component.
@@ -617,46 +616,45 @@ Whenever use enters data inside the input field, the updated data is shown direc
 we are not using onChange function to govern the changes made to the input element. Instead, we are using ref to access the value of the input element.
 
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164886613-a313d0b0-c663-43a1-b57a-3fe9e073965b.png" >
-
-
-
 )
 
 👽router    
-👉react router? 🦖  The react-router-dom is the package that is used in React apps for routing. 
-        -react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
-        -React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
-        -React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
-        -Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
+👉react router? 🦖  The 'react-router-dom' is the package that is used in React apps for routing. 
+-react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
+-React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
+-React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
+-Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
      
-     The main Components of React Router are:
-         -BrowserRouter:BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState and the popstate event) to keep your UI in                           sync with the URL. It is the parent component that is used to store all of the other components.
-         
-         -Routes:The Routes component looks through all of its child routes and it displays ranks  routes and picks the best one one whose path matches the                             current URL.
-                  -switch v/s routes:Routes are chosen based on the best match instead of being traversed in order.
-                                      The switch component looks through all of its child routes and it displays the first one whose path matches the current URL.
-                                      
-         -Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
-         
-         -Link & NavLink: Link component is used to create links to different routes and implement navigation around the application. It works like HTML anchor tag.
-             >When we use the NavLink as a tag, it automatically inherit an active class when clicked. On the other hand, the Link tag does now have an active class                when clicked.
-             >The Link component is used to navigate the different routes on the site. But NavLink is used to add the style attributes to the active routes.
-             >ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
-                🦖 <Link to="/">Home</Link>
-                🦖 <NavLink exact activeClassName="active" activeStyle={{color:'red',background:'red',}} to="/">Home </NavLink>
- Scaler(
+The main Components of React Router are:
+-BrowserRouter:BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState and the popstate event) to keep your UI in            sync with the URL. It is the parent component that is used to store all of the other components.
+
+-Routes:The Routes component looks through all of its child routes and it displays ranks  routes and picks the best one one whose path matches the                   current URL.
+-switch v/s routes:Routes are chosen based on the best match instead of being traversed in order.
+-The switch component looks through all of its child routes and it displays the first one whose path matches the current URL.
+-Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
+-Link & NavLink: Link component is used to create links to different routes and implement navigation around the application. It works like HTML anchor tag.
+>When we use the NavLink as a tag, it automatically inherit an active class when clicked. On the other hand, the Link tag does now have an active class                when clicked.
+>The Link component is used to navigate the different routes on the site.But NavLink is used to add the style attributes to the active routes.
+>ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
+  🦖 <Link to="/">Home</Link>
+  🦖 <NavLink exact activeClassName="active" activeStyle={{color:'red',background:'red',}} to="/">Home </NavLink>   it is v5 feature
+  
+Scaler(
 React Router refers to the standard library used for routing in React. It permits us for building a single-page web application in React with navigation without even  refreshing the page when the user navigates. It also allows to change the browser URL and will keep the user interface in sync with the URL. React Router will make use of the component structure for calling the components, using which appropriate information can be shown. Since React is a component-based framework, it’s not necessary to include and use this package. Any other compatible routing library would also work with React.
 The major components of React Router
-  -BrowserRouter: It is a router implementation that will make use of the HTML5 history API (pushState, popstate, and event replaceState) for keeping your UI to be in sync     with the URL. It is the parent component useful in storing all other components.
-  -Routes: It is a newer component that has been introduced in the React v6 and an upgrade of the component.
-  -Route: It is considered to be a conditionally shown component and some UI will be rendered by this whenever there is a match between its path and the current URL.
-  -Link: It is useful in creating links to various routes and implementing navigation all over the application. It works similarly to the anchor tag in HTML
-
+-BrowserRouter: (is the router implementation for HTML5 browsers (vs Native)),for keeping our UI to be in sync with the URL. It is the parent component   useful in    storing all other components.
+-Routes:Routes are chosen based on the best match instead of being traversed in order.
+-Route:(is the conditionally shown component based on matching a path to a URL.)It is considered to be a conditionally shown component and some UI will be rendered by this whenever there is a match between its path and the current URL.
+-Link:It is useful in creating links to various routes and implementing navigation all over the application. It works similarly to the anchor tag in HTML
  )
+ topics:- 1.nested route 2. dynamic route 
  👉 router hooks:
-                  1.useNavigate() -It helps to go to the specific URL, forward or backward pages. 
-                  2.
-                  
+   1.useNavigate() -It helps to go to the specific URL,forward or backward pages.(it is a new hook introduced in React Router v6 and it is extremely useful and easy    to use.) 
+     Uses:
+          Go to the previous or next pages
+          Redirect user to a specific Url
+
+      
  👽REDUX: 
  https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
  
