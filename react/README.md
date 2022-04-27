@@ -2,7 +2,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [What are the possible ways to create objects in JavaScript](#what-are-the-possible-ways-to-create-objects-in-javascript) |
+|1  | [what is react](#what is react) |
 |2  | [What is prototype chain](#what-is-a-prototype-chain)|
 |3  | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)|
 |4  | [What is JSON and its common operations](#what-is-json-and-its-common-operations)|
@@ -10,7 +10,7 @@
 |6  | [What is the purpose of the array splice method](#what-is-the-purpose-of-the-array-splice-method)|
 
 
-👉### what is react?
+1.### what is react
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
 
 👉 What are its features?
