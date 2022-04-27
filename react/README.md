@@ -23,7 +23,7 @@
 |19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
 |20 | [What are fragments](#What-are-fragments)|
 |21 | [client v/s server-side rendering](#client-v/s-server-side-rendering)|
-|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components-(HOC))|
+|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components)|
 |23 | [What are Pure Components](#What-are-Pure-Components)|
 |24 | [Hooks](#Hooks)|
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
@@ -366,7 +366,7 @@ Why fragments are better than container divs?
    -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
     Note: but Outside Constructor() Both will display same value for 'this.props'.
 
-### What are Higher Order Components(HOC)
+### What are Higher Order Components
 To share common functionality between components
   -A HOC is an advanced technique for reusing logic in React components.were inspired by higher-order functions in JavaScript.Higher-order functions in JavaScript      take some functions as arguments and return another function.
   -same in HOCS Components take one or more components as arguments, and return a new upgraded component.
