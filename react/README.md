@@ -10,8 +10,9 @@
 |6  | [What is the purpose of the array splice method](#what-is-the-purpose-of-the-array-splice-method)|
 
 
-1.### what is react
+### what is react
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
+**[⬆ Back to Top](#table-of-contents)**
 
 👉 What are its features?
 1.-> it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
