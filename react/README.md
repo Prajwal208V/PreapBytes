@@ -3,9 +3,9 @@
 | No. | Questions |
 |---- | ---------
 |1  | [what is react](#what-is-react) |
-|2  | [What is prototype chain](#what-is-a-prototype-chain)|
-|3  | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)|
-|4  | [What is JSON and its common operations](#what-is-json-and-its-common-operations)|
+|2  | [What are its features](#What-are-its-features)|
+|3  | [virtual DOM means](#virtual-DOM-means)|
+|4  | [SPA](#SPA)|
 |5  | [What is the purpose of the array slice method](#what-is-the-purpose-of-the-array-slice-method)|
 |6  | [What is the purpose of the array splice method](#what-is-the-purpose-of-the-array-splice-method)|
 
@@ -14,10 +14,13 @@
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
 **[⬆ Back to Top](#table-of-contents)**
 
-👉 What are its features?
-1.-> it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
+### What are its features
+1.->### SPA 
+it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
+**[⬆ Back to Top](#table-of-contents)**
 
-2.-> it uses special dom insted of "real-DOM" called virtual DOM means 
+2. ### virtual DOM means
+it uses special dom insted of "real-DOM" called virtual DOM means 
 In realDom, JavaScript Frameworks update the whole DOM at once, which makes the web application slow. But React uses virtual DOM, whenever any React             application gets loaded on the screen for the first time., or React components get mounted on the screen for the first time. Now when any user makes any             changes on the screen like button click because of which the state variable will get updated so in this case the changes will not directly go to Real DOM.
 Instead, react uses virtual DOM. So we are having two virtual doms, one virtual dom gets created at the time of mounting of react component so it is a copy of       our real dom. Another virtual dom is the dom which contains the new changes, updated state variables values. Now these two virtual doms will get compared with       each other and will check for the new changes. this complete procedure is known as “diffing algorithm”. Now the new changes will be updated in your Real dom.         this procedure is known as "Reconciliation".
 So Manipulating the virtual DOM is much faster, thats way  A virtual DOM object is a representation of a DOM object, like a lightweight copy.
@@ -36,17 +39,21 @@ For every DOM object, there is a corresponding virtual DOM object(copy), which h
 
 React uses two virtual DOMs to render the user interface. One of them is used to store the current state of the objects and the other to store the previous state of the objects. Whenever the virtual DOM gets updated, react compares the two virtual DOMs and gets to know about which virtual DOM objects were updated. After knowing which objects were updated, react renders only those objects inside the real DOM instead of rendering the complete real DOM. This way, with the use of virtual DOM, react solves the problem of inefficient updating
 )
-
+**[⬆ Back to Top](#table-of-contents)**
 
 3.-> react use JSX(JavaScript Syntax Extension)
 JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
 ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
+**[⬆ Back to Top](#table-of-contents)**
 
 4.-> a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is       transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its           parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of       one-way data binding. This keeps everything modular and fast.
+**[⬆ Back to Top](#table-of-contents)**
 
 5.-> Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
+**[⬆ Back to Top](#table-of-contents)**
 
 6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
+**[⬆ Back to Top](#table-of-contents)**
 
 👉React v/s angular?
 React: 
