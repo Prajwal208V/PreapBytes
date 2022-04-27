@@ -23,7 +23,7 @@
 |19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
 |20 | [What are fragments](#What-are-fragments)|
 |21 | [client v/s server-side rendering](#client-v/s-server-side-rendering)|
-|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components(HOC))|
+|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components-(HOC))|
 |23 | [What are Pure Components](#What-are-Pure-Components)|
 |24 | [Hooks](#Hooks)|
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
