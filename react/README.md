@@ -6,8 +6,37 @@
 |2  | [What are its features](#What-are-its-features)|
 |3  | [virtual DOM means](#virtual-DOM-means)|
 |4  | [SPA](#SPA)|
-|5  | [What is the purpose of the array slice method](#what-is-the-purpose-of-the-array-slice-method)|
-|6  | [What is the purpose of the array splice method](#what-is-the-purpose-of-the-array-splice-method)|
+|5  | [JSX](#JSX)|
+|6  | [One-way Data Binding](#One-way-Data-Binding)|
+|7  | [Components](#Components)|
+|8  | [Conditional Statements](#Conditional-Statements)|
+|9  | [React v/s angular?](#React-v/s-angular?)|
+|10 | [Library vs Framework](#Library-vs-Framework)|
+|11 | [states v/s props](#states-v/s-props)|
+|12 | [How can you update the state of a component](#How-can-you-update-the-state-of-a-component)|
+|13 | [different phases of the component lifecycle](#different-phases-of-the-component-lifecycle)|
+|14 | [lifecycle methods of React components](#lifecycle-methods-of-React-components)|
+|15 | [stateful v/s stateless components](#stateful-v/s-stateless-components)|
+|16 | [functional v/s class components](#functional-v/s-class-components)|
+|17 | [How to prevent re-renders in React](#How-to-prevent-re-renders-in React)|
+|18 | [Element v/s Component](#Element-v/s-Component)|
+|19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
+|20 | [What are fragments](#What-are-fragments)|
+|21 | [client v/s server-side rendering](#client-v/s-server-side-rendering)|
+|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components(HOC))|
+|23 | [What are Pure Components](#What-are-Pure-Components)|
+|24 | [Hooks](#Hooks)|
+|25 | [types of Hooks in React](#types-of-Hooks-in-React)|
+|26 | [controlled v/s uncontrolled components](#controlled-v/s-uncontrolled-components)|
+|27 | [router](#router)|
+|28 | [What are modules](#what-are-modules)|
+|29 | [Why do you need modules](#why-do-you-need-modules)|
+|30 | [What is scope in javascript](#what-is-scope-in-javascript)|
+|31 | [What is a service worker](#what-is-a-service-worker)|
+|32 | [How do you manipulate DOM using a service worker](#how-do-you-manipulate-dom-using-a-service-worker)|
+|33 | [How do you reuse information across service worker restarts](#how-do-you-reuse-information-across-service-worker-restarts)|
+|34 | [What is IndexedDB](#what-is-indexeddb)|
+
 
 
 ### what is react
@@ -15,8 +44,9 @@
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are its features
-1.->### SPA 
+1. ### SPA 
 it build an application by using SPA - single page application means in normal web application ,in which when we are clicking on any button or selecting            option from navigation bar then the web page is reloading then that means that application is your "multi - page application".but in SPA does not reload the browser page and just only updates the page without reloading then that application is known as Single Page application. When we create React application using CRA, (create-react-app boilerplate , developed by Facebook) it always create the application which will be Single page application.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 2. ### virtual DOM means
@@ -39,23 +69,34 @@ For every DOM object, there is a corresponding virtual DOM object(copy), which h
 
 React uses two virtual DOMs to render the user interface. One of them is used to store the current state of the objects and the other to store the previous state of the objects. Whenever the virtual DOM gets updated, react compares the two virtual DOMs and gets to know about which virtual DOM objects were updated. After knowing which objects were updated, react renders only those objects inside the real DOM instead of rendering the complete real DOM. This way, with the use of virtual DOM, react solves the problem of inefficient updating
 )
+
 **[⬆ Back to Top](#table-of-contents)**
 
-3.-> react use JSX(JavaScript Syntax Extension)
+3.### JSX
+react use JSX(JavaScript Syntax Extension)
 JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
+->Why can’t browsers read JSX
+Because there is no inherent implementation for the browser engines to read and understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which transform these JSX into valid JavaScript code.
 ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
+
 **[⬆ Back to Top](#table-of-contents)**
 
-4.-> a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is       transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its           parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of       one-way data binding. This keeps everything modular and fast.
+4. ### One-way Data Binding
+a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is       transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its           parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of       one-way data binding. This keeps everything modular and fast.
+
 **[⬆ Back to Top](#table-of-contents)**
 
-5.-> Components:React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
+5.### Components
+React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
+
 **[⬆ Back to Top](#table-of-contents)**
 
-6.-> Conditional Statements: JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
+6. ### Conditional Statements
+JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
+
 **[⬆ Back to Top](#table-of-contents)**
 
-👉React v/s angular?
+### React v/s angular
 React: 
 Type- React is a JavaScript library
 Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
@@ -75,7 +116,9 @@ Angular:
 -Angular comes with many ready to use elements. However, it mainly comes from a specific provider. So, there are priority collisions and namesDaces.
 -The testing and debugging for a complete project is possible with a single tool.
         
-👉Library vs Framework?
+ **[⬆ Back to Top](#table-of-contents)**
+ 
+### Library vs Framework
 Library:
 -is a collection of functions
 -In case of library the Execution of code will be decided by the developers Means  developers are in charge of the flow of the whole application.
@@ -89,14 +132,12 @@ Framework:
 -Framework provides you a structure in which we just put down the code our functionality.
 -it follows MVC structure (model view controller)
         
-👉Why can’t browsers read JSX?
-React uses JSX that allows us to write JavaScript objects inside the HTMLelements. It is a syntax extension of JavaScript. JSX makes code easy and understandable.    As JSX is a combination of HTML and JavaScript it is not supported by Browsers. Because there is no inherent implementation for the browser engines to read and      understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which            transform these JSX into valid JavaScript code.
-
+**[⬆ Back to Top](#table-of-contents)**
 
 👉What is the purpose of render() in React?
    
 
-👉states v/s props?
+### states v/s props
 Both props and state are plain JavaScript objects. While both of them hold information Props
 props:
  -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
@@ -124,7 +165,9 @@ Note- State object is not available in functional components but, we can use Rea
       -the State of a component is an object that holds some information that may change over the lifetime of the component.
       -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
 
-👉How can you update the state of a component?
+**[⬆ Back to Top](#table-of-contents)**
+
+### How can you update the state of a component
   -The State is an instance of React Component that can be defined as an object of a set of observable properties that control the behavior of the component. In        other words, the State of a component is an object that holds some information that may change over the lifetime of the component. 
    
    Update the State of Class-Based Components using ‘this.setState()’ method.Pass the state object in a JSX element and call the method to update the state on a        specific event like button click.
@@ -147,9 +190,9 @@ Note- State object is not available in functional components but, we can use Rea
      Update the state on a specific event like button click using the ‘setFun’ method.
      🦖setFun({text:'Updated Content'});
   
-  
+ **[⬆ Back to Top](#table-of-contents)** 
 
-👉different phases of the component lifecycle:
+### different phases of the component lifecycle
 There are four different phases in the lifecycle of React component. They are:
 
 ![image](https://user-images.githubusercontent.com/92531202/164892281-6f5dc928-4de8-467a-90b2-c35a35fd9b41.png)
@@ -159,7 +202,9 @@ There are four different phases in the lifecycle of React component. They are:
 -Updating: In this phase, a component will be updated when there is a change in the state or props of a component. This phase will have lifecycle methods like                componentWillUpdate, shouldComponentUpdate, render, and componentDidUpdate.
 -Unmounting: In this last phase of the component lifecycle, the component will be removed from the DOM or will be unmounted from the browser DOM. This phase will have the    lifecycle method named componentWillUnmount.
 
-👉lifecycle methods of React components
+**[⬆ Back to Top](#table-of-contents)**
+
+### lifecycle methods of React components
 React lifecycle hooks will have the methods that will be automatically called at different phases in the component lifecycle and thus it provides good control over what happens at the invoked point. It provides the power to effectively control and manipulate what goes on throughout the component lifecycle.
 For example, if you are developing the YouTube application, then the application will make use of a network for buffering the videos and it consumes the power of the battery (assume only these two). After playing the video if the user switches to any other application, then you should make sure that the resources like network and battery are being used most efficiently. You can stop or pause the video buffering which in turn stops the battery and network usage when the user switches to another application after video play.
 So we can say that the developer will be able to produce a quality application with the help of lifecycle methods and it also helps developers to make sure to plan what and how to do it at different points of birth, growth, or death of user interfaces.
@@ -173,88 +218,15 @@ The various lifecycle methods are:
 -componentDidUpdate(): This method will be called after the component has been updated in the DOM.
 -componentWillUnmount(): This method will be called when the component removal from the DOM is about to happen
 
-👉stateful v/s stateless components?
+**[⬆ Back to Top](#table-of-contents)**
+
+### stateful v/s stateless components
    -In React, a stateful component is a component that holds some state.  Stateless components, by contrast, have no state. but that both types of components can use     props.
    -They are also known as Container and Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
    
-👉conditionally render components?
-     -we can build Single Page Applications (SPA) that are dynamic and highly interactive with React.One feature that allows, that is conditional rendering.
-     -Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. In React, it allows us       to render different elements or components based on a condition.
-     6 Ways to Implement Conditional Rendering in React Applications:
-       1.Using an if…else Statement:
-         An if…else statement will execute the actions contained in the if block when the condition is satisfied. Otherwise, it will execute the actions contained in          the else block.
-         In JSX, we can able to use JavaScript code with markup to render dynamic values within your application. JSX uses curly braces {console.log("Prajwal)}
-                                   
-                                   🦖const AuthButton = props => {
-                                      let { isLoggedIn } = props;
-                                      if (isLoggedIn) {
-                                        return <button>Logout</button>;
-                                      } else {
-                                        return <button>Login</button>;
-                                      }
-                                    };
-                                    export default AuthButton;
-        2.Using a switch Statement:
-                                  🦖 const AuthButton = props => {
-                                          let { isLoggedIn } = props;
-                                          switch (isLoggedIn) {
-                                            case true:
-                                              return <button>Logout</button>;
-                                              break;
-                                            case false:
-                                              return <button>Login</button>;
-                                              break;
-                                            default:
-                                              return null;
-                                          }
-                                        };
-                                        export default AuthButton;
-        3.Using Element Variables:Element variables are similar to the approach to extract the conditional rendering into a function. Element variables                                     hold JSX elements. You can conditionally assign elements or components to these variables outside the JSX and only render the                                         variable within JSX.                       
-                       🦖class App extends Component {
-                            constructor(props) {
-                              super(props);
-                              this.state = {
-                                isLoggedIn: true
-                              };
-                            }
-                            render() {
-                              let { isLoggedIn } = this.state;
-                              let AuthButton;
-                              if (isLoggedIn) {
-                                AuthButton = <button>Logout</button>;
-                              } else {
-                                AuthButton = <button>Login</button>;
-                              }
-                              return (
-                                <div className="App">
-                                  <h1>
-                                    This is a Demo showing several ways to implement Conditional Rendering in React.
-                                  </h1>
-                                  {AuthButton}
-                                </div>
-                              );
-                            }
-                       }
-                       export default App;
-         
-         4.Using Ternary Operators:The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as                                    a shortcut for the if statement.
-                        🦖let { isLoggedIn } = this.state;
-                           {isLoggedIn ? <button>Logout</button> : <button>Login</button>}
-                           
-         5.Using Logical && (Short Circuit Evaluation):The logical && helps you specify that an action should be taken only on one condition, otherwise, it would be                                                        ignored entirely.
-                        🦖let { isLoggedIn } = this.state;
-                           {isLoggedIn && <button>Logout</button>}
-         
-         6.Using Immediately Invoked Function Expressions (IIFEs)
-                        🦖{(function() {
-                            if (isLoggedIn) {
-                              return <button>Logout</button>;
-                            } else {
-                              return <button>Login</button>;
-                            }
-                          })()}
-         
-👉 functional v/s class components?
+**[⬆ Back to Top](#table-of-contents)**
+
+### functional v/s class components
     functional:
               -Functional Components are Stateless component. but we can make it as statefull compoent by using react hooks like useState() by this method we can                     make it statefull compoents
               -It is simple javascript functions that simply returns jsx 
@@ -268,14 +240,17 @@ The various lifecycle methods are:
             -It must have render() method returning jsx
             -we can pass props to class components and access them with this.props
 
-👉How to prevent re-renders in React?
+**[⬆ Back to Top](#table-of-contents)**
+
+### How to prevent re-renders in React
 Reason for re-renders in React:
     -Re-rendering of a component and its child components occur when props or the state of the component has been changed.
     -Re-rendering components that are not updated, affects the performance of an application.
 to prevent re-rendering:
    
-   
-👉Element v/s Component?
+**[⬆ Back to Top](#table-of-contents)** 
+
+### Element v/s Component
    React Elements:
              -An Element is a plain object, describing what we want to appear on the screen in terms of the DOM nodes, A React Element returned from                   components.making it light and faster to render than components.
              -React Element contains both type and property. It may contain other Elements in its props, but React Element does not have any methods.
@@ -289,8 +264,6 @@ to prevent re-rendering:
                     const ele1 = React.createElement("h1",null,"Hey hello");
                     ReactDOM.render(ele1,document.getElementById("root"));
                  ​ we are creating an element with h1 tags, keeping its property as null and for the children, we are passing a string “Hey hello”.
-                 
-                 
    Component Elements: 
              -A React Component is a template. A blueprint. A global definition. This can be either a function or a class (with a render function).
              -It is comparatively slower than elements.
@@ -309,8 +282,10 @@ to prevent re-rendering:
                   }
                   const ele = <Welcome name="Geek"/>
                   ReactDOM.render(ele,document.getElementById("root"));
-                 
-👉What is CRA and its benefits?
+                  
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is CRA and its benefits
    -The create-react-app  it is a tool or(boilerplate) allows you to quickly create & run React applications with no configuration step.
    -Create React App (CRA) is the easiest way to get started building React applications. It provides a default setup with a number of core features in,                 including a build system containing a module bundler (webpack) and a transpiler (Babel).
     It includes everything we need to build a React app:
@@ -321,6 +296,7 @@ to prevent re-rendering:
       5.A live development server that warns about common mistakes.
       6.A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
 
+**[⬆ Back to Top](#table-of-contents)**
    
 👉Can you force a component to re-render without calling setState?
   -The components in React will re-render only if the state of the component or the props passed to it changes but if we need to re-render the component if some data    changes then we will use forceUpdate() method of React. Calling the forceUpdate() will forcibly re-render the component and thus calls the render() method of the    component skipping the shouldComponentUpdate() method.
@@ -337,7 +313,8 @@ to prevent re-rendering:
               
               
     
-👉What are fragments? Why fragments are better than container divs?
+### What are fragments 
+Why fragments are better than container divs?
      Fragments:"<> </> or <React.Fragment> </React.Fragment>" to return multiple elements. Fragments allows to group a list of children without adding extra nodes to        the  DOM.
      benfit of fragments:
                         1.use of div Increases the size of the DOM: DOM sizes get large when there are too many DOM nodes or HTML tags on your page or when these                              nodes are nested too deeply. As a result, the user’s browser consumes additional power to process an website, resulting in slow page load                         time and low page speed scores.()
@@ -345,9 +322,10 @@ to prevent re-rendering:
                         3.Oversized DOMs cause memory usage to increase, style processing to lag, and layout reflows to be costly.
                         4.Debugging and tracing the origin of the extra nodes become more challenging as the component tree nests deeper.
                         5.It difficult to maintain the desired layout: Flexbox and Grid have a unique parent-child relationship, and adding divs breaks the markup.
-   
 
-👉 client v/s server-side rendering ?
+**[⬆ Back to Top](#table-of-contents)**
+
+### client v/s server-side rendering
  server-side rendering:
     -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in  milliseconds.
     -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
@@ -358,7 +336,8 @@ to prevent re-rendering:
   application of each:
         -An application has very simple UI with fewer pages/features use server-side. v/s An application has very complex UI with many pages/features use client
         -An application has less dynamic data                                          |   An application has large and dynamic data
-        
+   
+   **[⬆ Back to Top](#table-of-contents)**
         
  👉 super() v/s super(props) ?
  
@@ -387,7 +366,8 @@ to prevent re-rendering:
    -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
     Note: but Outside Constructor() Both will display same value for 'this.props'.
 
-👉 What are Higher Order Components(HOC)? To share common functionality between components
+### What are Higher Order Components(HOC)
+To share common functionality between components
   -A HOC is an advanced technique for reusing logic in React components.were inspired by higher-order functions in JavaScript.Higher-order functions in JavaScript      take some functions as arguments and return another function.
   -same in HOCS Components take one or more components as arguments, and return a new upgraded component.
     Facts About HOCs:
@@ -408,8 +388,10 @@ to prevent re-rendering:
   need a Higher Order Component
    While developing React applications, we might develop components that are quite similar to each other with minute differences. In most cases, developing similar            components might not be an issue but, while developing larger applications we need to keep our code DRY, therefore, we want an abstraction that allows us to define this    logic in a single place and share it across components. HOC allows us to create that abstraction.
  )
+ 
+**[⬆ Back to Top](#table-of-contents)**
                         
-👉 What are Pure Components?
+### What are Pure Components
  -React has provided us a Pure Component. If we extend a class with Pure Component, there is no need for "shouldComponentUpdate()" Lifecycle Method. ReactJS Pure       Component Class compares current state and props with new props and states to decide whether the React component should re-render itself or  Not.
  -In simple words, If the previous value of state or props and the new value of state or props is the same, the component will not re-render itself. Since Pure         Components restricts the re-rendering when there is no use of re-rendering of the component. 
  -Extending React Class Components with Pure Components ensures the higher performance of the Component and ultimately makes an application faster, While in the       case of Regular Component, it will always re-render either value of State and Props changes or not.
@@ -435,8 +417,10 @@ in function-Component "component is wrapped in React.memo()".
       );
     }
     export const MemoizedMovie = React.memo(Movie);
-    
-👽Hooks    
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Hooks    
 👉 React Hooks:
      -Hooks were added to React in version 16.8.
      -Hooks allow function components to have access to state and other React features.means Hooks bring to functional components the things we once were only able         to do with classes, like being able to work with React local state, effects and context through useState, useEffect and useContext.
@@ -457,8 +441,10 @@ Using Hook, all features of React can be used without writing class components. 
   There are 2 rules which must be followed while you code with Hooks:
   React Hooks must be called only at the top level. It is not allowed to call them inside the nested functions, loops, or conditions.
   It is allowed to call the Hooks only from the React Function Components
-  
-**types of Hooks in React.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### types of Hooks in React
    ![image](https://user-images.githubusercontent.com/92531202/164894079-3b626562-25d8-4b79-9191-3e354482a0dd.png)
    
   There are two types of Hooks in React. They are:
@@ -581,8 +567,10 @@ Where the first argument callback represents the function having the logic of si
                     };
 
                     export default App;
+                    
+**[⬆ Back to Top](#table-of-contents)**
 
-   👉  controlled v/s uncontrolled components:
+### controlled v/s uncontrolled components
         2 ways to handle the input value, the first one is the Controlled Component and the second is Uncontrolled component
         controlled:
              The controlled component is a way that we can handle the form input value using the "state" and to change the input value there is only one way to                    change it is using "setState or useState" if you are using React Hooks and you can change this state using one of the events like onChange and when                  the user starts writing any character setState or useState will be called and update the state of this input then it will add the new value inside the                input.
@@ -638,7 +626,9 @@ we are not using onChange function to govern the changes made to the input eleme
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164886613-a313d0b0-c663-43a1-b57a-3fe9e073965b.png" >
 )
 
-👽router    
+**[⬆ Back to Top](#table-of-contents)**
+
+### router    
 👉react router? 🦖  The 'react-router-dom' is the package that is used in React apps for routing. 
 -react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
 -React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
@@ -673,99 +663,20 @@ The major components of React Router
      Uses:
           Go to the previous or next pages
           Redirect user to a specific Url
-
+          
+**[⬆ Back to Top](#table-of-contents)**
       
- 👽REDUX: 
+### REDUX 
  https://dook.pro/blog/technology/39-redux-vs-react-context-which-one-is-the-right-winner
- 
- 
-          
-   👉what is redux?
-     Redux is an open-source library made using the scripting language JavaScript. Redux's primary use lies in managing and centralizing application state and it is      usually used along with JavaScript libraries, for instance, React or Angular in order to build UIs (User Interfaces). It is a predictable state container for        applications built using JavaScript. It is based on the Flux design pattern. Redux is very small in size (around 2 kilobytes) and has no dependencies.
-     
-     Redux in React js?
-     Redux in React is the official React binding for Redux which allows the components in React to read data from a Redux Store, and dispatch Actions to the Store        for updating the data. The purpose of Redux is to help applications scale well by providing means to manage the state via a unidirectional data flow model.
-     
-        -Redux is a state managing library used in JavaScript apps. It simply manages the state of an application  
-        -Redux is a pattern and library for managing and updating application state, using events called "actions". It serves as a centralized store for state that            needs to be used across  entire application, with rules ensuring that the state can only be updated in a predictable fashion.
-        
-👉State the core principles of Redux:
-   -Single source of truth: The global state of our application is always put away in an object tree inside one store.
-   -The state is read-only: The only way to change the state of our application is by emitting an action, an object explaining what has happened.
-   -Changes are made with pure functions: This principle means that in order to define how the state tree is being transformed by the actions, we have to write pure     reducers
-   
-👉example depicting the usage of a Redux store.
-  ![image](https://user-images.githubusercontent.com/92531202/165001332-4f0a65de-b7ee-43d3-92d6-133ee43160d0.png)
+👉what is redux?
+Redux is an open-source library made using the scripting language JavaScript. Redux's primary use lies in managing and centralizing application state and it is      usually used along with JavaScript libraries, for instance, React or Angular in order to build UIs (User Interfaces). It is a predictable state container for        applications built using JavaScript. It is based on the Flux design pattern. Redux is very small in size (around 2 kilobytes) and has no dependencies.
 
-👉action in Redux's architecture:
-   In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to        describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened
-       example of the usage of Actions in Redux's architecture 
-                                                         const addingTodoAction = {
-                                                             type: 'ADD',
-                                                             payload: 'Do-homework'
-                                                        }
-👉reducers in Redux's architecture: Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next     state.
-      (previous_state, action) => new_state
-   example how reducers are used in Redux:-
-                                          ![image](https://user-images.githubusercontent.com/92531202/164999808-a5cb45d9-db77-4f87-a5f9-e08c6c0d3624.png)
-                                          
-👉What are the things which we should never do inside a reducer?
-  -Modify the argument of the reducer
-  -We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
-  -We should not call non-pure functions, for instance Date.now(), Math.random(), etc
+**[⬆ Back to Top](#table-of-contents)**
 
-👉"store" in Redux is used to carry together all the states.reducers, and actions which create the app.
-    responsibilities of the store are:-
-       The state of the current application from inside is held by the Redux Store.
-       We can access the current state using store.getState().
-       We can update the state using store.dispatch(action).
-       We can also register listener callbacks using the store.subscriber(listener)
-       
-👉how to set the initial state in Redux?
-  In order to set the initial state in Redux, we have to pass the initial state as the second argument to createStore.
-  ![image](https://user-images.githubusercontent.com/92531202/165001538-031c4ff5-2701-46dd-9d0e-f1ed3772fd04.png)
-
-👉Redux Store methods.   
-    getState()
-    subscribe(listener)
-    dispatch(action)
-    replaceReducer(nextReducer)
-
-👉Redux Lifecycle for an application:Redux starts with a call back from the User Interface component which dispatches an action with a payload. After that, the         reducers intercept and receive the dispatched actions, generating a new application state. After that, the actions are propagated down through a hierarchy of         components from the Redux store.
+### Redux Lifecycle for an application
+Redux starts with a call back from the User Interface component which dispatches an action with a payload. After that, the reducers intercept and receive the dispatched actions, generating a new application state. After that, the actions are propagated down through a hierarchy of components from the Redux store.
  ![image](https://user-images.githubusercontent.com/92531202/165000424-78da5561-7938-4042-ae62-75445d975250.png)
-
-👉advantages of using Redux:
-   -Redux provides extremely easy state transfer between the components.
-   -The states are always predictable in Redux and its maintenance is relatively easy.
-   -Debugging and testing code in Redux is simple through logging behaviour and status.
-   -Redux provides great performance. It might occur to us that keeping the application's state global would result in bad performance. However, usually, that is not      the case as React Redux implements a lot of performance optimizations internally so that our own connected component only re-renders when it actually needs to.
-   -Redux also offers state persistence by storing the application's state to local storage and restoring it after a refresh
-
-👉Redux can be described in three fundamental principles?  
-        ​ Single source of truth: The only state of the whole application is stored in an object tree within a single store. A single state tree makes it easier to             debug or inspect an application.
-          -In other words, one app — one store — one state.
-        ​State Immutability: The state is read-only, and it cannot be changed directly. Instead, the state should be updated through an action, i.e., an object                describing what has happened. This ensures that neither the views nor the network callbacks will ever be able to write directly to the state.
-        ​Changes are made with pure function: Pure functions here are the reducers, where the state gets updated without mutating the previous state by actions.
-          
-👉What do you understand by “Single source of truth” in redux?
-      Redux consists of a single store, which is a JavaScript value containing the entire state of your application. A single source of truth comes with a lot of           benefits:
-              ​it makes traditional applications, the state is stored in different places across the whole application. With a single source of truth, debugging                    becomes easy, as you simply have one value to look at.
-              ​It is easy to create universal apps, as you can serialize the application state on the server and send it to the client without much effort.
-              ​Generalized functionalities, such as undo/redo, become easy to implement. For example, you can simply drop in a library that turns (a part of) your                  state into an undoable state.
-              
-👉Redux Thunk:-
-        Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or           do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator             returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to           have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to           dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is               enabled, the middleware will call that function with the dispatch method itself as the first argument.
-        
-👉Redux Saga:- 
-      Redux Saga is a middleware library that can be useful for allowing a Redux store to interact with the resources outside of itself in an asynchronous manner,         for example, making HTTP requests to external services, accessing browser storage, executing Input/Output operations and many more. These operations are also         called side effects
-👉How can the addition of multiple middlewares to Redux be done?
-     In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
-   In the example given below, we have added Redux Thunk and logger middlewares as an argument:
-      import { createStore, applyMiddleware } from 'redux'
-      const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
-      
-
-
+ 
 👉List down the components of Redux. and explain?
       Redux has 4 components namely Store, Reducer, Action, and UI.
       1.action:Actions are plain JavaScript objects that describe what happens but don’t describe how the app state changes. Their job is to describe an event that                  took place in the application and to transport the new data to the stores. Each Action must have a type and an optional payload key that contains the                data.
@@ -779,34 +690,109 @@ The major components of React Router
                -This createStore method is used for creating the application’s Store. It accepts three arguments: rootReducer, initialState and Redux middleware                     constant (the latter two being optional).
               🦖createStore(rootReducer);
     
-    👉Show how the data flows through Redux? 
+👉Show how the data flows through Redux? 
 <img width="500" height="250" style="text-align=:center" src="https://celestialsys.com/blog/wp-content/uploads/2019/12/data-flow.jpg" >
-    
-    
-    
-    
-    👉context v/s React Redux?
-       context:
-               -Context provides a way to pass data through the component tree without manually passing props down through each nested component.
-               -any updateds are made with the Context value.
-               -We can change the state in it, very simple.
-               -Excellent for more static data Context is NOT designed for handling high-frequency updates.(means not optimized for high frequncy changes ex:state                   changes every seconds or multi times per second)
-               -Only little setup is required - create context and sometimes wrapper component
-               -There could be more difficult maintenance in more complex-applications.
-               -therfore It is better to use with small applications.
- 
-       Redux:
-              -Redux is a state managing library used in JavaScript apps.It simply manages the state and data of an application.
-              -any updateds are made with pure functions i.e. reducers.
-              -The state is read-only. We cannot change them directly.(Redux passes down the Action to the Reducer. Then, the Reducer updates the state depending                    upon the Action that was passed)
-              -redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
-              -More setup than Context API (and more terms to understand)
-              -esay  maintenance in more complex-applications.
-              -	It is perfect for larger applications.    
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### advantages of using Redux:
+   -Redux provides extremely easy state transfer between the components.
+   -The states are always predictable in Redux and its maintenance is relatively easy.
+   -Debugging and testing code in Redux is simple through logging behaviour and status.
+   -Redux provides great performance. It might occur to us that keeping the application's state global would result in bad performance. However, usually, that is not      the case as React Redux implements a lot of performance optimizations internally so that our own connected component only re-renders when it actually needs to.
+   -Redux also offers state persistence by storing the application's state to local storage and restoring it after a refresh
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### State the core principles of Redux
+-Single source of truth: The global state of our application is always put away in an object tree inside one store.
+-The state is read-only: The only way to change the state of our application is by emitting an action, an object explaining what has happened.
+-Changes are made with pure functions: This principle means that in order to define how the state tree is being transformed by the actions, we have to write pure     reducers
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### action in Redux's architecture
+In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to        describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened
+example of the usage of Actions in Redux's architecture 
+                                                  const addingTodoAction = {
+                                                      type: 'ADD',
+                                                      payload: 'Do-homework'
+                                                 }
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### reducers in Redux's architecture
+Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next  state.
+(previous_state, action) => new_state
+example how reducers are used in Redux:-
+                                   ![image](https://user-images.githubusercontent.com/92531202/164999808-a5cb45d9-db77-4f87-a5f9-e08c6c0d3624.png)
+
+👉What are the things which we should never do inside a reducer?
+-Modify the argument of the reducer
+-We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
+-We should not call non-pure functions, for instance Date.now(), Math.random(), etc
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### store in Redux
+is used to carry together all the states.reducers, and actions which create the app.
+responsibilities of the store are:-
+The state of the current application from inside is held by the Redux Store.
+We can access the current state using store.getState().
+We can update the state using store.dispatch(action).
+We can also register listener callbacks using the store.subscriber(listener)       
+👉how to set the initial state in Redux?
+In order to set the initial state in Redux, we have to pass the initial state as the second argument to createStore.
+![image](https://user-images.githubusercontent.com/92531202/165001538-031c4ff5-2701-46dd-9d0e-f1ed3772fd04.png)
+👉Redux Store methods.   
+getState()
+subscribe(listener)
+dispatch(action)
+replaceReducer(nextReducer)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Redux Thunk
+Using Redux Thunk middleware, we can write action creators returning a function instead of an action. This thunk can postpone the dispatch of an action, or           do conditional dispatchment. The arguments passed to the inner function are the store methods dispatch and getState(). In the event of an action creator             returning a function, the function gets executed by the Redux Thunk middleware and it does not have to be pure. In other words, the function is allowed to           have side effects, including executing asynchronous API calls. It can even dispatch actions. Redux thunk is used to delay the dispatch of an action, or to           dispatch in the event of a certain condition being met. At the time of dispatch of a function instead of an action object, if Redux Thunk middleware is               enabled, the middleware will call that function with the dispatch method itself as the first argument.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Redux Saga
+      Redux Saga is a middleware library that can be useful for allowing a Redux store to interact with the resources outside of itself in an asynchronous manner,         for example, making HTTP requests to external services, accessing browser storage, executing Input/Output operations and many more. These operations are also         called side effects
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How can the addition of multiple middlewares to Redux be done
+     In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
+   In the example given below, we have added Redux Thunk and logger middlewares as an argument:
+      import { createStore, applyMiddleware } from 'redux'
+      const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
+     
+### context v/s React Redux
+context:
+ -Context provides a way to pass data through the component tree without manually passing props down through each nested component.
+ -any updateds are made with the Context value.
+ -We can change the state in it, very simple.
+ -Excellent for more static data Context is NOT designed for handling high-frequency updates.(means not optimized for high frequncy changes ex:state                   changes every seconds or multi times per second)
+ -Only little setup is required - create context and sometimes wrapper component
+ -There could be more difficult maintenance in more complex-applications.
+ -therfore It is better to use with small applications.
+
+Redux:
+-Redux is a state managing library used in JavaScript apps.It simply manages the state and data of an application.
+-any updateds are made with pure functions i.e. reducers.
+-The state is read-only. We cannot change them directly.(Redux passes down the Action to the Reducer. Then, the Reducer updates the state depending                    upon the Action that was passed)
+-redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
+-More setup than Context API (and more terms to understand)
+-esay  maintenance in more complex-applications.
+-It is perfect for larger applications.
+
 ⚖️scaler(The React Hook cannot be considered as a replacement for Redux (It is an open-source, JavaScript library useful in managing the application state) when it comes to the management of the global application state tree in large complex applications, even though the React will provide a useReducer hook that manages state transitions similar to Redux. Redux is very useful at a lower level of component hierarchy to handle the pieces of a state which are dependent on each other, instead of a declaration of multiple useState hooks.
 In commercial web applications which is larger, the complexity will be high, so using only React Hook may not be sufficient. Few developers will try to tackle the challenge with the help of React Hooks and others will combine React Hooks with the Redux.)
-           
-   👉keys in React
+   
+**[⬆ Back to Top](#table-of-contents)**
+
+### keys in React
    <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164876607-0f6d069a-a678-48d5-9bdd-891c4f1bca4c.png" >
         const ids = [1,2,3,4,5];
         const listElements = ids.map((id)=>{
@@ -816,14 +802,16 @@ In commercial web applications which is larger, the complexity will be high, so 
         </li>
         )
         })
-       
-       Importance of keys -
-                            Keys help react identify which elements were added, changed or removed.
-                            Keys should be given to array elements for providing a unique identity for each element.
-                            Without keys, React does not understand the order or uniqueness of each element.
-                            With keys, React has an idea of which particular element was deleted, edited, and added.
-                            Keys are generally used for displaying a list of data coming from an API.
- 
+Importance of keys -
+Keys help react identify which elements were added, changed or removed.
+Keys should be given to array elements for providing a unique identity for each element.
+Without keys, React does not understand the order or uniqueness of each element.
+With keys, React has an idea of which particular element was deleted, edited, and added.
+Keys are generally used for displaying a list of data coming from an API.
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
 👉differences between functional and class components?
 Before the introduction of Hooks in React, functional components were called stateless components and were behind class components on a feature basis. After the            introduction of Hooks, functional components are equivalent to class components.
 -Declaration fun(Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword)
