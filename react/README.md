@@ -2,7 +2,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [what is react](#what is react) |
+|1  | [what is react](#what-is-react) |
 |2  | [What is prototype chain](#what-is-a-prototype-chain)|
 |3  | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)|
 |4  | [What is JSON and its common operations](#what-is-json-and-its-common-operations)|
