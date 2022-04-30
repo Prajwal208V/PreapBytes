@@ -895,14 +895,47 @@ Before the introduction of Hooks in React, functional components were called sta
 👉Differentiate React Hooks vs Classes
   ![image](https://user-images.githubusercontent.com/92531202/164894217-deb65fa2-4a43-4e90-ac88-75a913c60e11.png)
 
-👉
-           
-           
-           
-           
-           
-           
-           
+### package.json file
+(package-lock.json contain exact dependency tree to be installed in /node_modules. It helps while a team is working on private apps to ensure that they are working on the same version of dependencies and sub-dependencies. It also maintains a history of changes done in package.json so, that at any point of time, when required previous changes can be looked back in the package-lock.json file.
+name - points to name of your app.
+version - refers to the current version that the application is using.
+“private”: true - is a foolproof setting which avoids accidentally publishing of your react app as a public package in npm ecosystem.
+Dependencies will contain all required node modules and versions required for the application. By default, 2 dependencies are added which include React and React-Dom that allow using JavaScript. In our demo, we are using React version 16.8.
+Scripts specify aliases that can be used to access some React command in a more efficient manner.
+
+.gitignore - This file is the standard file which is used by source control tool git to identify which files and folders are need to be ignored while committing the code. Until and unless this file exists, the create-react-app command will not create a git repo in this folder.
+)
+package.json is used to store the metadata associated with the project as well as to store the list of dependency packages. In order to add dependency packages to your projects, you need to create package.json file. The file makes it easy for others to manage and install the packages associated with the project.
+  A package.json file:
+    lists the packages the project depends on
+    specifies versions of a package that your project can use.
+    makes your build reproducible, and therefore easier to share with other developers.   
+    This lists the package by default under dependecies with its version number.
+    scripts specifies aliases that you can use to access some of the react-scripts commands in a more efficient manner. For example, running npm start in your           command line will run react-scripts start behind the scenes. Similar is true for other attributes: build, test, etc.       
+
+### package-lock.json file
+    package-lock.json will describe the exact dependency tree currently installed. 
+    
+### package.json vs package-lock.json
+    The package.json file records the minimum version of different dependencies that your app needs
+    If you update the versions of a particular package, the change is not necessarily going to be reflected here.The package.json file is used for more than just         dependencies. It also is used to define project properties, descriptions, and license information.
+    
+    Where the package.json file is used for a handful of different things, the package-lock.json file is solely used to "lock" dependencies to a specific version         number, including minor and patch versions.This file keeps track of the the exact version of each installed package which means that future installs will be able     to build an identical dependency tree.
+    
+### node_modules
+(This folder contains all dependencies and sub-dependencies specified in package.json used by React app. It contains more than 800 subfolders, this folder is automatically added in the .gitignore file.)
+In Node.js, Modules are the blocks of encapsulated code that communicates with an external application on the basis of their related functionality. Modules can be a single file or a collection of multiples files/folders.
+ Modules are of three types:
+  Core Modules:
+  local Modules:
+  Third-party Modules:
+  
+### public folder in ReactJS 
+(This folder contains files which don’t require additional processing by webpack. The index.html file is considered as an entry point for the web application.)
+The public folder contains static files such as index.html, javascript library files, images, and other assets, etc. which you don’t want to be processed by webpack. Files in this folder are copied and pasted as they are directly into the build folder. Only files inside the `public` folder can be referenced from the HTML.
+   
+### src 
+This folder is the heart of React application as it contains JavaScript which needs to be processed by webpack. In this folder, there is a main component App.js, its related styles (App.css), test suite (App.test.js). index.js, and its style (index.css); which provide an entry point into the App. Lastly, it contains registerServiceWorker.js which takes care of caching and updating files for the end user. It helps in offline capability and faster page loading after the first visit.
            
            
            
