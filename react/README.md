@@ -2,7 +2,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [what is react](#what-is-react) |                                                      |1  | [what is react](#what-is-react) |
+|1  | [what is react](#what-is-react) |                                                      
 |2  | [What are its features](#What-are-its-features)|
 |3  | [virtual DOM means](#virtual-DOM-means)|
 |4  | [SPA](#SPA)|
