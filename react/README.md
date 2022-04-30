@@ -29,14 +29,26 @@
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
 |26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
 |27 | [router](#router)|
-|28 | [What are modules](#what-are-modules)|
-|29 | [Why do you need modules](#why-do-you-need-modules)|
-|30 | [What is scope in javascript](#what-is-scope-in-javascript)|
-|31 | [What is a service worker](#what-is-a-service-worker)|
-|32 | [How do you manipulate DOM using a service worker](#how-do-you-manipulate-dom-using-a-service-worker)|
-|33 | [How do you reuse information across service worker restarts](#how-do-you-reuse-information-across-service-worker-restarts)|
-|34 | [What is IndexedDB](#what-is-indexeddb)|
-
+|28 | [REDUX](#REDUX)|
+|29 | [Redux Lifecycle for an application](#Redux-Lifecycle-for-an-application)|
+|30 | [advantages of using Redux](#advantages-of-using-Redux)|
+|31 | [State the core principles of Redu](#State-the-core-principles-of-Redu)|
+|32 | [action in Redux's architecture](#action-in-Redux-architecture)|
+|33 | [reducers in Redux architecture](#reducers-in-Redux-architecture)|
+|34 | [store in Redux](#store-in-Redux)|
+|35 | [Redux Thunk](#Redux-Thunk)|
+|36 | [Redux Saga](#Redux-Saga)|
+|37 | [How can the addition of multiple middlewares to Redux be done?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|38 | [context v/s React Redux](#context-vs-React-Redux)|
+|39 | [keys in React](#keys-in-React)|
+|40 | [What are the different ways to style a React component?](#What-are-the-different-ways-to-style-a-React-component)|
+|41 | [Name a few techniques to optimize React app performance](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|42 | [package.Json file](#packageJson-file)|
+|43 | [package.Lock.Json file](#packageLockJson-file)|
+|44 | [packageJson v/s packageLockJson](#packageJson-vs-packageLockJson)|
+|45 | [nodeModules](#nodeModules)|
+|46 | [public folder in ReactJS](#public-folder-in-ReactJS)|
+|47 | [src](#src)|
 
 
 ### what is react
@@ -73,7 +85,7 @@ React uses two virtual DOMs to render the user interface. One of them is used to
 
 **[⬆ Back to Top](#table-of-contents)**
 
-3.### JSX
+### JSX
 react use JSX(JavaScript Syntax Extension)
 JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
 ->Why can’t browsers read JSX
@@ -87,12 +99,12 @@ a special feature is One-way Data Binding:Follows Unidirectional data flow or da
 
 **[⬆ Back to Top](#table-of-contents)**
 
-5.### Components
+### Components
 React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
 
 **[⬆ Back to Top](#table-of-contents)**
 
-6. ### Conditional Statements
+### Conditional Statements
 JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
 **[⬆ Back to Top](#table-of-contents)**
