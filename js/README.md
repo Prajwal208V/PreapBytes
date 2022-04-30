@@ -61,7 +61,6 @@
 |56 | [Math Methods](#what-is-a-callback-hell)|
 |57 | [DOM Methods](#what-is-server-sent-events)|
 |58 | [date Methods](#how-do-you-receive-server-sent-event-notifications)|
-
 |59 | [DOM](#how-do-you-check-browser-support-for-server-sent-events)|
 |60 | [DOM selectors](#what-are-the-events-available-for-server-sent-events)|
 |61 | [window vs document](#what-are-the-main-rules-of-promise)|
