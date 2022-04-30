@@ -73,7 +73,7 @@ React uses two virtual DOMs to render the user interface. One of them is used to
 
 **[⬆ Back to Top](#table-of-contents)**
 
-3.### JSX
+### JSX
 react use JSX(JavaScript Syntax Extension)
 JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
 ->Why can’t browsers read JSX
@@ -82,17 +82,17 @@ Because there is no inherent implementation for the browser engines to read and 
 
 **[⬆ Back to Top](#table-of-contents)**
 
-4. ### One-way Data Binding
+### One-way Data Binding
 a special feature is One-way Data Binding:Follows Unidirectional data flow or data binding.The data in react flows only in one direction i.e. the data is       transferred from top to bottom i.e. from parent components to child components. The properties(props) in the child component cannot return the data to its           parent component but it can have communication with the parent components to modify the states according to the provided inputs. This is the working process of       one-way data binding. This keeps everything modular and fast.
 
 **[⬆ Back to Top](#table-of-contents)**
 
-5.### Components
+### Components
 React.js is component-based, which means React.js divides the web page into multiple components as it is component-based.Each component is a         part of the UI design which has its own logic and design
 
 **[⬆ Back to Top](#table-of-contents)**
 
-6. ### Conditional Statements
+### Conditional Statements
 JSX allows us to write conditional statements. The data in the browser is displayed according to the conditions provided inside the JSX.
 
 **[⬆ Back to Top](#table-of-contents)**
