@@ -10,24 +10,24 @@
 |6  | [One-way Data Binding](#One-way-Data-Binding)|
 |7  | [Components](#Components)|
 |8  | [Conditional Statements](#Conditional-Statements)|
-|9  | [React v/s angular?](#React-v/s-angular?)|
-|10 | [Library vs Framework](#Library-vs-Framework)|
-|11 | [states v/s props](#states-v/s-props)|
+|9  | [React v/s angular?](#React-vs-angular)|
+|10 | [Library v/s Framework](#Library-vs-Framework)|
+|11 | [states v/s props](#states-vs-props)|
 |12 | [How can you update the state of a component](#How-can-you-update-the-state-of-a-component)|
 |13 | [different phases of the component lifecycle](#different-phases-of-the-component-lifecycle)|
 |14 | [lifecycle methods of React components](#lifecycle-methods-of-React-components)|
-|15 | [stateful v/s stateless components](#stateful-v-/-s-stateless-components)|
-|16 | [functional v/s class components](#functional-v-/-s-class-components)|
-|17 | [How to prevent re-renders in React](#How-to-prevent-re-renders-in React)|
-|18 | [Element v/s Component](#Element-v/s-Component)|
+|15 | [stateful v/s stateless components](#stateful-vs-stateless-components)|
+|16 | [functional v/s class components](#functional-vs-class-components)|
+|17 | [How to prevent re-renders in React](#How-to-prevent-reRenders-in-React)|
+|18 | [Element v/s Component](#Element-vs-Component)|
 |19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
 |20 | [What are fragments](#What-are-fragments)|
-|21 | [client v/s server-side rendering](#client-v/s-server-side-rendering)|
+|21 | [client v/s server-side rendering](#client-vs-serverSide-rendering)|
 |22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components)|
 |23 | [What are Pure Components](#What-are-Pure-Components)|
 |24 | [Hooks](#Hooks)|
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
-|26 | [controlled v/s uncontrolled components](#controlled-v/s-uncontrolled-components)|
+|26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
 |27 | [router](#router)|
 |28 | [What are modules](#what-are-modules)|
 |29 | [Why do you need modules](#why-do-you-need-modules)|
@@ -41,6 +41,7 @@
 
 ### what is react
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are its features
@@ -96,7 +97,7 @@ JSX allows us to write conditional statements. The data in the browser is displa
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### React v/s angular
+### React vs angular
 React: 
 Type- React is a JavaScript library
 Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
@@ -137,7 +138,7 @@ Framework:
 👉What is the purpose of render() in React?
    
 
-### states v/s props
+### states vs props
 Both props and state are plain JavaScript objects. While both of them hold information Props
 props:
  -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
@@ -220,13 +221,13 @@ The various lifecycle methods are:
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### stateful v/s stateless components
+### stateful vs stateless components
    -In React, a stateful component is a component that holds some state.  Stateless components, by contrast, have no state. but that both types of components can use     props.
    -They are also known as Container and Presentational components.That means the stateful components are keeping track of changing data, while stateless components       print out what is given to them via props, or they always render the same thing.
    
 **[⬆ Back to Top](#table-of-contents)**
 
-### functional v/s class components
+### functional vs class components
     functional:
               -Functional Components are Stateless component. but we can make it as statefull compoent by using react hooks like useState() by this method we can                     make it statefull compoents
               -It is simple javascript functions that simply returns jsx 
@@ -242,7 +243,7 @@ The various lifecycle methods are:
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### How to prevent re-renders in React
+### How to prevent reRenders in React
 Reason for re-renders in React:
     -Re-rendering of a component and its child components occur when props or the state of the component has been changed.
     -Re-rendering components that are not updated, affects the performance of an application.
@@ -250,7 +251,7 @@ to prevent re-rendering:
    
 **[⬆ Back to Top](#table-of-contents)** 
 
-### Element v/s Component
+### Element vs Component
    React Elements:
              -An Element is a plain object, describing what we want to appear on the screen in terms of the DOM nodes, A React Element returned from                   components.making it light and faster to render than components.
              -React Element contains both type and property. It may contain other Elements in its props, but React Element does not have any methods.
@@ -311,7 +312,7 @@ to prevent re-rendering:
               -It re-render the component if some state or props of that component changed.
               -It calls the lifecycle shouldComponentUpdate method.
               
-              
+**[⬆ Back to Top](#table-of-contents)**              
     
 ### What are fragments 
 Why fragments are better than container divs?
@@ -325,7 +326,7 @@ Why fragments are better than container divs?
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### client v/s server-side rendering
+### client vs serverSide rendering
  server-side rendering:
     -In server-side rendering when a user makes a request to a webpage, the server prepares an HTML page by fetching user-specific data and sends it to the user’s       machine over the internet. The browser then construes the content and displays the page. This entire process of fetching data from the database, creating an HTML     page and sending it to client happens in  milliseconds.
     -when user clicks a link on the page, the browser sends a request to the server and the entire process is carried out by the server again. This process not only      increases the load on the server but also consumes unnecessary internet bandwidth.
@@ -365,6 +366,8 @@ Why fragments are better than container divs?
    conclude: when we are not using props in super() then, when doing console.log(this.props) in console, we will get an "undefined" because we are using this.props      inside the constructor. But if we just console.log(props) this will give us a proper message in the console on the webpage.
    -If we want to use this.props inside the constructor we need to pass it with the super() function. Otherwise, we don’t want to pass props to super() 
     Note: but Outside Constructor() Both will display same value for 'this.props'.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ### What are Higher Order Components
 To share common functionality between components
@@ -445,6 +448,7 @@ Using Hook, all features of React can be used without writing class components. 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### types of Hooks in React
+
    ![image](https://user-images.githubusercontent.com/92531202/164894079-3b626562-25d8-4b79-9191-3e354482a0dd.png)
    
   There are two types of Hooks in React. They are:
@@ -570,7 +574,7 @@ Where the first argument callback represents the function having the logic of si
                     
 **[⬆ Back to Top](#table-of-contents)**
 
-### controlled v/s uncontrolled components
+### controlled vs uncontrolled components
         2 ways to handle the input value, the first one is the Controlled Component and the second is Uncontrolled component
         controlled:
              The controlled component is a way that we can handle the form input value using the "state" and to change the input value there is only one way to                    change it is using "setState or useState" if you are using React Hooks and you can change this state using one of the events like onChange and when                  the user starts writing any character setState or useState will be called and update the state of this input then it will add the new value inside the                input.
@@ -711,7 +715,7 @@ Redux starts with a call back from the User Interface component which dispatches
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### action in Redux's architecture
+### action in Reduxs architecture
 In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to        describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened
 example of the usage of Actions in Redux's architecture 
                                                   const addingTodoAction = {
@@ -721,7 +725,7 @@ example of the usage of Actions in Redux's architecture
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### reducers in Redux's architecture
+### reducers in Reduxs architecture
 Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next  state.
 (previous_state, action) => new_state
 example how reducers are used in Redux:-
@@ -768,6 +772,8 @@ Using Redux Thunk middleware, we can write action creators returning a function 
       import { createStore, applyMiddleware } from 'redux'
       const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
      
+**[⬆ Back to Top](#table-of-contents)**
+
 ### context v/s React Redux
 context:
  -Context provides a way to pass data through the component tree without manually passing props down through each nested component.
@@ -813,18 +819,26 @@ Keys are generally used for displaying a list of data coming from an API.
 **[⬆ Back to Top](#table-of-contents)**
 
 👉differences between functional and class components?
+
+  ![image](https://user-images.githubusercontent.com/92531202/164894217-deb65fa2-4a43-4e90-ac88-75a913c60e11.png)
+  
 Before the introduction of Hooks in React, functional components were called stateless components and were behind class components on a feature basis. After the            introduction of Hooks, functional components are equivalent to class components.
 -Declaration fun(Functional components are nothing but JavaScript functions and therefore can be declared using an arrow function or the function keyword)
              cls(Class components, on the other hand, are declared using the ES6 class)
 -Handling props fun(In functional components, the handling of props is pretty straightforward. Any prop provided as an argument to a functional component can be                                 directly used inside HTML elements)
                 cls(this keyword is used in the case of class components)
+                
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164879335-3c40179c-5fd9-40f7-ae39-de2c8797a039.png" >
+
 -Handling state fun(Functional components use React hooks to handle state. It uses the useState hook to set the state of a variable inside the component
                     Since useState hook returns an array of two items, the first item contains the current state, and the second item is a function used to update                              the state.)
                 cls(We cannot use React Hooks inside class components, therefore state handling is done very differently in a class component,For updating the state, we                     need to first bind the addStudent function to this. Only then, we will be able to use the setState function which is used to update the state. )
+                
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164883758-ca2fa94f-cc71-410f-ba39-4c41d53fb89f.png" >
-                            
-👉What are the different ways to style a React component?
+                   
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the different ways to style a React component
   There are many different ways through which one can style a React component. Some of the ways are :
    -Inline Styling: We can directly style an element using inline style attributes. Make sure the value of style is a JavaScript object:
       class RandomComponent extends React.Component {
@@ -875,8 +889,11 @@ Before the introduction of Hooks in React, functional components were called sta
             
       -CSS Modules: We can create a separate CSS module and import this module inside our component. Create a file with “.module.css”‘ extension, styles.module.css:
        ![image](https://user-images.githubusercontent.com/92531202/164889853-9b37f827-e1ca-400b-b8c6-38f251cfc10f.png)
+       
+**[⬆ Back to Top](#table-of-contents)**
     
-👉Name a few techniques to optimize React app performance.
+### Name a few techniques to optimize React app performance
+
   There are many ways through which one can optimize the performance of a React app,
   Using useMemo( ) -
     -it is a React hook that is used for caching CPU-Expensive functions.
@@ -893,9 +910,10 @@ Before the introduction of Hooks in React, functional components were called sta
    -It is a technique used to reduce the load time of a React app. Lazy loading helps reduce the risk of web app performances to a minimum
    
 👉Differentiate React Hooks vs Classes
-  ![image](https://user-images.githubusercontent.com/92531202/164894217-deb65fa2-4a43-4e90-ac88-75a913c60e11.png)
+  
+**[⬆ Back to Top](#table-of-contents)**
 
-### package.json file
+### packageJson file
 (package-lock.json contain exact dependency tree to be installed in /node_modules. It helps while a team is working on private apps to ensure that they are working on the same version of dependencies and sub-dependencies. It also maintains a history of changes done in package.json so, that at any point of time, when required previous changes can be looked back in the package-lock.json file.
 name - points to name of your app.
 version - refers to the current version that the application is using.
@@ -913,16 +931,22 @@ package.json is used to store the metadata associated with the project as well a
     This lists the package by default under dependecies with its version number.
     scripts specifies aliases that you can use to access some of the react-scripts commands in a more efficient manner. For example, running npm start in your           command line will run react-scripts start behind the scenes. Similar is true for other attributes: build, test, etc.       
 
-### package-lock.json file
+**[⬆ Back to Top](#table-of-contents)**
+
+### packageLockJson file
     package-lock.json will describe the exact dependency tree currently installed. 
     
-### package.json vs package-lock.json
+**[⬆ Back to Top](#table-of-contents)**
+    
+### packageJson vs packageLockJson
     The package.json file records the minimum version of different dependencies that your app needs
     If you update the versions of a particular package, the change is not necessarily going to be reflected here.The package.json file is used for more than just         dependencies. It also is used to define project properties, descriptions, and license information.
     
     Where the package.json file is used for a handful of different things, the package-lock.json file is solely used to "lock" dependencies to a specific version         number, including minor and patch versions.This file keeps track of the the exact version of each installed package which means that future installs will be able     to build an identical dependency tree.
     
-### node_modules
+**[⬆ Back to Top](#table-of-contents)**
+
+### nodeModules
 (This folder contains all dependencies and sub-dependencies specified in package.json used by React app. It contains more than 800 subfolders, this folder is automatically added in the .gitignore file.)
 In Node.js, Modules are the blocks of encapsulated code that communicates with an external application on the basis of their related functionality. Modules can be a single file or a collection of multiples files/folders.
  Modules are of three types:
@@ -930,13 +954,18 @@ In Node.js, Modules are the blocks of encapsulated code that communicates with a
   local Modules:
   Third-party Modules:
   
+**[⬆ Back to Top](#table-of-contents)**
+
 ### public folder in ReactJS 
 (This folder contains files which don’t require additional processing by webpack. The index.html file is considered as an entry point for the web application.)
 The public folder contains static files such as index.html, javascript library files, images, and other assets, etc. which you don’t want to be processed by webpack. Files in this folder are copied and pasted as they are directly into the build folder. Only files inside the `public` folder can be referenced from the HTML.
-   
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ### src 
 This folder is the heart of React application as it contains JavaScript which needs to be processed by webpack. In this folder, there is a main component App.js, its related styles (App.css), test suite (App.test.js). index.js, and its style (index.css); which provide an entry point into the App. Lastly, it contains registerServiceWorker.js which takes care of caching and updating files for the end user. It helps in offline capability and faster page loading after the first visit.
            
+**[⬆ Back to Top](#table-of-contents)**
            
            
            
