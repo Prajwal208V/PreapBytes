@@ -29,15 +29,27 @@
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
 |26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
 |27 | [router](#router)|
-|28 | [What are modules](#what-are-modules)|
-|29 | [Why do you need modules](#why-do-you-need-modules)|
-|30 | [What is scope in javascript](#what-is-scope-in-javascript)|
-|31 | [What is a service worker](#what-is-a-service-worker)|
-|32 | [How do you manipulate DOM using a service worker](#how-do-you-manipulate-dom-using-a-service-worker)|
-|33 | [How do you reuse information across service worker restarts](#how-do-you-reuse-information-across-service-worker-restarts)|
-|34 | [What is IndexedDB](#what-is-indexeddb)|
-
-
+|28 | [REDUX](#REDUX)|
+|29 | [Redux Lifecycle for an application](#Redux-Lifecycle-for-an-application)|
+|30 | [advantages of using Redux](#advantages-of-using-Redux)|
+|31 | [State the core principles of Redux](#State-the-core-principles-of-Redux)|
+|32 | [action in Redux architecture](#action-in-Redux-architecture)|
+|33 | [reducers in Redux architecture](#reducers-in-Redux-architecture)|
+|34 | [store in Redux](#store-in-Redux)|
+|28 | [Redux Thunk](#Redux-Thunk)|
+|29 | [Redux Saga](#Redux-Saga)|
+|30 | [How can the addition of multiple middlewares to Redux be done](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|31 | [context vs React Redux](#context-vs-React-Redux)|
+|32 | [keys in React](#keys-in-React)|
+|33 | [What are the different ways to style a React component](#What-are-the-different-ways-to-style-a-React-component)|
+|34 | [Name a few techniques to optimize React app performance](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|35 | [How can the addition of multiple middlewares to Redux be done](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|36 | [packageJson file](#packageJson-file)|
+|37 | [packageLockJson file](#packageLockJson-file)|
+|38 | [packageJson vs packageLockJson](#packageJson-vs-packageLockJson)|
+|39 | [nodeModules](#nodeModules)|
+|40 | [public folder in ReactJS](#public-folder-in-ReactJS)|
+|41 | [src](#src)|
 
 ### what is react
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
