@@ -16,8 +16,8 @@
 |12 | [How can you update the state of a component](#How-can-you-update-the-state-of-a-component)|
 |13 | [different phases of the component lifecycle](#different-phases-of-the-component-lifecycle)|
 |14 | [lifecycle methods of React components](#lifecycle-methods-of-React-components)|
-|15 | [stateful v/s stateless components](#stateful-v/s-stateless-components)|
-|16 | [functional v/s class components](#functional-v/s-class-components)|
+|15 | [stateful v/s stateless components](#stateful-v-/-s-stateless-components)|
+|16 | [functional v/s class components](#functional-v-/-s-class-components)|
 |17 | [How to prevent re-renders in React](#How-to-prevent-re-renders-in React)|
 |18 | [Element v/s Component](#Element-v/s-Component)|
 |19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
