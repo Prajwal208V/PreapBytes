@@ -78,3 +78,150 @@
 |69 | [JSON](#what-is-the-purpose-of-double-exclamation)|
 |70 | [JQUERY](#what-is-the-purpose-of-double-exclamation)|
 |71 | [Async & await](#what-is-the-purpose-of-double-exclamation)|
+
+
+### How JavaScript engine executes a script
+when JavaScript engine executes a script, it creates execution contexts. Each execution context has two phases: the creation phase and the execution phase.
+
+creation phase:-
+When a script executes for the first time, the JavaScript engine creates a Global Execution Context. During this creation phase it performs the following 
+1.Create a global object i.e., window in the web browser or global in Node.js.
+2.creates special variable called this  which points to the global object.
+3.Setup a memory heap for storing variables and function references.
+4.Store the function declarations in the memory heap and variables within the global execution context with the 
+initial values as undefined.
+
+The execution phase:-
+During the execution phase, the JavaScript engine executes the code line by line. In this phase, it assigns values to variables and executes the function calls.
+For every function call, the JavaScript engine creates a new Function Execution Context. The Function Execution Context is similar to the Global Execution Context, but instead of creating the global object, it creates the arguments object that contains a reference to all the parameters passed into the function.
+To keep track of all the execution contexts, including the Global Execution Context and Function Execution Contexts,
+the JavaScript engine uses a data structure named call stack.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### call stack
+JavaScript engine uses a call stack to manage execution contexts: the Global Execution Context and Function Execution Contexts. The call stack works based on the LIFO principle i.e., last-in-first-out.
+
+When we execute a script, the JavaScript engine creates a Global Execution Context and pushes it on top of the call stack.Whenever a function is called, the JavaScript engine creates a Function Execution Context for the function, pushes it on top of the Call Stack, and starts executing the function. If a function calls another function, the JavaScript engine creates a new Function Execution Context for the new function that is being called and pushes it on top of the call stack. When the current function completes, the JavaScript engine pops it from the call stack and resumes the execution where it left off in the last code listing. The script will stop when the call stack is empty.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### event Loop
+JavaScript is a single-threaded programming language. measns, JavaScript can do only one thing at a single point in time.but When we call the setTimeout() function, make a fetch request or click a button, the web browser can do these activities concurrently and asynchronously. The setTimeout(), fetch requests, and DOM events are parts of the Web APIs of the web browser.
+so browesr has js-engine,threadpool,callbackqueue,eventloop,microtask,Browser API 
+javaScript engine place the setTimeout() return, fetch requests return, and DOM events into a callback queue.
+The event loop is a constantly running process that monitors both the callback queue and the call stack.If the call stack is not empty, the event loop waits until it is empty and places the next function from the callback queue to the call stack. If the callback queue is empty.
+
+### callbackqueue
+javaScript maintains a queue of callback functions. It is called a callback queue or task queue. A queue data structure is First-In-First-Out(FIFO). So, the callback function that first gets into the queue has the opportunity to go out first. Callback Queue gets the ordinary callback functions coming from the setTimeout() API after the timer expires. Callback Queue has lesser priority than Microtask Queue of fetching the callback functions to Event Loop.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### microtask 
+Microtask Queue is like the Callback Queue, but Microtask Queue has higher priority. All the callback functions coming through Promises. Promise handling always has higher priority so the JavaScript engine executes all the tasks from Microtask Queue and then moves to the Callback Queue. Microtask Queue has higher priority than Callback Queue of fetching the callback functions to Event Loop.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### threadpool
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Browser API 
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### data types in js
+Data types basically specify what kind of data can be stored and manipulated within a program.
+There are 7 Primitive data types and Object, Array, and Function (which are all types of objects) are composite data types in JavaScript
+
+### 1. primitive data types
+1.The Boolean data type :- can hold only two values: true or false.
+JavaScript, there are only five falsy values-> zero, the empty string, undefined, null,NAN
+
+2.Undefined :- (is a primitive type in JavaScript.)type The undefined data type can only have one value-the special value undefined. If a variable has been declared, but has not been assigned a value, has the value undefined.undefined is a property of the global object. That is, it is a variable in global scope. The initial value of undefined is the primitive value A variable that has not been assigned a value is of type undefined.
+(A variable or an object has an undefined value when no value is assigned before using it.)
+JavaScript uses the undefined value in the following situations.
+1) Accessing an uninitialized variable
+2) Accessing a non-existing property of an object
+3) Function parameters :- call the a function and don’t pass all the arguments, the parameters inside the function becomes undefined
+4) Functions return a value :- A function that doesn’t have a return statement implicitly returns undefined
+5) Accessing out-of-bounds array elements 
+
+3.null type:- You can assign null to a variable to denote that currently that variable does not have any value but it will have later on. A null means absence of a value.(JavaScript uses the null value to represent the intentional absence of any object value.),typeof null is object
+
+4.NAN :- stands for 'Not a Number' It represents a value which is not a valid number.NaN is a property of the global object. 
+NaN, It is a result of an invalid or an undefined mathematical operation.
+Operations return NaN
+1) Parsing numbers :- If JavaScript cannot convert a string to a number, it returns NaN. In this case, NaN indicates that the parsing has failed.
+   ex:- parseInt('x100')
+2) Use undefined as an operand :- console.log(undefined * 2); // NaN
+3) Using NaN as an operand :- console.log( 10 + 1 / NaN ); // NaN
+4) Using indeterminate forms :- When an arithmetical operation is in the indeterminate form, it returns NaN ex:- console.log(10 + 0 / 0); // NaN
+5) Using invalid arguments of math functions :- When a math function receives an invalid argument, it returns NaN 
+   ex:- console.log( Math.sqrt(-1));// NaN  Since it only accepts a non-negative number, passing -1 results in NaN.
+
+5.number type :- Js The number data type is used to represent positive or negative  or decimal place, the JavaScript number type uses the IEEE-754 format.
+ES2020 introduced a new primitive type bigint that represent big integer numbers whose values are larger than 2^53 – 1.
+
+6.string type :- String type is used to represent textual data. It is a set of "elements" of 16-bit unsigned integer values,Each element in the String occupies a position in the String. The first element is at index 0, the next at index 1, and so on. The length of a String is the number of elements in it.
+Strings are created using single or double quotes.JavaScript strings are immutable. This means that once a string is created, it is not possible to modify it.
+   
+7.Symbol type.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### composite data types
+    arr,objects,function
+ 
+**[⬆ Back to Top](#table-of-contents)**
+
+### Hoisting
+When the JavaScript engine executes the JavaScript code, it creates the global execution context. The global execution context has two phases: creation and execution.During the creation phase, the JavaScript engine moves the variable and function declarations to the top of your code. This feature is known as hoisting in JavaScript. so we can use functions and variables before they're declared.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### TDZ temporal dead zone
+there is a period between entering scope and being declared where they cannot be accessed. This period is the temporal dead zone (TDZ). Accessing let and const varibles  in the inner scope still causes a ReferenceError. If let were not hoisted, it would log outer value. The TDZ is a good thing because it helps to highlight bugs—accessing a value before it has been declared is rarely intentional.
+The TDZ also applies to default function arguments. Arguments are evaluated left to right, and each argument is in the TDZ until it is assigned
+            function testDefaults(a = b, b) { }
+            testDefaults(undefined, 1);
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### let v/s const v/s var
+using these three we can declare a variable in JavaScript,
+VAR:
+Before the ES6, var was var only way to declare variables. and let and var after ES 2015.
+->Scope of var: When we declare a variable outside a function its scope is global.the variables whose declaration happens with "var" outside a function (even within a block) are accessible in the whole window. but when the declaration of a variable occurs inside a function, it is available and accessible only within that function. that's why var is function scope.
+->Re-declaration of "var" variables:The variables declared using var can be re-declared within the same scope also, and it will not raise any error.
+->Hoisting of var:So var variables hoist to the top of its scope and initialize with a value of undefined.
+
+LET:In ES 2015 release, ES released one more keyword for declaration of variables, which is known as the "let".
+->Scope of let:let is block scoped. A block is a chunk of code bounded by {}. Moreover, a variable that one declares in a block with the "let" is only available for use within that block only."let" are block-scoped and can't access outside the block in which the declaration happens.
+->Re-declaration of "let" variables:The variable declared using let can't be re-declared.
+->Hoisting of let: let declarations hoist to the top. But, unlike var, which initializes as undefined, the let keyword does not initialize. So if you try to use a let variable before the declaration, you'll get a "Reference Error".
+
+CONST: Variables declared with the "const" keyword maintain constant values and can't change their values during the scope. 
+Scope of const:Similar to let, the scope of the const variables is also blocked.
+Re-declaration of const variables:Similar to let variables, the variable declared using const can't be re-declared.
+Hoisting of const:Just like "let", "const" declarations hoist to the top but don't initialize.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Strict-equality vs equality
+== (equality operator or loose equality operator) and the other one is === (strict equality operator). Both of these operators check the value of operands for equality. But, the difference between == & === is that the == does a type conversion before checking for equality.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### JavaScript is a loosely typed and dynamic language
+means we don’t have to explicitly specify types of variables and objects. but in A strongly typed language we should specified what kind of data/value we are storing it but TypeScript is a superset of JavaScript it is strongly typed language.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### difference between type conversion and type coercion
+
+
+
+
+
+
