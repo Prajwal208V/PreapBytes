@@ -3,9 +3,13 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [](#what-are-the-possible-ways-to-create-objects-in-javascript) |
-|2  | [](#what-is-a-prototype-chain)|
-|3  | [](#what-is-the-difference-between-call-apply-and-bind)|
+|1  | [How JavaScript engine executes a script?](#what-are-the-possible-ways-to-create-objects-in-javascript) |
+|2  | [call stack](#what-is-a-prototype-chain)|
+|3  | [event-loop](#what-is-the-difference-between-call-apply-and-bind)|
+|2  | [threadpool](#what-is-a-prototype-chain)|
+|2  | [Browser API](#what-is-a-prototype-chain)|
+|2  | [callback queue](#what-is-a-prototype-chain)|
+|2  | [micro-task](#what-is-a-prototype-chain)|
 |4  | [data types in js](#what-is-json-and-its-common-operations)|
 |5  | [primitive data types](#what-is-the-purpose-of-the-array-slice-method)|
 |6  | [composite data types](#what-is-the-purpose-of-the-array-splice-method)|
@@ -72,3 +76,5 @@
 |67 | [session storage](#why-do-you-need-strict-mode)|
 |68 | [What is IndexedDB](#how-do-you-declare-strict-mode)|
 |69 | [JSON](#what-is-the-purpose-of-double-exclamation)|
+|70 | [JQUERY](#what-is-the-purpose-of-double-exclamation)|
+|71 | [Async & await](#what-is-the-purpose-of-double-exclamation)|
