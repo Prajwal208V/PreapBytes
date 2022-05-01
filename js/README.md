@@ -23,6 +23,7 @@
 |14 | [deep and shallow copies](#what-is-a-unary-function)|
 |15 | [Function](#what-is-the-currying-function)|
 |16 | [IIFE immediately-invoked-function-expression](#what-is-a-pure-function)|
+|16 | [Anonymous Function](#what-is-a-pure-function)|
 |17 | [Higher Order Functions](#what-is-the-purpose-of-the-let-keyword)|
 |18 | [callback functions](#what-is-the-difference-between-let-and-var)|
 |19 | [What is a pure function](#what-is-the-reason-to-choose-the-name-let-as-a-keyword)|
@@ -30,6 +31,7 @@
 |21 | [What is a first class function](#what-is-the-temporal-dead-zone)|
 |22 | [What is a first order function](#what-is-iifeimmediately-invoked-function-expression)|
 |23 | [What is a unary function](#how-do-you-decode-or-encode-a-url-in-javascript)|
+|23 | [Generator function](#what-is-json-and-its-common-operations)|
 |24 | [recurstion](#what-is-memoization)|
 |25 | [this keyword](#what-is-hoisting)|                  need callbacks
 |26 | [call-bind-apply methods](#what-are-classes-in-es6)|
@@ -208,8 +210,8 @@ Hoisting of const:Just like "let", "const" declarations hoist to the top but don
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### Strict-equality vs equality
-== (equality operator or loose equality operator) and the other one is === (strict equality operator). Both of these operators check the value of operands for equality. But, the difference between == & === is that the == does a type conversion before checking for equality.
+### Strict-equality vs equality 
+==(equality operator or loose equality operator) and the other one is === (strict equality operator). Both of these operators check the value of operands for equality. But, the difference between == & === is that the == does a type conversion before checking for equality.
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -219,8 +221,170 @@ means we don’t have to explicitly specify types of variables and objects. but 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### difference between type conversion and type coercion
+type coercion:- is the automatic or implicit conversion of values from one data type to another,the coercion is done implicitly. When JavaScript operates in a wrong data type, it will try to convert the value to the right data type.
+examples:- 12 + ""    //Output is "12" as number 12 is converted to string "12"
+           "15" * 2    //Output is 30 as string 15 is converted to number 15
+           undefined + 6 //Output is NaN as undefined could not be converted to number
+           "Hello" + null  //Output is "Hellonull", as null is converted to string "null"
+           null + 25     //Output is 25, as null is converted to 0.
+           true + true //Output is 2, as true is converted to number 1.
+           false + 10 //Output is 10, as false is converted to number 0.
+           10 * [6] //Output is 60, as [6] is converted to number 6.
+           10 * [10, 20] //Output is NaN, as [10, 20] could not be converted to number
+           [1] + [1,2] //Output is "11,2" as [1] is converted to "1" and [1,2] is converted "1,2". Finally the two are concatenated to give the result "11,2"
+           
+Type conversion:- (In this case, type conversion is explicitly done in the code by the developer.) JavaScript provides inbuilt methods for type conversion. using the inbuilt functions like Number(), String(), Boolean(),paresInt() etc.
+examples:-1)Converting to Number:- The Number() global method is used to convert any other data type value to numeric values.
+            Number("25") //Output is 25 as "25" string is converted to number 25
+            Number("") //Output is 0 as "" string is converted to 0
+            Number([]) //Output is 0 as [] is converted to 0
+            Number(null) //Output is 0 as null is converted to 0
+            Number(true) //Output is 1 as true is converted to 1
+            Number(false) //Output is 0 as false is converted to 0
+            Number("Test") //Output is NaN as "Test" could not be converted to number
+            parseInt() and parseFloat() methods can also be used to convert numbers stored as a string to a number. 
+            For all other data types, it will return NaN.
+         2)Converting to String :-The String() global method is used to convert any other data type value to string values.
+            String(25) //Output is "25" as 25 is converted to string "25"
+            String([]) //Output is "" as [] is converted to empty string ""
+            String(null) //Output is "null" as null is converted to string "null"
+            String(true) //Output is "true" as true is converted to string "true"
+            String(false) //Output is "false" as false is converted to string "false"
+            String({}) //Output is "[object Object]" as {} is converted to string(similar to calling toString() on a object)
+         3)Converting to Boolean:- The Boolean() global method is used to convert any other data type value to Boolean values.
+            Boolean(25) //Output is true
+            Boolean([]) //Output is true
+            Boolean(null) //Output is false
+            Boolean({}) //Output is true
+            Boolean("Yeah! I will be converted to Boolean.") //Output is true
+            
+**[⬆ Back to Top](#table-of-contents)**
 
+### pass by value and pass by reference 
+passed by value:-
+In JavaScript, all function arguments are always passed by value. It means that JavaScript copies the values of the variables into the function arguments.
+Any changes that you make to the arguments inside the function do not reflect the passing variables outside of the function. In other words, the changes made to the arguments are not reflected outside of the function.
 
+passed by reference  value:-
+If function arguments are passed by reference, the changes of variables that you pass into the function will be reflected outside the function.This is not possible in JavaScript. passing paramaters as objects
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### deep and shallow copies
+shallow copies:-
+When a reference variable is copied into a new reference variable using the assignment operator, a shallow copy of the referenced object is created. In simple words, a reference variable mainly stores the address of the object it refers to. When a new reference variable is assigned the value of the old reference variable, the address stored in the old reference variable is copied into the new one. This means both the old and new reference variable point to the same object in memory. As a result if the state of the object changes through any of the reference variables it is reflected for both. 
+ex:- 
+      var employee = {
+          eid: "E102",
+          ename: "Jack",
+          eaddress: "New York",
+          salary: 50000
+      }
+      var newEmployee = employee;    // Shallow copy
+
+deep copies:-
+deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object. In this way, both the objects are independent of each other and in case of any modification to either one the other is not affected. Also, if one of the objects is deleted the other still remains in the memory. Now to create a deep copy of an object in JavaScript we use JSON.parse() and JSON.stringify() methods. 
+ex:-
+      var employee = {
+          eid: "E102",
+          ename: "Jack",
+          eaddress: "New York",
+          salary: 50000
+      }
+      var newEmployee = JSON.parse(JSON.stringify(employee)); //Deep Copy
+      
+Here the new object is created using the JSON.parse() and JSON.stringify() methods of JavaScript. JSON.stringify() takes a JavaScript object as argument and then transforms it into a JSON string. This JSON string is passed to the JSON.parse() method which then transforms it into a JavaScript object. This method is useful when the object is small and has serializable properties. But if the object is very large and contains certain non-serializable properties then there is a risk of data loss. Specially if an object contains methods then JSON.stringify() will fail as methods are non-serializable. There are better ways to deep clone of which one is Lodash which allows cloning methods as well.
+
+Lodash To Deep Copy:(https://www.geeksforgeeks.org/what-is-shallow-copy-and-deep-copy-in-javascript/)
+Lodash is a JavaScript library that provides multiple utility functions and one of the most commonly used function of the Lodash library is the cloneDeep() method. This method helps in deep cloning of an object and also clones the non serializable properties which were a limitation in the JSON.stringify() approach.
+ex:-
+   const lodash = require('lodash');
+   var employee = {
+       eid: "E102",
+       ename: "Jack",
+       eaddress: "New York",
+       salary: 50000,
+       details: function () {
+           return "Employee Name: "
+               + this.ename + "-->Salary: "
+               + this.salary;
+       }
+   }
+   var deepCopy = lodash.cloneDeep(employee);
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Function 
+is a A block of code which we can use multiple times, so you define or declare it once, and then  use it wherever we want as many times.
+different ways of declaring a function in JS
+1)Function Expression:-   var greet = function () { }
+2)Anonymous Function:-  
+3)Immediately Invoked Function Expressions (IIFE)
+4)Constructor Function
+5)Arrow Function
+6)regular function
+7)Generator function  = - - - - - - - - - - - - - - - - -
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### IIFE immediately-invoked-function-expression
+Immediately Invoked Function Expressions (IIFE) are functions that can be stated as expressions or normal declarations and use the anonymous property of the function expression to execute its code. If you want to execute a function immediately after the declaration, use IIFE. This is executed by wrapping the anonymous function in parentheses and ending it with a semicolon.
+          (function () {
+            console.log("Welcome to Javascript");
+          })();
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Anonymous Function 
+Anonymous function declaration allows function names to appear hidden in the declaration itself. An anonymous function can also be an argument of a function hence, it can be declared inside another function as its parameters.
+    setTimeout(
+        function () {
+          console.log("Executed after three seconds");
+        }  , 3000 // delay in milliseconds
+    )
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Higher Order Functions
+A higher order function is a function that takes a function as an argument, or returns a function.we are using higher-order functions when passing callback functions.some pre-defined methods are map,filter,settimout,Eventlistener these methods take a function as an argument.
+ex:-  const firstOrderFunc = () => console.log ('Hello, I am a First order function');
+      const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
+      higherOrder(firstOrderFunc);
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### callback functions
+A callback function is a function passed into another function as an argument. This function is invoked inside the outer function to complete an action.
+this callback function uesd in many inbuild methods: like,filter,map,addEventListener
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a pure function
+Pure Function is a function (a block of code ) that always returns the same result if the same arguments are passed. It does not depend on any state, or data change during a program’s execution rather it only depends on its input arguments. Also a pure function does not produce any observable side effects such as network requests or data mutation etc.
+ex:-        function calculateGST( productPrice ) {
+               return productPrice * 0.05;
+            }
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are lambda or arrow functions
+arrow function arrow functions do not get their own 'this keyword' (lexical this keyword,) because it simply gets picked up from the outer lexical scope of the arrow function. basically an arrow function inherits the this keyword from the parent scope.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a first class function
+In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
+For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+ex:-     const handler = () => console.log ('This is a click handler function');
+         document.addEventListener ('click', handler);
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a first order function
+First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+ex:- const firstOrder = () => console.log ('I am a first order function!');
+
+**[⬆ Back to Top](#table-of-contents)**
 
 
 
