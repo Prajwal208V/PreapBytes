@@ -945,12 +945,19 @@ Array Constructor initialize an array with Array constructor syntax using new ke
 ### ways to empty the array 
 4 Ways to Empty an Array in JavaScript
 1.Assigning it to a new empty array
-```let arr=[]; ```
+
+```let arr=[];
+```
 2.set its length to zero
-```arr.length=0; ```
+
+```arr.length=0;
+```
 3.Using splice() method,splice method removing or replacing existing elements
-```arr.splice(0,arr.length)```
+
+```arr.splice(0,arr.length)
+```
 4.Using pop() method:remove each element of the array one by one using the while loop and pop()
+
 ``` while(arr.length){
         arr.pop();
     }
@@ -958,14 +965,37 @@ Array Constructor initialize an array with Array constructor syntax using new ke
 
 **[⬆ Back to Top](#table-of-contents)**
 
+### Destructuring array 
+that makes it possible to unpack values from arrays we can extract data from arrays and objects and assign them to variables.
+```const colorArr = ["red", "yellow", "blue", "green", "white", "black"];
+   const [first, second] = colorArr;
+   console.log(first, second);// red, yellow
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ### rest parameter and spread operator
+~spread operator:allows you to spread out elements of an iterable object such as an array,a  map, or a set. means The spread operator unpacks elements.
+~rest parameter:allows a function to accept an indefinite number of arguments as an array (The rest parameter packs elements into an array.)
+The difference between rest parameters and the arguments object
+1.The arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly
+2.The ...restParam bundles all the  parameters into a single array so we wouldn't define many paraments
+spread operator usecases
+1.use case1 (array literal) when concat two or more arrys into a single array
+```let arr1=[1,2,3,4,5,6,7];
+   let arr2=[11,12,13,14,15,16,17];
+   let arr3;
+   arr3=[arr1,arr2]; //[Array(7), Array(7)]
+   arr3=[...arr1,...arr2];//1,2,3,4,5,6,7,11,12,13,14,15,16,17
+```
+2.
 
 
 
 
 
 
-
+**[⬆ Back to Top](#table-of-contents)**
 
 
 
