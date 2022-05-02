@@ -130,6 +130,7 @@ Microtask Queue is like the Callback Queue, but Microtask Queue has higher prior
 
 ### Browser API 
 
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ### data types in js
@@ -386,6 +387,133 @@ ex:- const firstOrder = () => console.log ('I am a first order function!');
 
 **[⬆ Back to Top](#table-of-contents)**
 
+### Unary function
+Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for a single argument accepted by a function.
+const unaryFunction = a => console.log (a + 10); // Add 10 to the given argument and display the value
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Generator function
+https://www.javascripttutorial.net/es6/javascript-generators/ 
+In JavaScript, a regular function is executed based on the run-to-completion model. It cannot pause midway and then continues from where it paused. ES6 introduces a new kind of function that is different from a regular function: function generator or generator.
+A generator can pause midway and then continues from where it paused.
+First, you see the asterisk (*) after the function keyword. The asterisk denotes that the generate() is a generator, not a normal function.
+Second, the yield statement returns a value and pauses the execution of the function
+      ex: function* generate() {
+             console.log('invoked 1st time');
+             yield 1;
+             console.log('invoked 2nd time');
+             yield 2;
+           }
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### recurstion
+recurstion is a method of solving problems by breaking them  into smaller subsets of the main problem, so we can use this samll subset to find solustion.in programming we can achive this by calling a function itself, usually with a different input passed to the child function. It calls itself over and over until an exit condition is reached, and then passes the results back up the call stack.
+
+if we doing with recurstion in programming we should keep two things in mind
+   1.base condition 
+   2.what is the return type
+         
+there are many different way to do recurstion
+   1.tail recurstion- when a recursive call is the last thing
+   2.Head Recursion- when a recursive call is the first thing
+   3.Tree Recursion-
+   4.Indirect Recursion-
+   5.Nested Recursion-
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### this keyword
+https://www.javascripttutorial.net/javascript-this/
+the this references the object of which the function is a property. In other words, the this references the object that is currently calling the function.
+Which object depends on how this is being invoked (used or called).
+
+The this keyword refers to different objects depending on how it is used:
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+ex:- Suppose you have an object called counter that has a method next(). When you call the next() method, you can access the this object.
+let counter = {
+  count: 0,
+  next: function () {
+    return ++this.count;
+  },
+};
+counter.next();
+Inside the next() function, the this references the counter object. See the following method call:
+The next() is a function that is the property of the counter object. Therefore, inside the next() function, the this references the counter object.
 
 
+but In the global context, the this references the global object, which is the window object on the web browser or global object on Node.js.
+but in arrow functions do not get their own 'this keyword' (lexical this keyword,) because it simply gets picked up from the outer lexical scope of the arrow function.
+basically an arrow function inherits the this keyword from the parent scope.
+console.log(`in global execution context 'this keyword' points to window object: `,this);
+ var obj={
+            firstName:"Prajwal",
+            lastName:"Veeresh",
+            method:function(){
+                console.log(`in function execution context 'this keyword' points to parent object of method: `,this);
+                console.log(`fullName: ${this.firstName} ${this.lastName}`);
+            }
+        }
+        obj.method();
+        
+arrow function arrow functions do not get their own 'this keyword' (lexical this keyword,) because it simply gets picked up from the outer lexical scope of the arrow function. basically an arrow function inherits the this keyword from the parent scope.
+        var obj2={
+            from:"Bangalore",
+            method:()=>{
+                console.log(this);// O/P window object
+            }
+        }
+        obj2.method();
+        var obj3={
+            to:'USA',
+            inside_obj:{
+                flightNo:145678,
+                inside_method:()=>{
+                    console.log(this);// O/P window object
+                }
+            }
+        }
+        obj3.inside_obj.inside_method();        
+        
+**[⬆ Back to Top](#table-of-contents)**
 
+### call-bind-apply methods
+call,bind,apply methods to tie a function into an object and call the function as if it belonged to that object The bind method creates a copy of the function and sets the this keyword
+Call: The call() method invokes a function with a given this value and arguments provided one by one
+Apply: Invokes the function with a given this value and allows you to pass in arguments as an array
+bind: returns a new function, allowing you to pass any number of arguments
+
+Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for comma (separated list) and Apply is for Array.
+Whereas Bind creates a new function that will have this set to the first parameter passed to bind().
+var employee1 = {firstName: 'John', lastName: 'Rodson'};
+var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
+function invite(greeting1, greeting2) {
+    console.log(greeting1 + ' ' + this.firstName + ' ' + this.lastName+ ', '+ greeting2);
+}
+
+call
+invite.call(employee1, 'Hello', 'How are you?'); // Hello John Rodson, How are you?
+invite.call(employee2, 'Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
+
+apply
+invite.apply(employee1, ['Hello', 'How are you?']); // Hello John Rodson, How are you?
+invite.apply(employee2, ['Hello', 'How are you?']); // Hello Jimmy Baily, How are you?
+        
+bind
+var inviteEmployee1 = invite.bind(employee1);
+var inviteEmployee2 = invite.bind(employee2);
+inviteEmployee1('Hello', 'How are you?'); // Hello John Rodson, How are you?
+inviteEmployee2('Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### scope
+
+        
