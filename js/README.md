@@ -186,9 +186,9 @@ When the JavaScript engine executes the JavaScript code, it creates the global e
 ### TDZ temporal dead zone
 there is a period between entering scope and being declared where they cannot be accessed. This period is the temporal dead zone (TDZ). Accessing let and const varibles  in the inner scope still causes a ReferenceError. If let were not hoisted, it would log outer value. The TDZ is a good thing because it helps to highlight bugs—accessing a value before it has been declared is rarely intentional.
 The TDZ also applies to default function arguments. Arguments are evaluated left to right, and each argument is in the TDZ until it is assigned
-            function testDefaults(a = b, b) { }
+ ```           function testDefaults(a = b, b) { }
             testDefaults(undefined, 1);
-
+```
 **[⬆ Back to Top](#table-of-contents)**
 
 ### let v/s const v/s var
@@ -223,7 +223,8 @@ means we don’t have to explicitly specify types of variables and objects. but 
 
 ### difference between type conversion and type coercion
 type coercion:- is the automatic or implicit conversion of values from one data type to another,the coercion is done implicitly. When JavaScript operates in a wrong data type, it will try to convert the value to the right data type.
-examples:- 12 + ""    //Output is "12" as number 12 is converted to string "12"
+examples:- ```
+            12 + ""    //Output is "12" as number 12 is converted to string "12"
            "15" * 2    //Output is 30 as string 15 is converted to number 15
            undefined + 6 //Output is NaN as undefined could not be converted to number
            "Hello" + null  //Output is "Hellonull", as null is converted to string "null"
@@ -233,10 +234,10 @@ examples:- 12 + ""    //Output is "12" as number 12 is converted to string "12"
            10 * [6] //Output is 60, as [6] is converted to number 6.
            10 * [10, 20] //Output is NaN, as [10, 20] could not be converted to number
            [1] + [1,2] //Output is "11,2" as [1] is converted to "1" and [1,2] is converted "1,2". Finally the two are concatenated to give the result "11,2"
-           
+           ```
 Type conversion:- (In this case, type conversion is explicitly done in the code by the developer.) JavaScript provides inbuilt methods for type conversion. using the inbuilt functions like Number(), String(), Boolean(),paresInt() etc.
 examples:-1)Converting to Number:- The Number() global method is used to convert any other data type value to numeric values.
-            Number("25") //Output is 25 as "25" string is converted to number 25
+       ```  Number("25") //Output is 25 as "25" string is converted to number 25
             Number("") //Output is 0 as "" string is converted to 0
             Number([]) //Output is 0 as [] is converted to 0
             Number(null) //Output is 0 as null is converted to 0
@@ -245,19 +246,22 @@ examples:-1)Converting to Number:- The Number() global method is used to convert
             Number("Test") //Output is NaN as "Test" could not be converted to number
             parseInt() and parseFloat() methods can also be used to convert numbers stored as a string to a number. 
             For all other data types, it will return NaN.
+            ```
          2)Converting to String :-The String() global method is used to convert any other data type value to string values.
-            String(25) //Output is "25" as 25 is converted to string "25"
+    ```     String(25) //Output is "25" as 25 is converted to string "25"
             String([]) //Output is "" as [] is converted to empty string ""
             String(null) //Output is "null" as null is converted to string "null"
             String(true) //Output is "true" as true is converted to string "true"
             String(false) //Output is "false" as false is converted to string "false"
             String({}) //Output is "[object Object]" as {} is converted to string(similar to calling toString() on a object)
+            ```
          3)Converting to Boolean:- The Boolean() global method is used to convert any other data type value to Boolean values.
-            Boolean(25) //Output is true
+         ```Boolean(25) //Output is true
             Boolean([]) //Output is true
             Boolean(null) //Output is false
             Boolean({}) //Output is true
             Boolean("Yeah! I will be converted to Boolean.") //Output is true
+            ```
             
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -274,7 +278,7 @@ If function arguments are passed by reference, the changes of variables that you
 ### deep and shallow copies
 shallow copies:-
 When a reference variable is copied into a new reference variable using the assignment operator, a shallow copy of the referenced object is created. In simple words, a reference variable mainly stores the address of the object it refers to. When a new reference variable is assigned the value of the old reference variable, the address stored in the old reference variable is copied into the new one. This means both the old and new reference variable point to the same object in memory. As a result if the state of the object changes through any of the reference variables it is reflected for both. 
-ex:- 
+ex:- ```
       var employee = {
           eid: "E102",
           ename: "Jack",
@@ -282,10 +286,10 @@ ex:-
           salary: 50000
       }
       var newEmployee = employee;    // Shallow copy
-
+```
 deep copies:-
 deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object. In this way, both the objects are independent of each other and in case of any modification to either one the other is not affected. Also, if one of the objects is deleted the other still remains in the memory. Now to create a deep copy of an object in JavaScript we use JSON.parse() and JSON.stringify() methods. 
-ex:-
+ex:-```
       var employee = {
           eid: "E102",
           ename: "Jack",
@@ -293,13 +297,13 @@ ex:-
           salary: 50000
       }
       var newEmployee = JSON.parse(JSON.stringify(employee)); //Deep Copy
-      
+      ```
 Here the new object is created using the JSON.parse() and JSON.stringify() methods of JavaScript. JSON.stringify() takes a JavaScript object as argument and then transforms it into a JSON string. This JSON string is passed to the JSON.parse() method which then transforms it into a JavaScript object. This method is useful when the object is small and has serializable properties. But if the object is very large and contains certain non-serializable properties then there is a risk of data loss. Specially if an object contains methods then JSON.stringify() will fail as methods are non-serializable. There are better ways to deep clone of which one is Lodash which allows cloning methods as well.
 
 Lodash To Deep Copy:(https://www.geeksforgeeks.org/what-is-shallow-copy-and-deep-copy-in-javascript/)
 Lodash is a JavaScript library that provides multiple utility functions and one of the most commonly used function of the Lodash library is the cloneDeep() method. This method helps in deep cloning of an object and also clones the non serializable properties which were a limitation in the JSON.stringify() approach.
 ex:-
-   const lodash = require('lodash');
+```const lodash = require('lodash');
    var employee = {
        eid: "E102",
        ename: "Jack",
@@ -312,6 +316,7 @@ ex:-
        }
    }
    var deepCopy = lodash.cloneDeep(employee);
+   ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -324,33 +329,33 @@ different ways of declaring a function in JS
 4)Constructor Function
 5)Arrow Function
 6)regular function
-7)Generator function  = - - - - - - - - - - - - - - - - -
+7)Generator function 
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### IIFE immediately-invoked-function-expression
 Immediately Invoked Function Expressions (IIFE) are functions that can be stated as expressions or normal declarations and use the anonymous property of the function expression to execute its code. If you want to execute a function immediately after the declaration, use IIFE. This is executed by wrapping the anonymous function in parentheses and ending it with a semicolon.
-          (function () {
+ ```      (function () {
             console.log("Welcome to Javascript");
           })();
-
+```
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Anonymous Function 
 Anonymous function declaration allows function names to appear hidden in the declaration itself. An anonymous function can also be an argument of a function hence, it can be declared inside another function as its parameters.
-    setTimeout(
+   ```setTimeout(
         function () {
           console.log("Executed after three seconds");
         }  , 3000 // delay in milliseconds
     )
-
+```
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Higher Order Functions
 A higher order function is a function that takes a function as an argument, or returns a function.we are using higher-order functions when passing callback functions.some pre-defined methods are map,filter,settimout,Eventlistener these methods take a function as an argument.
-ex:-  const firstOrderFunc = () => console.log ('Hello, I am a First order function');
-      const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
-      higherOrder(firstOrderFunc);
+ex:-```  const firstOrderFunc = () => console.log ('Hello, I am a First order function');
+         const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
+         higherOrder(firstOrderFunc);```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -362,9 +367,9 @@ this callback function uesd in many inbuild methods: like,filter,map,addEventLis
 
 ### What is a pure function
 Pure Function is a function (a block of code ) that always returns the same result if the same arguments are passed. It does not depend on any state, or data change during a program’s execution rather it only depends on its input arguments. Also a pure function does not produce any observable side effects such as network requests or data mutation etc.
-ex:-        function calculateGST( productPrice ) {
+ex:-    ```function calculateGST( productPrice ) {
                return productPrice * 0.05;
-            }
+            }```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -376,20 +381,20 @@ arrow function arrow functions do not get their own 'this keyword' (lexical this
 ### What is a first class function
 In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
-ex:-     const handler = () => console.log ('This is a click handler function');
-         document.addEventListener ('click', handler);
+ex:- ``` const handler = () => console.log ('This is a click handler function');
+         document.addEventListener ('click', handler);```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
-ex:- const firstOrder = () => console.log ('I am a first order function!');
+ex:- ```const firstOrder = () => console.log ('I am a first order function!');```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Unary function
 Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for a single argument accepted by a function.
-const unaryFunction = a => console.log (a + 10); // Add 10 to the given argument and display the value
+```const unaryFunction = a => console.log (a + 10); // Add 10 to the given argument and display the value```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -399,12 +404,12 @@ In JavaScript, a regular function is executed based on the run-to-completion mod
 A generator can pause midway and then continues from where it paused.
 First, you see the asterisk (*) after the function keyword. The asterisk denotes that the generate() is a generator, not a normal function.
 Second, the yield statement returns a value and pauses the execution of the function
-      ex: function* generate() {
-             console.log('invoked 1st time');
-             yield 1;
-             console.log('invoked 2nd time');
-             yield 2;
-           }
+      ex: ```function* generate() {
+                console.log('invoked 1st time');
+                yield 1;
+                console.log('invoked 2nd time');
+                yield 2;
+           }```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -438,13 +443,13 @@ In an event, this refers to the element that received the event.
 Methods like call(), apply(), and bind() can refer this to any object.
 
 ex:- Suppose you have an object called counter that has a method next(). When you call the next() method, you can access the this object.
-let counter = {
-  count: 0,
-  next: function () {
+```let counter = {
+   count: 0,
+   next: function () {
     return ++this.count;
-  },
+   },
 };
-counter.next();
+counter.next();```
 Inside the next() function, the this references the counter object. See the following method call:
 The next() is a function that is the property of the counter object. Therefore, inside the next() function, the this references the counter object.
 
@@ -452,7 +457,7 @@ The next() is a function that is the property of the counter object. Therefore, 
 but In the global context, the this references the global object, which is the window object on the web browser or global object on Node.js.
 but in arrow functions do not get their own 'this keyword' (lexical this keyword,) because it simply gets picked up from the outer lexical scope of the arrow function.
 basically an arrow function inherits the this keyword from the parent scope.
-console.log(`in global execution context 'this keyword' points to window object: `,this);
+```console.log(`in global execution context 'this keyword' points to window object: `,this);
  var obj={
             firstName:"Prajwal",
             lastName:"Veeresh",
@@ -461,10 +466,10 @@ console.log(`in global execution context 'this keyword' points to window object:
                 console.log(`fullName: ${this.firstName} ${this.lastName}`);
             }
         }
-        obj.method();
+        obj.method();```
         
 arrow function arrow functions do not get their own 'this keyword' (lexical this keyword,) because it simply gets picked up from the outer lexical scope of the arrow function. basically an arrow function inherits the this keyword from the parent scope.
-        var obj2={
+        ```var obj2={
             from:"Bangalore",
             method:()=>{
                 console.log(this);// O/P window object
@@ -480,7 +485,8 @@ arrow function arrow functions do not get their own 'this keyword' (lexical this
                 }
             }
         }
-        obj3.inside_obj.inside_method();        
+        obj3.inside_obj.inside_method();
+   ```
         
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -492,6 +498,7 @@ bind: returns a new function, allowing you to pass any number of arguments
 
 Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for comma (separated list) and Apply is for Array.
 Whereas Bind creates a new function that will have this set to the first parameter passed to bind().
+```
 var employee1 = {firstName: 'John', lastName: 'Rodson'};
 var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
 function invite(greeting1, greeting2) {
@@ -511,9 +518,105 @@ var inviteEmployee1 = invite.bind(employee1);
 var inviteEmployee2 = invite.bind(employee2);
 inviteEmployee1('Hello', 'How are you?'); // Hello John Rodson, How are you?
 inviteEmployee2('Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
-
+```
 **[⬆ Back to Top](#table-of-contents)**
 
 ### scope
+scope defines accessibility of variables, objects and functions in some particular part of programming code during runtime.
+In other words, scope determines the visibility of variables and other resources in areas of your code.        
 
+There are two types of scope in JavaScript.
+1.Global scope: Variables declared outside of any function become global variables. so we can be access and modified from any function.
+2.Local scope :
+            a.Block Scope, it will apply only for let and const varibles but doesn't apply var varible
+            b.Functional Scope, it will apply for let const and var
+            
+**[⬆ Back to Top](#table-of-contents)**
+            
+### scope chain
+the JavaScript engine will try to find the variable’s value in the current scope.If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
+If it’s still could not find the variable, it will either implicitly declare the variable in the global scope (if not in strict mode) or return an error.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### lexical scope
+A lexical scope in JavaScript means that a variable defined outside a function can be accessible inside inside function defined after the variable declaration.
+But the opposite is not true.
+      ``` var a = 10; 
+          var par_func = function (){ // outermost function
+            var b = 20;
+            console.log("a and b is accessible (outer):", a, b);
+            var innerFunc= function (){ // innermost function
+              var c = 30;
+              console.log("a and b and c is accessible (innner):", a, b, c);
+            }
+            innerFunc();
+          }
+          par_func()
+        ```
         
+**[⬆ Back to Top](#table-of-contents)**
+
+### Closures
+A closure is the combination of a function and the lexical environment which measn that function was declared.It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains.
+The closure has three scope chains
+ 1.Own scope where variables defined between its curly brackets
+ 2.Outer function’s variables
+ 3.Global variables
+        ```var a = 10; // variable a assigned to 10
+        var par_func = function (){ // outermost function
+          var b = 20;
+          console.log("a and b is accessible (outer):", a, b);
+          var innerFunc= function (){ // innermost function
+            var c = 30;
+            console.log("a and b and c is accessible (innner):", a, b, c);
+           }
+           return innerFunc;
+        }
+        var var25= par_func();
+        var25();
+        ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the possible ways to create objects in JavaScript
+there are 5 ways to create object in js
+1.Object Literal
+2.using new Object() method 
+3.using Object.create(proto,propertiesObject)
+4.uinsg Constructor Function
+5.using ES6 Classes
+
+-Object Literal Way:
+The Simplest and easiest way to create an object is using Object Literal “{}”. Just define properties and values inside curly braces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
