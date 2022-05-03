@@ -670,20 +670,20 @@ When we try to access a property of an object: if the property can't be found in
 ### Object Destructuring
 OavaScript Object Destructuring is the syntax for extracting values from an object property and assigning them to a variable.
 
-```let person={
-   name:"Prajwal V",
-   age:23,
-   from:"Bengaluru"
-}
-let name=person.name;
-let age=person.age;
-let from=person.from;
-```
+            ```let person={
+               name:"Prajwal V",
+               age:23,
+               from:"Bengaluru"
+            }
+            let name=person.name;
+            let age=person.age;
+            let from=person.from;
+            ```
 We have to explicitly mention the name and age property with the user object in dot(.) notation, then declare variables accordingly and assign them. 
 Setting default values and also we assign the age property to the age variable with the default value of 18.
-```let{name,age,from}=person;
-let{name,age:currentAge=18,from,contactNo='63628***',}=person;
-```
+            ```let{name,age,from}=person;
+            let{name,age:currentAge=18,from,contactNo='63628***',}=person;
+            ```
 if property not there in object it will take defult value
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -691,8 +691,8 @@ if property not there in object it will take defult value
 ### SET
 A set is a collection of items which are unique i.e no element can be repeated, values of any type.Set in ES6 are ordered: elements of the set can be iterated in the insertion order. Set can store any types of values whether primitive or objects.
 To create a new empty Set, 
-```let setObject = new Set();
-```
+            ```let setObject = new Set();
+            ```
 The Set constructor also accepts an optional iterable object. If you pass an iterable object to the Set constructor, all the elements of the iterable object will be added to the new set:
 Set methods:
 1.add(value) – appends a new element with a specified value to the set.
@@ -703,26 +703,26 @@ Set methods:
 6.has(value) – returns true if an element with a given value is in the set, or false if it is not.
 7.keys() – is the same as values() function.
 
-```let chars = new Set(['a', 'a', 'b', 'c', 'c']);
-   console.log(chars);//Set { 'a', 'b', 'c' }
-   console.log(chars.size);//  3
-   console.log(chars instanceof Set);// true
-   chars.add('d');// Set { 'a', 'b', 'c', 'd' }
-   console.log(chars.has('a'));// true
-   chars.delete('d'); //   Set { 'a', 'b', 'c',}
-   chars.clear(); //Set{}
-   
-   for (let char of chars) {
-    console.log(char);
-   }
-   
-   for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
-    console.log(key === value);
-   }
-   
-   Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
-   chars.forEach(char => console.log(char.toUpperCase()));
-   ``` 
+         ```let chars = new Set(['a', 'a', 'b', 'c', 'c']);
+            console.log(chars);//Set { 'a', 'b', 'c' }
+            console.log(chars.size);//  3
+            console.log(chars instanceof Set);// true
+            chars.add('d');// Set { 'a', 'b', 'c', 'd' }
+            console.log(chars.has('a'));// true
+            chars.delete('d'); //   Set { 'a', 'b', 'c',}
+            chars.clear(); //Set{}
+
+            for (let char of chars) {
+             console.log(char);
+            }
+
+            for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
+             console.log(key === value);
+            }
+
+            Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
+            chars.forEach(char => console.log(char.toUpperCase()));
+            ``` 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### MAP
