@@ -50,8 +50,8 @@
 |46 | [nodeModules](#nodeModules)|
 |47 | [public folder in ReactJS](#public-folder-in-ReactJS)|
 |48 | [src](#src)|
-|49 | [interview questions](https://github.com/sudheerj/reactjs-interview-questions#what-are-pure-components)|
-|50 | [What are Pure Components](#What-are-the-different-ways-to-style-a-React-component)|
+|49 | [interview questions]()|
+|50 | [What are Pure Components](https://github.com/sudheerj/reactjs-interview-questions#what-are-pure-components)|
 |51 | [What is the difference between HTML and React event handling](#Name-a-few-techniques-to-optimize-React-app-performance)|
 |52 | [What are inline conditional expressions?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
 |53 | [What is the use of refs?](#packageJson-file)|
