@@ -50,6 +50,57 @@
 |46 | [nodeModules](#nodeModules)|
 |47 | [public folder in ReactJS](#public-folder-in-ReactJS)|
 |48 | [src](#src)|
+|49 | [interview questions](https://github.com/sudheerj/reactjs-interview-questions#what-are-pure-components)|
+|50 | [What are Pure Components](#What-are-the-different-ways-to-style-a-React-component)|
+|51 | [What is the difference between HTML and React event handling](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|52 | [What are inline conditional expressions?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|53 | [What is the use of refs?](#packageJson-file)|
+|54 | [What are forward refs?](#packageLockJson-file)|
+|55 | [difference between createElement and cloneElement](#packageJson-vs-packageLockJson)|
+|56 | [What is Lifting State Up in React?](#nodeModules)|
+|57 | [What is reconciliation?](#public-folder-in-ReactJS)|
+|58 | [Why React uses className over class attribute?](#src)|
+|59 | [How to apply validation on props in React?](#src)|
+|60 | [What are error boundaries in React v16?](#What-are-the-different-ways-to-style-a-React-component)|
+|61 | [How error boundaries handled in React v15?](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|62 | [What is the use of react-dom package?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|63 | [What is the purpose of render method of react-dom?](#packageJson-file)|
+|64 | [What is ReactDOMServer?](#packageLockJson-file)|
+|65 | [How to use innerHTML in React?](#packageJson-vs-packageLockJson)|
+|66 | [Is it good to use setState() in componentWillMount() method?](#nodeModules)|
+|67 | [How do you conditionally render components?](#public-folder-in-ReactJS)|
+|68 | [How do you memoize a component?](#src)|
+|69 | [How you implement Server Side Rendering or SSR?](#src)|
+|70 | [Why should component names start with capital letter?](#What-are-the-different-ways-to-style-a-React-component)|
+|71 | [Can you force a component to re-render without calling setState?](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|72 | [How to loop inside JSX?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|73 | [What is the difference between React and ReactDOM?](#packageJson-file)|
+|74 | [Why ReactDOM is separated from React?](#packageLockJson-file)|
+|75 | [](#packageJson-vs-packageLockJson)|
+|76 | [Is it good to use setState() in componentWillMount() method?](#nodeModules)|
+|77 | [How to listen to state changes?](#public-folder-in-ReactJS)|
+|78 | [s it possible to use React without rendering HTML?](#src)|
+|79 | [How to pretty print JSON with React?](#src)|
+|80 | [How to focus an input element on page load?](#What-are-the-different-ways-to-style-a-React-component)|
+|81 | [What are the possible ways of updating objects in state?](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|82 | [How to use https instead of http in create-react-app?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|83 | [Why is a component constructor called only once?](#packageJson-file)|
+|84 | [What is the benefit of styles modules?](#packageLockJson-file)|
+|85 | [What are the popular React-specific linters?](#packageJson-vs-packageLockJson)|
+|86 | [What is Shallow Renderer in React testing?](#nodeModules)|<-React Testing
+|87 | [What is TestRenderer package in React?](#public-folder-in-ReactJS)|
+|88 | [What is the purpose of ReactTestUtils package?](#src)|
+|89 | [What is Jest?](#src)|
+|90 | [What are the advantages of Jest over Jasmine?](#What-are-the-different-ways-to-style-a-React-component)|
+|91 | [Give a simple example of Jest test case](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|92 | [What is flux?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|<-React Redux
+|93 | [Can I dispatch an action in reducer?](#packageJson-file)|
+|94 | [How to reset state in Redux?](#packageLockJson-file)|
+|95 | [Why are Redux state functions called reducers?](#packageJson-vs-packageLockJson)|
+|96 | [How to make AJAX request in Redux?](#nodeModules)|<-React Testing
+|97 | [What is the mental model of redux-saga?](#public-folder-in-ReactJS)|
+|98 | [What are the differences between call() and put() in redux-saga?](#src)|
+|99 | [What are the differences between redux-saga and redux-thunk?](#src)|
 
 ### what is react
 -> React is an open-source JavaScript Library created by Facebook(SPA - single page application) for creating dynamic and interactive applications and building better UI/UX design for web and mobile applications.it makes code easier to debug by dividing them into components.
