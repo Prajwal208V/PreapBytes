@@ -695,7 +695,7 @@ To create a new empty Set,
             ```
 The Set constructor also accepts an optional iterable object. If you pass an iterable object to the Set constructor, all the elements of the iterable object will be added to the new set:
 Set methods:
-1.add(value) – appends a new element with a specified value to the set.
+   1.add(value) – appends a new element with a specified value to the set.
 2.clear()  – removes all elements from the Set object.
 3.delete(value) – deletes an element specified by the value.
 4.entries()– returns a new Iterator that contains an array of  [value, value]
@@ -703,26 +703,26 @@ Set methods:
 6.has(value) – returns true if an element with a given value is in the set, or false if it is not.
 7.keys() – is the same as values() function.
 
-         ```let chars = new Set(['a', 'a', 'b', 'c', 'c']);
-            console.log(chars);//Set { 'a', 'b', 'c' }
-            console.log(chars.size);//  3
-            console.log(chars instanceof Set);// true
-            chars.add('d');// Set { 'a', 'b', 'c', 'd' }
-            console.log(chars.has('a'));// true
-            chars.delete('d'); //   Set { 'a', 'b', 'c',}
-            chars.clear(); //Set{}
+    ```let chars = new Set(['a', 'a', 'b', 'c', 'c']);
+       console.log(chars);//Set { 'a', 'b', 'c' }
+       console.log(chars.size);//  3
+       console.log(chars instanceof Set);// true
+       chars.add('d');// Set { 'a', 'b', 'c', 'd' }
+       console.log(chars.has('a'));// true
+       chars.delete('d'); //   Set { 'a', 'b', 'c',}
+       chars.clear(); //Set{}
+  
+       for (let char of chars) {
+          console.log(char);
+       }
 
-            for (let char of chars) {
-             console.log(char);
-            }
-
-            for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
-             console.log(key === value);
-            }
-
-            Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
-            chars.forEach(char => console.log(char.toUpperCase()));
-            ``` 
+       for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
+         console.log(key === value);
+       }
+       Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
+       chars.forEach(char => console.log(char.toUpperCase()));
+       ``` 
+       
 **[⬆ Back to Top](#table-of-contents)**
 
 ### MAP
