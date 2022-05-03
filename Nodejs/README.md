@@ -15,14 +15,12 @@
 |7  | [commonly used timing features of Node.js](#what-is-the-difference-between-slice-and-splice)|
 |8  | [package.json file](#how-do-you-compare-object-and-map)|
 |9  | [Express](#what-is-the-difference-between--and--operators)|
-
 |12 | [how express helps you to create a backend application](#what-is-a-first-order-function)|<- prepbytes
 |10 | [Explain the concept of middleware in Node.js.](#what-are-lambda-or-arrow-functions)|
 |11 | [Explain CORS](#what-is-a-first-class-function)|
 |13 | [Explain min 5 status codes gets used in Backend development](#what-is-a-higher-order-function)|
 |14 | [Difference between HTTP and HTTPS](#what-is-a-unary-function)|
 |15 | [What are JWT tokens?](#what-is-the-currying-function)|
-
 |16 | [What are the data types in Node.js](#what-is-a-pure-function)| <- linkdin
 |12 | [When should you npm and when yarn](#what-is-a-first-order-function)|
 |10 | [What is REPL? What purpose it is used for](#what-are-lambda-or-arrow-functions)|
@@ -45,8 +43,6 @@
 |15 | [What is the difference between Node.js vs Ajax](#what-is-the-currying-function)|
 |16 | [Why npm shrinkwrap is useful?](#what-is-a-pure-function)|
 |14 | [How to make post request in Node.js](#what-is-a-unary-function)|
-
-
 |15 | [](#what-is-the-currying-function)|
 |16 | [](#what-is-a-pure-function)|
 |14 | [](#what-is-a-unary-function)|
