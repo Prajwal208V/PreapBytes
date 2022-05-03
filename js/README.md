@@ -4,6 +4,10 @@
 | No. | Questions |
 |---- | ---------
 |1  | [How JavaScript engine executes a script?](#what-are-the-possible-ways-to-create-objects-in-javascript) |
+|   | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
+|   | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
+|   | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
+|   | [What is ECMAScript](#what-is-ecmascript)|
 |2  | [call stack](#what-is-a-prototype-chain)|
 |3  | [event-loop](#what-is-the-difference-between-call-apply-and-bind)|
 |2  | [threadpool](#what-is-a-prototype-chain)|
@@ -43,6 +47,8 @@
 |32 | [Prototypes](#how-do-you-manipulate-dom-using-a-service-worker)|
 |33 | [prototype chaining](#how-do-you-reuse-information-across-service-worker-restarts)|
 |34 | [Object Destructuring](#what-is-indexeddb)|
+|   | [How do you test for an empty object](#how-do-you-test-for-an-empty-object)|
+|   | [How do you check if a key exists in an object](#how-do-you-check-if-a-key-exists-in-an-object)|
 |35 | [set](#what-is-web-storage)|
 |36 | [map](#what-is-a-post-message)|
 |37 | [weakSet](#what-is-a-cookie)|
@@ -52,6 +58,8 @@
 |41 | [promise](#What-are-the-differences-between-cookie-local-storage-and-session-storage)|
 |42 | [Consuming a Promise](#what-is-the-main-difference-between-localstorage-and-sessionstorage)|
 |43 | [promise chaining](#how-do-you-access-web-storage)|
+|   | [What are the main rules of promise](#what-are-the-main-rules-of-promise)|
+|   | [What are the pros and cons of promises over callbacks](#what-are-the-pros-and-cons-of-promises-over-callbacks)|
 |44 | [try catch throw finally in js](#what-are-the-methods-available-on-session-storage)|
 |45 | [What are the possible ways to create an array](#what-is-a-storage-event-and-its-event-handler)|
 |46 | [ways to empty the array](#why-do-you-need-web-storage)|
@@ -78,8 +86,68 @@
 |67 | [session storage](#why-do-you-need-strict-mode)|
 |68 | [What is IndexedDB](#how-do-you-declare-strict-mode)|
 |69 | [JSON](#what-is-the-purpose-of-double-exclamation)|
+|| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
+|| [What is the purpose JSON stringify](#what-is-the-purpose-json-stringify)|
+|| [How do you parse JSON string](#how-do-you-parse-json-string)|
+|| [Why do you need JSON](#why-do-you-need-json)|
+|| [What are PWAs](#what-are-pwas?)|
 |70 | [JQUERY](#what-is-the-purpose-of-double-exclamation)|
 |71 | [Async & await](#what-is-the-purpose-of-double-exclamation)|
+|   | [What is a strict mode in javascript](#what-is-a-strict-mode-in-javascript)|
+|   | [Why do you need strict mode](#why-do-you-need-strict-mode)|
+|   | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
+|   | |**storage**|
+|34 | [What is IndexedDB](#what-is-indexeddb)|
+|35 | [What is web storage](#what-is-web-storage)|
+|36 | [What is a post message](#what-is-a-post-message)|
+|37 | [What is a cookie](#what-is-a-cookie)|
+|38 | [Why do you need a Cookie](#why-do-you-need-a-cookie)|
+|39 | [What are the options in a cookie](#what-are-the-options-in-a-cookie)|
+|40 | [How do you delete a cookie](#how-do-you-delete-a-cookie)|
+|41 | [What are the differences between cookie, local storage and session storage](#What-are-the-differences-between-cookie-local-storage-and-session-storage)|
+|42 | [What is the main difference between localStorage and sessionStorage](#what-is-the-main-difference-between-localstorage-and-sessionstorage)|
+|43 | [How do you access web storage](#how-do-you-access-web-storage)|
+|44 | [What are the methods available on session storage](#what-are-the-methods-available-on-session-storage)|
+|45 | [What is a storage event and its event handler](#what-is-a-storage-event-and-its-event-handler)|
+|46 | [Why do you need web storage](#why-do-you-need-web-storage)|
+|47 | [How do you check web storage browser support](#how-do-you-check-web-storage-browser-support)|
+|48 | [How do you check web workers browser support](#how-do-you-check-web-workers-browser-support)|
+|49 | [Give an example of web worker](#give-an-example-of-web-worker)|
+|50 | [What are the restrictions of web workers on DOM](#what-are-the-restrictions-of-web-workers-on-dom)|
+|   | |**server-sent events**|
+|57 | [What is server-sent events](#what-is-server-sent-events)|
+|58 | [How do you receive server-sent event notifications](#how-do-you-receive-server-sent-event-notifications)|
+|59 | [How do you check browser support for server-sent events](#how-do-you-check-browser-support-for-server-sent-events)|
+|60 | [What are the events available for server sent events](#what-are-the-events-available-for-server-sent-events)|
+|   | |**window v/s document**|
+|76 | [What is the difference between window and document](#what-is-the-difference-between-window-and-document)|
+|77 | [How do you access history in javascript](#how-do-you-access-history-in-javascript)|
+|90 | [What is the difference between document load and DOMContentLoaded events](#what-is-the-difference-between-document-load-and-domcontentloaded-events)|
+|   | |**IQ**|
+|84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)
+|   | |**DOM**|
+|88 | [How do you submit a form using JavaScript](#how-do-you-submit-a-form-using-javascript)|
+|91 | [What is the difference between native, host and user objects](#what-is-the-difference-between-native,-host-and-user-objects)|
+|94 | [What is the difference between an attribute and a property](#what-is-the-difference-between-an-attribute-and-a-property)|
+|100| [What are events](#what-are-events)|
+|102| [What is the use of preventDefault method](#what-is-the-use-of-preventdefault-method)|
+|119| [How do you redirect new page in javascript](#how-do-you-redirect-new-page-in-javascript)|
+|122| [How do you get the current url with javascript](#how-do-you-get-the-current-url-with-javascript)|
+|123| [What are the various url properties of location object](#what-are-the-various-url-properties-of-location-object)|
+|124| [How do get query string values in javascript](#how-do-get-query-string-values-in-javascript)|
+|   | |**time**|
+|117| [What is the purpose of clearTimeout method](#what-is-the-purpose-of-cleartimeout-method)|
+|118| [What is the purpose of clearInterval method](#what-is-the-purpose-of-clearinterval-method)|
+|131| [How do you display the current date in javascript](#how-do-you-display-the-current-date-in-javascript)|
+|132| [How do you compare two date objects](#how-do-you-compare-two-date-objects)|
+|137| [How do you assign default values to variables](#how-do-you-assign-default-values-to-variables)|
+
+
+
+
+
+
+
 
 
 ### How JavaScript engine executes a script
@@ -945,23 +1013,15 @@ Array Constructor initialize an array with Array constructor syntax using new ke
 ### ways to empty the array 
 4 Ways to Empty an Array in JavaScript
 1.Assigning it to a new empty array
-
-```let arr=[];
-```
+let arr=[];
 2.set its length to zero
-
-```arr.length=0;
-```
+arr.length=0;
 3.Using splice() method,splice method removing or replacing existing elements
-
-```arr.splice(0,arr.length)
-```
+arr.splice(0,arr.length)
 4.Using pop() method:remove each element of the array one by one using the while loop and pop()
-
-``` while(arr.length){
+while(arr.length){
         arr.pop();
     }
-```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -975,11 +1035,10 @@ that makes it possible to unpack values from arrays we can extract data from arr
 **[⬆ Back to Top](#table-of-contents)**
 
 ### rest parameter and spread operator
+JavaScript uses three dots (...) for both the rest and spread operators.
 ~spread operator:allows you to spread out elements of an iterable object such as an array,a  map, or a set. means The spread operator unpacks elements.
 ~rest parameter:allows a function to accept an indefinite number of arguments as an array (The rest parameter packs elements into an array.)
-The difference between rest parameters and the arguments object
-1.The arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly
-2.The ...restParam bundles all the  parameters into a single array so we wouldn't define many paraments
+The main difference between rest and spread is that the rest operator puts the rest of some specific user-supplied values into a JavaScript array. But the spread syntax expands iterables into individual elements.
 spread operator usecases
 1.use case1 (array literal) when concat two or more arrys into a single array
 ```let arr1=[1,2,3,4,5,6,7];
@@ -989,11 +1048,6 @@ spread operator usecases
    arr3=[...arr1,...arr2];//1,2,3,4,5,6,7,11,12,13,14,15,16,17
 ```
 2.
-
-
-
-
-
 
 **[⬆ Back to Top](#table-of-contents)**
 
