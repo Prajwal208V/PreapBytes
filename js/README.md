@@ -8,7 +8,7 @@
 |98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
 |99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
 |100| [What is ECMAScript](#what-is-ecmascript)|
-|3  | [event-loop](#)|
+|3  | [event-loop](#event-Loop)|
 |387| [What are tasks in event loop](#what-are-tasks-in-event-loop)|
 |388| [What are microtasks](#what-are-microtasks)|
 |395| [What is a microTask queue](#what-is-a-microtask-queue)|
