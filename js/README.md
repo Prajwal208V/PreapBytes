@@ -521,7 +521,7 @@ different ways of declaring a function in JS
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### IIFE immediately-invoked-function-expression
+### IIFE
 Immediately Invoked Function Expressions (IIFE) are functions that can be stated as expressions or normal declarations and use the anonymous property of the function expression to execute its code. If you want to execute a function immediately after the declaration, use IIFE. This is executed by wrapping the anonymous function in parentheses and ending it with a semicolon.
        (function () {
             console.log("Welcome to Javascript");
@@ -677,7 +677,7 @@ arrow function arrow functions do not get their own 'this keyword' (lexical this
         
 **[⬆ Back to Top](#table-of-contents)**
 
-### call-bind-apply methods
+### call bind apply methods
 call,bind,apply methods to tie a function into an object and call the function as if it belonged to that object The bind method creates a copy of the function and sets the this keyword
 Call: The call() method invokes a function with a given this value and arguments provided one by one
 Apply: Invokes the function with a given this value and allows you to pass in arguments as an array
@@ -877,6 +877,72 @@ if property not there in object it will take defult value
 
 **[⬆ Back to Top](#table-of-contents)**
 
+127. ### How do you test for an empty object
+
+     There are different solutions based on ECMAScript versions
+     1. **Using Object entries(ECMA 7+):** You can use object entries length along with constructor type.
+
+     ```javascript
+     Object.entries(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
+     ```
+
+     1. **Using Object keys(ECMA 5+):** You can use object keys length along with constructor type.
+
+     ```javascript
+     Object.keys(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
+     ```
+
+     1. **Using for-in with hasOwnProperty(Pre-ECMA 5):** You can use a for-in loop along with hasOwnProperty.
+
+     ```javascript
+     function isEmpty(obj) {
+       for(var prop in obj) {
+         if(obj.hasOwnProperty(prop)) {
+           return false;
+         }
+       }
+
+       return JSON.stringify(obj) === JSON.stringify({});
+     }
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+125. ### How do you check if a key exists in an object
+
+     You can check whether a key exists in an object or not using three approaches,
+
+     1. **Using in operator:** You can use the in operator whether a key exists in an object or not
+
+     ```javascript
+     "key" in obj
+     ```
+
+     and If you want to check if a key doesn't exist, remember to use parenthesis,
+
+     ```javascript
+     !("key" in obj)
+     ```
+
+     1. **Using hasOwnProperty method:** You can use `hasOwnProperty` to particularly test for properties of the object instance (and not inherited properties)
+
+     ```javascript
+     obj.hasOwnProperty("key") // true
+     ```
+
+     1. **Using undefined comparison:** If you access a non-existing property from an object, the result is undefined. Let’s compare the properties against undefined to determine the existence of the property.
+
+     ```javascript
+     const user = {
+       name: 'John'
+     };
+
+     console.log(user.name !== undefined);     // true
+     console.log(user.nickName !== undefined); // false
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
 ### SET
 A set is a collection of items which are unique i.e no element can be repeated, values of any type.Set in ES6 are ordered: elements of the set can be iterated in the insertion order. Set can store any types of values whether primitive or objects.
 To create a new empty Set, 
@@ -1001,7 +1067,72 @@ The main difference is that references to key objects in Map are strong while re
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
- 
+
+62. ### What is callback in callback
+
+    You can nest one callback inside in another callback to execute the actions sequentially one by one. This is known as callbacks in callbacks.
+
+    ```javascript
+    loadScript('/script1.js', function(script) {
+       console.log('first script is loaded');
+
+      loadScript('/script2.js', function(script) {
+
+        console.log('second script is loaded');
+
+        loadScript('/script3.js', function(script) {
+
+            console.log('third script is loaded');
+          // after all scripts are loaded
+        });
+
+      })
+
+    });
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+61. ### What are the main rules of promise
+
+    A promise must follow a specific set of rules,
+    1. A promise is an object that supplies a standard-compliant `.then()` method
+    2. A pending promise may transition into either fulfilled or rejected state
+    3. A fulfilled or rejected promise is settled and it must not transition into any other state.
+    4. Once a promise is settled, the value must not change.
+
+    **[⬆ Back to Top](#table-of-contents)**
+    
+93. ### What are the pros and cons of promises over callbacks
+
+    Below are the list of pros and cons of promises over callbacks,
+
+    **Pros:**
+    1. It avoids callback hell which is unreadable
+    2. Easy to write sequential asynchronous code with .then()
+    3. Easy to write parallel asynchronous code with Promise.all()
+    4. Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)
+
+    **Cons:**
+    1. It makes little complex code
+    2. You need to load a polyfill if ES6 is not supported
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+228. ### What are the different error names from error object
+
+     There are 6 different types of error names returned from error object,
+     | Error Name | Description |
+     |---- | ---------
+     | EvalError  | An error has occurred in the eval() function |
+     | RangeError | An error has occurred with a number "out of range"  |
+     | ReferenceError | An error due to an illegal reference|
+     | SyntaxError | An error due to a syntax error|
+     | TypeError | An error due to a type error |
+     | URIError | An error due to encodeURI() |
+
+     **[⬆ Back to Top](#table-of-contents)**
+     
 ### CALLBACK hell
 we tries to execute multiple asynchronous operations one after the other. By nesting callbacks The use of callbacks makes the code difficult to write and maintain. It also increases the difficulty of identifying the flow of the application,
 ```async1(function(){
@@ -1014,7 +1145,6 @@ we tries to execute multiple asynchronous operations one after the other. By nes
     });
 });
 ```
-
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -1155,6 +1285,94 @@ that makes it possible to unpack values from arrays we can extract data from arr
 
 **[⬆ Back to Top](#table-of-contents)**
 
+111. ### What is JSON
+
+     JSON (JavaScript Object Notation) is a lightweight format that is used for data interchanging. It is based on a subset of JavaScript language in the way objects are built in JavaScript.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+112. ### What are the syntax rules of JSON
+
+     Below are the list of syntax rules of JSON
+     1. The data is in name/value pairs
+     2. The data is separated by commas
+     3. Curly braces hold objects
+     4. Square brackets hold arrays
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+113. ### What is the purpose JSON stringify
+
+     When sending data to a web server, the data has to be in a string format. You can achieve this by converting JSON object into a string using stringify() method.
+
+     ```javascript
+     var userJSON = {'name': 'John', age: 31}
+     var userString = JSON.stringify(user);
+     console.log(userString); //"{"name":"John","age":31}"
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+114. ### How do you parse JSON string
+
+     When receiving the data from a web server, the data is always in a string format. But you can convert this string value to a javascript object using parse() method.
+
+     ```javascript
+     var userString = '{"name":"John","age":31}';
+     var userJSON = JSON.parse(userString);
+     console.log(userJSON);// {name: "John", age: 31}
+     ```
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+115. ### Why do you need JSON
+
+     When exchanging data between a browser and a server, the data can only be text. Since JSON is text only, it can easily be sent to and from a server, and used as a data format by any programming language.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+116. ### What are PWAs
+
+     Progressive web applications (PWAs) are a type of mobile app delivered through the web, built using common web technologies including HTML, CSS and JavaScript. These PWAs are deployed to servers, accessible through URLs, and indexed by search engines.
+
+     **[⬆ Back to Top](#table-of-contents)**
+
+66. ### What is a strict mode in javascript
+
+    Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a “strict” operating context. This way it prevents certain actions from being taken and throws more exceptions. The literal expression `"use strict";` instructs the browser to use the javascript code in the Strict mode.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+67. ### Why do you need strict mode
+
+    Strict mode is useful to write "secure" JavaScript by notifying "bad syntax" into real errors. For example, it eliminates accidentally creating a global variable by throwing an error and also throws an error for assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+68. ### How do you declare strict mode
+
+    The strict mode is declared by adding "use strict"; to the beginning of a script or a function.
+    If declared at the beginning of a script, it has global scope.
+
+    ```javascript
+    "use strict";
+    x = 3.14; // This will cause an error because x is not declared
+    ```
+
+    and if you declare inside a function, it has local scope
+
+    ```javascript
+    x = 3.14;       // This will not cause an error.
+    myFunction();
+
+    function myFunction() {
+      "use strict";
+      y = 3.14;   // This will cause an error
+    }
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 ### rest parameter and spread operator
 JavaScript uses three dots (...) for both the rest and spread operators.
 ~spread operator:allows you to spread out elements of an iterable object such as an array,a  map, or a set. means The spread operator unpacks elements.
@@ -1195,6 +1413,7 @@ spread operator usecases
      ECMAScript is the scripting language that forms the basis of JavaScript. ECMAScript standardized by the ECMA International standards organization in the ECMA-262 and ECMA-402 specifications. The first edition of ECMAScript was released in 1997.
 
      **[⬆ Back to Top](#table-of-contents)**
+
 
 304. ### List down some of the features of ES6
 
