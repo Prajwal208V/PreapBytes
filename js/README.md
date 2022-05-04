@@ -3,7 +3,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script?) |
+|1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script) |
 |97 | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
 |98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
 |99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
@@ -28,7 +28,7 @@
 |7  | [Hoisting](#Hoisting)|
 |8  | [TDZ temporal dead zone](#TDZ-temporal-dead-zone)|
 |9  | [let v/s const v/s var](#let-const-var)|
-|10 | [Strict equality (===) and equality(==)](#Strict equality-equality)|
+|10 | [Strict equality (===) and equality(==)](#Strict-equality)|
 |11 | [JavaScript is a loosely typed and dynamic language](#JavaScript-is-a-loosely-typed-and-dynamic-language)|
 |12 | [difference between type conversion and type coercion](#difference-between-type-conversion-and-type-coercion)|
 |13 | [pass by value and pass by reference](#pass-by-value-and-pass-by-reference)|
@@ -400,7 +400,7 @@ Hoisting of const:Just like "let", "const" declarations hoist to the top but don
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### Strict-equality vs equality 
+### Strict equality 
 ==(equality operator or loose equality operator) and the other one is === (strict equality operator). Both of these operators check the value of operands for equality. But, the difference between == & === is that the == does a type conversion before checking for equality.
 
 **[⬆ Back to Top](#table-of-contents)**
