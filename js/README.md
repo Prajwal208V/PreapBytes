@@ -4,107 +4,108 @@
 | No. | Questions |
 |---- | ---------
 |1  | [How JavaScript engine executes a script?](#what-are-the-possible-ways-to-create-objects-in-javascript) |
-|   | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
-|   | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
-|   | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
-|   | [What is ECMAScript](#what-is-ecmascript)|
+|97 | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
+|98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
+|99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
+|100| [What is ECMAScript](#what-is-ecmascript)|
+|3  | [event-loop](#)|
 |387| [What are tasks in event loop](#what-are-tasks-in-event-loop)|
 |388| [What are microtasks](#what-are-microtasks)|
+|395| [What is a microTask queue](#what-is-a-microtask-queue)|
 |393| [What is heap](#what-is-heap)|
 |394| [What is an event table](#what-is-an-event-table)|
-|395| [What is a microTask queue](#what-is-a-microtask-queue)|
 |398| [What is babel](#what-is-babel)|
 |304| [List down some of the features of ES6](#list-down-some-of-the-features-of-es6)|
 |305| [What is ES6](#what-is-es6)|
 |297| [What is V8 JavaScript engine](#what-is-v8-javascript-engine)|
-|2  | [call stack](#what-is-a-prototype-chain)|
-|3  | [event-loop](#what-is-the-difference-between-call-apply-and-bind)|
-|2  | [threadpool](#what-is-a-prototype-chain)|
-|2  | [Browser API](#what-is-a-prototype-chain)|
-|2  | [callback queue](#what-is-a-prototype-chain)|
-|2  | [micro-task](#what-is-a-prototype-chain)|
-|4  | [data types in js](#what-is-json-and-its-common-operations)|
-|5  | [primitive data types](#what-is-the-purpose-of-the-array-slice-method)|
-|6  | [composite data types](#what-is-the-purpose-of-the-array-splice-method)|
-|7  | [Hoisting](#what-is-the-difference-between-slice-and-splice)|
-|8  | [TDZ temporal dead zone](#how-do-you-compare-object-and-map)|
-|9  | [let v/s const v/s var](#what-is-the-difference-between--and--operators)|
-|10 | [Strict equality (===) and equality(==)](#what-are-lambda-or-arrow-functions)|
-|11 | [JavaScript is a loosely typed and dynamic language](#what-is-a-first-class-function)|
-|12 | [difference between type conversion and type coercion](#what-is-a-first-order-function)|
-|13 | [pass by value and pass by reference](#what-is-a-higher-order-function)|
-|14 | [deep and shallow copies](#what-is-a-unary-function)|
-|15 | [Function](#what-is-the-currying-function)|
-|16 | [IIFE immediately-invoked-function-expression](#what-is-a-pure-function)|
-|16 | [Anonymous Function](#what-is-a-pure-function)|
-|17 | [Higher Order Functions](#what-is-the-purpose-of-the-let-keyword)|
-|18 | [callback functions](#what-is-the-difference-between-let-and-var)|
-|19 | [What is a pure function](#what-is-the-reason-to-choose-the-name-let-as-a-keyword)|
-|20 | [What are lambda or arrow functions](#how-do-you-redeclare-variables-in-switch-block-without-an-error)|
-|21 | [What is a first class function](#what-is-the-temporal-dead-zone)|
-|22 | [What is a first order function](#what-is-iifeimmediately-invoked-function-expression)|
-|23 | [What is a unary function](#how-do-you-decode-or-encode-a-url-in-javascript)|
-|23 | [Generator function](#what-is-json-and-its-common-operations)|
-|24 | [recurstion](#what-is-memoization)|
-|25 | [this keyword](#what-is-hoisting)|                  need callbacks
-|26 | [call-bind-apply methods](#what-are-classes-in-es6)|
-|27 | [scope](#what-are-closures)|
-|28 | [lexical scope](#what-are-modules)|
-|29 | [Closures](#why-do-you-need-modules)|
-|30 | [What are the possible ways to create objects in JavaScript](#what-is-scope-in-javascript)|
-|31 | [function attached to an object](#what-is-a-service-worker)|
-|32 | [Prototypes](#how-do-you-manipulate-dom-using-a-service-worker)|
-|33 | [prototype chaining](#how-do-you-reuse-information-across-service-worker-restarts)|
-|34 | [Object Destructuring](#what-is-indexeddb)|
-|   | [How do you test for an empty object](#how-do-you-test-for-an-empty-object)|
-|   | [How do you check if a key exists in an object](#how-do-you-check-if-a-key-exists-in-an-object)|
-|35 | [set](#what-is-web-storage)|
-|36 | [map](#what-is-a-post-message)|
-|37 | [weakSet](#what-is-a-cookie)|
-|38 | [weakMap](#why-do-you-need-a-cookie)|
+|2  | [call stack](#call-stack)|
+|2  | [threadpool](#threadpool)|
+|2  | [Browser API](#[Browser-API)|
+|2  | [callback queue](#callback-queue)|
+|4  | [data types in js](#data-types-in-js)|
+|5  | [primitive data types](#primitive-data-types)|
+|6  | [composite data types](#composite-data-types)|
+|7  | [Hoisting](#Hoisting)|
+|8  | [TDZ temporal dead zone](#TDZ-temporal-dead-zone)|
+|9  | [let v/s const v/s var](#let-const-var)|
+|10 | [Strict equality (===) and equality(==)](#Strict equality-equality)|
+|11 | [JavaScript is a loosely typed and dynamic language](#JavaScript-is-a-loosely-typed-and-dynamic-language)|
+|12 | [difference between type conversion and type coercion](#difference-between-type-conversion-and-type-coercion)|
+|13 | [pass by value and pass by reference](#pass-by-value-and-pass-by-reference)|
+|14 | [deep and shallow copies](#deep-and-shallow-copies)|
+|15 | [Function](#Function)|
+|16 | [IIFE immediately-invoked-function-expression](#IIFE)|
+|16 | [Anonymous Function](#Anonymous-Function)|
+|17 | [Higher Order Functions](#Higher-Order-Functions)|
+|18 | [callback functions](#callback-functions)|
+|19 | [What is a pure function](#What-is-a-pure-function)|
+|20 | [What are lambda or arrow functions](#What-are-lambda-or-arrow-functions)|
+|21 | [What is a first class function](#What-is-a-first-class-function)|
+|22 | [What is a first order function](#What-is-a-first-order-function)|
+|23 | [What is a unary function](#What-is-a-unary-function)|
+|23 | [Generator function](#Generator-function)|
+|24 | [recurstion](#recurstion)|
+|25 | [this keyword](#this-keyword)|            
+|26 | [call-bind-apply methods](#call-bind-apply-methods)|
+|27 | [scope](#scope)|
+|28 | [lexical scope](#lexical-scope)|
+|29 | [Closures](#Closures)|
+|30 | [What are the possible ways to create objects in JavaScript](#What-are-the-possible-ways-to-create-objects-in-JavaScript
+)|
+|31 | [function attached to an object](#function-attached-to-an-object)|
+|32 | [Prototypes](#Prototypes)|
+|33 | [prototype chaining](#prototype-chaining)|
+|34 | [Object Destructuring](#Object-Destructuring)|
+|127| [How do you test for an empty object](#how-do-you-test-for-an-empty-object)|
+|125| [How do you check if a key exists in an object](#how-do-you-check-if-a-key-exists-in-an-object)|
+|35 | [set](#set)|
+|36 | [map](#map)|
+|37 | [weakSet](#weakSet)|
+|38 | [weakMap](#weakMap)|
 |62 | [What is callback in callback](#what-is-callback-in-callback)|
-|39 | [need callbacks](#what-are-the-options-in-a-cookie)|
-|40 | [CALLBACK hell](#how-do-you-delete-a-cookie)|
-|41 | [promise](#What-are-the-differences-between-cookie-local-storage-and-session-storage)|
-|42 | [Consuming a Promise](#what-is-the-main-difference-between-localstorage-and-sessionstorage)|
-|43 | [promise chaining](#how-do-you-access-web-storage)|
-|   | [What are the main rules of promise](#what-are-the-main-rules-of-promise)|
-|   | [What are the pros and cons of promises over callbacks](#what-are-the-pros-and-cons-of-promises-over-callbacks)|
-|44 | [try catch throw finally in js](#what-are-the-methods-available-on-session-storage)|
-|   | [What are the different error names from error object](#what-are-the-different-error-names-from-error-object)|
+|39 | [need callbacks](#need-callbacks)|
+|40 | [CALLBACK hell](#CALLBACK-hell)|
+|41 | [promise](#promise)|
+|42 | [Consuming a Promise](#Consuming-a-Promise)|
+|43 | [promise chaining](#promise-chaining)|
+|61 | [What are the main rules of promise](#what-are-the-main-rules-of-promise)|
+|93 | [What are the pros and cons of promises over callbacks](#what-are-the-pros-and-cons-of-promises-over-callbacks)|
+|44 | [try catch throw finally in js](#try-catch-throw-finally-in-js)|
+|228| [What are the different error names from error object](#what-are-the-different-error-names-from-error-object)|
 |338| [What is the purpose of Error object](#what-is-the-purpose-of-error-object)|
-|45 | [What are the possible ways to create an array](#what-is-a-storage-event-and-its-event-handler)|
-|46 | [ways to empty the array](#why-do-you-need-web-storage)|
-|47 | [rest parameter and spread operator](#how-do-you-check-web-storage-browser-support)|
-|48 | [constructor](#how-do-you-check-web-workers-browser-support)|
-|49 | [ES6 class](#give-an-example-of-web-worker)|
+|45 | [What are the possible ways to create an array](#What-are-the-possible-ways-to-create-an-array)|
+|46 | [ways to empty the array](#ways-to-empty-the-array)|
+|47 | [rest parameter and spread operator](#rest-parameter-and-spread-operator)|
+|48 | [constructor](#constructor)|
+|49 | [ES6 class](#ES6-class)|
 |50 | [use strict](#what-are-the-restrictions-of-web-workers-on-dom)|
-|51 | [array methods](#what-is-a-promise)|
-|52 | [string methods](#why-do-you-need-a-promise)|
-|53 | [object methods](#what-are-the-three-states-of-promise)|
-|54 | [map methods](#what-is-a-callback-function)|
-|55 | [set methods](#why-do-we-need-callbacks)|
-|56 | [Math Methods](#what-is-a-callback-hell)|
-|57 | [DOM Methods](#what-is-server-sent-events)|
-|58 | [date Methods](#how-do-you-receive-server-sent-event-notifications)|
-|59 | [DOM](#how-do-you-check-browser-support-for-server-sent-events)|
-|60 | [DOM selectors](#what-are-the-events-available-for-server-sent-events)|
-|61 | [window vs document](#what-are-the-main-rules-of-promise)|
-|62 | [window.onload vs document.onload](#what-is-callback-in-callback)|
-|63 | [what are the possible ways of making an API call in JavaScript](#what-is-promise-chaining)|
+|51 | [array methods](#array-methods)|
+|52 | [string methods](#string-methods)|
+|53 | [object methods](#object-methods)|
+|54 | [map methods](#map-methods)|
+|55 | [set methods](#set-methods)|
+|56 | [Math Methods](#Math-Methods)|
+|57 | [DOM Methods](#DOM-Methods)|
+|58 | [date Methods](#date-Methods)|
+|59 | [DOM](#DOM)|
+|60 | [DOM selectors](#DOM-selectors)|
+|61 | [window vs document](#window-vs-document)|
+|62 | [window.onload vs document.onload](#windowonload-vs-documentonload)|
+|63 | [what are the possible ways of making an API call in JavaScript](#what-are-the-possible-ways-of-making-an-API-call-in-JavaScript)|
 |   | |**json**|
-|69 | [JSON](#what-is-the-purpose-of-double-exclamation)|
-|| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
-|| [What is the purpose JSON stringify](#what-is-the-purpose-json-stringify)|
-|| [How do you parse JSON string](#how-do-you-parse-json-string)|
-|| [Why do you need JSON](#why-do-you-need-json)|
+|69 | [JSON](#JSON)|
+|111| [What is JSON](#What-is-JSON)|
+|112| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
+|113| [What is the purpose JSON stringify](#what-is-the-purpose-json-stringify)|
+|114| [How do you parse JSON string](#how-do-you-parse-json-string)|
+|115| [Why do you need JSON](#why-do-you-need-json)|
 |148| [How do you define JSON arrays](#how-do-you-define-json-arrays)|
-|| [What are PWAs](#what-are-pwas?)|
+|116| [What are PWAs](#what-are-pwas?)|
 |296| [What is jQuery](#what-is-jquery)|
 |71 | [Async & await](#what-is-the-purpose-of-double-exclamation)|
-|   | [What is a strict mode in javascript](#what-is-a-strict-mode-in-javascript)|
-|   | [Why do you need strict mode](#why-do-you-need-strict-mode)|
-|   | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
+|66 | [What is a strict mode in javascript](#what-is-a-strict-mode-in-javascript)|
+|67 | [Why do you need strict mode](#why-do-you-need-strict-mode)|
+|68 | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
 |   | |**storage**|
 |34 | [What is IndexedDB](#what-is-indexeddb)|
 |35 | [What is web storage](#what-is-web-storage)|
