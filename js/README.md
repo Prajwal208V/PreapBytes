@@ -3,7 +3,7 @@
 
 | No. | Questions |
 |---- | ---------
-|1  | [How JavaScript engine executes a script?](#what-are-the-possible-ways-to-create-objects-in-javascript) |
+|1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script?) |
 |97 | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
 |98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
 |99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
@@ -50,8 +50,7 @@
 |27 | [scope](#scope)|
 |28 | [lexical scope](#lexical-scope)|
 |29 | [Closures](#Closures)|
-|30 | [What are the possible ways to create objects in JavaScript](#What-are-the-possible-ways-to-create-objects-in-JavaScript
-)|
+|30 | [What are the possible ways to create objects in JavaScript](#What-are-the-possible-ways-to-create-objects-inJavaScript)|
 |31 | [function attached to an object](#function-attached-to-an-object)|
 |32 | [Prototypes](#Prototypes)|
 |33 | [prototype chaining](#prototype-chaining)|
