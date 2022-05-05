@@ -518,22 +518,19 @@ Using Hook, all features of React can be used without writing class components. 
    ![image](https://user-images.githubusercontent.com/92531202/164894079-3b626562-25d8-4b79-9191-3e354482a0dd.png)
    
   There are two types of Hooks in React. They are:
-   1.Built-in Hooks: The built-in Hooks are divided into 2 parts
-     Basic Hooks:
-        useState(): This functional component is used to set and retrieve the state.
-        useEffect(): It enables for performing the side effects in the functional components.
-        useContext(): It is used for creating common data that is to be accessed by the components hierarchy without having to pass the props down to each level.
-     Additional Hooks:
-        useReducer() : It is used when there is a complex state logic that is having several sub-values or when the upcoming state is dependent on the previous state. It             will also enable you to optimization of component performance that will trigger deeper updates as it is permitted to pass the dispatch down instead of callbacks.
-        useMemo() : This will be used for recomputing the memoized value when there is a change in one of the dependencies. This optimization will help for avoiding                    expensive calculations on each render.
-        useCallback() : This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded              renders.
-        useImperativeHandle():  It will enable modifying the instance that will be passed with the ref object.
-        useDebugValue(): It is used for displaying a label for custom hooks in React DevTools.
-        useRef() : It will permit creating a reference to the DOM element directly within the functional component.
-        useLayoutEffect(): It is used for the reading layout from the DOM and re-rendering synchronously.
-   2.Custom Hooks: A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom      Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover,        developing custom Hooks will enable you for extracting component logic from within reusable functions.
-   )
-          1.useState:-
+1.Built-in Hooks: The built-in Hooks are divided into 2 parts
+Basic Hooks:
+
+1. ### useState
+useState(): This functional component is used to set and retrieve the state.
+ ```const [state, setState] = useState(initialstate)
+ ```
+The useState() is a Hook that allows you to have state variables in functional components. React has two types of components, one is class components which are ES6 classes that extend from React and the other is functional components. Class components a Component and can have state and lifecycle methods: class Message extends React. The useState hook is a special function that takes the initial state as an argument and returns an array of two entries.
+Syntax: The first element is the initial state and the second one is a function that is used for updating the state.
+We can also pass a function as an argument if the initial state has to be computed. And the value returned by the function will be used as the initial state.
+ ```const [sum, setsum] = useState(function generateRandomInteger(){5+7);})
+ ```
+ ```1.useState:-
            🦖 const [state, setState] = useState(initialState);
             -Returns a stateful value, and a function to update it.
             -During the initial render, the returned state (state) is the same as the value passed as the first argument (initialState).
@@ -541,68 +538,22 @@ Using Hook, all features of React can be used without writing class components. 
             🦖setState(newState);
             Functional updates:If the new state is computed using the previous state, you can pass a function to setState. The function will receive the previous                 value, and return an updated value.
             🦖 <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-            
-          2.useEffect:-carries out an effect each time there is a state change. By default, it runs after the first render and every time the state is updated. 
-          -React useEffect is a function that gets executed for 3 different React component lifecycles.
-          Those lifecycles are componentDidMount, componentDidUpdate, and componentWillUnmount lifecycles.
-          -useEffect() fuction takes two arguments- 1.what are things we have to exicute and 2.dependencies 
-                 dependencies:-1.empty 2. empty array[] & 3. states list form as array
-            >If you want to run an effect on mount and unmount, you can pass an empty array ([])
-            >
-          Basic usage of useEffect:
-                                  1.I want to useEffect to change the message a second after the component has mounted.
-                            
-                                  🦖 import React, { useState, useEffect } from 'react';
-                                      const App = () => {
-                                        const [message, setMessage] = useState('Hi there, how are you?');
-                                        useEffect(() => {
-                                          console.log('trigger use effect hook');
-                                          setTimeout(() => {
-                                            setMessage("I'm fine, thanks for asking.");
-                                          }, 1000)
-                                        })
-                                        return <h1>{message}</h1>
-                                      };
-                                      export default App;
-          scaler(
-          The useEffect React Hook is used for performing the side effects in functional components. With the help of useEffect, you will inform React that your component requires something to be done after rendering the component or after a state change. The function you have passed(can be referred to as “effect”) will be remembered by React and call afterwards the performance of DOM updates is over. Using this, we can perform various calculations such as data fetching, setting up document title, manipulating DOM directly, etc, that don’t target the output value. The useEffect hook will run by default after the first render and also after each update of the component. React will guarantee that the DOM will be updated by the time when the effect has run by it.
-The useEffect React Hook will accept 2 arguments: useEffect(callback[, dependencies]);
+  ```
+**[⬆ Back to Top](#table-of-contents)**
 
-Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. The second argument dependencies represent an optional array of dependencies. The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+2. ### useReducer
+The useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when you have complex state-building logic or when the next state value depends upon its previous value or when the components are needed to be optimized.
 
-             There are two types of side effects in React component. They are:
-               Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser from screen update. It also improves the                            responsiveness of an application. A few common examples are network requests, Logging, manual DOM mutations, etc.
-               
-               Effects with Cleanup: Some of the Hook effects will require the cleanup after updating of DOM is done. For example, if you want to set up an external data                  source subscription, it requires cleaning up the memory else there might be a problem of memory leak. It is a known fact that React will carry out the                      cleanup of memory when the unmounting of components happens. But the effects will run for each render() method rather than for any specific method. Thus we                  can say that, before execution of the effects succeeding time the React will also cleanup effects from the preceding render.
-          )
-          3.useContext:-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
-                        -solving one major problem React problem — prop drilling.
-                        Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React                           components. Component will receive props indirectly and you.
-                        -wide-state storge and directly pass that to the components without building a long propchain directly change it from any comoponents in                              application and directly pass it to any component in application 
-                         
-                         🦖 import {createContext} from 'react'
-                             const myContext=createContext(); //calling it for create context object 
-                             export const StudentProvider = ( props ) => {
-                                 const [students, setStudents] = useState([])
-                                    return (
-                                            <StudentContext.Provider value={ [students,setStudents] }>  //we wraping in jsx code so all the compoents that should be                                                                              abel to tap into that conext if any compoent not wrapped will not be able to listen them
-                                                { props.children }
-                                            </StudentContext.Provider>
-                                        )
-                             }
-                        🦖  import { myContext } from 'react';
-                             const StudentList = () => {
-                                const [students, setStudents] = useContext(myContext);
-                             }
-
-         limitation of context:is not optimized for high frequncey changes  ex:state change every second or multple times /seconds
-         
-         4.useReducer:The useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when we have                               complex state-building logic or when the next state value depends upon its previous value or when the components are needed to be optimized.
-            
+useReducer() : It is used when there is a complex state logic that is having several sub-values or when the upcoming state is dependent on the previous state. It     will also enable you to optimization of component performance that will trigger deeper updates as it is permitted to pass the dispatch down instead of callbacks.
+The useReducer hook takes three arguments including reducer, initial state, and the function to load the initial state lazily.  
+```const [state, dispatch] = useReducer(reducer, initialArgs, init);
+```
+```
+  useReducer:The useReducer Hook is the better alternative to the useState hook and is generally more preferred over the useState hook when we have                     complex state-building logic or when the next state value depends upon its previous value or when the components are needed to be optimized.  
             The useReducer hook takes two arguments including reducer, initial state; 
-            🦖 const [state, dispatch] = useReducer(reducer, initialArg, init);
-            
-                    import React, { useReducer } from "react";
+             const [state, dispatch] = useReducer(reducer, initialArg, init);
+           
+                🦖 import React, { useReducer } from "react";
                     const initialState = 0;
                     const reducer = (state, action) => {
                         switch (action) {
@@ -637,7 +588,181 @@ Where the first argument callback represents the function having the logic of si
                     };
 
                     export default App;
-                    
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+3. ### useRef
+It will permit creating a reference to the DOM element directly within the functional component.
+The useRef is a hook that allows to directly create a reference to the DOM element in the functional component. 
+purpose does useRef hook serve?
+Some of the use cases of useRef hook are:
+1.To access DOM elements
+2.To persist values in successive renders
+
+Accessing DOM elements
+One of the most common use case of useRef hook is to access DOM elements (NOT custom React component). For example if you want to access an input element after it has been mounted to the DOM, instead of using document.getElementById, document.querySelector or any other method for selecting DOM elements like in vanilla javascript, you can use useRef hook. This is illustrated in the example below.
+
+```import React from "react";
+       import ReactDOM from "react-dom";
+       const App = (props) => {
+         const inputRef = React.useRef(null);
+         React.useEffect(() => {
+           console.log(inputRef.current);
+           inputRef.current.focus();
+         }, []);
+         return (
+           <form>
+             <input 
+               type="text"
+               placeholder="Enter Name" 
+               name="name" 
+               ref={inputRef} />
+           </form>
+         );
+       };
+       const root = document.getElementById("root");
+       ReactDOM.render(<App />, root);
+```
+Persist Values Across Successive
+useRef isn’t just for DOM refs, but it’s a generic container that can hold anything, similar to an instance property on a class. There are situations where you may want to persist values across renders instead of recreating them on each render. Instead of storing these values in states which may cause additional unnecessary rendering, you can put them in useRef ‘s current property. For example, lets look at this Timer component.
+Using ref with class components If you want to reference a DOM element in class components, you can use React.createRef API.
+
+```      const Timer = () => {
+         const intervalRef = useRef();
+
+         useEffect(() => {
+           const id = setInterval(() => {
+             // ...
+           });
+           intervalRef.current = id;
+           return () => {
+             clearInterval(intervalRef.current);
+           };
+         });
+
+         // ...
+       }
+```
+use refs in React:
+  1)You need to directly access the DOM element(Need to focus an element? Need to play or pause a video? )
+  2) Storing mutable state(Using refs to handle mutable state can be useful if you want to prevent the re-rendering of your components. One common use case of this is   implementing a usePrevious hook. With this hook, you can keep track of the previous value of one of your state variables.)
+  3)Forwarding Refs
+  
+**[⬆ Back to Top](#table-of-contents)**
+
+4. ### useEffect
+It enables for performing the side effects in the functional components.
+The useEffect React Hook is used for performing the side effects in functional components. With the help of useEffect, you will inform React that your component requires something to be done after rendering the component or after a state change. The function you have passed(can be referred to as “effect”) will be remembered by React and call afterwards the performance of DOM updates is over. Using this, we can perform various calculations such as data fetching, setting up document title, manipulating DOM directly, etc, that don’t target the output value. The useEffect hook will run by default after the first render and also after each update of the component. React will guarantee that the DOM will be updated by the time when the effect has run by it.
+
+Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. The second argument dependencies represent an optional array of dependencies. The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+There are two types of side effects in React component. They are:
+1.Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser from screen update. It also improves the                      responsiveness of an application. A few common examples are network requests, Logging, manual DOM mutations, etc.
+2.Effects with Cleanup: Some of the Hook effects will require the cleanup after updating of DOM is done. For example, if you want to set up an external data         source subscription, it requires cleaning up the memory else there might be a problem of memory leak. It is a known fact that React will carry out the                 cleanup of memory when the unmounting of components happens. But the effects will run for each render() method rather than for any specific method. Thus we           can say that, before execution of the effects succeeding time the React will also cleanup effects from the preceding render
+               
+useEffect:-carries out an effect each time there is a state change. By default, it runs after the first render and every time the state is updated. 
+-React useEffect is a function that gets executed for 3 different React component lifecycles.
+Those lifecycles are componentDidMount, componentDidUpdate, and componentWillUnmount lifecycles.
+-useEffect() fuction takes two arguments- 1.what are things we have to exicute and 2.dependencies 
+dependencies:-1.empty 2. empty array[] & 3. states list form as array
+>If you want to run an effect on mount and unmount, you can pass an empty array ([])
+
+```import React, { useState, useEffect } from 'react';
+   const App = () => {
+     const [message, setMessage] = useState('Hi there, how are you?');
+     useEffect(() => {
+       console.log('trigger use effect hook');
+       setTimeout(() => {
+         setMessage("I'm fine, thanks for asking.");
+       }, 1000)
+     })
+     return <h1>{message}</h1>
+   };
+   export default App;
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+5.### useContext():
+It is used for creating common data that is to be accessed by the components hierarchy without having to pass the props down to each level.
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+-solving one major problem React problem — prop drilling.Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React components. Component will receive props indirectly and you.
+-wide-state storge and directly pass that to the components without building a long propchain directly change it from any comoponents in                              application and directly pass it to any component in application 
+
+```     import {createContext} from 'react'
+        const myContext=createContext(); //calling it for create context object 
+        export const StudentProvider = ( props ) => {
+            const [students, setStudents] = useState([])
+               return (
+                       <StudentContext.Provider value={ [students,setStudents] }>  //we wraping in jsx code so all the compoents that should be                                                                              abel to tap into that conext if any compoent not wrapped will not be able to listen them
+                           { props.children }
+                       </StudentContext.Provider>
+                   )
+        }
+       🦖  import { myContext } from 'react';
+        const StudentList = () => {
+           const [students, setStudents] = useContext(myContext);
+        }
+```
+
+limitation of context:is not optimized for high frequncey changes  ex:state change every second or multple times /seconds
+
+**[⬆ Back to Top](#table-of-contents)**
+
+6. ### useMemo
+Memoization is an optimization technique that passes a complex function to be memoized. In memoization, the result is “remembered” when the same parameters are passed-in subsequently.
+useMemo() : This will be used for recomputing the memoized value when there is a change in one of the dependencies. This optimization will help for avoiding           expensive calculations on each render.
+The useMemo is a hook used in the functional component of react that returns a memoized value. 
+memoization in general when we don’t need to recompute the function with a given argument for the next time as it returns the cached result. A memoized function remembers the results of output for a given set of inputs. For example, if there is a function to add two numbers, and we give the parameter as 1 and 2 for the first time the function will add these two numbers and return 3, but if the same inputs come again then we will return the cached value i.e 3 and not compute with the add function again. In react also, we use this concept, whenever in the React component, the state and props do not change the component and the component does not re-render, it shows the same output. The useMemo hook is used to improve performance in our React application.
+```const memoizedValue = useMemo(functionThatReturnsValue, arrayDepencies)
+```
+example:-
+
+```import { useState ,useMemo} from 'react';
+       export function MultiplyerOf2() {
+           const [number, setNumber] = useState(1);
+           const [inc, setInc] = useState(0);
+
+           console.log("parent rendering");
+           const factorial = useMemo(() => childFun(number), [number]);
+
+           const onClickFun=()=>{
+               setInc(pre => pre+1);
+           }
+
+           return (
+               <>
+                   <div>
+                       Factorial of
+                       <input type="number" value={number} onChange={(event)=> setNumber(event.target.value)} />
+                       is {factorial}
+                       <button onClick={onClickFun}>Re-render</button>
+                   </div>
+               </>
+           )
+
+       }
+       function childFun(n) {
+           console.log('child rendering');
+           return n*2;
+       }
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+7.useCallback
+useCallback() :This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded     renders.
+  
+**[⬆ Back to Top](#table-of-contents)**
+
+8.useImperativeHandle():  It will enable modifying the instance that will be passed with the ref object.
+
+9.useDebugValue(): It is used for displaying a label for custom hooks in React DevTools.
+
+10.useLayoutEffect(): It is used for the reading layout from the DOM and re-rendering synchronously.
+
+11.Custom Hooks: A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover,developing custom Hooks will enable you for extracting component logic from within reusable functions. 
+
 **[⬆ Back to Top](#table-of-contents)**
 
 ### controlled vs uncontrolled components
