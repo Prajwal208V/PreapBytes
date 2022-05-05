@@ -29,6 +29,14 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 |22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components)|
 |23 | [What are Pure Components](#What-are-Pure-Components)|
 |24 | [Hooks](#Hooks)|
+|24 | [useState](#useState)|
+|24 | [useReducer](#useReducer)|
+|24 | [useRef](#useRef)|
+|24 | [useEffect](#useEffect)|
+|24 | [useContext](#useContext)|
+|24 | [useMemo](#useMemo)|
+|24 | [useCallback](#useCallback)|
+|24 | [Custom Hooks](#Custom-Hooks)|
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
 |26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
 |27 | [router](#router)|
@@ -683,7 +691,7 @@ dependencies:-1.empty 2. empty array[] & 3. states list form as array
 
 **[⬆ Back to Top](#table-of-contents)**
 
-5.### useContext():
+5.### useContext
 It is used for creating common data that is to be accessed by the components hierarchy without having to pass the props down to each level.
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 -solving one major problem React problem — prop drilling.Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React components. Component will receive props indirectly and you.
@@ -776,7 +784,8 @@ useMemo: The useMemo is similar to useCallback hook as it accepts a function and
 
 10.useLayoutEffect(): It is used for the reading layout from the DOM and re-rendering synchronously.
 
-11.Custom Hooks: A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover,developing custom Hooks will enable you for extracting component logic from within reusable functions. 
+11. ### Custom Hooks
+ A custom Hook is basically a function of JavaScript. The Custom Hook working is similar to a regular function. The “use” at the beginning of the Custom Hook Name is required for React to understand that this is a custom Hook and also it will describe that this specific function follows the rules of Hooks. Moreover,developing custom Hooks will enable you for extracting component logic from within reusable functions. 
 
 **[⬆ Back to Top](#table-of-contents)**
 
