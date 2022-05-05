@@ -1,4 +1,3 @@
-
 ### Table of Contents
 
 | No. | Questions |
@@ -10,7 +9,7 @@
 |100| [What is ECMAScript](#what-is-ecmascript)|
 |3  | [event-loop](#event-Loop)|
 |387| [What are tasks in event loop](#what-are-tasks-in-event-loop)|
-|388| [What are microtasks](#what-are-microtasks)|
+|388| [microtask](#microtask)|
 |395| [What is a microTask queue](#what-is-a-microtask-queue)|
 |393| [What is heap](#what-is-heap)|
 |394| [What is an event table](#what-is-an-event-table)|
@@ -21,7 +20,7 @@
 |2  | [call stack](#call-stack)|
 |2  | [threadpool](#threadpool)|
 |2  | [Browser API](#[Browser-API)|
-|2  | [callback queue](#callback-queue)|
+|2  | [callback queue](#callbackqueue)|
 |4  | [data types in js](#data-types-in-js)|
 |5  | [primitive data types](#primitive-data-types)|
 |6  | [composite data types](#composite-data-types)|
@@ -271,6 +270,7 @@
 |407| [What is an async function](#what-is-an-async-function)|
 
 
+
 ### How JavaScript engine executes a script
 when JavaScript engine executes a script, it creates execution contexts. Each execution context has two phases: the creation phase and the execution phase.
 
@@ -380,7 +380,7 @@ The TDZ also applies to default function arguments. Arguments are evaluated left
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### let v/s const v/s var
+### let const var
 using these three we can declare a variable in JavaScript,
 VAR:
 Before the ES6, var was var only way to declare variables. and let and var after ES 2015.
