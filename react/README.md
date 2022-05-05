@@ -722,6 +722,7 @@ Memoization is an optimization technique that passes a complex function to be me
 useMemo() : This will be used for recomputing the memoized value when there is a change in one of the dependencies. This optimization will help for avoiding           expensive calculations on each render.
 The useMemo is a hook used in the functional component of react that returns a memoized value. 
 memoization in general when we don’t need to recompute the function with a given argument for the next time as it returns the cached result. A memoized function remembers the results of output for a given set of inputs. For example, if there is a function to add two numbers, and we give the parameter as 1 and 2 for the first time the function will add these two numbers and return 3, but if the same inputs come again then we will return the cached value i.e 3 and not compute with the add function again. In react also, we use this concept, whenever in the React component, the state and props do not change the component and the component does not re-render, it shows the same output. The useMemo hook is used to improve performance in our React application.
+
 ```const memoizedValue = useMemo(functionThatReturnsValue, arrayDepencies)
 ```
 example:-
@@ -762,6 +763,7 @@ example:-
 useCallback() :This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded     renders.The useCallback hook is used when you have a component in which the child is rerendering again and again without need.
 when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 The useCallback hook receives a function as a parameter, and also an array of dependencies. The useCallback hook will return a memoized version of the callback, and it’ll only be changed if one of the dependencies has changed.
+
 ```useCallback(callback, dependencies)
 ```
 will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
@@ -984,6 +986,7 @@ Redux Saga is a middleware library that can be useful for allowing a Redux store
 ### How can the addition of multiple middlewares to Redux be done
 In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
 In the example given below, we have added Redux Thunk and logger middlewares as an argument:
+
   ```import { createStore, applyMiddleware } from 'redux'
       const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
    ```
@@ -1057,6 +1060,7 @@ Before the introduction of Hooks in React, functional components were called sta
 ### What are the different ways to style a React component
 There are many different ways through which one can style a React component. Some of the ways are :
 -Inline Styling: We can directly style an element using inline style attributes. Make sure the value of style is a JavaScript object:
+
   ```class RandomComponent extends React.Component {
          render() {
            return (
@@ -1230,7 +1234,7 @@ This folder is the heart of React application as it contains JavaScript which ne
            
  17. ### What are inline conditional expressions?
 
-    You can use either *if statements* or *ternary expressions* which are available from JS to conditionally render expressions. Apart from these approaches, you can also embed any expressions in JSX by wrapping them in curly braces and then followed by JS logical operator `&&`.
+You can use either *if statements* or *ternary expressions* which are available from JS to conditionally render expressions. Apart from these approaches, you can also embed any expressions in JSX by wrapping them in curly braces and then followed by JS logical operator `&&`.
 
     ```jsx harmony
     <h1>Hello!</h1>
@@ -1250,7 +1254,7 @@ This folder is the heart of React application as it contains JavaScript which ne
            
  19. ### What is the use of refs?
 
-    The *ref* is used to return a reference to the element. They *should be avoided* in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.
+The *ref* is used to return a reference to the element. They *should be avoided* in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.
 
 
    **[⬆ Back to Top](#table-of-contents)**          
@@ -1276,20 +1280,20 @@ This folder is the heart of React application as it contains JavaScript which ne
    
 31. ### What is the difference between createElement and cloneElement?
 
-    JSX elements will be transpiled to `React.createElement()` functions to create React elements which are going to be used for the object representation of UI. Whereas `cloneElement` is used to clone an element and pass it new props.
+JSX elements will be transpiled to `React.createElement()` functions to create React elements which are going to be used for the object representation of UI. Whereas `cloneElement` is used to clone an element and pass it new props.
 
 
    **[⬆ Back to Top](#table-of-contents)**
    
 32. ### What is Lifting State Up in React?
 
-    When several components need to share the same changing data then it is recommended to *lift the shared state up* to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
+When several components need to share the same changing data then it is recommended to *lift the shared state up* to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
 
 
    **[⬆ Back to Top](#table-of-contents)**
 41. ### What is reconciliation?
 
-    When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called *reconciliation*.
+When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called *reconciliation*.
 
 
    **[⬆ Back to Top](#table-of-contents)**
