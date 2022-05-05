@@ -790,45 +790,45 @@ useMemo: The useMemo is similar to useCallback hook as it accepts a function and
 **[⬆ Back to Top](#table-of-contents)**
 
 ### controlled vs uncontrolled components
-        2 ways to handle the input value, the first one is the Controlled Component and the second is Uncontrolled component
-        controlled:
-             The controlled component is a way that we can handle the form input value using the "state" and to change the input value there is only one way to                    change it is using "setState or useState" if you are using React Hooks and you can change this state using one of the events like onChange and when                  the user starts writing any character setState or useState will be called and update the state of this input then it will add the new value inside the                input.
-             
-             - most cases, devlopers using controlled components to implement forms. In a controlled component, form data is handled by a React component. The                      alternative is uncontrolled components, where form data is handled by the DOM itself.
-             
-                 🦖 import React, { useState } from "react";
-                     export default function App() {
-                          const [inputValue, setInputValue] = useState("");
-                          const handleInputChange = (e) => {
-                            setInputValue(e.target.value)
-                          }
-                          const handleSubmitButton = () => {
-                            alert(inputValue);
-                          };
-                          return (
-                            <div className="App">
-                              <input value={inputValue} onChange={handleInputChange} />
-                              <input type="submit" value="submit" onClick={handleSubmitButton} />
-                            </div>
-                          );
-                     }
-             
-        Uncontrolled:The uncontrolled component is like traditional HTML form inputs that we will not be able to handle the value by yourself but the DOM will take                      care of handling the value of the input and save it then we can get this value using React Ref
+2 ways to handle the input value, the first one is the Controlled Component and the second is Uncontrolled component
+controlled:
+The controlled component is a way that we can handle the form input value using the "state" and to change the input value there is only one way to                    change it is using "setState or useState" if you are using React Hooks and you can change this state using one of the events like onChange and when                  the user starts writing any character setState or useState will be called and update the state of this input then it will add the new value inside the                input.         
+- most cases, devlopers using controlled components to implement forms. In a controlled component, form data is handled by a React component. The                      alternative is uncontrolled components, where form data is handled by the DOM itself.
+
+  `` 🦖 import React, { useState } from "react";
+       export default function App() {
+            const [inputValue, setInputValue] = useState("");
+            const handleInputChange = (e) => {
+              setInputValue(e.target.value)
+            }
+            const handleSubmitButton = () => {
+              alert(inputValue);
+            };
+            return (
+              <div className="App">
+                <input value={inputValue} onChange={handleInputChange} />
+                <input type="submit" value="submit" onClick={handleSubmitButton} />
+              </div>
+            );
+       }
+   ```         
+Uncontrolled:The uncontrolled component is like traditional HTML form inputs that we will not be able to handle the value by yourself but the DOM will take           care of handling the value of the input and save it then we can get this value using React Ref
                     
-                    🦖 import React, { useRef } from "react";
-                        export default function App() {
-                          const inputRef = useRef(null);
-                          const handleSubmitButton = () => {
-                            alert(inputRef.current.value);
-                          };
-                          return (
-                            <div className="App">
-                              <input type="text" ref={inputRef} />
-                              <input type="submit" value="submit" onClick={handleSubmitButton} />
-                            </div>
-                          );
-                        }
-     
+  ```🦖 import React, { useRef } from "react";
+          export default function App() {
+            const inputRef = useRef(null);
+            const handleSubmitButton = () => {
+              alert(inputRef.current.value);
+            };
+            return (
+              <div className="App">
+                <input type="text" ref={inputRef} />
+                <input type="submit" value="submit" onClick={handleSubmitButton} />
+              </div>
+            );
+          }
+  ```
+  
 ⚖️scaler(Controlled and uncontrolled components are just different approaches to handling input from elements in react. 
 <img width="500" height="250" style="text-align=:center" src="https://user-images.githubusercontent.com/92531202/164884461-1cc466de-537e-4207-adb0-3af5931715b9.png" >
 
@@ -977,16 +977,17 @@ Using Redux Thunk middleware, we can write action creators returning a function 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Redux Saga
-      Redux Saga is a middleware library that can be useful for allowing a Redux store to interact with the resources outside of itself in an asynchronous manner,         for example, making HTTP requests to external services, accessing browser storage, executing Input/Output operations and many more. These operations are also         called side effects
+Redux Saga is a middleware library that can be useful for allowing a Redux store to interact with the resources outside of itself in an asynchronous manner,         for example, making HTTP requests to external services, accessing browser storage, executing Input/Output operations and many more. These operations are also         called side effects
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### How can the addition of multiple middlewares to Redux be done
-     In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
-   In the example given below, we have added Redux Thunk and logger middlewares as an argument:
-      import { createStore, applyMiddleware } from 'redux'
+In order to add multiple middlewares to Redux, the usage of applyMiddleware can do the work. In applyMiddleware, we can pass every piece of middleware as a new      argument. Therefore, our job is to just pass each piece of middleware that we want.
+In the example given below, we have added Redux Thunk and logger middlewares as an argument:
+  ```import { createStore, applyMiddleware } from 'redux'
       const createStoreWithMiddleware = applyMiddleware(ReduxThunk, logger)(createStore);
-     
+   ```
+   
 **[⬆ Back to Top](#table-of-contents)**
 
 ### context vs React Redux
@@ -1054,9 +1055,9 @@ Before the introduction of Hooks in React, functional components were called sta
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are the different ways to style a React component
-  There are many different ways through which one can style a React component. Some of the ways are :
-   -Inline Styling: We can directly style an element using inline style attributes. Make sure the value of style is a JavaScript object:
-      class RandomComponent extends React.Component {
+There are many different ways through which one can style a React component. Some of the ways are :
+-Inline Styling: We can directly style an element using inline style attributes. Make sure the value of style is a JavaScript object:
+  ```class RandomComponent extends React.Component {
          render() {
            return (
              <div>
@@ -1066,9 +1067,11 @@ Before the introduction of Hooks in React, functional components were called sta
            );
          }
        }
-       
-    -Using JavaScript object: We can create a separate JavaScript object and set the desired style properties. This object can be used as the value of the inline style          attribute.
-        class RandomComponent extends React.Component {
+   ```
+   
+-Using JavaScript object: We can create a separate JavaScript object and set the desired style properties. This object can be used as the value of the inline style    attribute.
+
+   ```class RandomComponent extends React.Component {
                paragraphStyles = {
                  color: "Red",
                  fontSize: "32px"
@@ -1088,9 +1091,10 @@ Before the introduction of Hooks in React, functional components were called sta
                  );
                }
           }
-          
-      -CSS Stylesheet: We can create a separate CSS file and write all the styles for the component inside that file. This file needs to be imported inside the component          file.
-           import './RandomComponent.css';
+   ```       
+   
+-CSS Stylesheet: We can create a separate CSS file and write all the styles for the component inside that file. This file needs to be imported inside the component   file.
+    ```import './RandomComponent.css';
               class RandomComponent extends React.Component {
                render() {
                  return (
@@ -1101,8 +1105,8 @@ Before the introduction of Hooks in React, functional components were called sta
                  );
                }
             }
-            
-      -CSS Modules: We can create a separate CSS module and import this module inside our component. Create a file with “.module.css”‘ extension, styles.module.css:
+     ```       
+-CSS Modules: We can create a separate CSS module and import this module inside our component. Create a file with “.module.css”‘ extension, styles.module.css:
        ![image](https://user-images.githubusercontent.com/92531202/164889853-9b37f827-e1ca-400b-b8c6-38f251cfc10f.png)
        
 **[⬆ Back to Top](#table-of-contents)**
@@ -1154,10 +1158,10 @@ package.json is used to store the metadata associated with the project as well a
 **[⬆ Back to Top](#table-of-contents)**
     
 ### packageJson vs packageLockJson
-    The package.json file records the minimum version of different dependencies that your app needs
-    If you update the versions of a particular package, the change is not necessarily going to be reflected here.The package.json file is used for more than just         dependencies. It also is used to define project properties, descriptions, and license information.
+The package.json file records the minimum version of different dependencies that your app needs
+If you update the versions of a particular package, the change is not necessarily going to be reflected here.The package.json file is used for more than just         dependencies. It also is used to define project properties, descriptions, and license information.
     
-    Where the package.json file is used for a handful of different things, the package-lock.json file is solely used to "lock" dependencies to a specific version         number, including minor and patch versions.This file keeps track of the the exact version of each installed package which means that future installs will be able     to build an identical dependency tree.
+Where the package.json file is used for a handful of different things, the package-lock.json file is solely used to "lock" dependencies to a specific version         number, including minor and patch versions.This file keeps track of the the exact version of each installed package which means that future installs will be able     to build an identical dependency tree.
     
 **[⬆ Back to Top](#table-of-contents)**
 
