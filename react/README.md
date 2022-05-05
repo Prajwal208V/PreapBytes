@@ -36,6 +36,7 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 |24 | [useContext](#useContext)|
 |24 | [useMemo](#useMemo)|
 |24 | [useCallback](#useCallback)|
+|24 | [The Difference Between useCallback And useMemo](#The-Difference-Between-useCallback-And-useMemo)|
 |24 | [Custom Hooks](#Custom-Hooks)|
 |25 | [types of Hooks in React](#types-of-Hooks-in-React)|
 |26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
@@ -692,6 +693,7 @@ dependencies:-1.empty 2. empty array[] & 3. states list form as array
 **[⬆ Back to Top](#table-of-contents)**
 
 5.### useContext
+
 It is used for creating common data that is to be accessed by the components hierarchy without having to pass the props down to each level.
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 -solving one major problem React problem — prop drilling.Prop drilling is the processing of getting data from component A to component Z by passing it through multiple layers of intermediary React components. Component will receive props indirectly and you.
@@ -718,6 +720,7 @@ limitation of context:is not optimized for high frequncey changes  ex:state chan
 **[⬆ Back to Top](#table-of-contents)**
 
 6. ### useMemo
+
 Memoization is an optimization technique that passes a complex function to be memoized. In memoization, the result is “remembered” when the same parameters are passed-in subsequently.
 useMemo() : This will be used for recomputing the memoized value when there is a change in one of the dependencies. This optimization will help for avoiding           expensive calculations on each render.
 The useMemo is a hook used in the functional component of react that returns a memoized value. 
@@ -759,7 +762,8 @@ example:-
 
 **[⬆ Back to Top](#table-of-contents)**
 
-7.useCallback
+7.### useCallback
+
 useCallback() :This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded     renders.The useCallback hook is used when you have a component in which the child is rerendering again and again without need.
 when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
 The useCallback hook receives a function as a parameter, and also an array of dependencies. The useCallback hook will return a memoized version of the callback, and it’ll only be changed if one of the dependencies has changed.
