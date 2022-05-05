@@ -751,8 +751,23 @@ example:-
 **[⬆ Back to Top](#table-of-contents)**
 
 7.useCallback
-useCallback() :This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded     renders.
-  
+useCallback() :This is useful while passing callbacks into the optimized child components and depends on the equality of reference for the prevention of unneeded     renders.The useCallback hook is used when you have a component in which the child is rerendering again and again without need.
+when a component re-renders, every function inside of the component is recreated and therefore these functions’ references change between renders.
+The useCallback hook receives a function as a parameter, and also an array of dependencies. The useCallback hook will return a memoized version of the callback, and it’ll only be changed if one of the dependencies has changed.
+```useCallback(callback, dependencies)
+```
+will return a memoized instance of the callback that only changes if one of the dependencies has changed. This means that instead of recreating the function object on every re-render, we can use the same function object between renders.
+Use case scenario:-
+1)Passing callbacks to optimized child components
+useCallback is especially useful to prevent unnecessary renders when passing callbacks to optimized child components that rely on reference equality.
+
+### The Difference Between useCallback And useMemo
+useCallback: The useCallback is a react hook that returns a memoized callback when passed a function and a list of dependencies as parameters. It’s very useful when a component is passing a callback to its child component to prevent the rendering of the child component. It only changes the callback when one of its dependencies gets changed.
+
+useMemo: The useMemo is similar to useCallback hook as it accepts a function and a list of dependencies but it returns the memoized value returned by the passed function. It recalculated the value only when one of its dependencies change. It is useful to avoid expensive calculations on every render when the returned value is not going to change.
+
+
+
 **[⬆ Back to Top](#table-of-contents)**
 
 8.useImperativeHandle():  It will enable modifying the instance that will be passed with the ref object.
