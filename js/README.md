@@ -90,7 +90,7 @@
 |61 | [window vs document](#window-vs-document)|
 |62 | [window.onload vs document.onload](#windowonload-vs-documentonload)|
 |63 | [what are the possible ways of making an API call in JavaScript](#what-are-the-possible-ways-of-making-an-API-call-in-JavaScript)|
-|   | |**json**|
+|   | |**json** |
 |69 | [JSON](#JSON)|
 |111| [What is JSON](#What-is-JSON)|
 |112| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
@@ -104,7 +104,7 @@
 |66 | [What is a strict mode in javascript](#what-is-a-strict-mode-in-javascript)|
 |67 | [Why do you need strict mode](#why-do-you-need-strict-mode)|
 |68 | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
-|   | |**storage**|
+|   | |**storage** |
 |34 | [What is IndexedDB](#what-is-indexeddb)|
 |35 | [What is web storage](#what-is-web-storage)|
 |36 | [What is a post message](#what-is-a-post-message)|
@@ -122,7 +122,7 @@
 |48 | [How do you check web workers browser support](#how-do-you-check-web-workers-browser-support)|
 |49 | [Give an example of web worker](#give-an-example-of-web-worker)|
 |50 | [What are the restrictions of web workers on DOM](#what-are-the-restrictions-of-web-workers-on-dom)|
-|   | |**server-sent events**|
+|   | |**server-sent events** |
 |57 | [What is server-sent events](#what-is-server-sent-events)|
 |58 | [How do you receive server-sent event notifications](#how-do-you-receive-server-sent-event-notifications)|
 |59 | [How do you check browser support for server-sent events](#how-do-you-check-browser-support-for-server-sent-events)|
@@ -141,13 +141,13 @@
 |327| [How do you avoid receiving postMessages from attackers](#how-do-you-avoid-receiving-postmessages-from-attackers)|
 |328| [Can I avoid using postMessages completely](#can-i-avoid-using-postmessages-completely)|
 |329| [Is postMessages synchronous](#is-postmessages-synchronous)|
-|   | |**window v/s document**|
+|   | |**window v/s document** |
 |76 | [What is the difference between window and document](#what-is-the-difference-between-window-and-document)|
 |77 | [How do you access history in javascript](#how-do-you-access-history-in-javascript)|
 |90 | [What is the difference between document load and DOMContentLoaded events](#what-is-the-difference-between-document-load-and-domcontentloaded-events)|
 |172| [What are the properties used to get size of window](#what-are-the-properties-used-to-get-size-of-window)|
 |174| [Can you apply chaining on conditional operator](#Can-you-apply-chaining-on-conditional-operator)|
-|   | |**IQ**|
+|   | |**IQ** |
 |84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)|
 |24 | [What is memoization](#what-is-memoization)|
 |26 | [What are classes in ES6](#what-are-classes-in-es6)|
@@ -171,7 +171,7 @@
 |311| [What are nesting templates](#what-are-nesting-templates)|
 |323| [What is for...of statement](#what-is-for...of-statement)|
 |335| [How do you convert character to ASCII code](#how-do-you-convert-character-to-ascii-code)|
-|   | |**DOM**|
+|   | |**DOM** |
 |88 | [How do you submit a form using JavaScript](#how-do-you-submit-a-form-using-javascript)|
 |91 | [What is the difference between native, host and user objects](#what-is-the-difference-between-native,-host-and-user-objects)|
 |94 | [What is the difference between an attribute and a property](#what-is-the-difference-between-an-attribute-and-a-property)|
@@ -186,7 +186,7 @@
 |161| [How do you change style of a HTML element](#how-do-you-change-style-of-a-html-element)|
 |284| [How do I modify the url without reloading the page](#how-do-i-modify-the-url-without-reloading-the-page)|
 |295| [What are the different methods to find HTML elements in DOM](#what-are-the-different-methods-to-find-html-elements-in-dom)|
-|   | |**string**|
+|   | |**string** |
 |120| [How do you check whether a string contains a substring](#how-do-you-check-whether-a-string-contains-a-substring)|
 |134| [How do you trim a string in javascript](#how-do-you-trim-a-string-in-javascript)|
 |138| [How do you define multiline strings](#how-do-you-define-multiline-strings)|
@@ -198,7 +198,7 @@
 |159| [How do you search a string for a pattern](#how-do-you-search-a-string-for-a-pattern)|
 |160| [What is the purpose of exec method](#what-is-the-purpose-of-exec-method)|
 |182| [How to convert string to title case with javascript](#how-to-convert-string-to-title-case-with-javascript)|
-|   | |**objects**|
+|   | |**objects** |
 |125| [How do you check if a key exists in an object](#how-do-you-check-if-a-key-exists-in-an-object)|
 |126| [How do you loop through or enumerate javascript object](#how-do-you-loop-through-or-enumerate-javascript-object)|
 |127| [How do you test for an empty object](#how-do-you-test-for-an-empty-object)|
@@ -229,12 +229,12 @@
 |262| [How do you prevent an object to extend](#how-do-you-prevent-an-object-to-extend)|
 |263| [What are the different ways to make an object non-extensible](#what-are-the-different-ways-to-make-an-object-non-extensible)|
 |264| [How do you define multiple properties on an object](#how-do-you-define-multiple-properties-on-an-object)|
-|   | |**functions**|
+|   | |**functions** |
 |140| [Can we define properties for functions](#can-we-define-properties-for-functions)|
 |141| [What is the way to find the number of parameters expected by a function](#what-is-the-way-to-find-the-number-of-parameters-expected-by-a-function)|
 |402| [What is the difference between Function constructor and function declaration](#what-is-the-difference-between-function-constructor-and-function-declaration)|
 |406| [What is the difference between function and class declarations](#what-is-the-difference-between-function-and-class-declarations)|
-|   | |**time**|
+|   | |**time** |
 |106| [What is the use of setTimeout](#what-is-the-use-of-settimeout)|
 |107| [What is the use of setInterval](#what-is-the-use-of-setinterval)|
 |117| [What is the purpose of clearTimeout method](#what-is-the-purpose-of-cleartimeout-method)|
@@ -245,26 +245,26 @@
 |171| [How do you convert date to another timezone in javascript](#how-do-you-convert-date-to-another-timezone-in-javascript)|
 |293| [How do get the timezone offset from date](#how-do-get-the-timezone-offset-from-date)|
 |429| [What is the difference between setTimeout, setImmediate and process.nextTick?](#what-is-the-difference-between-set-timeout-,-set-immediate-and-processnext-tick)|
-|   | |**math**|
+|   | |**math** |
 |149| [How do you generate random integers](#how-do-you-generate-random-integers)|
 |150| [Can you write a random integers function to print integers with in a range](#can-you-write-a-random-integers-function-to-print-integers-with-in-a-range)|
 |365| [How do you rounding numbers to certain decimals](#how-do-you-rounding-numbers-to-certain-decimals)|
-|   | |**array**|
+|   | |**array** |
 |243| [What is the purpose of compareFunction while sorting arrays](#what-is-the-purpose-of-comparefunction-while-sorting-arrays)|
 |286| [How do you compare scalar arrays](#how-do-you-compare-scalar-arrays)|
 |360| [How do you remove falsy values from an array](#how-do-you-remove-falsy-values-from-an-array)|
 |366| [What is the easiest way to convert an array to an object](#what-is-the-easiest-way-to-convert-an-array-to-an-object)|
 |418| [What are the differences between for...of and for...in statements](#what-are-the-differences-between-for...of-and-for...in-statements)|
-|   | |**typescript**|
+|   | |**typescript** |
 |251| [What is typescript](#what-is-typescript)|
 |252| [What are the differences between javascript and typescript](#what-are-the-differences-between-javascript-and-typescript)|
 |253| [What are the advantages of typescript over javascript](#what-are-the-advantages-of-typescript-over-javascript)|
-|   | |**class**|
+|   | |**class** |
 |255| [What is a constructor method](#what-is-a-constructor-method)|
 |256| [What happens if you write constructor more than once in a class](#what-happens-if-you-write-constructor-more-than-once-in-a-class)|
 |257| [How do you call the constructor of a parent class](#how-do-you-call-the-constructor-of-a-parent-class)|
 |283| [How do you extend classes](#how-do-you-extend-classes)|
-|   | |**async**|
+|   | |**async** |
 |381| [What is AJAX](#what-is-ajax)|
 |382| [What are the different ways to deal with Asynchronous Code](#what-are-the-different-ways-to-deal-with-asynchronous-code)|
 |407| [What is an async function](#what-is-an-async-function)|
