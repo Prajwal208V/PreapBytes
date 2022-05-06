@@ -90,7 +90,7 @@
 |61 | [window vs document](#window-vs-document)|
 |62 | [window.onload vs document.onload](#windowonload-vs-documentonload)|
 |63 | [what are the possible ways of making an API call in JavaScript](#what-are-the-possible-ways-of-making-an-API-call-in-JavaScript)|
-|   | |**json** |
+|   | **interview questions** |
 |69 | [JSON](#JSON)|
 |111| [What is JSON](#What-is-JSON)|
 |112| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
