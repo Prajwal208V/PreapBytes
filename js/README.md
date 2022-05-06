@@ -105,7 +105,6 @@
 |67 | [Why do you need strict mode](#why-do-you-need-strict-mode)|
 |68 | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
 |   | **storage** |
-
 |34 | [What is IndexedDB](#what-is-indexeddb)|
 |35 | [What is web storage](#what-is-web-storage)|
 |36 | [What is a post message](#what-is-a-post-message)|
