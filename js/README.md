@@ -1268,7 +1268,9 @@ A pending promise can either be fulfilled with a value or rejected with a reason
 
 Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
 Creating a promise:create a promise in JavaScript, you use the Promise constructor:
-   ```const promise = new Promise(resolve => {
+
+   ```js
+   const promise = new Promise(resolve => {
         setTimeout(() => {
           resolve("I'm a Promise!");
         }, 5000);
@@ -1290,105 +1292,124 @@ by using then, catch, finally methods to further action with a promise that beco
 ### promise chaining
 The instance method of the Promise object such as then(), catch(), or finally() returns a separate "promise object".Therefore, you can call the promise’s instance method on the return Promise. The successively calling methods in this way is referred to as the promise chaining.
 The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
-```let my_promise3=new Promise((resolve, reject)=>{
-          setTimeout(()=>{
-             resolve(1);
-          },1*1000)
-       })
-       my_promise3.then((result)=>{
-         console.log(result);
-         return result*2
-       }).then((result)=>{
-        console.log(result);
-        return result*3
-       }).then((result)=>{
-        console.log(result);
-       })
-```
+
+    ```
+    let my_promise3=new Promise((resolve, reject)=>{
+       setTimeout(()=>{
+          resolve(1);
+       },1*1000)
+    })
+    my_promise3.then((result)=>{
+      console.log(result);
+      return result*2
+    }).then((result)=>{
+     console.log(result);
+     return result*3
+    }).then((result)=>{
+     console.log(result);
+    })
+    ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### promise.all
 Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected.
 
-```Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`)) ```
-Note: Remember that the order of the promises(output the result) is maintained as per input order.
+   ```js
+   Promise.all([Promise1, Promise2, Promise3]) .then(result) => {   console.log(result) }) .catch(error => console.log(`Error in promises ${error}`))
+   ```
+   
+Note: the order of the promises(output the result) is maintained as per input order.
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### promise.race
 Promise.race() method will return the promise instance which is firstly resolved or rejected. example of race() method where promise2 is resolved first
 
-```var promise1 = new Promise(function(resolve, reject) {
+   ```js
+   var promise1 = new Promise(function(resolve, reject) {
     setTimeout(resolve, 500, 'one');
    });
    var promise2 = new Promise(function(resolve, reject) {
     setTimeout(resolve, 100, 'two');
    });
-   
+
    Promise.race([promise1, promise2]).then(function(value) {
       console.log(value); // "two" // Both promises will resolve, but promise2 is faster
    });
-```
+   ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### try catch throw finally in js
 When executing JavaScript code, errors will most definitely occur. These errors can occur due to the fault from the programmer’s side or the input is wrong or even if there is a problem with the logic of the program. When an error occurs, JavaScript will stop and generate an error message.
 No one wants its software to fail or crash. Exceptions are the major reason for software failure. The exceptions can be handled in the program beforehand and prevent the execution from stopping. This is known as exception handling.exception handling is the mechanism for identifying the undesirable states that the program can reach and specifying the desirable outcomes of such states.Try-catch is the most common method used for handling exceptions in the program.
-~The try statement lets you test a block of code to check for errors.
-~The catch statement lets you handle the error if any are present.
-~The throw statement lets you make your own errors.
-~The finally statement lets you execute code, after try and catch.
-~The finally block runs regardless of the result of the try-catch block.
-```try {
-  let result = add(10, 20);
-  console.log(result);
-} catch (e) {
-  console.log({ name: e.name, message: e.message });
-}
-console.log('Bye');
-```
-```try {
-      let result = add(10, 20);
-      throw {name:'error',message:'please eneter valid i/p'}
+
+1.The try statement lets you test a block of code to check for errors.
+2.The catch statement lets you handle the error if any are present.
+3.The throw statement lets you make your own errors.
+4.The finally statement lets you execute code, after try and catch.
+5.The finally block runs regardless of the result of the try-catch block.
+
+   ```js
+   try {
+     let result = add(10, 20);
+     console.log(result);
    } catch (e) {
-      console.log({ name: e.name, message: e.message });
+     console.log({ name: e.name, message: e.message });
    }
-```
+   console.log('Bye');
+   ```
+   ```try {
+         let result = add(10, 20);
+         throw {name:'error',message:'please eneter valid i/p'}
+      } catch (e) {
+         console.log({ name: e.name, message: e.message });
+      }
+   ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are the possible ways to create an array
 An array in JavaScript can be defined and initialized in two ways, 1.array literal and 2.Array constructor way.
 Array Literal syntax is simple. It takes a list of values separated by a comma and enclosed in square brackets. 
- ```let arr=["a","b","c","d","e","f"];```
+
+    ```js
+    let arr=["a","b","c","d","e","f"];
+    ```
 
 Array Constructor initialize an array with Array constructor syntax using new keyword.
-```var arrayName = new Array(element1, element2, element3,... elementN);
-       let arr2=new Array();
-```
+
+   ```js
+   var arrayName = new Array(element1, element2, element3,... elementN);
+   let arr2=new Array();
+   ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### ways to empty the array 
 4 Ways to Empty an Array in JavaScript
-1.Assigning it to a new empty array
-let arr=[];
-2.set its length to zero
-arr.length=0;
-3.Using splice() method,splice method removing or replacing existing elements
-arr.splice(0,arr.length)
-4.Using pop() method:remove each element of the array one by one using the while loop and pop()
-while(arr.length){
-        arr.pop();
-    }
-
+   
+   ```js
+   1.Assigning it to a new empty array
+   let arr=[];
+   2.set its length to zero
+   arr.length=0;
+   3.Using splice() method,splice method removing or replacing existing elements
+   arr.splice(0,arr.length)
+   4.Using pop() method:remove each element of the array one by one using the while loop and pop()
+   while(arr.length){
+           arr.pop();
+       }
+   ```
+   
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Destructuring array 
 that makes it possible to unpack values from arrays we can extract data from arrays and objects and assign them to variables.
-```const colorArr = ["red", "yellow", "blue", "green", "white", "black"];
+
+```js
+   const colorArr = ["red", "yellow", "blue", "green", "white", "black"];
    const [first, second] = colorArr;
    console.log(first, second);// red, yellow
 ```
@@ -1398,6 +1419,9 @@ that makes it possible to unpack values from arrays we can extract data from arr
 111. ### What is JSON
 
      JSON (JavaScript Object Notation) is a lightweight format that is used for data interchanging. It is based on a subset of JavaScript language in the way objects are built in JavaScript.
+     JavaScript Object Notation (JSON) is a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa).
+     JSON exists as a string — useful when you want to transmit data across a network. It needs to be converted to a native JavaScript object when you want to access the data. 
+
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -1413,7 +1437,7 @@ that makes it possible to unpack values from arrays we can extract data from arr
 
 113. ### What is the purpose JSON stringify
 
-     When sending data to a web server, the data has to be in a string format. You can achieve this by converting JSON object into a string using stringify() method.
+     When sending data to a web server, the data has to be in a string format. we can achieve this by converting JSON object into a string using stringify() method.
 
      ```javascript
      var userJSON = {'name': 'John', age: 31}
@@ -1438,7 +1462,15 @@ that makes it possible to unpack values from arrays we can extract data from arr
 115. ### Why do you need JSON
 
      When exchanging data between a browser and a server, the data can only be text. Since JSON is text only, it can easily be sent to and from a server, and used as a data format by any programming language.
-
+     
+     Features:-
+     Easy to use – JSON API offers high-level facade, which helps you to simplify commonly used use-cases.
+     Performance – JSON is quite fast as it consumes very less memory space, which is especially suitable for large object graphs or systems.
+     Free tool – JSON library is open source and free to use.
+     Doesn’t require to create mapping – Jackson API provides default mapping for many objects to be serialized.
+     Clean JSON – Creates clean, and compatible JSON result that is easy to read.
+     Dependency – JSON library does not require any other library for processing.
+     
      **[⬆ Back to Top](#table-of-contents)**
 
 116. ### What are PWAs
@@ -1551,7 +1583,7 @@ spread operator usecases
 
 398. ### What is babel
 
-     Babel is a JavaScript transpiler to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Some of the main features are listed below,
+     Babel is a JavaScript transpiler to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. Some of the main features are ,
      1. Transform syntax
      2. Polyfill features that are missing in your target environment (using @babel/polyfill)
      3. Source code transformations (or codemods)
@@ -1561,7 +1593,7 @@ spread operator usecases
 387. ### What are tasks in event loop
 
      A task is any javascript code/program which is scheduled to be run by the standard mechanisms such as initially starting to run a program, run an event callback, or an interval or timeout being fired. All these tasks are scheduled on a task queue.
-     Below are the list of use cases to add tasks to the task queue,
+     use cases to add tasks to the task queue,
      1. When a new javascript program is executed directly from console or running by the ```<script>``` element, the task will be added to the task queue.
      2. When an event fires, the event callback added to task queue
      3. When a setTimeout or setInterval is reached, the corresponding callback added to task queue
@@ -1588,9 +1620,7 @@ spread operator usecases
 394. ### What is an event table
 
      Event Table is a data structure that stores and keeps track of all the events which will be executed asynchronously like after some time interval or after the resolution of some API requests. i.e Whenever you call a setTimeout function or invoke async operation, it is added to the Event Table.
-     It doesn't not execute functions on it’s own. The main purpose of the event table is to keep track of events and send them to the Event Queue as shown in the below diagram.
-
-     ![Screenshot](images/event-table.png)
+     It doesn't not execute functions on it’s own. The main purpose of the event table is to keep track of events and send them to the Event Queue
 
      **[⬆ Back to Top](#table-of-contents)**
 
@@ -1644,7 +1674,7 @@ spread operator usecases
      
 167. ### How do you detect a mobile browser without regexp
 
-     You can detect mobile browsers by simply running through a list of devices and checking if the useragent matches anything. This is an alternative solution for RegExp usage,
+     we can detect mobile browsers by simply running through a list of devices and checking if the useragent matches anything. This is an alternative solution for RegExp usage,
 
      ```javascript
      function detectmob() {
