@@ -413,17 +413,20 @@ means we don’t have to explicitly specify types of variables and objects. but 
 ### difference between type conversion and type coercion
 type coercion:- is the automatic or implicit conversion of values from one data type to another,the coercion is done implicitly. When JavaScript operates in a wrong data type, it will try to convert the value to the right data type.
 examples:- 
-12 + ""    //Output is "12" as number 12 is converted to string "12"
-"15" * 2    //Output is 30 as string 15 is converted to number 15
-undefined + 6 //Output is NaN as undefined could not be converted to number
-"Hello" + null  //Output is "Hellonull", as null is converted to string "null"
-null + 25     //Output is 25, as null is converted to 0.
-true + true //Output is 2, as true is converted to number 1.
-false + 10 //Output is 10, as false is converted to number 0.
-10 * [6] //Output is 60, as [6] is converted to number 6.
-10 * [10, 20] //Output is NaN, as [10, 20] could not be converted to number
-[1] + [1,2] //Output is "11,2" as [1] is converted to "1" and [1,2] is converted "1,2". Finally the two are concatenated to give the result "11,2"
-           
+
+      ``````javascript
+      12 + ""    //Output is "12" as number 12 is converted to string "12"
+      "15" * 2    //Output is 30 as string 15 is converted to number 15
+      undefined + 6 //Output is NaN as undefined could not be converted to number
+      "Hello" + null  //Output is "Hellonull", as null is converted to string "null"
+      null + 25     //Output is 25, as null is converted to 0.
+      true + true //Output is 2, as true is converted to number 1.
+      false + 10 //Output is 10, as false is converted to number 0.
+      10 * [6] //Output is 60, as [6] is converted to number 6.
+      10 * [10, 20] //Output is NaN, as [10, 20] could not be converted to number
+      [1] + [1,2] //Output is "11,2" as [1] is converted to "1" and [1,2] is converted "1,2". Finally the two are concatenated to give the result "11,2"
+      ```
+
 Type conversion:- (In this case, type conversion is explicitly done in the code by the developer.) JavaScript provides inbuilt methods for type conversion. using the inbuilt functions like Number(), String(), Boolean(),paresInt() etc.
 examples:-1)Converting to Number:- The Number() global method is used to convert any other data type value to numeric values.
 Number("25") //Output is 25 as "25" string is converted to number 25
