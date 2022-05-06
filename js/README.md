@@ -429,31 +429,39 @@ examples:-
 
 Type conversion:- (In this case, type conversion is explicitly done in the code by the developer.) JavaScript provides inbuilt methods for type conversion. using the inbuilt functions like Number(), String(), Boolean(),paresInt() etc.
 examples:-1)Converting to Number:- The Number() global method is used to convert any other data type value to numeric values.
-Number("25") //Output is 25 as "25" string is converted to number 25
-Number("") //Output is 0 as "" string is converted to 0
-Number([]) //Output is 0 as [] is converted to 0
-Number(null) //Output is 0 as null is converted to 0
-Number(true) //Output is 1 as true is converted to 1
-Number(false) //Output is 0 as false is converted to 0
-Number("Test") //Output is NaN as "Test" could not be converted to number
-parseInt() and parseFloat() methods can also be used to convert numbers stored as a string to a number. 
-For all other data types, it will return NaN.
 
+    ```javascript
+    Number("25") //Output is 25 as "25" string is converted to number 25
+    Number("") //Output is 0 as "" string is converted to 0
+    Number([]) //Output is 0 as [] is converted to 0
+    Number(null) //Output is 0 as null is converted to 0
+    Number(true) //Output is 1 as true is converted to 1
+    Number(false) //Output is 0 as false is converted to 0
+    Number("Test") //Output is NaN as "Test" could not be converted to number
+    parseInt() and parseFloat() //methods can also be used to convert numbers stored as a string to a number. 
+    //For all other data types, it will return NaN.
+    ```
+    
 2)Converting to String :-The String() global method is used to convert any other data type value to string values.
-String(25) //Output is "25" as 25 is converted to string "25"
-String([]) //Output is "" as [] is converted to empty string ""
-String(null) //Output is "null" as null is converted to string "null"
-String(true) //Output is "true" as true is converted to string "true"
-String(false) //Output is "false" as false is converted to string "false"
-String({}) //Output is "[object Object]" as {} is converted to string(similar to calling toString() on a object)
-
+    
+    ```javascript
+    String(25) //Output is "25" as 25 is converted to string "25"
+    String([]) //Output is "" as [] is converted to empty string ""
+    String(null) //Output is "null" as null is converted to string "null"
+    String(true) //Output is "true" as true is converted to string "true"
+    String(false) //Output is "false" as false is converted to string "false"
+    String({}) //Output is "[object Object]" as {} is converted to string(similar to calling toString() on a object)
+    ```
+    
 3)Converting to Boolean:- The Boolean() global method is used to convert any other data type value to Boolean values.
-Boolean(25) //Output is true
-Boolean([]) //Output is true
-Boolean(null) //Output is false
-Boolean({}) //Output is true
-Boolean("Yeah! I will be converted to Boolean.") //Output is true
 
+    ```javascript
+    Boolean(25) //Output is true
+    Boolean([]) //Output is true
+    Boolean(null) //Output is false
+    Boolean({}) //Output is true
+    Boolean("Yeah! I will be converted to Boolean.") //Output is true
+    ```
             
 **[⬆ Back to Top](#table-of-contents)**
 
