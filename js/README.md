@@ -479,32 +479,40 @@ If function arguments are passed by reference, the changes of variables that you
 shallow copies:-
 When a reference variable is copied into a new reference variable using the assignment operator, a shallow copy of the referenced object is created. In simple words, a reference variable mainly stores the address of the object it refers to. When a new reference variable is assigned the value of the old reference variable, the address stored in the old reference variable is copied into the new one. This means both the old and new reference variable point to the same object in memory. As a result if the state of the object changes through any of the reference variables it is reflected for both. 
 ex:- 
-var employee = {
-    eid: "E102",
-    ename: "Jack",
-    eaddress: "New York",
-    salary: 50000
-}
-var newEmployee = employee;    // Shallow copy
 
+    ```javascript
+    var employee = {
+       eid: "E102",
+       ename: "Jack",
+       eaddress: "New York",
+       salary: 50000
+    }
+    var newEmployee = employee;    // Shallow copy
+    ```
+    
 deep copies:-
 deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object. In this way, both the objects are independent of each other and in case of any modification to either one the other is not affected. Also, if one of the objects is deleted the other still remains in the memory. Now to create a deep copy of an object in JavaScript we use JSON.parse() and JSON.stringify() methods. 
 ex:-
-var employee = {
-    eid: "E102",
-    ename: "Jack",
-    eaddress: "New York",
-    salary: 50000
-}
-var newEmployee = JSON.parse(JSON.stringify(employee)); //Deep Copy
 
+    ```javascript
+    var employee = {
+       eid: "E102",
+       ename: "Jack",
+       eaddress: "New York",
+       salary: 50000
+    }
+    var newEmployee = JSON.parse(JSON.stringify(employee)); //Deep Copy
+    ```
+    
 Here the new object is created using the JSON.parse() and JSON.stringify() methods of JavaScript. JSON.stringify() takes a JavaScript object as argument and then transforms it into a JSON string. This JSON string is passed to the JSON.parse() method which then transforms it into a JavaScript object. This method is useful when the object is small and has serializable properties. But if the object is very large and contains certain non-serializable properties then there is a risk of data loss. Specially if an object contains methods then JSON.stringify() will fail as methods are non-serializable. There are better ways to deep clone of which one is Lodash which allows cloning methods as well.
 
 Lodash To Deep Copy:(https://www.geeksforgeeks.org/what-is-shallow-copy-and-deep-copy-in-javascript/)
 Lodash is a JavaScript library that provides multiple utility functions and one of the most commonly used function of the Lodash library is the cloneDeep() method. This method helps in deep cloning of an object and also clones the non serializable properties which were a limitation in the JSON.stringify() approach.
 ex:-
-const lodash = require('lodash');
-   var employee = {
+
+    ```javascript
+    const lodash = require('lodash');
+    var employee = {
        eid: "E102",
        ename: "Jack",
        eaddress: "New York",
@@ -514,48 +522,60 @@ const lodash = require('lodash');
                + this.ename + "-->Salary: "
                + this.salary;
        }
-   }
-   var deepCopy = lodash.cloneDeep(employee);
-
+    }
+    var deepCopy = lodash.cloneDeep(employee);
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Function 
 is a A block of code which we can use multiple times, so you define or declare it once, and then  use it wherever we want as many times.
 different ways of declaring a function in JS
-1)Function Expression:-   var greet = function () { }
-2)Anonymous Function:-  
-3)Immediately Invoked Function Expressions (IIFE)
-4)Constructor Function
-5)Arrow Function
-6)regular function
-7)Generator function 
+    ```javascript
+    1)Function Expression:-   var greet = function () { }
+    2)Anonymous Function:-  
+    3)Immediately Invoked Function Expressions (IIFE)
+    4)Constructor Function
+    5)Arrow Function
+    6)regular function
+    7)Generator function 
+    ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### IIFE
 Immediately Invoked Function Expressions (IIFE) are functions that can be stated as expressions or normal declarations and use the anonymous property of the function expression to execute its code. If you want to execute a function immediately after the declaration, use IIFE. This is executed by wrapping the anonymous function in parentheses and ending it with a semicolon.
-       (function () {
-            console.log("Welcome to Javascript");
-        })();
 
+    ```javascript
+    (function () {
+      console.log("Welcome to Javascript");
+    })();
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Anonymous Function 
 Anonymous function declaration allows function names to appear hidden in the declaration itself. An anonymous function can also be an argument of a function hence, it can be declared inside another function as its parameters.
-   setTimeout(
+   
+    ```javascript
+    setTimeout(
         function () {
           console.log("Executed after three seconds");
         }  , 3000 // delay in milliseconds
-    )
-
+     )
+     ```
+     
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Higher Order Functions
 A higher order function is a function that takes a function as an argument, or returns a function.we are using higher-order functions when passing callback functions.some pre-defined methods are map,filter,settimout,Eventlistener these methods take a function as an argument.
-ex:-  const firstOrderFunc = () => console.log ('Hello, I am a First order function');
-      const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
-      higherOrder(firstOrderFunc);
-
+ex:- 
+    ```javascript
+    const firstOrderFunc = () => console.log ('Hello, I am a First order function');
+    const higherOrder = ReturnFirstOrderFunc => ReturnFirstOrderFunc();
+    higherOrder(firstOrderFunc);
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### callback functions
@@ -566,10 +586,14 @@ this callback function uesd in many inbuild methods: like,filter,map,addEventLis
 
 ### What is a pure function
 Pure Function is a function (a block of code ) that always returns the same result if the same arguments are passed. It does not depend on any state, or data change during a program’s execution rather it only depends on its input arguments. Also a pure function does not produce any observable side effects such as network requests or data mutation etc.
-ex:-    function calculateGST( productPrice ) {
-               return productPrice * 0.05;
-         }   
+ex:- 
 
+    ```javascript
+    function calculateGST( productPrice ) {
+         return productPrice * 0.05;
+    }   
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are lambda or arrow functions
@@ -580,35 +604,50 @@ arrow function arrow functions do not get their own 'this keyword' (lexical this
 ### What is a first class function
 In Javascript, functions are first class objects. First-class functions means when functions in that language are treated like any other variable.
 For example, in such a language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
-ex:-    const handler = () => console.log ('This is a click handler function');
-         document.addEventListener ('click', handler);
+ex:-   
 
+    ```javascript
+    const handler = () => console.log ('This is a click handler function');
+    document.addEventListener ('click', handler);
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What is a first order function
 First-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
-ex:- const firstOrder = () => console.log ('I am a first order function!');
+ex:-
 
+    ```javascript
+    const firstOrder = () => console.log ('I am a first order function!');
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Unary function
 Unary function (i.e. monadic) is a function that accepts exactly one argument. It stands for a single argument accepted by a function.
-const unaryFunction = a => console.log (a + 10); // Add 10 to the given argument and display the value
 
+    ```javascript
+    const unaryFunction = a => console.log (a + 10); // Add 10 to the given argument and display the value
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Generator function
 https://www.javascripttutorial.net/es6/javascript-generators/ 
-In JavaScript, a regular function is executed based on the run-to-completion model. It cannot pause midway and then continues from where it paused. ES6 introduces a new kind of function that is different from a regular function: function generator or generator.
+In JavaScript, a regular function is executed based on the run-to-completion model. It cannot pause midway and then continues from where it paused. ES6 introduces a new kind of function that is different from a regular function that is called function generator or generator.
 A generator can pause midway and then continues from where it paused.
 First, you see the asterisk (*) after the function keyword. The asterisk denotes that the generate() is a generator, not a normal function.
 Second, the yield statement returns a value and pauses the execution of the function
-      ex: function* generate() {
-                console.log('invoked 1st time');
-                yield 1;
-                console.log('invoked 2nd time');
-                yield 2;
-           }
+ex: 
+
+    ```javascript
+    function* generate() {
+       console.log('invoked 1st time');
+       yield 1;
+       console.log('invoked 2nd time');
+       yield 2;
+    }
+    ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -616,20 +655,26 @@ Second, the yield statement returns a value and pauses the execution of the func
 recurstion is a method of solving problems by breaking them  into smaller subsets of the main problem, so we can use this samll subset to find solustion.in programming we can achive this by calling a function itself, usually with a different input passed to the child function. It calls itself over and over until an exit condition is reached, and then passes the results back up the call stack.
 
 if we doing with recurstion in programming we should keep two things in mind
-   1.base condition 
-   2.what is the return type
-         
+    ```
+    1.base condition 
+    2.what is the return type
+    ```
+    
 there are many different way to do recurstion
-   1.tail recurstion- when a recursive call is the last thing
-   2.Head Recursion- when a recursive call is the first thing
-   3.Tree Recursion-
-   4.Indirect Recursion-
-   5.Nested Recursion-
 
+    ```
+    1.tail recurstion- when a recursive call is the last thing
+    2.Head Recursion- when a recursive call is the first thing
+    3.Tree Recursion-
+    4.Indirect Recursion-
+    5.Nested Recursion-
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### this keyword
 https://www.javascripttutorial.net/javascript-this/
+
 the this references the object of which the function is a property. In other words, the this references the object that is currently calling the function.
 Which object depends on how this is being invoked (used or called).
 
@@ -696,27 +741,36 @@ bind: returns a new function, allowing you to pass any number of arguments
 
 Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for comma (separated list) and Apply is for Array.
 Whereas Bind creates a new function that will have this set to the first parameter passed to bind().
-
-var employee1 = {firstName: 'John', lastName: 'Rodson'};
-var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
-function invite(greeting1, greeting2) {
-    console.log(greeting1 + ' ' + this.firstName + ' ' + this.lastName+ ', '+ greeting2);
-}
-
+    ```javascript
+    var employee1 = {firstName: 'John', lastName: 'Rodson'};
+    var employee2 = {firstName: 'Jimmy', lastName: 'Baily'};
+    function invite(greeting1, greeting2) {
+       console.log(greeting1 + ' ' + this.firstName + ' ' + this.lastName+ ', '+ greeting2);
+    }
+    ```
 call
-invite.call(employee1, 'Hello', 'How are you?'); // Hello John Rodson, How are you?
-invite.call(employee2, 'Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
 
+    ```javascript
+    invite.call(employee1, 'Hello', 'How are you?'); // Hello John Rodson, How are you?
+    invite.call(employee2, 'Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
+    ```
+    
 apply
-invite.apply(employee1, ['Hello', 'How are you?']); // Hello John Rodson, How are you?
-invite.apply(employee2, ['Hello', 'How are you?']); // Hello Jimmy Baily, How are you?
-        
-bind
-var inviteEmployee1 = invite.bind(employee1);
-var inviteEmployee2 = invite.bind(employee2);
-inviteEmployee1('Hello', 'How are you?'); // Hello John Rodson, How are you?
-inviteEmployee2('Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
 
+   ```javascript
+   invite.apply(employee1, ['Hello', 'How are you?']); // Hello John Rodson, How are you?
+   invite.apply(employee2, ['Hello', 'How are you?']); // Hello Jimmy Baily, How are you?
+   ```
+   
+bind
+
+    ```javascript
+    var inviteEmployee1 = invite.bind(employee1);
+    var inviteEmployee2 = invite.bind(employee2);
+    inviteEmployee1('Hello', 'How are you?'); // Hello John Rodson, How are you?
+    inviteEmployee2('Hello', 'How are you?'); // Hello Jimmy Baily, How are you?
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### scope
@@ -724,11 +778,14 @@ scope defines accessibility of variables, objects and functions in some particul
 In other words, scope determines the visibility of variables and other resources in areas of your code.        
 
 There are two types of scope in JavaScript.
-1.Global scope: Variables declared outside of any function become global variables. so we can be access and modified from any function.
-2.Local scope :
+
+ ```
+ 1.Global scope: Variables declared outside of any function become global variables. so we can be access and modified from any function.
+ 2.Local scope :
             a.Block Scope, it will apply only for let and const varibles but doesn't apply var varible
             b.Functional Scope, it will apply for let const and var
-            
+ ```    
+ 
 **[⬆ Back to Top](#table-of-contents)**
             
 ### scope chain
@@ -740,18 +797,20 @@ If it’s still could not find the variable, it will either implicitly declare t
 ### lexical scope
 A lexical scope in JavaScript means that a variable defined outside a function can be accessible inside inside function defined after the variable declaration.
 But the opposite is not true.
-       var a = 10; 
-          var par_func = function (){ // outermost function
-            var b = 20;
-            console.log("a and b is accessible (outer):", a, b);
-            var innerFunc= function (){ // innermost function
-              var c = 30;
-              console.log("a and b and c is accessible (innner):", a, b, c);
-            }
-            innerFunc();
-          }
-          par_func()
-        
+
+    ```javascript
+    var a = 10; 
+    var par_func = function (){ // outermost function
+     var b = 20;
+     console.log("a and b is accessible (outer):", a, b);
+     var innerFunc= function (){ // innermost function
+       var c = 30;
+       console.log("a and b and c is accessible (innner):", a, b, c);
+     }
+     innerFunc();
+    }
+    par_func()
+    ```     
         
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -761,70 +820,88 @@ The closure has three scope chains
  1.Own scope where variables defined between its curly brackets
  2.Outer function’s variables
  3.Global variables
-        var a = 10; // variable a assigned to 10
-        var par_func = function (){ // outermost function
-          var b = 20;
-          console.log("a and b is accessible (outer):", a, b);
-          var innerFunc= function (){ // innermost function
-            var c = 30;
-            console.log("a and b and c is accessible (innner):", a, b, c);
-           }
-           return innerFunc;
-        }
-        var var25= par_func();
-        var25();
-        
+ 
+   ```javascript
+   var a = 10; // variable a assigned to 10
+   var par_func = function (){ // outermost function
+    var b = 20;
+    console.log("a and b is accessible (outer):", a, b);
+    var innerFunc= function (){ // innermost function
+     var c = 30;
+     console.log("a and b and c is accessible (innner):", a, b, c);
+    }
+    return innerFunc;
+   }
+   var var25= par_func();
+   var25();
+   ```     
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are the possible ways to create objects in JavaScript
 there are 5 ways to create object in js
-1.Object Literal
-2.using new Object() method 
-3.using Object.create(proto,propertiesObject)
-4.uinsg Constructor Function
-5.using ES6 Classes
 
+    ```javascript
+    1.Object Literal
+    2.using new Object() method 
+    3.using Object.create(proto,propertiesObject)
+    4.uinsg Constructor Function
+    5.using ES6 Classes
+    ```
+    
 -Object Literal Way:
 The Simplest and easiest way to create an object is using Object Literal “{}”. Just define properties and values inside curly braces
-         let obj51={name:"Prajwal"};
-         console.log(obj51.name);
-        
+
+    ```javascript
+    let obj51={name:"Prajwal"};
+    console.log(obj51.name);
+    ```
+    
 -new Object() Way
 way to create an Object is by using new Object() method. For simplicity, but readability and execution speed, by use object literal way.
-         let obj52=new Object({name:"Prajwal"});
-         console.log(obj52.name);
-
+    
+    ```javascript
+    let obj52=new Object({name:"Prajwal"});
+    console.log(obj52.name);
+    ```
+    
  Object Literal vs new Object()
 {} is literal and literals are evaluated faster in JavaScript, but new Object() is a constructor call to function Object() which is having its own definition that takes comparatively more time to evaluate.
 
 -Object.create(proto,propertiesObject) Way.this method creates a new object, using an existing object as the prototype of the newly created object.
 it takes two parameters. The first parameter is a mandatory object that serves as the prototype of the new object to be created. The second parameter is an optional object which contains the properties to be added to the new object.
-         let object53=Object.create(obj51,{new_property:{value:23}});
+         
+      let object53=Object.create(obj51,{new_property:{value:23}});
 
 -Constructor Function Way
 The constructor function is a function allows to create multiple objects of the same constructor function with the help of new keyword
-Technically speaking, a constructor function is a regular function with the following convention:
+Technically speaking, a constructor function is a regular function with the  convention:
 * The name of a constructor function starts with a capital letter like Person, Document, etc.
 * A constructor function should be called only with the new operator.
-      function Constructor_fun(name,age,phone){
-            this.name=name;
-            this.age=age;
-            this.phone=phone;
-      }
-      let obj54=new Constructor_fun("Prajwal");
-
+    
+    ```js
+    function Constructor_fun(name,age,phone){
+      this.name=name;
+      this.age=age;
+      this.phone=phone;
+    }
+    let obj54=new Constructor_fun("Prajwal");
+    ```
+    
 -ES6 Classes
 By using classes we can create a new objects.The constructor method is a special method of a class for creating and initializing an object instance of that class.
-      class cls_Obj{
-          constructor(name, age, phone){
-            this.name=name;
-            this.age=age;
-            this.phone=phone;
-          }
-        }
-        let obj55=new cls_Obj("Prajwal",23);
-
+   
+    ```js
+    class cls_Obj{
+       constructor(name, age, phone){
+         this.name=name;
+         this.age=age;
+         this.phone=phone;
+       }
+     }
+     let obj55=new cls_Obj("Prajwal",23);
+    ```
+    
 **[⬆ Back to Top](#table-of-contents)**
 
 ### function attached to an object
@@ -834,35 +911,44 @@ By using classes we can create a new objects.The constructor method is a special
 ### Prototypes
 Prototypes: are the mechanism by which JavaScript objects inherit features from one another. Every object in JavaScript has a built-in property called prototype.The prototype is itself an object.
 When we try to access a property of an object: if the property can't be found in the object itself, the prototype is searched for the property. If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.
-      const obj8={
-          city:"Bangalore",
-          greet:function (){
-            console.log(`Greetings from ${this.city}`);
-          }
-      }
-      console.log(obj8)//list of all the properties available to this object.these extra properties come from prototype
-to check its own property or not using hasOwnProperty() method 
-console.log(obj8.hasOwnProperty('city'));//true
-console.log(obj8.hasOwnProperty('name'));//false
-->Object.prototype, is the most basic prototype, that all objects have by default. The prototype of Object.prototype is null, so it's at the end of the prototype chain:
-console.log(Object.getPrototypeOf(obj8));//Object {...}
-console.log(Object.getPrototypeOf(Object.getPrototypeOf(obj8)));//null
+
+    ```js
+    const obj8={
+       city:"Bangalore",
+       greet:function (){
+         console.log(`Greetings from ${this.city}`);
+       }
+    }
+    console.log(obj8)
+    /*list of all the properties available to this object.these extra properties come from prototype to check its own property or not using                               hasOwnProperty() method */
+    console.log(obj8.hasOwnProperty('city'));//true
+    console.log(obj8.hasOwnProperty('name'));//false
+    ```    
+Object.prototype, is the most basic prototype, that all objects have by default. The prototype of Object.prototype is null, so it's at the end of the prototype     chain:
+
+    ```js
+    console.log(Object.getPrototypeOf(obj8));//Object {...}
+    console.log(Object.getPrototypeOf(Object.getPrototypeOf(obj8)));//null
+    ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### prototype chaining
 When we try to access a property of an object: if the property can't be found in the object itself, the prototype is searched for the property. If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.
-        let person_obj={
-          name:"Veeresh",
-          college:"B.M.S.C.E"
-        }
-        let person_obj2=Object.create(person_obj,{age:{value:"23"}});
-        console.log(person_obj2.hasOwnProperty('age'));//true
-        console.log(person_obj2.hasOwnProperty('name'));//false
-        let person_obj3=Object.create(person_obj2,{number:{value:"9148302***"}});
-        console.log(person_obj3.__proto__.__proto__.__proto__);
-        console.log(Object.prototype.__proto__);
-        
+    
+    ```js
+    let person_obj={
+     name:"Veeresh",
+     college:"B.M.S.C.E"
+    }
+    let person_obj2=Object.create(person_obj,{age:{value:"23"}});
+    console.log(person_obj2.hasOwnProperty('age'));//true
+    console.log(person_obj2.hasOwnProperty('name'));//false
+    let person_obj3=Object.create(person_obj2,{number:{value:"9148302***"}});
+    console.log(person_obj3.__proto__.__proto__.__proto__);
+    console.log(Object.prototype.__proto__);
+    ```
+    
 ->Shadowing properties:
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -870,20 +956,25 @@ When we try to access a property of an object: if the property can't be found in
 ### Object Destructuring
 OavaScript Object Destructuring is the syntax for extracting values from an object property and assigning them to a variable.
 
-            ```let person={
-               name:"Prajwal V",
-               age:23,
-               from:"Bengaluru"
-            }
-            let name=person.name;
-            let age=person.age;
-            let from=person.from;
-            ```
+   ```
+   let person={
+      name:"Prajwal V",
+      age:23,
+      from:"Bengaluru"
+   }
+   let name=person.name;
+   let age=person.age;
+   let from=person.from;
+   ```
+   
 We have to explicitly mention the name and age property with the user object in dot(.) notation, then declare variables accordingly and assign them. 
 Setting default values and also we assign the age property to the age variable with the default value of 18.
-            ```let{name,age,from}=person;
-            let{name,age:currentAge=18,from,contactNo='63628***',}=person;
-            ```
+
+   ```js
+   let{name,age,from}=person;
+   let{name,age:currentAge=18,from,contactNo='63628***',}=person;
+   ```
+   
 if property not there in object it will take defult value
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -891,19 +982,19 @@ if property not there in object it will take defult value
 127. ### How do you test for an empty object
 
      There are different solutions based on ECMAScript versions
-     1. **Using Object entries(ECMA 7+):** You can use object entries length along with constructor type.
+     1. **Using Object entries(ECMA 7+):** we can use object entries length along with constructor type.
 
      ```javascript
      Object.entries(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
      ```
 
-     1. **Using Object keys(ECMA 5+):** You can use object keys length along with constructor type.
+     2. **Using Object keys(ECMA 5+):** we can use object keys length along with constructor type.
 
      ```javascript
      Object.keys(obj).length === 0 && obj.constructor === Object // Since date object length is 0, you need to check constructor check as well
      ```
 
-     1. **Using for-in with hasOwnProperty(Pre-ECMA 5):** You can use a for-in loop along with hasOwnProperty.
+     3. **Using for-in with hasOwnProperty(Pre-ECMA 5):
 
      ```javascript
      function isEmpty(obj) {
@@ -921,9 +1012,9 @@ if property not there in object it will take defult value
 
 125. ### How do you check if a key exists in an object
 
-     You can check whether a key exists in an object or not using three approaches,
+     we can check whether a key exists in an object or not using three approaches,
 
-     1. **Using in operator:** You can use the in operator whether a key exists in an object or not
+     1. **Using in operator:** we can use the in operator whether a key exists in an object or not
 
      ```javascript
      "key" in obj
@@ -935,13 +1026,13 @@ if property not there in object it will take defult value
      !("key" in obj)
      ```
 
-     1. **Using hasOwnProperty method:** You can use `hasOwnProperty` to particularly test for properties of the object instance (and not inherited properties)
+     2. **Using hasOwnProperty method:** we can use `hasOwnProperty` to particularly test for properties of the object instance (and not inherited properties)
 
      ```javascript
      obj.hasOwnProperty("key") // true
      ```
 
-     1. **Using undefined comparison:** If you access a non-existing property from an object, the result is undefined. Let’s compare the properties against undefined to determine the existence of the property.
+     3. **Using undefined comparison:** If you access a non-existing property from an object, the result is undefined. Let’s compare the properties against undefined to determine the existence of the property.
 
      ```javascript
      const user = {
@@ -957,8 +1048,10 @@ if property not there in object it will take defult value
 ### SET
 A set is a collection of items which are unique i.e no element can be repeated, values of any type.Set in ES6 are ordered: elements of the set can be iterated in the insertion order. Set can store any types of values whether primitive or objects.
 To create a new empty Set, 
-            ```let setObject = new Set();
-            ```
+
+   ```js
+   let setObject = new Set();
+   ```
 The Set constructor also accepts an optional iterable object. If you pass an iterable object to the Set constructor, all the elements of the iterable object will be added to the new set:
 Set methods:
    1.add(value) – appends a new element with a specified value to the set.
@@ -969,25 +1062,26 @@ Set methods:
 6.has(value) – returns true if an element with a given value is in the set, or false if it is not.
 7.keys() – is the same as values() function.
 
-    ```let chars = new Set(['a', 'a', 'b', 'c', 'c']);
-       console.log(chars);//Set { 'a', 'b', 'c' }
-       console.log(chars.size);//  3
-       console.log(chars instanceof Set);// true
-       chars.add('d');// Set { 'a', 'b', 'c', 'd' }
-       console.log(chars.has('a'));// true
-       chars.delete('d'); //   Set { 'a', 'b', 'c',}
-       chars.clear(); //Set{}
-  
-       for (let char of chars) {
-          console.log(char);
-       }
+    ```js
+    let chars = new Set(['a', 'a', 'b', 'c', 'c']);
+    console.log(chars);//Set { 'a', 'b', 'c' }
+    console.log(chars.size);//  3
+    console.log(chars instanceof Set);// true
+    chars.add('d');// Set { 'a', 'b', 'c', 'd' }
+    console.log(chars.has('a'));// true
+    chars.delete('d'); //   Set { 'a', 'b', 'c',}
+    chars.clear(); //Set{}
 
-       for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
-         console.log(key === value);
-       }
-       Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
-       chars.forEach(char => console.log(char.toUpperCase()));
-       ``` 
+    for (let char of chars) {
+       console.log(char);
+    }
+
+    for (let [key, value] of chars.entries()) { //Set also provides the keys(), values(), and entries() methods like the Map.Set are identical. 
+      console.log(key === value);
+    }
+    Invoke a callback function on each element of a set,If you want to invoke a callback on every element of a set, you can use the forEach() method.
+    chars.forEach(char => console.log(char.toUpperCase()));
+    ``` 
        
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -997,8 +1091,10 @@ A data structure in which data is stored as key value pairs. In which a unique k
 -A Map is ordered and iterable, whereas a objects is not ordered and not iterable
 -We can put any type of data as a Map key, whereas objects can only have a number, string, or symbol as a key.
 -A Map inherits from Map.prototype. This offers all sorts of utility functions and properties which makes working with Map objects a lot easier.
-```let map = new Map([iterable]);
-```
+
+   ```js
+   let map = new Map([iterable]);
+   ```
 methods:
 1.clear() – removes all elements from the map object.
 2.delete(key) – removes an element specified by the key. It returns if the element is in the map, or false if it does not.
@@ -1010,21 +1106,22 @@ methods:
 8.values() returns a new iterator object that contains values for each element in insertion order.
 9.set(key, value) – sets the value for the key in the map object. It returns the map object itself therefore you can chain this method with other methods.
 
-```let userRoles = new Map();
+   ```javascript
+   let userRoles = new Map();
    console.log(userRoles instanceof Map); // true
    userRoles.set(john, 'admin');
-   
+
    let userRoles = new Map([  //Initialize a map with an iterable object
     [john, 'admin'],
     [lily, 'editor'],
     [peter, 'subscriber']
    ]);
-   
+
    userRoles.get(john); // admin
    userRoles.get({name: 'Foo'}); //undefined 
    userRoles.has(lily); // true
    console.log(userRoles.size); // 3
-   
+
    //Iterate over map keys
    for (const user of userRoles.keys()) {
       console.log(user.name);
@@ -1039,7 +1136,7 @@ methods:
    }
    //forEach() method of the map object:
    userRoles.forEach((role, user) => console.log(`${user.name}: ${role}`));
-  ```
+   ```
  
  **[⬆ Back to Top](#table-of-contents)**
 
@@ -1052,13 +1149,14 @@ The main difference is that references to objects in Set are strong while refere
 3.WeakSet does not have methods such as clear, keys, values, entries, forEach.
 4.WeakSet is not iterable.
 
-```var ws = new WeakSet();
+   ```js
+   var ws = new WeakSet();
    let my_weakSet=new WeakSet([obj2,obj3]);
    let obj={name:"prajwal",age:23}
    my_weakSet.add(obj);
    my_weakSet.delete(obj3);Removing objects from WeakSets using delete() method It will return true if the object was successfully removed. 
    console.log(my_weakSet.has(obj),my_weakSet.has(obj3));// Checking if object exists in a WeakSet
-```
+   ```
 
  **[⬆ Back to Top](#table-of-contents)**
 
@@ -1070,12 +1168,13 @@ The main difference is that references to key objects in Map are strong while re
 3.WeakMap does not have methods such as clear, keys, values, entries, forEach.
 4.WeakMap is not iterable.
 
-```var ws = new WeakMap();
+   ```js
+   var ws = new WeakMap();
    ws.set(user);
    ws.has(user);    // true
    ws.delete(user); // removes user from the map
    ws.has(user);    // false, user has been removed
-```
+   ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
