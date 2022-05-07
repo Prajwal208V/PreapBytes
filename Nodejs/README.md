@@ -18,7 +18,7 @@
 |9  | [Why is LIBUV needed in Node JS?](#q-Why-is-LIBUV-needed-in-Node-JS) |
 |10 | [event-loop](#q-event-loop) |
 |11 | [What are globals in Node.js?](#q-What-are-globals-in-Nodejs) |
-|12 | [What is Node.js Process Model?](#q-What-is-Node.js-Process-Model) |
+|12 | [What is Node.js Process Model?](#q-What-is-Nodejs-Process-Model) |
 |13 | [What is JIT and how is it related to Node.js?](#q-) |
 |14 | [What is chrome v8 engine?](#q-) |
 |15 | [Node.js Single-threaded](#q-) |
