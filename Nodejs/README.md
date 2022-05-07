@@ -20,9 +20,7 @@
 |2  | [Explain usage of NODE_ENV?](#Explain-usage-of-NODE_ENV)|
 |2  | [How to create a simple server in Node.js that returns Hello World?](#q-How-to-create-a-simple-server-in-Nodejs-that-returns-Hello-World)|
 |2  | [Explain the concept of URL module in Node.js?](#q-Explain-the-concept-of-URL-module-in-Nodejs?)|
-
 |2  | [types of API functions are there in Node.js](#what-is-a-prototype-chain)|
-
 |2  | [NPM](#what-is-a-prototype-chain)|
 |4  | [modules in Node.js](#what-is-json-and-its-common-operations)|
 |5  | [purpose of the module.Exports](#what-is-the-purpose-of-the-array-slice-method)|
