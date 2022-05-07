@@ -8,12 +8,12 @@
 |---- | --------- |
 |     | **Core Node** |
 |1  | [Node.js and Where can you use it?](#Nodejs-and-Where-can-you-use-it) |
-|2  | [Where can you use it ?](#Nodejs-and-Where-can-you-use-it) |
-|3  | [What are the benefits of using Node.js?](#q-) |
-|4  | [What are the key features of Node.js?](#q-) |
-|5  | [What are the Challenges with Node.js?](#q-) |
-|6  | [How is Node.js better than other frameworks most popularly used ?](#q-) |
-|7  | [What does the runtime environment mean in Node.js?](#q-) |
+|2  | [Where can you use it ?](#Where-can-you-use-it) |
+|3  | [What are the benefits of using Node.js?](#q-What-are-the-benefits-of-using-Nodejs) |
+|4  | [What are the key features of Node.js?](#q-What-are-the-key-features-of-Nodejs) |
+|5  | [What are the Challenges with Node.js?](#q-What-are-the-Challenges-with-Nodejs) |
+|6  | [How is Node.js better than other frameworks most popularly used ?](#q-How-is-Nodejs-better-than-other-frameworks-most-popularly-used) |
+|7  | [What does the runtime environment mean in Node.js?](#q-What-does-the-runtime-environment-mean-in-Nodejs) |
 |8  | [Node.js work](#Q-) |
 |9  | [Why is LIBUV needed in Node JS?](#q-) |
 |10 | [event-loop](#q-) |
