@@ -14,11 +14,11 @@
 |5  | [What are the Challenges with Node.js?](#q-What-are-the-Challenges-with-Nodejs) |
 |6  | [How is Node.js better than other frameworks most popularly used ?](#q-How-is-Nodejs-better-than-other-frameworks-most-popularly-used) |
 |7  | [What does the runtime environment mean in Node.js?](#q-What-does-the-runtime-environment-mean-in-Nodejs) |
-|8  | [Node.js work](#Q-) |
-|9  | [Why is LIBUV needed in Node JS?](#q-) |
-|10 | [event-loop](#q-) |
-|11 | [What are globals in Node.js?](#q-) |
-|12 | [What is Node.js Process Model?](#q-) |
+|8  | [Node.js work](#Q-Nodejs-work) |
+|9  | [Why is LIBUV needed in Node JS?](#q-Why-is-LIBUV-needed-in-Node-JS) |
+|10 | [event-loop](#q-event-loop) |
+|11 | [What are globals in Node.js?](#q-What-are-globals-in-Nodejs) |
+|12 | [What is Node.js Process Model?](#q-What-is-Node.js-Process-Model) |
 |13 | [What is JIT and how is it related to Node.js?](#q-) |
 |14 | [What is chrome v8 engine?](#q-) |
 |15 | [Node.js Single-threaded](#q-) |
