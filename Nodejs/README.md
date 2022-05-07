@@ -107,7 +107,7 @@
 |54 | [How does routing work in Node.js?](#q-How-does-routing-work-in-Nodejs) |
 |   | **Tokens** |
 |61 | [How to use JSON Web Token (JWT) for authentication in Node.js?](#q-How-to-use-JSON-Web-Token-JWT-for-authentication-in-Nodejs) |
-|62 | [_How to implement asymmetric cryptography when signing and verify JSON Web Token (JWT) for authentication in node js?_](#q-_How-to-implement-asymmetric-cryptography-when-signing-and-verify-JSON-Web-Token-(JWT)-for-authentication-in-node-js) |❗
+|62 | [How to implement asymmetric cryptography when signing and verify JSON Web Token (JWT) for authentication in node js?_](#q-How-to-implement-asymmetric-cryptography-when-signing-and-verify-JSON-Web-Token-JWT-for-authentication-in-node-js) |❗
 |   | **microservices** |
 |63 | [microservices](#q-microservices) |
 |64 | [How to generate and verify checksum of the given string in Nodejs](#q-How-to-generate-and-verify-checksum-of-the-given-string-in-Nodejs) |
