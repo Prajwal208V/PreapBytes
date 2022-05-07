@@ -33,6 +33,8 @@ In Node this is different. The top-level scope is not the global scope; var some
 |process;     | The process object is a global object and can be accessed from anywhere. It is an instance of EventEmitter.|
 |Buffer;      | The Buffer class is a global type for dealing with binary data directly.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Console
 
 |  API                                  |  Description   |
@@ -47,6 +49,8 @@ In Node this is different. The top-level scope is not the global scope; var some
 |console.trace(label);                  |Print a stack trace to stderr of the current position.|
 |console.assert(expression, [message]); |Same as assert.ok() where if the expression evaluates as false throw an AssertionError with message.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Timers
 
 |  API                                        |  Description                        |
@@ -59,6 +63,8 @@ In Node this is different. The top-level scope is not the global scope; var some
 |clearImmediate(immediateObject);             | Stop a timer that was previously created with setImmediate().|
 |unref();  | Allow you to create a timer that is active but if it is the only item left in the event loop, node won't keep the program running.|
 |ref();    | If you had previously unref()d a timer you can call ref() to explicitly request the timer hold the program open.
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## Modules
 
@@ -91,6 +97,8 @@ module.exports = function(width) {
   };
 }
 ```
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## Process
 
@@ -134,6 +142,8 @@ process.on('uncaughtException', function(err) {});  // Emitted when an exception
 |process.uptime();            |Number of seconds Node has been running.|
 |process.hrtime();            |Returns the current high-resolution real time in a [seconds, nanoseconds] tuple Array.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Child Process
 
 Node provides a tri-directional popen facility through the child_process module.
@@ -155,6 +165,8 @@ child_process.exec(command, [options], callback);             |Runs a command in
 child_process.execFile(file, [args], [options], [callback]);  |Runs a command in a shell and buffers the output.|
 child_process.fork(modulePath, [args], [options]);            |This is a special case of the spawn() functionality for spawning Node processes. In addition to having all the methods in a normal ChildProcess instance, the returned object has a communication channel built-in. |
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Util
 
 These functions are in the module 'util'. Use require('util') to access them.
@@ -174,6 +186,8 @@ These functions are in the module 'util'. Use require('util') to access them.
 |util.isError(object);          |Returns true if the given "object" is an Error. false otherwise.|
 |util.inherits(constructor, superConstructor); |Inherit the prototype methods from one constructor into another.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Events
 
 All objects which emit events are instances of events.EventEmitter. You can access this module by doing: require("events");
@@ -191,6 +205,8 @@ All EventEmitters emit the event 'newListener' when new listeners are added and 
 |emitter.listeners(event);                   |Returns an array of listeners for the specified event.|
 |emitter.emit(event, [arg1], [arg2], [...]); |Execute each of the listeners in order with the supplied arguments. Returns true if event had listeners, false otherwise.|
 |EventEmitter.listenerCount(emitter, event);  |Return the number of listeners for a given event.|
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## Stream
 
@@ -245,6 +261,8 @@ Examples of Duplex streams include: tcp sockets, zlib streams, crypto streams.
 Transform streams are Duplex streams where the output is in some way computed from the input. They implement both the Readable and Writable interfaces. See above for usage.
 
 Examples of Transform streams include: zlib streams, crypto streams.
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## File System
 
@@ -330,6 +348,8 @@ fs.createReadStream(path, [options]);   // Returns a new ReadStream object.
 fs.createWriteStream(path, [options]);  // Returns a new WriteStream object.
 ```
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Path
 
 Use require('path') to use this module.
@@ -349,6 +369,8 @@ The file system is not consulted to check whether paths are valid.
 |path.sep;                            |The platform-specific file separator. '\\' or '/'.|
 |path.delimiter;                      |The platform-specific path delimiter, ';' or ':'.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## HTTP
 
 To use the HTTP server and client one must require('http').
@@ -359,9 +381,10 @@ To use the HTTP server and client one must require('http').
 |http.request(options, [callback]);               |This function allows one to transparently issue requests.|
 |http.get(options, [callback]);                   |Set the method to GET and calls req.end() automatically.|
 |server = http.createServer([requestListener]);   |Returns a new web server object. The requestListener is a function which is automatically added to the 'request' event.|
+
 |server.listen(port, [hostname], [backlog], [callback]); |Begin accepting connections on the specified port and hostname|
 |server.listen(path, [callback]);                 |Start a UNIX socket server listening for connections on the given path.|
-|server.listen(handle, [callback]);               |The handle object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n>} object.|
+|server.listen(handle, [callback]);               |The handle object can be set to either a server or socket (anything with an underlying _handle member), or a {fd: <n />} object.|
 |server.close([callback]);                        |Stops the server from accepting new connections. |
 |server.setTimeout(msecs, callback);              |Sets the timeout value for sockets, and emits a 'timeout' event on the Server object, passing the socket as an argument, if a timeout occurs.|
 |server.maxHeadersCount;  |Limits maximum incoming headers count, equal to 1000 by default. If set to 0 - no limit will be applied.|
@@ -407,6 +430,8 @@ To use the HTTP server and client one must require('http').
 |message.socket;                         |The net.Socket object associated with the connection.|
 |message.setTimeout(msecs, callback);    |Calls message.connection.setTimeout(msecs, callback).|
 
+**[⬆ Back to Top](#Node-APIs-List)**  
+
 ## URL
 
 This module has utilities for URL resolution and parsing. Call require('url') to use it.
@@ -417,6 +442,8 @@ This module has utilities for URL resolution and parsing. Call require('url') to
 |url.format(urlObj);                                         |Take a parsed URL object, and return a formatted URL string.|
 |url.resolve(from, to);                                      |Take a base URL, and a href URL, and resolve them as a browser would for an anchor tag.|
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Query String
 
 This module provides utilities for dealing with query strings. Call require('querystring') to use it.
@@ -425,6 +452,8 @@ This module provides utilities for dealing with query strings. Call require('que
 |------------------------------------------------|--------------------------------------|
 |querystring.stringify(obj, [sep], [eq]);        | Serialize an object to a query string. Optionally override the default separator ('&') and assignment ('=') characters.|
 |querystring.parse(str, [sep], [eq], [options]); | Deserialize a query string to an object. Optionally override the default |separator ('&') and assignment ('=') characters.|
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## Assert
 
@@ -443,6 +472,8 @@ This module is used for writing unit tests for your applications, you can access
 |assert.throws(block, [error], [message]);           |Expects block to throw an error. error can be constructor, RegExp or validation function.|
 |assert.doesNotThrow(block, [message]);             |Expects block not to throw an error, see assert.throws for details.|
 |assert.ifError(value);                             |Tests if value is not a false value, throws if it is a true value. |Useful when testing the first argument, error in callbacks.|
+
+**[⬆ Back to Top](#Node-APIs-List)**
 
 ## OS
 
@@ -466,6 +497,8 @@ Use require('os') to access this module.
 |os.networkInterfaces();  |Get a list of network interfaces.
 |os.EOL;                  |A constant defining the appropriate End-of-line marker for the operating system.
 
+**[⬆ Back to Top](#Node-APIs-List)**
+
 ## Buffer
 
 Buffer is used to dealing with binary data. Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap
@@ -488,3 +521,5 @@ Buffer is used to dealing with binary data. Buffer is similar to an array of int
 |buf[index];                         |Get and set the octet at index|
 |buf.length;                         |The size of the buffer in bytes, Note that this is not necessarily the size of the contents|
 |buffer.INSPECT_MAX_BYTES;           |How many bytes will be returned when buffer.inspect() is called. This can be overridden by user modules.|
+
+**[⬆ Back to Top](#Node-APIs-List)**
