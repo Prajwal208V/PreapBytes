@@ -55,10 +55,9 @@
 |16 | [](#what-is-a-pure-function)|
 
 
-
 ### ***Node.js and Where can you use it?***
 
-Node.js is an open-source, cross-platform, JavaScript runtime environment built on Chrome's V8 JavaScript engine that executes JavaScript code outside a web browser.
+Node.js is an open-source server side runtime environment built on Chrome\'s V8 JavaScript engine. It provides an event driven, non-blocking (asynchronous) I/O and cross-platform runtime environment for building highly scalable server-side applications using JavaScript.
 
 ### Where can you use it ? 
   Node.js is perfect for data-intensive applications as it uses an asynchronous, event-driven model.we can use I/O intensive web applications     like video streaming sites.we can also use it for developing: 
@@ -79,6 +78,8 @@ The Node.js runtime for App Engine in the standard environment is declared in th
 ```js
 runtime: nodejs10
 ```
+
+The runtime environment is literally just the environment our application is running in. This can be used to describe both the hardware and the software that is running our application. How much RAM, what version of node, what operating system, how much CPU cores, can all be referenced when talking about a runtime environment.
 
 **[⬆ Back to Top](#table-of-contents)**
 
