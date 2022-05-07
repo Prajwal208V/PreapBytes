@@ -7,6 +7,7 @@
 | No. | Questions |
 |---- | ---------
 |1  | [Node.js and Where can you use it?](#Nodejs-and-Where-can-you-use-it) |
+|2  | [What does the runtime environment mean in Node.js?](#q-what-does-the-runtime-environment-mean-in-nodejs)|
 |2  | [event-loop](#what-is-a-prototype-chain)|
 |3  | [Node.js work](#what-is-the-difference-between-call-apply-and-bind)|
 |2  | [Node.js Single-threaded](#what-is-a-prototype-chain)|
@@ -59,11 +60,28 @@
 
 Node.js is an open-source, cross-platform, JavaScript runtime environment built on Chrome's V8 JavaScript engine that executes JavaScript code outside a web browser.
 
-Where can you use it ? Node.js is perfect for data-intensive applications as it uses an asynchronous, event-driven model.we can use I/O intensive web applications     like video streaming sites.we can also use it for developing: 
-Real-time web applications,
-Network applications,
-General-purpose applications and 
-Distributed systems.
+### Where can you use it ? 
+  Node.js is perfect for data-intensive applications as it uses an asynchronous, event-driven model.we can use I/O intensive web applications     like video streaming sites.we can also use it for developing: 
+  
+    Real-time web applications,
+    Network applications,
+    General-purpose applications and 
+    Distributed systems.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## Q. ***What does the runtime environment mean in Node.js?***
+
+The Node.js runtime is the software stack responsible for installing your web service\'s code and its dependencies and running your service.
+
+The Node.js runtime for App Engine in the standard environment is declared in the `app.yaml` file:
+
+```js
+runtime: nodejs10
+```
+
+**[⬆ Back to Top](#table-of-contents)**
+
 
 ### event-loop
 in Node JS:Event loops handle asynchronous callbacks in Node.js. It is the foundation of the non-blocking input/output in Node.js, 
