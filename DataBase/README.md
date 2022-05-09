@@ -99,6 +99,255 @@
 |1    | [What are the reporting services in SQL Server?](#What-are-the-reporting-services-in-SQL-Server) |	
 |1    | [What are the master data services in SQL Server?](#What-are-the-master-data-services-in-SQL-Server) |	
 
+### What is Database
+A database is an organized collection of data, stored and retrieved digitally from a remote or local computer system. Databases can be vast and complex, and such databases are developed using fixed design and modeling approaches
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is DBMS
+DBMS stands for Database Management System. DBMS is a system software responsible for the creation, retrieval, updation, and management of the database. It ensures that our data is consistent, organized, and is easily accessible by serving as an interface between the database and its end-users or application software.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is Datawarehouse
+Datawarehouse is a central repository of data from multiple sources of information. Those data are consolidated, transformed and made available for the mining and online processing. Warehouse data have a subset of data called Data Marts.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is RDBMS How is it different from DBMS
+RDBMS stands for Relational Database Management System. The key difference here, compared to DBMS, is that RDBMS stores data in the form of a collection of tables, and relations can be defined between the common fields of these tables. Most modern database management systems like MySQL, Microsoft SQL Server, Oracle, IBM DB2, and Amazon Redshift are based on RDBMS.
+
+RDBMS: It is referred as Relation Database Management Systems (RDBMS). RDBMS possesses a set of the below given characteristics:
+
+• Write-intensive operations: The RDBMS is frequently written to and is often used in transaction-oriented applications.
+
+• Data in flux or historical data: The RDBMS is designed to handle frequently changing data. Alternatively, RDBMS can also store vast 
+amounts of historical data, which can later be analyzed or "mined".
+
+• Application-specific schema: The RDBMS is configured on a per-application basis and a unique schema exists to support each application.
+
+• Complex data models. The relational nature of the RDBMS makes it suitable for handling sophisticated, complex data models that require many tables, foreign key values, complex join operations, and so on.
+
+• Data integrity: The RDBMS features many components designed to ensure data integrity. This includes rollback operations, referential integrity, and transaction-oriented operations.
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is SQL
+SQL stands for Structured Query Language. It is the standard language for relational database management systems. It is especially useful in handling organized data comprised of entities (variables) and relations between different entities of the data.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is PL SQL
+PL/SQL Control Statements in Oracle.
+
+Control Statements,
+
+•	Control statements are very important in PL/SQL.
+
+•	Control Statements are elements in a program that control the flow of program execution.
+
+•	The syntax of control statements are similar to regular English and are very similar to choices that we make every day.
+
+•	Branching statements are as follows:
+
+o	If statement
+
+
+o If - THEN - ELSE o Nested IF
+
+o	Branching with logical connectivity
+
+o	While
+
+o	For Loop
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+
+### What is the difference between SQL and PL SQL
+SQL: It is referred as Structured Query Language.
+
+•	Only simple IF / Else statements.
+
+•	Through SQL you can interact with database through ADO.NET
+
+•	In SQL you can execute a line of code
+
+•	It can run only on windows
+
+PL/SQL: It is referred as Procedure Language / Structure Query Language:
+
+•	In PL/SQL you can execute a block of code not a single line of code.
+
+•	Deep control statements
+
+•	It can run in UNIX also.
+
+•	PL/SQL language includes object oriented programming techniques such as encapsulation, function overloading, and information hiding (all but inheritance).
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is the difference between SQL and MySQL
+SQL is a standard language for retrieving and manipulating structured databases. On the contrary, MySQL is a relational database management system, like SQL Server, Oracle or IBM DB2, that is used to manage SQL databases.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a database table
+
+Database table: Table contains records in the form of rows and columns. A permanent table is created in the database you specify and remains in the database permanently, until you delete it.
+
+Syntax:
+
+1.	Create table TableName (ID INT, NAME VARCHAR(30) )
+
+2.	Drop syntax: drop table TableName
+
+3.	Select Syntax: Select * from TableName
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are tables and Fields
+A table is an organized collection of data stored in the form of rows and columns. Columns can be categorized as vertical and rows as horizontal. The columns in a table are called fields while the rows can be referred to as records.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a query
+A Database query is a code written in order to get the information back from the database. Query can be designed in such a way that it matched with our expectation of the result set. Simply, a question to the Database.
+   
+   ```sql
+   SELECT fname, lname    /* select query */
+   FROM myDb.students
+   WHERE student_id = 1;
+   
+   
+   UPDATE myDB.students    /* action query */
+   SET fname = 'Captain', lname = 'America'
+   WHERE student_id = 1;
+   ```
+  
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is subquery
+A subquery is a query within another query. The outer query is called as main query, and inner query is called subquery. SubQuery is always executed first, and the result of subquery is passed on to the main query.
+
+(A subquery is a query within another query, also known as a nested query or inner query. It is used to restrict or enhance the data to be queried by the main query, thus restricting or enhancing the output of the main query respectively. For example, here we fetch the contact information for students who have enrolled for the maths subject)
+
+   ```sql
+   SELECT name, email, mob, address
+  FROM myDb.contacts
+  WHERE roll_no IN (
+  SELECT roll_no
+  FROM myDb.students
+  WHERE subject = 'Maths'); 
+  ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the types of subquery
+There are two types of subquery - Correlated and Non-Correlated.
+ • A correlated subquery cannot be considered as an independent query, but it can refer to the column in a table listed in the FROM of the main query.
+ • A non-correlated subquery can be considered as an independent query and the output of the subquery is substituted in the main query.
+    
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a database relationship
+Relationships are created by linking the column in one table with the column in another table. There are four different types of relationship that can be created.
+
+***different types of relationships in SQL
+
+• One-to-One - This can be defined as the relationship between two tables where each record in one table is associated with the maximum of one record in the other table.
+• One-to-Many & Many-to-One - This is the most commonly used relationship where a record in a table is associated with multiple records in the other table.
+• Many-to-Many - This is used in cases when multiple instances on both sides are needed for defining a relationship.
+• Self-Referencing Relationships - This is used when a table needs to define a relationship with itself
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Crud Operations in SQL
+CRUD is an abbreviation for Create, Read, Update and Delete. These 4 operations comprise the most basic database operations. The relevant commands for these 4
+operations in SQL are:
+
+• Create: INSERT, To insert any new data into a database
+• Read: SELECT, We use the select statement to perform the Read ( R ) operation of CRUD.
+• Update: UPDATE, used to update the contents of specific columns of specific rows.
+• Delete: DELETE,  used to delete or remove some rows from a table.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How to create a table in SQL
+SQL provides an organized way for table creation.
+
+Syntax:  
+  ```sql
+  Create table TableName (
+    columnName1 datatype 
+    columnName2 datatype 
+   )
+  ```
+  
+  ```sql
+  create table Info (
+    Name varchar(20)
+    BirthDate date
+    Phone varchar(12)
+    City varchar(20)
+  )
+  ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How to update a database table using SQL
+To update an existing Table we use SQL Command UPDATE: It will update the records as per user defined query/need.
+
+Syntax:
+
+   ```sql
+   Update TableName 
+   SET ColumnName = NewData 
+   where Condition
+   ```
+   ```sql
+   Update info
+   Set City = 'Baroda'
+   where id = 2
+   ```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How to delete a table in SQL Server
+Delete Data Record from Database Table and deleting an existing table by the following method:
+
+Syntax:To delete all table records of a table:
+   ```sql
+   Delete TableName  // To delete all table records of a table
+   
+	 Delete TableName  // To delete particular row/column in table
+   WHERE condition  
+   ```
+   
+   ```sql
+   DELETE FROM info
+   WHERE City = "Scaler";
+   ``` 
+   
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the TRUNCATE, DELETE and DROP statements
+
+**[⬆ Back to Top](#table-of-contents)**
+
+
+
+
+
+
+
+
+
+
 
 
 
