@@ -360,16 +360,211 @@ The DELETE command deletes only the rows from the table based on the condition g
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### 
+### What is the difference between DROP and TRUNCATE statements
+If a table is dropped, all things associated with the tables are dropped as well. This includes - the relationships defined on the table with other tables, the integrity checks and constraints, access privileges and other grants that the table has. To create and use the table again in its original form, all these relations, checks, constraints, privileges and relationships need to be redefined. However, if a table is truncated, none of the above problems exist and the table retains its original structure.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### When are we going to use truncate and delete
+
+1.	TRUNCATE is a DDL command, whereas DELETE is a DML command.
+
+2.	We can’t execute a trigger in case of TRUNCATE whilst with DELETE, we can accomplish a trigger.
+
+3.	TRUNCATE is quicker than DELETE, for the reason that when we use DELETE to delete the data, at that time it store the whole 
+statistics in the rollback gap on or after where we can get the data back after removal. In case of TRUNCATE, it will not store data in rollback gap and will unswervingly rub it out. TRUNCATE do not recover the deleted data.
+
+4.	We can use any condition in WHERE clause using DELETE but it is not possible with TRUNCATE.5.If a table is referenced by any foreign key constraints, then TRUNCATE won’t work.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### SQL DataTypes
+
+![image](https://user-images.githubusercontent.com/92531202/167479688-d4d19d55-85b8-41f1-9bb1-a9453aae0c10.png)
+
+https://github.com/Prajwal208V/PreapBytes/blob/master/DataBase/SQL%20cheat%20sheet%20.pdf
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### SQL Commands
+SQL Commands are instructions that are used by the user to communicate with the database, to perform specific tasks, functions and queries of data
+Types of SQL Commands:
+
+![image](https://user-images.githubusercontent.com/92531202/167480510-697ba51c-64a2-4f6b-8633-b46944d70c6a.png)
+
+### Data Definition Language
+1. Data Definition Language(DDL): It changes a table’s structure by adding, deleting and altering its contents. Its changes are auto-committed(all changes are automatically permanently saved in the database). Some commands that are a part of DDL are:
+
+CREATE: Used to create a new table in the database.
+
+	```sql
+	CREATE TABLE STUDENT(Name VARCHAR2(20), Email VARCHAR2(100), DOB DATE);
+	```
+	
+ALTER: Used to alter contents of a table by adding some new column or attribute, or changing some existing attribute.
+
+	```sql
+	ALTER TABLE STUDENT ADD(ADDRESS VARCHAR2(20));
+	ALTER TABLE STUDENT MODIFY (ADDRESS VARCHAR2(20));
+	```
+
+DROP: Used to delete the structure and record stored in the table
+	
+	```sql
+	DROP TABLE STUDENT;
+	```
+
+TRUNCATE: Used to delete all the rows from the table, and free up the space inthe table.
+
+	```sql
+	TRUNCATE TABLE STUDENT;
+	```
+**[⬆ Back to Top](#table-of-contents)**
+
+### Data Manipulation Language
+
+2. Data Manipulation Language(DML): It is used for modifying a database, and is responsible for any form of change in a database. These commands are not autocommitted, i.e all changes are not automatically saved in the database. Some
+commands that are a part of DML are:
+  
+  INSERT: Used to insert data in the row of a table
+  
+	```sql
+	INSERT INTO STUDENT (Name, Subject) VALUES ("Scaler", "DSA");
+	```
+  UPDATE: Used to update value of a table’s column.
+ 	
+	```sql
+	UPDATE STUDENT
+	SET User_Name = 'Interviewbit'
+	WHERE Student_Id = '2'
+	```
+  DELETE: Used to delete one or more rows in a table.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Data Control Language
+
+3. Data Control Language(DCL): These commands are used to grant and take back access/authority (revoke) from any database user. Some commands that are a part of
+DCL are:
+    Grant: Used to grant a user access privileges to a database.
+    
+   ```sql
+    GRANT SELECT, UPDATE ON TABLE_1 TO USER_1, USER_2;
+   ```
+   
+   Revoke: Used to revoke the permissions from an user.
+   
+   ```sql
+    REVOKE SELECT, UPDATE ON TABLE_1 FROM USER_1, USER_2;
+   ```
+  https://github.com/Prajwal208V/PreapBytes/blob/master/DataBase/SQL%20cheat%20sheet%20.pdf
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Transaction Control Language
+Transaction Control Language: These commands can be used only with DML commands in conjunction and belong to the category of auto-committed
+commands. Some commands that are a part of TCL are:
+  COMMIT: Saves all the transactions made on a database.
+	
+	```sql
+	DELETE FROM STUDENTS
+	WHERE AGE = 16;
+	COMMIT;
+	```
+  ROLLBACK: It is used to undo transactions which are not yet been saved.	
+	
+	```sql
+	DELETE FROM STUDENTS
+	WHERE AGE = 16;
+	ROLLBACK;
+	```
+  SAVEPOINT: Used to roll transaction back to a certain point without having to roll back the entirity of the transaction.	
+  
+       	```sql
+	SAVEPOINT SAVED;
+	DELETE FROM STUDENTS
+	WHERE AGE = 16;
+	ROLLBACK TO SAVED;
+	```
+**[⬆ Back to Top](#table-of-contents)**
+
+5.Data Query Language: It is used to fetch some data from a database. 
+
+The command belonging to this category is:       
+   SELECT: It is used to retrieve selected data based on some conditions which are described using the WHERE clause. It is to be noted that the WHERE clause is
+   also optional to be used here and can be used depending on the user’s needs.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are Constraints in SQL
+Constraints are rules which are applied on a table. For example, specifying valid limits or ranges on data in the table etc.
+The valid constraints in SQL are:
+1. NOT NULL: Specifies that this column cannot store a NULL value
+
+	```sql
+	CREATE TABLE Student
+	(
+	ID int(8) NOT NULL,
+	NAME varchar(30) NOT NULL,
+	ADDRESS varchar(50)
+	);
+	```
+In the above example, we create a table STUDENT, which has some attributes it has to store. Among these attributes we declare that the columns ID and NAME cannot
+have NULL values in their fields using NOT NULL constraint.
+
+2. UNIQUE: Specifies that this column can have only Unique values, i.e the values cannot be repeated in the column.
+
+	```sql
+	CREATE TABLE Student
+	(
+	ID int(8) UNIQUE,
+	NAME varchar(10) NOT NULL,
+	ADDRESS varchar(20)
+	);
+	```
+
+In the above example, we create a table Student and declare the ID column to be unique using the UNIQUE constraint.
+
+3. Primary Key: It is a field using which it is possible to uniquely identify each row in a table. We will get to know about this in detail in the upcoming section.
+4. Foreign Key: It is a field using which it is possible to uniquely identify each row in some other table. We will get to know about this in detail in the upcoming section.
+5. CHECK: It validates if all values in a column satisfy some particular condition or not.
+6. 
+	```sql
+	CREATE TABLE Student
+	(
+	ID int(6) NOT NULL,
+	NAME varchar(10),
+	AGE int CHECK (AGE < 20)
+	)
+	```
+Here, in the above query, we add the CHECK constraint into the table. By adding the constraint, we can only insert entries that satisfy the condition AGE < 20 into the
+table.
+
+6. DEFAULT: It specifies a default value for a column when no value is specified for that field.
+
+	```sql
+	CREATE TABLE Student
+	(
+	ID int(8) NOT NULL,
+	NAME varchar(50) NOT NULL,
+	CLASS int DEFAULT 2
+	);
+	```
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is the difference between Primary key and unique key
+
+Primary key does not allow the null values but unique key allows one null value.
+
+Primary key will create clustered index on column but unique key will create non-clustered index by default.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is database normalization
 
 
-
-
-
-
-
-
-
+**[⬆ Back to Top](#table-of-contents)**
 
 
 
