@@ -336,10 +336,31 @@ Syntax:To delete all table records of a table:
 **[⬆ Back to Top](#table-of-contents)**
 
 ### What are the TRUNCATE, DELETE and DROP statements
+DELETE statement is used to delete rows from a table.
+   ```sql
+   DELETE FROM Candidates
+   WHERE CandidateId > 1000;
+   ```
+   
+TRUNCATE command is used to delete all the rows from the table and free the space containing the table.
+  ```sql
+  TRUNCATE TABLE Candidates;
+  ```
+  
+DROP command is used to remove an object from the database. If you drop a table, all the rows in the table are deleted and the table structure is removed from the database.
+  ```sql
+  DROP TABLE Candidates;
+  ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
+### What is the difference between DELETE TABLE and TRUNCATE TABLE commands
+The TRUNCATE command is used to delete all the rows from the table and free the space containing the table.
+The DELETE command deletes only the rows from the table based on the condition given in the where clause or deletes all the rows from the table if no condition is specified. But it does not free the space containing the table.
 
+**[⬆ Back to Top](#table-of-contents)**
+
+### 
 
 
 
