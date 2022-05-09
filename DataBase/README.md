@@ -7,6 +7,7 @@
 |1    | [What is DBMS?](#What-is-DBMS) |
 |1    | [What is Datawarehouse?](#What-is-Datawarehouse) |	
 |1    | [What is RDBMS How is it different from DBMS?](#What-is-RDBMS-How-is-it-different-from-DBMS) |
+|1    | [What is a database relationship?](#What-is-a-database-relationship) |
 |1    | [What is SQL?](#What-is-SQ) |
 |1    | [What is PL/SQL?](#What-is-PL-SQL) |
 |1    | [What is the difference between SQL and PL/SQL?](#What-is-the-difference-between-SQL-and-PL-SQL) |
@@ -16,7 +17,6 @@
 |1    | [What is a query?](#What-is-a-query) |
 |1    | [What is subquery?](#What-is-subquery) |
 |1    | [What are the types of subquery?](#What-are-the-types-of-subquery) |
-|1    | [What is a database relationship?](#What-is-a-database-relationship) |
 |1    | [Crud Operations in SQL](#Crud-Operations-in-SQL) |
 |1    | [How to create a table in SQL?](#How-to-create-a-table-in-SQL) |
 |1    | [How to delete a table in SQL Server?](#How-to-delete-a-table-in-SQL-Server) |
@@ -24,7 +24,6 @@
 |1    | [What is the difference between DELETE TABLE and TRUNCATE TABLE commands?](#What-is-the-difference-between-DELETE-TABLE-and-TRUNCATE-TABLE-commands) |
 |1    | [When are we going to use truncate and delete?](#When-are-we-going-to-use-truncate-and-delete) |	
 |1    | [How to update a database table using SQL?](#How-to-update-a-database-table-using-SQL) |
-|1    | [SQL Features](#SQL-Features) |
 |1    | [SQL DataTypes](#SQL-DataTypes) |
 |1    | [SQL Commands](#SQL-Commands) |
 |1    | [Data Definition Language(DDL)](#Data-Definition-Language) |
@@ -35,13 +34,13 @@
 |1    | [What are Constraints in SQL?](#What-are-Constraints-in-SQL) |
 |1    | [NOT NULL](#NOT-NULL) |
 |1    | [UNIQUE](#UNIQUE) |
+|1    | [CHECK](#CHECK) |
+|1    | [DEFAULT](#DEFAULT) |
 |1    | [Keys in SQL](#Keys-in-SQL) |
 |1    | [Types of Keys](#Types-of-Keys) |
 |1    | [Primary Key](#Primary-Key) |
 |1    | [Foreign Key](#Foreign-Key) |
 |1    | [What is the difference between Primary key and unique key?](#What-is-the-difference-between-Primary-key-and-unique-key) |
-|1    | [CHECK](#CHECK) |
-|1    | [DEFAULT](#DEFAULT) |
 |1    | [What is database normalization?](#What-is-database-normalization) |
 |1    | [What are the various forms of Normalization](#What-are-the-various-forms-of-Normalization) |	
 |1    | [What are database normalization forms?](#What-are-database-normalization-forms) |
@@ -98,6 +97,11 @@
 |1    | [What are the data quality services in SQL Server?](#What-are-the-data-quality-services-in-SQL-Serve) |	
 |1    | [What are the reporting services in SQL Server?](#What-are-the-reporting-services-in-SQL-Server) |	
 |1    | [What are the master data services in SQL Server?](#What-are-the-master-data-services-in-SQL-Server) |	
+|1    | [What is the difference between DROP and TRUNCATE statements](#) |	
+|1    | [](#) |	
+|1    | [](#) |	
+|1    | [](#) |	
+|1    | [](#) |	
 
 ### What is Database
 A database is an organized collection of data, stored and retrieved digitally from a remote or local computer system. Databases can be vast and complex, and such databases are developed using fixed design and modeling approaches
