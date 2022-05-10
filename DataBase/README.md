@@ -557,6 +557,67 @@ table.
 	
 **[⬆ Back to Top](#table-of-contents)**
 
+### Types of Keys
+
+A database consists of multiple tables and these tables and their contents are related to each other by some relations/conditions. To identify each row of these tables
+uniquely, we make use of SQL keys. A SQL key can be a single column or a group of columns used to uniquely identify the rows of a table. SQL keys are a means to ensure that no row will have duplicate values. They are also a means to establish relations between multiple tables in a database
+
+Types of Keys:
+
+1. Primary Key: They uniquely identify a row in a table.
+Properties:
+• Only a single primary key for a table. (A special case is a composite key, which can be formed by the composition of 2 or more columns, and act as a single
+candidate key.)
+
+• The primary key column cannot have any NULL values.
+
+• The primary key must be unique for each row.
+
+Example:
+
+	```sql
+	CREATE TABLE Student (
+	  ID int NOT NULL,
+	  LastName varchar(255) NOT NULL,
+	  FirstName varchar(255),
+	  Class int,
+	  PRIMARY KEY (ID)
+	);
+	```
+The above example creates a table called STUDENT with some given properties(columns) and assigns the ID column as the primary key of the table. Using
+the value of ID column, we can uniquely identify its corresponding row.
+
+2. Foreign Key: Foreign keys are keys that reference the primary keys of some other table. They establish a relationship between 2 tables and link them up.
+
+Example: In the below example, a table called Orders is created with some given attributes and its Primary Key is declared to be OrderID and Foreign Key is declared
+to be PersonId referenced from the Person's table. A person's table is assumed to be created beforehand.
+
+	```sql
+	CREATE TABLE Orders (
+	  OrderID int NOT NULL,
+	  OrderNumber int NOT NULL,
+	  PersonID int,
+	  PRIMARY KEY (OrderID),
+	  FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+	);
+	```
+	
+3.Super Key: It is a group of single or multiple keys which identifies row of a table.
+
+4.Candidate Key: It is a collection of unique attributes that can uniquely identify tuples in a table.
+
+5.Alternate Key: It is a column or group of columns that can identify every row in a table uniquely.
+
+6.Compound Key: It is a collection of more than one record that can be used to uniquely identify a specific record.
+
+7.Composite Key: Collection of more than one column that can uniquely identify rows in a table.
+
+8.Surrogate Key: It is an artificial key that aims to uniquely identify each record.
+
+Amongst these, the Primary and Foreign keys are most commonly used.
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ### What is the difference between Primary key and unique key
 
 Primary key does not allow the null values but unique key allows one null value.
@@ -567,8 +628,376 @@ Primary key will create clustered index on column but unique key will create non
 
 ### What is database normalization
 
+Database normalization is the process of organizing the fields and tables of a relational database to minimize redundancy and dependency. Normalization usually involves dividing large tables into smaller (and less redundant) tables and defining relationships among them. Normalization is a bottom-up technique for database design.
 
 **[⬆ Back to Top](#table-of-contents)**
+
+### What are the various forms of Normalization
+
+Normalization is the process of organizing data into a related table. it also eliminates redundancy and increases the integrity which improves performance of the query. To normalize a database, we divide the database into tables and establish relationships between the tables
+
+•	First Normal Form (1NF)
+
+•	Second Normal Form (2NF)
+
+•	Third Normal Form (3NF)
+
+•	Boyce-Codd Normal Form (BCNF)
+
+•	4th Normal Form
+
+•	5th Normal Form
+
+•	6th Normal Form
+
+1)First Normal Form (1NF):
+
+This should remove all the duplicate columns from the table. Creation of tables for the related data and identification of unique columns.
+								|or|
+(A relation is in first normal form if every attribute in that relation is a single-valued attribute. If a relation contains a composite or multi-valued attribute, it violates the first normal form. Let's consider the example students table. Each student in the table, has a name, his/her address, and the books they issued from the public library -
+
+![image](https://user-images.githubusercontent.com/92531202/167578323-a21b0773-f37b-4c62-b830-951c0370da05.png)
+
+
+the Books Issued field has more than one value per record, and to convert it into 1NF, this has to be resolved into separate individual records for each book issued.  the following table in 1NF form -
+
+![image](https://user-images.githubusercontent.com/92531202/167578021-4244b59e-b00a-441d-ad18-42c8eab36636.png)
+
+2)Second Normal Form (2NF):
+
+Meeting all requirements of the first normal form. Placing the subsets of data in separate tables and Creation of relationships between the tables using primary keys.
+
+(A relation is in second normal form if it satisfies the conditions for the first normal form and does not contain any partial dependency. A relation in 2NF has no partial dependency, i.e., it has no non-prime attribute that depends on any proper subset of any candidate key of the table. Often, specifying a single column Primary Key is the solution to the problem.)
+
+Example1 -
+the Students Table in the 1NF form has a candidate key in the form of [Student, Address] that can uniquely identify all records in the table. The field Books Issued (non-prime attribute) depends partially on the Student field. Hence, the table is not in 2NF. To convert it into the 2nd Normal Form, we will partition the tables into two while specifying a new Primary Key attribute to identify the individual records in the Students table. The Foreign Key constraint will be set on the other table to ensure referential integrity.
+
+![image](https://user-images.githubusercontent.com/92531202/167579622-597d2b16-139a-4c09-b7c0-379ca29874b0.png)
+
+Example 2 - Consider the following dependencies in relation to R(W,X,Y,Z)
+
+ WX -> Y    [W and X together determine Y] 
+ XY -> Z    [X and Y together determine Z] 
+ 
+Here, WX is the only candidate key and there is no partial dependency, i.e., any proper subset of WX doesn’t determine any non-prime attribute in the relation.
+
+3) Third  Normal Form (2NF):
+
+This should meet all requirements of 2NF. Removing the columns which are not dependent on primary key constraints.
+
+(A relation is said to be in the third normal form, if it satisfies the conditions for the second normal form and there is no transitive dependency between the non-prime attributes, i.e., all non-prime attributes are determined only by the candidate keys of the relation and not by any other non-prime attribute.)
+
+Example 1 - the Students Table in the 2NF form has a single candidate key Student_ID (primary key) that can uniquely identify all records in the table. The field Salutation (non-prime attribute), however, depends on the Student Field rather than the candidate key. Hence, the table is not in 3NF. To convert it into the 3rd Normal Form, we will once again partition the tables into two while specifying a new Foreign Key constraint to identify the salutations for individual records in the Students table. The Primary Key constraint for the same will be set on the Salutations table to identify each record uniquely.
+
+![image](https://user-images.githubusercontent.com/92531202/167581495-b12cd2c6-309f-4da7-b7d2-e554d94f1bfe.png)
+
+Example 2 - Consider the following dependencies in relation to R(P,Q,R,S,T)
+
+ P -> QR     [P together determine C] 
+ RS -> T     [B and C together determine D] 
+ Q -> S 
+ T -> P 
+For the above relation to exist in 3NF, all possible candidate keys in the above relation should be {P, RS, QR, T}.
+
+Boyce-Codd Normal Form
+A relation is in Boyce-Codd Normal Form if satisfies the conditions for third normal form and for every functional dependency, Left-Hand-Side is super key. In other words, a relation in BCNF has non-trivial functional dependencies in form X –> Y, such that X is always a super key. For example - In the above example, Student_ID serves as the sole unique identifier for the Students Table and Salutation_ID for the Salutations Table, thus these tables exist in BCNF. The same cannot be said for the Books Table and there can be several books with common Book Names and the same Student_ID
+
+4)Fourth Normal Form (4NF):
+Meeting all the requirements of third normal form and it should not have multi- valued dependencies.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is Denormalization
+
+DeNormalization is a technique used to access the data from higher to lower normal forms of database. It is also process of introducing redundancy into a table by incorporating data from the related tables. 
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Clauses in SQL
+Clauses are in-built functions available in SQL and are used for filtering and analysing data quickly allowing the user to efficiently extract the required information from the database.
+
+Example – Query that has WHERE condition
+
+Query that has HAVING condition.
+
+The below table lists some of the important SQL clauses and their description with
+examples:
+
+![image](https://user-images.githubusercontent.com/92531202/167583729-e2fbaa53-4596-4235-822b-18fb1a4ced55.png)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### SQL Operators in-built functions 
+Operators are used in SQL to form complex expressions which can be evaluated to code more intricate queries and extract more precise data from a database.
+There are 3 main types of operators: Arithmetic, Comparision and Logical operators.
+
+![image](https://user-images.githubusercontent.com/92531202/167585115-604be169-8b5d-48f1-9221-8a26c81eaf56.png)
+
+• Arithmetic Operators: Arithmetic Operators allows the user to perform arithmetic operations in SQL. 
+
+![image](https://user-images.githubusercontent.com/92531202/167585296-6e975212-6f45-4520-9259-8b5f9944d5f0.png)
+
+• Bitwise Operators: Bitwise operators are used to performing Bit manipulation operations in SQL.
+
+![image](https://user-images.githubusercontent.com/92531202/167585522-80fdb038-1ef0-4c5a-99e2-05fa32b7f81c.png)
+
+• Relational Operators: Relational operators are used to performing relational expressions in SQL, i.e those expressions whose value either result in true or false.
+
+![image](https://user-images.githubusercontent.com/92531202/167585686-db14ebc4-f70b-4b39-ba88-2dd923374774.png)
+
+• Compound Operators: Compound operators are basically a combination of 2 or more arithmetic or relational operator, which can be used as a shorthand while writing code.
+
+![image](https://user-images.githubusercontent.com/92531202/167585837-f139a8f4-68e3-438b-b0cf-51f3661fef86.png)
+
+• Logical Operators: Logical operators are used to combining 2 or more relational statements into 1 compound statement whose truth value is evaluated as a whole. 
+
+![image](https://user-images.githubusercontent.com/92531202/167586019-dafc5d12-75cb-4479-90a5-3b968305683f.png)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### 
+
+The SQL Server has many builtin functions some of which are
+
+• SQL Server String Functions:
+
+![image](https://user-images.githubusercontent.com/92531202/167589154-d73cb818-68c9-4d81-a511-30294740d814.png)
+
+• SQL Server Numeric Functions:
+
+![image](https://user-images.githubusercontent.com/92531202/167589270-1a65ac04-610a-4c95-a148-647d69559400.png)
+
+• SQL Server Date Functions:
+
+![image](https://user-images.githubusercontent.com/92531202/167589366-4f60cd80-c716-4e2d-bf48-c113a2a8d992.png)
+
+• SQL Server Advanced Functions:
+
+![image](https://user-images.githubusercontent.com/92531202/167592835-3cebb3e4-c5a8-45f5-a2c0-1e41a63ac76f.png)
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Joins in SQL
+
+Joins are a SQL concept that allows us to fetch data aer combining multiple tables of a database
+(If you want to retrieve data from multiple tables then you need to use joins in SQL Server. Joins are used to get data from two or more tables based on the relationships among some of the columns in the tables.)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are different types of joins in SQL Server
+
+Joins are useful for bringing data together from different tables based on their database relations. First we will see how the join operates between tables. Then we will explore the Order of Execution when both a join and a where condition exist. Finally we will move our exploration to the importance of the Join order.
+
+A Join condition defines a way two tables are related in a query by:
+
+•	Specifying the column to be used for the Join from each table. In joining foreign keys in a table and its associated key in the  other table.
+
+•	To use the logical operator in comparing values from the columns.
+
+There are four type of joins available based on the way we join columns of two different tables.
+
+1.	Full Join
+
+2.	Inner Join
+
+3.	Left outer Join
+
+4.	Right outer Join
+
+
+
+![image](https://user-images.githubusercontent.com/92531202/167593524-64da0f11-b2e8-4678-a8da-909dd4487d71.png)
+
+• Inner Join: rieves records that have matching values in both tables involved in the join. This is the widely used join for queries.
+
+	```sql
+	SELECT *
+	FROM Table_A
+	JOIN Table_B;
+	SELECT *
+	FROM Table_A
+	INNER JOIN Table_B;
+	```
+Example:
+	
+	```sql
+	SELECT orders.order_id, products.product_name,customers.customer_name,products.price
+	FROM orders
+	INNER JOIN products ON products.product_id = order.product_id
+	INNER JOIN customers on customers.customer_id = order.customer_id;
+	```
+
+![image](https://user-images.githubusercontent.com/92531202/167598328-4974b0f6-d4e2-4263-a943-a1c5256e02dc.png)
+
+using Inner Joins:
+
+![image](https://user-images.githubusercontent.com/92531202/167598270-75418798-2bc0-4c93-9a00-76ff9f35d065.png)
+
+• RIGHT JOIN:  Retrieves all the records/rows from the right and the matched records/rows from the left table.
+
+	```sql
+	SELECT *
+	FROM Table_A A
+	RIGHT JOIN Table_B B
+	ON A.col = B.col;
+	```
+	
+Example: Returns all of the records from the second table, along with any matching records from the first.
+
+	```sql
+	SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+	FROM Orders
+	RIGHT JOIN Employees
+	ON Orders.EmployeeID = Employees.EmployeeID
+	ORDER BY Orders.OrderID;
+	```
+	
+![image](https://user-images.githubusercontent.com/92531202/167599541-5cc682bc-630e-4c18-bf9e-b9ef1e92baa3.png)
+
+![image](https://user-images.githubusercontent.com/92531202/167599747-d13f24b8-71ca-4bec-8ce6-126b961aed67.png)
+
+• LEFT (OUTER) JOIN: Retrieves all the records/rows from the left and the matched records/rows from the right table.
+	
+	```sql
+	SELECT *
+	FROM Table_A A
+	LEFT JOIN Table_B B
+	ON A.col = B.col;
+	```
+
+Example: Returns all of the records from the first table, along with any matching records from the second table.
+
+	```sql
+	SELECT Customers.CustomerName, Orders.OrderID
+	FROM Customers
+	LEFT JOIN Orders
+	ON Customers.CustomerID=Orders.CustomerID
+	ORDER BY Customers.CustomerName;
+	```
+	
+![image](https://user-images.githubusercontent.com/92531202/167600471-3083cbcb-34da-4bd5-805a-41f7d25fc0eb.png)
+
+![image](https://user-images.githubusercontent.com/92531202/167600608-c1861bf1-fefe-4c78-89ce-440185982ade.png)
+
+
+• FULL JOIN: Retrieves all the records where there is a match in either the left or right table.
+
+	```sql
+	SELECT *
+	FROM Table_A A
+	FULL JOIN Table_B B
+	ON A.col = B.col;
+	```
+
+Example	: Returns all records from both tables when there is a match.
+
+	```sql
+	SELECT ID, NAME, AMOUNT, DATE
+	FROM CUSTOMERS
+	FULL JOIN ORDERS
+	ON CUSTOMERS.ID = ORDERS.CUSTOMER_ID;
+	```
+	
+![image](https://user-images.githubusercontent.com/92531202/167600920-8ba17d9b-e251-4185-98a8-54c4c4a6a07d.png)
+
+We will get the following table as the result of the outer join.
+
+![image](https://user-images.githubusercontent.com/92531202/167601215-11389e7e-2ca3-40fe-b1d4-776cdbb9d95d.png)
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### Self Join
+
+A self JOIN is a case of regular join where a table is joined to itself based on some relation between its own column(s). Self-join uses the INNER JOIN or LEFT JOIN clause and a table alias is used to assign different names to the table within the query.
+
+	``sql
+	SELECT A.emp_id AS "Emp_ID",A.emp_name AS "Employee",
+	B.emp_id AS "Sup_ID",B.emp_name AS "Supervisor"
+	FROM employee A, employee B
+	WHERE A.emp_sup = B.emp_id;
+	```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Cross Join
+
+Cross join can be defined as a cartesian product of the two tables included in the join. The table after join contains the same number of rows as in the cross-product of the number of rows in the two tables. If a WHERE clause is used in cross join then the query will work like an INNER JOIN.
+
+	```sql
+	SELECT stu.name, sub.subject 
+	FROM students AS stu
+	CROSS JOIN subjects AS sub;
+	```
+
+![image](https://user-images.githubusercontent.com/92531202/167604461-3f3908c2-dd7e-43c8-a855-492ae4c23346.png)
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a stored procedure
+
+A Stored Procedure is a collection or a group of T-SQL statements. Stored Procedures are a precompiled set of one or more statements that are stored together in the database. They reduce the network load because of the precompilation. We can create a Stored Procedure using the "Create proc" statement.
+(SQL procedures are stored in SQL codes, which can be saved for reuse again and again.)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Why we use Stored Procedure
+
+There are several reasons to use a Stored Procedure. They are a network load reducer and decrease execution time because they are precompiled. The most important use of a Stored Procedure is for security purposes. They can restrict SQL Injection. We can avoid SQL injection by use of a Stored Procedure.
+
+Advantages of using a Stored Procedure in SQL Server
+
+•	It is very easy to maintain a Stored Procedure and they are re-usable.
+
+•	The Stored Procedure retains the state of the execution plans.
+
+•	Stored Procedures can be encrypted and that also prevents SQL Injection Attacks
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How to create a Stored Procedure
+
+CREATE PROCEDURE spEmployee   AS
+
+BEGIN
+
+SELECT EmployeeId, Name, Gender, DepartmentName  FROM tblEmployees  INNER JOIN tblDepartments ON tblEmployees.EmployeeDepartmentId = tblDepartments.DepartmentId
+
+END
+
+**[⬆ Back to Top](#table-of-contents)**
+
+
+### What is a stored procedure
+
+A stored procedure that calls itself until a boundary condition is reached, is called a recursive stored procedure. This recursive function helps the programmers to deploy the same set of code several times as and when required. Some SQL programming languages limit the recursion depth to prevent an infinite loop of procedure calls from causing a stack overflow, which slows down the system and may lead to system crashes.
+
+	```sql
+	DELIMITER $$     /* Set a new delimiter => $$ */
+	CREATE PROCEDURE calctotal( /* Create the procedure */
+	   IN number INT,   /* Set Input and Ouput variables */
+	   OUT total INT
+	) BEGIN
+	DECLARE score INT DEFAULT NULL;   /* Set the default value => "score" */
+	SELECT awards FROM achievements   /* Update "score" via SELECT query */
+	WHERE id = number INTO score;
+	IF score IS NULL THEN SET total = 0;   /* Termination condition */
+	ELSE
+	CALL calctotal(number+1);   /* Recursive call */
+	SET total = total + score;   /* Action after recursion */
+	END IF;
+	END $$     /* End of procedure */
+	DELIMITER ;     /* Reset the delimiter */
+	```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Triggers in SQL
+
+
+**[⬆ Back to Top](#table-of-contents)**
+
+
 
 
 
