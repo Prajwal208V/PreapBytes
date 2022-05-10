@@ -993,11 +993,505 @@ A stored procedure that calls itself until a boundary condition is reached, is c
 **[⬆ Back to Top](#table-of-contents)**
 
 ### Triggers in SQL
+SQL codes automatically executed in response to a certain event occurring in a table of a database are called triggers. There cannot be more than 1 trigger with a similar action time and event for one table.
 
+"A Trigger is a Database object just like a stored procedure or we can say it is a special kind of Stored Procedure which fires when an event occurs in a database."
+It is a database object that is bound to a table and is executed automatically. We cannot explicitly call any trigger. Triggers provide data integrity and used to access and check data before and after modification using DDL or DML query.
+
+There are two types of Triggers:
+
+1.	DDL Trigger
+
+2.	DML trigger
+
+DDL Triggers: They fire in response to DDL (Data Definition Language) command events that start with Create, Alter and Drop like Create_table, Create_view, drop_table, Drop_view and Alter_table.
+
+Code of DDL Triggers:
+
+create trigger saftey on database for
+
+create_table, alter_table, drop_table
+as   print 'you can not create ,drop and alter table in this database'    rollback;
+
+DML Triggers: They fire in response to DML (Data Manipulation Language) command events that start with Insert, Update and Delete like insert_table, Update_view and Delete_table.
+
+Code of DML Trigger:
+
+create trigger deep on emp  for insert, update, delete 	as	print 'you can notinsert,update and delete this table I' 	rollback;
+
+**[⬆ Back to Top](#table-of-contents)**
+
+###  Why do we need triggers
+
+We use a trigger when we want some event to happen automatically on certain desirable scenarios.
+You have a table that changes frequently, now you want to know how many times and when these changes take place. In that case you can create a trigger that will insert the desired data into another table whenever any change in the main table occurs.
+
+In SQL Server we can create the following 3 types of triggers:
+
+•	Data Definition Language (DDL) triggers
+
+•	Data Manipulation Language (DML) triggers
+
+•	Logon triggers
+
+Example:
+
+	```sql
+	CREATE TRIGGER trgAfterInsert ON[dbo].[Employee_Test]
+	FOR INSERT AS
+	declare@ empid int; declare@ empname varchar(100);
+	declare@ empsal decimal(10, 2);
+	declare@ audit_action varchar(100);
+	select@ empid = i.Emp_ID from inserted i;
+	select@ empname = i.Emp_Name from inserted i;
+	select@ empsal = i.Emp_Sal from inserted i; 
+	set@ audit_action = 'Inserted Record -- After Insert Trigger.'; 	
+	insert into Employee_Test_Audit	(Emp_ID, Emp_Name, Emp_Sal, Audit_Action, Audit_Timestamp)	values(@empid, @empname, @empsal, @audit_action, getdate()); 
+	PRINT 'AFTER INSERT trigger fired.' 	
+	GO
+	```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the different types of triggers
+
+Triggers are a special type of stored procedure which is executed automatically based on the occurrence of a database event. These events can be categorized as:
+
+•	Data Manipulation Language (DML) and
+
+•	Data Definition Language (DDL) events.
+
+The benefit derived from triggers is based in their events driven nature. Once created, the trigger automatically fires without user intervention based on an event in the database.
+
+A. Using DML Triggers: DML triggers are invoked when any DML command such as INSERT, DELETE, and UPDATE occurs on the data of a table and/or view.
+
+• DML triggers are powerful objects for maintaining database integrity and consistency.
+
+• DML triggers evaluate data before it has been committed to the database. o During this evaluation the following actions are performed.
+
+We cannot use the following commands in DML trigger:
+
+o	ALTER DATABASE
+
+o	CREATE DATABASE
+
+o	DISK DATABASE
+
+o	LOAD DATABASE
+
+o	RESTORE DATABASE
+
+B.	Using DDL Triggers:
+
+• These triggers focus on changes to the definition of database objects as opposed to changes to the actual data.
+
+• This type of trigger is useful for controlling development and production database environments.
+
+Let us create DDL trigger now-
+
+The following is the syntax.
+
+	```sql
+	CREATE TRIGGER trigger_name	ON{ALL SERVER | DATABASE	}
+
+	[WITH < ddl_trigger_option > [, ...n]]{	FOR | AFTER	}	{
+
+	event_type | event_group	}[, ...n]	AS
+
+	{sql_statement[;][...n] | EXTERNAL NAME < method specifier > [;] 	}
+	```
+	
+	```sql
+	CREATE TRIGGER tr_TableAudit	ON DATABASE FOR CREATE_TABLE, ALTER_TABLE, DROP_TABLE AS PRINT 'You must disable the TableAudit trigger 
+	in order to change any table in this database ' 	ROLLBACK 	GO
+ 	```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### if we have multiple AFTER Triggers on table how can we define the sequence od the triggers
+
+If a table has multiple AFTER triggers, then you can specify which trigger should be executed first and which trigger should be executed last using the stored procedure sp_settriggerorder.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a view in the database
+A view in SQL is a virtual table based on the result-set of an SQL statement. A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+![image](https://user-images.githubusercontent.com/92531202/167674934-4d4ccced-ddb3-4f1f-8cdf-891a39ad99cd.png)
+
+A View is nothing but a select query with a name given to it or we can simply say a view is a Named Query.
+
+need a view:
+ 
+• A view can combine data from multiple tables using adequate joins and while bringing it may require complex filters and calculated data to form the required result set. From a user's point of view, all these complexities are hidden data queried from a single table.
+
+• Sometimes for security purposes, access to the table, table structures and table relationships are not given to the database user. All they have is access to a view not knowing what tables actually exist in the database.
+
+• Using the view, you can restrict the user update only portions of the records.
+
+• To control access to rows and columns of data.
+
+• To aggregate data for performance.
+
+• To hide the complexity of the underlying database schema, or customize the data and schema for a set of users.
+
+Views are used for security purposes because they provide encapsulation of the name of the table. Data is in the virtual table, not stored permanently. Views display only selected data.
+
+
+The following are the key points to be noted about views:
+
+1.	Multiple views can be created on one table.
+
+2.	Views can be defined as read-only or updatable.
+
+3.	Views can be indexed for better performance.
+
+4.	Insert, update, delete can be done on an updatable view.
+
+There are two types of views.
+
+•	Simple View
+
+•	Complex View
+
+Syntax of a View:
+
+	```sql
+	CREATE VIEW view_name AS SELECT column_name(s) FROM table_name 
+	WHERE condition 
+	```
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### SQL Injection
+
+Insertion or ‘Injection’ of some SQL Query from the input data of the client to the application is called SQL Injection. They can perform CRUD operations on the
+database and can read to vulnerabilities and loss of data.
+
+It can occur in 2 ways:
+Data is used to dynamically construct an SQL Query.
+Unintended data from an untrusted source enters the application.
+
+The consequences of SQL Injections can be Confidentiality issues, Authentication breaches, Authorization vulnerabilities, and breaking the Integrity of the system.
+
+![image](https://user-images.githubusercontent.com/92531202/167678683-165737d3-d296-4b13-a9ef-53006938ed9d.png)
+
+The above image shows an example of SQL injections, through the use of 2 tables-students and library.
+
+Here the hacker is injecting SQL code -
+
+	```sql
+	UNION SELECT studentName, rollNo FROM students
+	```
+	
+into the Database server, where his query is used to JOIN the tables - students and library. Joining the 2 tables, the result of the query is returned from the database, using which the hacker gains access to the information he needs thereby taking advantage of the system vulnerability. The arrows in the diagram show the flow of how the SQL Injection causes the vulnerability in the database system, starting from the hacker’s computer.
+
+OR
+
+"It is a Form of attack on a database-driven Web site in which the attacker executes unauthorized SQL commands by taking advantage of insecure code on a system connected to the Internet, bypassing the firewall. SQL injection attacks are used to steal information from a database from which the data would normally not be available and/or to gain access to an organization’s host computers through the computer that is hosting the database.
+
+SQL injection attacks typically are easy to avoid by ensuring that a system has strong input validation.
+
+As name suggest we inject SQL which can be relatively dangerous for the database. Example this is a simple SQL 
+
+SELECT email, passwd, login_id, full_name FROM members WHERE email = 'x'
+
+Now somebody does not put “x” as the input but puts “x ; DROP TABLE members;”. So the actual SQL which will execute is:- 
+
+SELECT email, passwd, login_id, full_name FROM members WHERE email = ‘x’; DROP TABLE members;
+
+Think what will happen to your database."
 
 **[⬆ Back to Top](#table-of-contents)**
 
 
+### What is an Index Explain its different types
+
+An Index is one of the most powerful techniques to work with this enormous information. Database tables are not enough for getting the data efficiently in case of a huge amount of data. In order to get the data quickly we need to index the column in a table.
+
+An index is a database object that is created and maintained by the DBMS. Indexed columns are ordered or sorted so that data searching is extremely fast. An index can be applied on a column or a view. A table can have more than one index.
+
+There are different types of indexes that can be created for different purposes:
+
+1.Unique and Non-Unique Index:
+• Unique indexes are indexes that help maintain data integrity by ensuring that no two rows of data in a table have identical key values. Once a unique index has been defined for a table, uniqueness is enforced whenever keys are added or changed within the index.
+
+	```sql
+	CREATE UNIQUE INDEX myIndex
+	ON students (enroll_no);
+	```
+• Non-unique indexes, on the other hand, are not used to enforce constraints on the tables with which they are associated. Instead, non-unique indexes are used solely to improve query performance by maintaining a sorted order of data values that are used frequently. 
+
+2.Clustered and Non-Clustered Index:
+
+• Clustered Index: A Clustered Index sorts and stores the data in the table based on keys. A Clustered Index can be defined only once per 
+table in the SQL Server Database, because the data rows can be sorted in only one order. Text, nText and Image data are not allowed as a Clustered index.
+
+	```sql
+	SET STATISTICS IO ON
+	SELECT * FROM Employee WHERE EmpID = 20001
+	EmpID	EmpName	Cell	Dept 20001	Black Smith	12345678901	1
+        ```
+	
+• Non-Clustered Index: Non Clustered Indexes or simply indexes are created outside of the table. SQL Server supports 999 Non-Clustered per table and each Non-Clustered can have up to 1023 columns. A Non-Clustered Index does not support the Text, nText and Image data types.
+
+	```sql
+	CREATE NONCLUSTERED INDEX NCL_ID ON Employee(DeptID)
+        SET STATISTICS IO ON
+	SELECT * FROM Employee WHERE DeptID = 20001
+	EmpID	EmpName	Cell	Dept
+	40001	Black Smith	12345678901	20001
+	```
+The only difference between clustered and non-clustered indexes is that the database manager attempts to keep the data in the database in the same order as the corresponding keys appear in the clustered index.
+
+Clustering indexes can improve the performance of most query operations because they provide a linear-access path to data stored in the database.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 
+### Why do I need an index in a database
+
+An Index is a database object that can be created on one or more columns (16 max column combinations). When creating the index it will read the column(s) and forms a relevant data structure to minimize the number of data comparisons. The index will improve the performance of data retrieval and add some overhead to the data modification such as create, delete and modify. So it depends on how much data retrieval can be done on table versus how much of DML (Insert, Delete and Update) operations.
+
+Need of Index in Database: An index is basically used for fast data retrieval from the database.
+
+Syntax: 
+
+	```sql
+	CREATE INDEX index_name ON table_name;
+	```
+	or
+	
+	```sql
+	DROP INDEX index_name;
+	```
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### Clustered and Non-Clustered Index
+
+• Clustered index modifies the way records are stored in a database based on the indexed column. A non-clustered index creates a separate entity within the table which references the original table.
+
+• Clustered index is used for easy and speedy retrieval of data from the database, whereas, fetching records from the non-clustered index is relatively slower.
+
+•  In SQL, a table can have a single clustered index whereas it can have multiple non-clustered indexes
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is OLTP Online Transaction Processing
+
+OLTP stands for Online Transaction Processing, is a class of software applications capable of supporting transaction-oriented programs. An essential attribute of an OLTP system is its ability to maintain concurrency. To avoid single points of failure, OLTP systems are often decentralized. These systems are usually designed for a large number of users who conduct short transactions. Database queries are usually simple, require sub-second response times, and return relatively few records. Here is an insight into the working of an OLTP system 
+
+![image](https://user-images.githubusercontent.com/92531202/167683226-0b32e21c-6a67-4309-a91e-a58e37846b38.png)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are the differences between OLTP and OLAP
+
+OLTP stands for Online Transaction Processing, is a class of software applications capable of supporting transaction-oriented programs. An important attribute of an OLTP system is its ability to maintain concurrency. OLTP systems often follow a decentralized architecture to avoid single points of failure. These systems are generally designed for a large audience of end-users who conduct short transactions. Queries involved in such databases are generally simple, need fast response times, and return relatively few records. A number of transactions per second acts as an effective measure for such systems.
+
+OLAP stands for Online Analytical Processing, a class of software programs that are characterized by the relatively low frequency of online transactions. Queries are often too complex and involve a bunch of aggregations. For OLAP systems, the effectiveness measure relies highly on response time. Such systems are widely used for data mining or maintaining aggregated, historical data, usually in multi-dimensional schemas.
+
+![image](https://user-images.githubusercontent.com/92531202/167683437-515beb4b-82e9-45cf-83be-a63f3a19ee80.png)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is the use of OLAP?  ❌
+
+OLAP is useful because it provides fast and interactive access to aggregated data and the ability to drill down to detail.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is a measure in OLAP? ❌
+
+Measures are the key performance indicator that you want to evaluate. To determine which of the numbers in the data might be measures. A rule of thumb is if a number makes sense when it is aggregated, then it is a measure.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are dimensions in OLAP? ❌
+
+Dimensions are the categories of data analysis. For example, in a revenue report by month by sales region, the two dimensions needed are time and sales region. Typical dimensions include product, time, and region.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are Entities and Relationships
+
+Entity: An entity can be a real-world object, either tangible or intangible, that can be easily identifiable. For example, in a college database, students, professors, workers, departments, and projects can be referred to as entities. Each entity has some associated properties that provide it an identity.
+
+Relationships: Relations or links between entities that have something to do with each other. For example - The employee's table in a company's database can be associated with the salary table in the same database.
+
+![image](https://user-images.githubusercontent.com/92531202/167683954-861b8f15-b41a-490d-9ef3-0d0f9b16399a.png)
+
+List the different types of relationships in SQL:
+
+• One-to-One - This can be defined as the relationship between two tables where each record in one table is associated with the maximum of one record in the other table.
+
+• One-to-Many & Many-to-One - This is the most commonly used relationship where a record in a table is associated with multiple records in the other table.
+
+• Many-to-Many - This is used in cases when multiple instances on both sides are needed for defining a relationship.
+
+• Self-Referencing Relationships - This is used when a table needs to define a relationship with itself.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is an Alias in SQL
+
+It is a temporary name assigned to the table or table column for the purpose of a particular SQL query. In addition, aliasing can be employed as an obfuscation technique to secure the real names of database fields. A table alias is also called a correlation name.
+
+An alias is represented explicitly by the AS keyword but in some cases, the same can be performed without it as well. Nevertheless, using the AS keyword is always a good practice.
+
+	```sql
+	SELECT A.emp_name AS "Employee"  /* Alias using AS keyword */
+	B.emp_name AS "Supervisor"
+	FROM employee A, employee B   /* Alias without AS keyword */
+	WHERE A.emp_sup = B.emp_id;
+	```
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is Data Integrity
+
+Data Integrity defines the accuracy and consistency of data stored in a database. It can also define integrity constraints to enforce business rules on the data when it is entered into the application or database.
+
+OR
+
+Data Integrity is the assurance of accuracy and consistency of data over its entire life-cycle and is a critical aspect of the design, implementation, and usage of any system which stores, processes, or retrieves data. It also defines integrity constraints to enforce business rules on the data when it is entered into an application or a database.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### ### What is Auto Increment ❌
+
+Auto increment keyword allows the user to create a unique number to be generated when a new record is inserted into the table. AUTO INCREMENT keyword can be used in Oracle and IDENTITY keyword can be used in SQL SERVER.
+Mostly this keyword can be used whenever PRIMARY KEY is used.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are UNION, MINUS and INTERSECT commands
+
+The UNION operator combines and returns the result-set retrieved by two or more SELECT statements.
+
+The MINUS operator in SQL is used to remove duplicates from the result-set obtained by the second SELECT query from the result-set obtained by the first SELECT query and then return the filtered results from the first.
+
+The INTERSECT clause in SQL combines the result-set fetched by the two SELECT statements where records from one match the other and then returns this intersection of result-sets.
+
+Certain conditions need to be met before executing either of the above statements in SQL -
+
+• Each SELECT statement within the clause must have the same number of columns
+
+• The columns must also have similar data types
+
+• The columns in each SELECT statement should necessarily have the same order
+
+	```sql
+	SELECT name FROM Students   /* Fetch the union of queries */
+	UNION
+	SELECT name FROM Contacts;
+	SELECT name FROM Students   /* Fetch the union of queries with duplicates*/
+	UNION ALL
+	SELECT name FROM Contacts;
+	```
+	
+	```sql
+	SELECT name FROM Students   /* Fetch names from students */
+	MINUS     /* that aren't present in contacts */
+	SELECT name FROM Contacts;
+	```
+	
+	```sql
+	SELECT name FROM Students   /* Fetch names from students */
+	INTERSECT    /* that are present in contacts as well */
+	SELECT name FROM Contacts;
+	```
+	
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is User defined function What are its various types
+
+The user-defined functions in SQL are like functions in any other programming language that accept parameters, perform complex calculations, and return a value. They are written to use the logic repetitively whenever required. 
+
+There are two types of SQL user-defined functions:
+
+• Scalar Function: As explained earlier, user-defined scalar functions return a single scalar value.
+
+• Table-Valued Functions: User-defined table-valued functions return a table as output.
+
+	• Inline: returns a table data type based on a single SELECT statement.
+	
+	• Multi-statement: returns a tabular result-set but, unlike inline, multiple SELECT statements can be used inside the function body.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is Collation? What are the different types of Collation Sensitivity
+
+Collation refers to a set of rules that determine how data is sorted and compared. Rules defining the correct character sequence are used to sort the character data. It incorporates options for specifying case sensitivity, accent marks, kana character types, and character width. Below are the different types of collation sensitivity:
+
+• Case sensitivity: A and a are treated differently.
+• Accent sensitivity: a and á are treated differently.
+• Kana sensitivity: Japanese kana characters Hiragana and Katakana are treated differently.
+• Width sensitivity: Same character represented in single-byte (half-width) and double-byte (full-width) are treated differently
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is CLAUSE
+
+Clauses are in-built functions available in SQL and are used for filtering and analysing data quickly allowing the user to efficiently extract the required information from the database.
+
+![image](https://user-images.githubusercontent.com/92531202/167696336-763f115a-4906-46a1-be57-738e270c1308.png)
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What are Aggregate and Scalar functions
+
+An aggregate function performs operations on a collection of values to return a single scalar value. Aggregate functions are often used with the GROUP BY and HAVING clauses of the SELECT statement. Following are the widely used SQL aggregate functions:
+
+• AVG() - Calculates the mean of a collection of values.
+
+• COUNT() - Counts the total number of records in a specific table or view.
+
+• MIN() - Calculates the minimum of a collection of values.
+
+• MAX() - Calculates the maximum of a collection of values.
+
+• SUM() - Calculates the sum of a collection of values.
+
+• FIRST() - Fetches the first element in a collection of values.
+
+• LAST() - Fetches the last element in a collection of values.
+
+Note: All aggregate functions described above ignore NULL values except for the COUNT function.
+
+A scalar function returns a single value based on the input value. Following are the widely used SQL scalar functions:
+
+• LEN() - Calculates the total length of the given field (column).
+
+• UCASE() - Converts a collection of string values to uppercase characters.
+
+• LCASE() - Converts a collection of string values to lowercase characters.
+
+• MID() - Extracts substrings from a collection of string values in a table.
+
+• CONCAT() - Concatenates two or more strings.
+
+• RAND() - Generates a random collection of numbers of a given length.
+
+• ROUND() - Calculates the round-off integer value for a numeric field (or decimal point values).
+
+• NOW() - Returns the current date & time.
+
+• FORMAT() - Sets the format to display a collection of values.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### What is database engine in SQL Server
+
+
+
+
+
+
+
+
+
+
+**[⬆ Back to Top](#table-of-contents)**
 
