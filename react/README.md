@@ -5,10 +5,10 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 
 | No. | Questions |
 |---- | ---------
-|1  | [what is react](#what-is-react) |                                                       
+|1  | [what is react](#what-is-react)|                                                       
 |2  | [What are its features](#What-are-its-features)|
-|3  | [virtual DOM means](#virtual-DOM-means) |4  | [SPA](#SPA)|
-|4  | [SPA](#SPA)|
+|3  | [virtual DOM means](#virtual-DOM-means)|
+|4  | [SPA](#SPA)| 
 |5  | [JSX](#JSX)|
 |6  | [One-way Data Binding](#One-way-Data-Binding)|
 |7  | [Components](#Components)|
