@@ -1,13 +1,14 @@
 ### React Testing 
 https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B16887_03_Final_PG_ePub.xhtml#_idParaDest-51
 
-<img src='https://user-images.githubusercontent.com/92531202/167924934-e683bdd1-8886-44c9-b65f-11e2d6f78d8e.png' />
-<img src='https://user-images.githubusercontent.com/92531202/167925084-514555c4-a4eb-46ad-87a6-0d3a689b4273.jpg' />
-<img src='https://user-images.githubusercontent.com/92531202/167925185-58554811-c938-453f-884a-f857fd8947b2.jpg' />
-<img src='https://user-images.githubusercontent.com/92531202/167925199-c6066d09-e80f-44d6-8aa9-b9ab7d71b1f9.jpg' />
-<img src='https://user-images.githubusercontent.com/92531202/167925219-fd90608c-132c-4d6a-a65f-4d12a3f153ca.jpg' />
-
 ### Table of Contents
+
+<img src='https://user-images.githubusercontent.com/92531202/167924934-e683bdd1-8886-44c9-b65f-11e2d6f78d8e.png' style="width:50px;height:80px;"/>
+<img src='https://user-images.githubusercontent.com/92531202/167925084-514555c4-a4eb-46ad-87a6-0d3a689b4273.jpg' style="width:50px;height:80px;"/>
+<img src='https://user-images.githubusercontent.com/92531202/167925185-58554811-c938-453f-884a-f857fd8947b2.jpg' style="width:50px;height:80px;"/>
+<img src='https://user-images.githubusercontent.com/92531202/167925199-c6066d09-e80f-44d6-8aa9-b9ab7d71b1f9.jpg' style="width:50px;height:80px;"/>
+<img src='https://user-images.githubusercontent.com/92531202/167925219-fd90608c-132c-4d6a-a65f-4d12a3f153ca.jpg' style="width:50px;height:80px;"/>
+
 
 | No. | Questions |
 |---- | ---------
