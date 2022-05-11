@@ -151,6 +151,7 @@ React uses two virtual DOMs to render the user interface. One of them is used to
 ### JSX
 react use JSX(JavaScript Syntax Extension)
 JSX is a combination of HTML and JavaScript. We can embed JavaScript objects inside the HTML elements.place them in the DOM without using functions like appendChild( ) or createElement( ).But JSX is not supported by the browsers, as a result Babel compiler transcompile the code into JavaScript code. JSX makes codes easy and understandable. It is easy to learn if we know HTML and JavaScript.
+
 ->Why can’t browsers read JSX
 Because there is no inherent implementation for the browser engines to read and understand them. JSX is not intended to be implemented by the engines or browsers, it is intended to be used by various transcompiler like (Babel ) which transform these JSX into valid JavaScript code.
 ![image](https://user-images.githubusercontent.com/92531202/164877770-4deefef6-5c0c-4339-896f-718bb8abe93a.png)
@@ -174,38 +175,64 @@ JSX allows us to write conditional statements. The data in the browser is displa
 
 ### React vs angular
 React: 
+
 Type- React is a JavaScript library
+
 Best feature- It gives you the freedom to choose the tools, architecture, and libraries, for developing an app.
+
 Data binding- React language uses one-way data binding, which means that the Ul elements can’t be changed without updating the corresponding model state.
+
 Written in- JavaScript
+
 Model- It is based on Virtual DOM
+
 Use of code- React allows we have to manage the code according to your desired format.
+
 Testing & Debugging- It requires a set of tools to perform different types of testing. 
        
 Angular:
+
 -Angular is a complete framework.
--It offers a limited amount of freedom and flexibility. 
+
+-It offers a limited amount of freedom and flexibility.  
+
 -Angular Supports both one way and two way  data binding. It helps you to ensure that the model state automatically changes when any change is made.
   (means that if we modify the UI input, the model state will change, and vice versa)
+  
 -Typescript
+
 -Based on MVC (Model View Controller)
+
 -Angular comes with many ready to use elements. However, it mainly comes from a specific provider. So, there are priority collisions and namesDaces.
+
 -The testing and debugging for a complete project is possible with a single tool.
         
  **[⬆ Back to Top](#table-of-contents)**
  
 ### Library vs Framework
+
 Library:
+
 -is a collection of functions
+
 -In case of library the Execution of code will be decided by the developers Means  developers are in charge of the flow of the whole application.
+
 -We are choosing when and where to call the library.
+
 -in case of library its developers duty to design the structure.
+
 -library follows View model
+
 Framework:
+
 -Framework is a collection of multiple other libraries.
+
 -in case of framework the execution is already defined or decided.the framework is in charge of the flow of the whole application.
+
 -It provides some places for we have to plug in our code, but it calls the code you   plugged in as needed.
+
 -Framework provides you a structure in which we just put down the code our functionality.
+
 -it follows MVC structure (model view controller)
         
 **[⬆ Back to Top](#table-of-contents)**
@@ -214,32 +241,53 @@ Framework:
    
 
 ### states vs props
+
 Both props and state are plain JavaScript objects. While both of them hold information Props
+
 props:
+
  -Props are read-only components. It is an object which stores the value of attributes of a tag and works similar to the HTML attributes. It allows passing             data from one component to other components (parent to child component ). It is similar to function arguments and can be passed to the component the same way         as arguments passed in a function. Props are immutable so we cannot modify the props from inside the child-component.
+ 
  -Props are also objects that hold information to control the behavior of that particular component.
 
+ state:
+ 
+      -the State of a component is an object that holds some information that may change over the lifetime of the component.
+      
+      -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
+      
 scaler(
 What is prop drilling in React?
+
 Sometimes while developing React applications, there is a need to pass data from a component that is higher in the hierarchy to a component that is deeply nested. To  pass data between such components, we pass props from a source component and keep passing the prop to the next component in the hierarchy till we reach the deeply    nested component.
+
 The disadvantage of using prop drilling is that the components that should otherwise be not aware of the data have access to the data.
+
   ![image](https://user-images.githubusercontent.com/92531202/164887113-d8cc7470-1261-4216-888e-967fb48ff5e1.png)
+  
 )      
  
-Scaler(The props: in React are the inputs to a component of React. They can be single-valued or objects having a set of values that will be passed to components of React during creation by using a naming convention that almost looks similar to HTML-tag attributes. We can say that props are the data passed from a parent component into a child component.
+Scaler(
+
+The props: in React are the inputs to a component of React. They can be single-valued or objects having a set of values that will be passed to components of React during creation by using a naming convention that almost looks similar to HTML-tag attributes. We can say that props are the data passed from a parent component into a child component.
+
 The main purpose of props is to provide different component functionalities such as:
+
   Passing custom data to the React component.
+  
   Using through this.props.reactProp inside render() method of the component.
+  
   Triggering state changes.
   
 React State:
+
 Every component in react has a built-in state object, which contains all the property values that belong to that component.
 In other words, the state object controls the behaviour of a component. Any change in the property values of the state object leads to the re-rendering of the component.
+
 Note- State object is not available in functional components but, we can use React Hooks to add state to a functional component
+
  )
- state:
-      -the State of a component is an object that holds some information that may change over the lifetime of the component.
-      -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
+
 
 **[⬆ Back to Top](#table-of-contents)**
 
