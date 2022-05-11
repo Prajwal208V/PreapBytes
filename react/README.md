@@ -252,9 +252,9 @@ props:
 
  state:
  
-      -the State of a component is an object that holds some information that may change over the lifetime of the component.
-      
-      -States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
+-the State of a component is an object that holds some information that may change over the lifetime of the component.
+
+-States can be used in Class Components, Functional components with the use of React Hooks (useState and other methods) while Props don’t have this limitation.         State is generally updated by event handlers.
       
 scaler(
 What is prop drilling in React?
@@ -292,55 +292,80 @@ Note- State object is not available in functional components but, we can use Rea
 **[⬆ Back to Top](#table-of-contents)**
 
 ### How can you update the state of a component
+
   -The State is an instance of React Component that can be defined as an object of a set of observable properties that control the behavior of the component. In        other words, the State of a component is an object that holds some information that may change over the lifetime of the component. 
    
    Update the State of Class-Based Components using ‘this.setState()’ method.Pass the state object in a JSX element and call the method to update the state on a        specific event like button click.
-                    🦖 class App extends Component {
-                          constructor(){
-                            super()
-                            this.state={
-                              text : 'Welcome to Geeksforgeeks'
-                            }
-                          }
-                          goPremium(){
-                            this.setState({
-                              text:'Subscription successful'
-                            })
-                       }
+
+       ```js
+       🦖 class App extends Component {
+            constructor(){
+              super()
+              this.state={
+                text : 'Welcome to Geeksforgeeks'
+              }
+            }
+            goPremium(){
+              this.setState({
+                text:'Subscription successful'
+              })
+         }
+         ```
+                       
    Update the State of functional Components:React functional components are plain JavaScript functions.It is not possible to persist state in local variables, to      maintain state inside the function, React provides several hooks:
+   
    like useState() hook allows you create and mange a state variable that can be a simple JavaScript primitive or an object.
-     🦖const [varible, setFun] = useState(false);
-     The only way to mutate the state and its binding is to call the function setFun()
-     Update the state on a specific event like button click using the ‘setFun’ method.
-     🦖setFun({text:'Updated Content'});
+   
+       ```js 
+       🦖const [varible, setFun] = useState(false);
+       The only way to mutate the state and its binding is to call the function setFun()
+       Update the state on a specific event like button click using the ‘setFun’ method.
+       🦖setFun({text:'Updated Content'});
+       ```
   
  **[⬆ Back to Top](#table-of-contents)** 
 
 ### different phases of the component lifecycle
+
 There are four different phases in the lifecycle of React component. They are:
 
 ![image](https://user-images.githubusercontent.com/92531202/164892281-6f5dc928-4de8-467a-90b2-c35a35fd9b41.png)
 
 -Initialization: During this phase, React component will prepare by setting up the default props and initial state for the upcoming tough journey.
+
 -Mounting: Mounting refers to putting the elements into the browser DOM. Since React uses VirtualDOM, the entire browser DOM which has been currently rendered would not      be refreshed. This phase includes the lifecycle methods componentWillMount and componentDidMount.
+
 -Updating: In this phase, a component will be updated when there is a change in the state or props of a component. This phase will have lifecycle methods like                componentWillUpdate, shouldComponentUpdate, render, and componentDidUpdate.
+
 -Unmounting: In this last phase of the component lifecycle, the component will be removed from the DOM or will be unmounted from the browser DOM. This phase will have the    lifecycle method named componentWillUnmount.
+
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### lifecycle methods of React components
 React lifecycle hooks will have the methods that will be automatically called at different phases in the component lifecycle and thus it provides good control over what happens at the invoked point. It provides the power to effectively control and manipulate what goes on throughout the component lifecycle.
+
 For example, if you are developing the YouTube application, then the application will make use of a network for buffering the videos and it consumes the power of the battery (assume only these two). After playing the video if the user switches to any other application, then you should make sure that the resources like network and battery are being used most efficiently. You can stop or pause the video buffering which in turn stops the battery and network usage when the user switches to another application after video play.
+
 So we can say that the developer will be able to produce a quality application with the help of lifecycle methods and it also helps developers to make sure to plan what and how to do it at different points of birth, growth, or death of user interfaces.
+
 The various lifecycle methods are:
--constructor(): This method will be called when the component is initiated before anything has been done. It helps to set up the initial state and initial values.
--getDerivedStateFromProps(): This method will be called just before element(s) rendering in the DOM. It helps to set up the state object depending on the initial props. The -getDerivedStateFromProps() method will have a state as an argument and it returns an object that made changes to the state. This will be the first method to be called on     an updating of a component.
--render(): This method will output or re-render the HTML to the DOM with new changes. The render() method is an essential method and will be called always while the           remaining methods are optional and will be called only if they are defined.
--componentDidMount(): This method will be called after the rendering of the component. Using this method, you can run statements that need the component to be already kept   in the DOM.
--shouldComponentUpdate(): The Boolean value will be returned by this method which will specify whether React should proceed further with the rendering or not. The default     value for this method will be True.
--getSnapshotBeforeUpdate(): This method will provide access for the props as well as for the state before the update. It is possible to check the previously present value     before the update, even after the update.
--componentDidUpdate(): This method will be called after the component has been updated in the DOM.
--componentWillUnmount(): This method will be called when the component removal from the DOM is about to happen
+
+* constructor(): This method will be called when the component is initiated before anything has been done. It helps to set up the initial state and initial values.
+
+* getDerivedStateFromProps(): This method will be called just before element(s) rendering in the DOM. It helps to set up the state object depending on the initial props. The -getDerivedStateFromProps() method will have a state as an argument and it returns an object that made changes to the state. This will be the first method to be called on     an updating of a component.
+
+* render(): This method will output or re-render the HTML to the DOM with new changes. The render() method is an essential method and will be called always while the           remaining methods are optional and will be called only if they are defined.
+
+* componentDidMount(): This method will be called after the rendering of the component. Using this method, you can run statements that need the component to be already kept   in the DOM.
+
+* shouldComponentUpdate(): The Boolean value will be returned by this method which will specify whether React should proceed further with the rendering or not. The default     value for this method will be True.
+
+* getSnapshotBeforeUpdate(): This method will provide access for the props as well as for the state before the update. It is possible to check the previously present value     before the update, even after the update.
+
+* componentDidUpdate(): This method will be called after the component has been updated in the DOM.
+
+* componentWillUnmount(): This method will be called when the component removal from the DOM is about to happen
 
 **[⬆ Back to Top](#table-of-contents)**
 
