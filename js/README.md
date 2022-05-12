@@ -36,6 +36,32 @@
 |13 | [pass by value and pass by reference](#pass-by-value-and-pass-by-reference)|
 |14 | [deep and shallow copies](#deep-and-shallow-copies)|
 
+***IQ***
+
+|84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)|
+|24 | [What is memoization](#what-is-memoization)|
+|26 | [What are classes in ES6](#what-are-classes-in-es6)|
+|69 | [What is the purpose of double exclamation](#what-is-the-purpose-of-double-exclamation)|
+|71 | [What is typeof operator](#what-is-typeof-operator)|
+|75 | [What is eval](#What-is-eval)|
+|82 | [What are the problems with global variables](#what-are-the-problems-with-global-variables)|
+|84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)|
+|90 | [What is the difference between document load and DOMContentLoaded events](#what-is-the-difference-between-document-load-and-domcontentloaded-events)|
+|91 | [What is the difference between native, host and user objects](#what-is-the-difference-between-native,-host-and-user-objects)|
+|137| [How do you assign default values to variables](#how-do-you-assign-default-values-to-variables)|
+|145| [What are the benefits of keeping declarations at the top](#what-are-the-benefits-of-keeping-declarations-at-the-top)|
+|146| [What are the benefits of initializing variables](#what-are-the-benefits-of-initializing-variables)|
+|184| [What are various operators supported by javascript](#what-are-various-operators-supported-by-javascript)|
+|187| [What are the bitwise operators available in javascript](#what-are-the-bitwise-operators-available-in-javascript)|
+|185| [What is a rest parameter](#what-is-a-rest-parameter)|
+|188| [What is a spread operator](#what-is-a-spread-operator)|
+|248| [How do you get meta data of a module](#how-do-you-get-meta-data-of-a-module)|
+|308| [What are default parameters](#what-are-default-parameters)|
+|309| [What are template literals](#what-are-template-literals)|
+|311| [What are nesting templates](#what-are-nesting-templates)|
+|323| [What is for...of statement](#what-is-for...of-statement)|
+|335| [How do you convert character to ASCII code](#how-do-you-convert-character-to-ascii-code)|
+
 ***func***
 
 |15 | [Function](#Function)|
@@ -260,32 +286,6 @@
 |149| [How do you generate random integers](#how-do-you-generate-random-integers)|
 |150| [Can you write a random integers function to print integers with in a range](#can-you-write-a-random-integers-function-to-print-integers-with-in-a-range)|
 |365| [How do you rounding numbers to certain decimals](#how-do-you-rounding-numbers-to-certain-decimals)|
-
-***IQ***
-
-|84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)|
-|24 | [What is memoization](#what-is-memoization)|
-|26 | [What are classes in ES6](#what-are-classes-in-es6)|
-|69 | [What is the purpose of double exclamation](#what-is-the-purpose-of-double-exclamation)|
-|71 | [What is typeof operator](#what-is-typeof-operator)|
-|75 | [What is eval](#What-is-eval)|
-|82 | [What are the problems with global variables](#what-are-the-problems-with-global-variables)|
-|84 | [What is the purpose of isFinite function](#what-is-the-purpose-of-isfinite-function)|
-|90 | [What is the difference between document load and DOMContentLoaded events](#what-is-the-difference-between-document-load-and-domcontentloaded-events)|
-|91 | [What is the difference between native, host and user objects](#what-is-the-difference-between-native,-host-and-user-objects)|
-|137| [How do you assign default values to variables](#how-do-you-assign-default-values-to-variables)|
-|145| [What are the benefits of keeping declarations at the top](#what-are-the-benefits-of-keeping-declarations-at-the-top)|
-|146| [What are the benefits of initializing variables](#what-are-the-benefits-of-initializing-variables)|
-|184| [What are various operators supported by javascript](#what-are-various-operators-supported-by-javascript)|
-|187| [What are the bitwise operators available in javascript](#what-are-the-bitwise-operators-available-in-javascript)|
-|185| [What is a rest parameter](#what-is-a-rest-parameter)|
-|188| [What is a spread operator](#what-is-a-spread-operator)|
-|248| [How do you get meta data of a module](#how-do-you-get-meta-data-of-a-module)|
-|308| [What are default parameters](#what-are-default-parameters)|
-|309| [What are template literals](#what-are-template-literals)|
-|311| [What are nesting templates](#what-are-nesting-templates)|
-|323| [What is for...of statement](#what-is-for...of-statement)|
-|335| [How do you convert character to ASCII code](#how-do-you-convert-character-to-ascii-code)|
 
 
 | No. | Questions |
