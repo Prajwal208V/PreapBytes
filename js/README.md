@@ -1,5 +1,10 @@
 ### Table of Contents
 
+|1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script) |
+|97 | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
+|98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
+|99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
+
 | No. | Questions |
 |---- | ---------
 |1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script) |
