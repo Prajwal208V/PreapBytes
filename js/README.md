@@ -1,9 +1,143 @@
 ### Table of Contents
 
+***engine***
+
 |1  | [How JavaScript engine executes a script?](#How-JavaScript-engine-executes-a-script) |
 |97 | [Is JavaScript a compiled or interpreted language](#is-javascript-a-compiled-or-interpreted-language)|
 |98 | [Is JavaScript a case-sensitive language](#is-javascript-a-case-sensitive-language)|
 |99 | [Why is JavaScript treated as Single threaded](#why-is-javascript-treated-as-single-threaded)|
+|100| [What is ECMAScript](#what-is-ecmascript)|
+|3  | [event-loop](#event-Loop)|
+|387| [What are tasks in event loop](#what-are-tasks-in-event-loop)|
+|388| [microtask](#microtask)|
+|395| [What is a microTask queue](#what-is-a-microtask-queue)|
+|393| [What is heap](#what-is-heap)|
+|394| [What is an event table](#what-is-an-event-table)|
+|398| [What is babel](#what-is-babel)|
+|304| [List down some of the features of ES6](#list-down-some-of-the-features-of-es6)|
+|305| [What is ES6](#what-is-es6)|
+|297| [What is V8 JavaScript engine](#what-is-v8-javascript-engine)|
+|2  | [call stack](#call-stack)|
+|2  | [threadpool](#threadpool)|
+|2  | [Browser API](#[Browser-API)|
+|2  | [callback queue](#callbackqueue)|
+
+***basic***
+
+|4  | [data types in js](#data-types-in-js)|
+|5  | [primitive data types](#primitive-data-types)|
+|6  | [composite data types](#composite-data-types)|
+|7  | [Hoisting](#Hoisting)|
+|8  | [TDZ temporal dead zone](#TDZ-temporal-dead-zone)|
+|9  | [let v/s const v/s var](#let-const-var)|
+|10 | [Strict equality (===) and equality(==)](#Strict-equality)|
+|11 | [JavaScript is a loosely typed and dynamic language](#JavaScript-is-a-loosely-typed-and-dynamic-language)|
+|12 | [difference between type conversion and type coercion](#difference-between-type-conversion-and-type-coercion)|
+|13 | [pass by value and pass by reference](#pass-by-value-and-pass-by-reference)|
+|14 | [deep and shallow copies](#deep-and-shallow-copies)|
+
+***func***
+
+|15 | [Function](#Function)|
+|16 | [IIFE immediately-invoked-function-expression](#IIFE)|
+|16 | [Anonymous Function](#Anonymous-Function)|
+|17 | [Higher Order Functions](#Higher-Order-Functions)|
+|18 | [callback functions](#callback-functions)|
+|19 | [What is a pure function](#What-is-a-pure-function)|
+|20 | [What are lambda or arrow functions](#What-are-lambda-or-arrow-functions)|
+|21 | [What is a first class function](#What-is-a-first-class-function)|
+|22 | [What is a first order function](#What-is-a-first-order-function)|
+|23 | [What is a unary function](#What-is-a-unary-function)|
+|23 | [Generator function](#Generator-function)|
+|24 | [recurstion](#recurstion)|
+|25 | [this keyword](#this-keyword)|            
+|26 | [call-bind-apply methods](#call-bind-apply-methods)|
+|27 | [scope](#scope)|
+|28 | [lexical scope](#lexical-scope)|
+|29 | [Closures](#Closures)|
+|30 | [What are the possible ways to create objects in JavaScript](#What-are-the-possible-ways-to-create-objects-inJavaScript)|
+|31 | [function attached to an object](#function-attached-to-an-object)|
+
+***obj***
+
+|32 | [Prototypes](#Prototypes)|
+|33 | [prototype chaining](#prototype-chaining)|
+|34 | [Object Destructuring](#Object-Destructuring)|
+|127| [How do you test for an empty object](#how-do-you-test-for-an-empty-object)|
+|125| [How do you check if a key exists in an object](#how-do-you-check-if-a-key-exists-in-an-object)|
+|35 | [set](#set)|
+|36 | [map](#map)|
+|37 | [weakSet](#weakSet)|
+|38 | [weakMap](#weakMap)|
+
+***asyncromus***
+
+|62 | [What is callback in callback](#what-is-callback-in-callback)|
+|39 | [need callbacks](#need-callbacks)|
+|40 | [CALLBACK hell](#CALLBACK-hell)|
+|41 | [promise](#promise)|
+|42 | [Consuming a Promise](#Consuming-a-Promise)|
+|43 | [promise chaining](#promise-chaining)|
+|61 | [What are the main rules of promise](#what-are-the-main-rules-of-promise)|
+|93 | [What are the pros and cons of promises over callbacks](#what-are-the-pros-and-cons-of-promises-over-callbacks)|
+|44 | [try catch throw finally in js](#try-catch-throw-finally-in-js)|
+
+***array***
+
+|45 | [What are the possible ways to create an array](#What-are-the-possible-ways-to-create-an-array)|
+|46 | [ways to empty the array](#ways-to-empty-the-array)|
+
+***dom***
+
+|59 | [DOM](#DOM)|
+|60 | [DOM selectors](#DOM-selectors)|
+|61 | [window vs document](#window-vs-document)|
+|62 | [window.onload vs document.onload](#windowonload-vs-documentonload)|
+|63 | [what are the possible ways of making an API call in JavaScript](#what-are-the-possible-ways-of-making-an-API-call-in-JavaScript)|
+
+***json***
+
+|69 | [JSON](#JSON)|
+|111| [What is JSON](#What-is-JSON)|
+|112| [What are the syntax rules of JSON](#what-are-the-syntax-rules-of-json)|
+|113| [What is the purpose JSON stringify](#what-is-the-purpose-json-stringify)|
+|114| [How do you parse JSON string](#how-do-you-parse-json-string)|
+|115| [Why do you need JSON](#why-do-you-need-json)|
+|148| [How do you define JSON arrays](#how-do-you-define-json-arrays)|
+|116| [What are PWAs](#what-are-pwas?)|
+|296| [What is jQuery](#what-is-jquery)|
+|71 | [Async & await](#what-is-the-purpose-of-double-exclamation)|
+|66 | [What is a strict mode in javascript](#what-is-a-strict-mode-in-javascript)|
+|67 | [Why do you need strict mode](#why-do-you-need-strict-mode)|
+|68 | [How do you declare strict mode](#how-do-you-declare-strict-mode)|
+
+***storage**
+
+|34 | [What is IndexedDB](#what-is-indexeddb)|
+|35 | [What is web storage](#what-is-web-storage)|
+|36 | [What is a post message](#what-is-a-post-message)|
+|37 | [What is a cookie](#what-is-a-cookie)|
+|38 | [Why do you need a Cookie](#why-do-you-need-a-cookie)|
+|39 | [What are the options in a cookie](#what-are-the-options-in-a-cookie)|
+|40 | [How do you delete a cookie](#how-do-you-delete-a-cookie)|
+|41 | [What are the differences between cookie, local storage and session storage](#What-are-the-differences-between-cookie-local-storage-and-session-storage)|
+|42 | [What is the main difference between localStorage and sessionStorage](#what-is-the-main-difference-between-localstorage-and-sessionstorage)|
+|43 | [How do you access web storage](#how-do-you-access-web-storage)|
+|44 | [What are the methods available on session storage](#what-are-the-methods-available-on-session-storage)|
+|45 | [What is a storage event and its event handler](#what-is-a-storage-event-and-its-event-handler)|
+|46 | [Why do you need web storage](#why-do-you-need-web-storage)|
+|47 | [How do you check web storage browser support](#how-do-you-check-web-storage-browser-support)|
+|48 | [How do you check web workers browser support](#how-do-you-check-web-workers-browser-support)|
+|49 | [Give an example of web worker](#give-an-example-of-web-worker)|
+|50 | [What are the restrictions of web workers on DOM](#what-are-the-restrictions-of-web-workers-on-dom)|
+
+***window and document**
+
+|76 | [What is the difference between window and document](#what-is-the-difference-between-window-and-document)|
+|77 | [How do you access history in javascript](#how-do-you-access-history-in-javascript)|
+|90 | [What is the difference between document load and DOMContentLoaded events](#what-is-the-difference-between-document-load-and-domcontentloaded-events)|
+|172| [What are the properties used to get size of window](#what-are-the-properties-used-to-get-size-of-window)|
+|174| [Can you apply chaining on conditional operator](#Can-you-apply-chaining-on-conditional-operator)|
 
 | No. | Questions |
 |---- | ---------
