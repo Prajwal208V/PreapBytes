@@ -4,6 +4,65 @@
 * *[NodeJS Coding Practice](nodejs-programming.md)*
 * *[NodeJS Commands](nodejs-commands.md)*
 
+|     | **Core Node** |
+|1  | [Node.js and Where can you use it?](#Nodejs-and-Where-can-you-use-it) |
+|2  | [Where can you use it ?](#Where-can-you-use-it) |
+|3  | [What are the benefits of using Node.js?](#q-What-are-the-benefits-of-using-Nodejs) |
+|4  | [What are the key features of Node.js?](#q-What-are-the-key-features-of-Nodejs) |
+|5  | [What are the Challenges with Node.js?](#q-What-are-the-Challenges-with-Nodejs) |
+|6  | [How is Node.js better than other frameworks most popularly used ?](#q-How-is-Nodejs-better-than-other-frameworks-most-popularly-used) |❌
+|7  | [What does the runtime environment mean in Node.js?](#q-What-does-the-runtime-environment-mean-in-Nodejs) |
+|8  | [Node.js work](#Q-Nodejs-work) |
+|9  | [Why is LIBUV needed in Node JS?](#q-Why-is-LIBUV-needed-in-Node-JS) |
+|10 | [event-loop](#q-event-loop) | 
+|11 | [What are globals in Node.js?](#q-What-are-globals-in-Nodejs) |
+|12 | [What is Node.js Process Model?](#q-What-is-Nodejs-Process-Model) |
+|13 | [What is JIT and how is it related to Node.js?](#q-What-is-JIT-and-how-is-it-related-to-Nodejs) |
+|14 | [What is chrome v8 engine?](#q-What-is-chrome-v8-engine) |
+|15 | [Node.js Single-threaded](#q-Nodejs-Single-threaded) | 
+|16 | [If Node.js is single-threaded, then how does it handle concurrency](#If-Nodejs-is-single-threaded-then-how-does-it-handle-concurrency) | 
+|17 | [Since node is a single threaded process, how to make use of all CPUs?](#q-Since-node-is-a-single-threaded-process-how-to-make-use-of-all-CPUs) | 
+|18 | [Single Threaded Event Loop Model Processing Steps](#q-Single-Threaded-Event-Loop-Model-Processing-Steps) |
+|19 | [What is asynchronous programming in Node.js?](#q-What-is-asynchronous-programming-in-Nodejs) |
+|20 | [What is the difference between Asynchronous and Non-blocking?](#q-What-is-the-difference-between-Asynchronous-and-Non-blocking) |
+|21 | [Name the types of API functions in Node.js?](#q-Name-the-types-of-API-functions-in-Nodejs) |
+|22 | [Explain usage of NODE_ENV?](#q-Explain-usage-of-NODE_ENV) |
+|23 | [What is Event loop in Node.js? How does it work?](#q-What-is-Event-loop-in-Nodejs-How-does-it-work) | 
+|24 | [What are the data types in Node.js?](#q-What-are-the-data-types-in-Nodejs) |
+|25 | [What is REPL? What purpose it is used for?](#q-What-is-REPL-What-purpose-it-is-used-for) | 
+|26 | [When to use Node.js and when not to use it?](#q-When-to-use-Nodejs-and-when-not-to-use-it) |
+|27 | [What is the difference between Node.js vs Ajax?](#q-What-is-the-difference-between-Nodejs-vs-Ajax) |
+|28 | [What is the difference between Node.js, AJAX, and JQuery?](#q-What-is-the-difference-between-Nodejs-AJAX-and-JQuery) |
+|29 | [What is callback function in Node.js?](#q-What-is-callback-function-in-Nodejs) |
+|30 | [What is an error-first callback?](#q-What-is-an-error-first-callback) |
+|30 | [What is callback hell in Node.js?](#q-What-is-callback-hell-in-Nodejs) |
+|030| [What is typically the first argument passed to a Node.js callback handler?](#q-What-is-typically-the-first-argument-passed-to-a-Nodejs-callback-handler) |
+|030| [What are Promises in Node.js?](#q-What-are-Promises-in-Nodejs) |
+|030| [How to create a simple server in Node.js that returns Hello World?](#q-How-to-create-a-simple-server-in-Nodejs-that-returns-Hello-World) |
+|030| [Explain the concept of URL module in Node.js?](#q-Explain-the-concept-of-URL-module-in-Nodejs) |
+|030| [How assert works in Node.js?](#q-How-assert-works-in-Nodejs) |
+|030| [What tools can be used to assure consistent style?](#q-What-tools-can-be-used-to-assure-consistent-style) |
+|030| [What is a stub?](#q-What-is-a-stub) |
+|030| [What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-What-is-a-test-pyramid-How-can-you-implement-it-when-talking-about-HTTP-APIs) | ❗
+|030| [How to debug an application in Node.js?](#q-How-to-debug-an-application-in-Nodejs) | 
+|030| [How can you secure your HTTP cookies against XSS attacks?](#q-How-can-you-secure-your-HTTP-cookies-against-XSS-attacks) |
+|030| [modules in Node.js](#modules-in-Nodejs) |
+|030| [purpose of the module.Exports](#purpose-of-the-moduleExports) |
+|030| [different types of HTTP requests](#different-types-of-HTTP-requests) |
+|030| [What is difference between put and patch?](#What-is-difference-between-put-and-patch) |
+|030| [List types of Http requests supported by Node.js?](#List-types-of-Http-requests-supported-by-Nodejs) |
+|030| [What is EventEmitter in Node.js?](#q-What-is-EventEmitter-in-Nodejs) |
+|030| [What is the use of DNS module in Node.js?](#q-What-is-the-use-of-DNS-module-in-Nodejs) |
+|030| [What is the difference between operational and programmer errors?](#q-What-is-the-difference-between-operational-and-programmer-errors) |
+|030| [Database Integration](#Database-Integration) |
+|030| [Template Engine](#Template-Engine) |
+|030| [What is difference between JavaScript and Node.js?](#q-What-is-difference-between-JavaScript-and-Nodejs) |
+|030| [What are the difference between Events and Callbacks?](#q-What-are-the-difference-between-Events-and-Callbacks) |
+|030| [Explain RESTful Web Services in Node.js?](#q-Explain-RESTful-Web-Services-in-Nodejs) |
+|030| [What is the difference between req.params and req.query?](#q-What-is-the-difference-between-reqparams-and-reqquery) |
+|030| [How to use Q promise in Node.js?](#q-How-to-use-Q-promise-in-Nodejs) |
+
+
 | No. | Questions |
 |---- | --------- |
 |     | **Core Node** |
