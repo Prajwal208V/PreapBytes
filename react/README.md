@@ -1144,76 +1144,98 @@ Redux starts with a call back from the User Interface component which dispatches
  
 👉List down the components of Redux. and explain?
       Redux has 4 components namely Store, Reducer, Action, and UI.
-      1.action:Actions are plain JavaScript objects that describe what happens but don’t describe how the app state changes. Their job is to describe an event that                  took place in the application and to transport the new data to the stores. Each Action must have a type and an optional payload key that contains the                data.
-               🦖 {
-                     actionType: "UPDATE_TITLE", 
-                     payload: "This is a new title." 
-                   }
-      2.Reducer:Reducers are pure functions that define how the app state changes. Whenever we dispatch an Action to our store, Redux passes down the Action to the                   Reducer. Then, the Reducer updates the state depending upon the Action that was passed. The Reducer function takes two arguments: the previous app                   state, the Action being dispatched and returns the new app state.
-              🦖 (previousState, action) => newState 
-      3.store:The Store is the object that brings Action and Reducer together. Store holds the state of the application.
-               -This createStore method is used for creating the application’s Store. It accepts three arguments: rootReducer, initialState and Redux middleware                     constant (the latter two being optional).
-              🦖createStore(rootReducer);
-    
+      
+* action:Actions are plain JavaScript objects that describe what happens but don’t describe how the app state changes. Their job is to describe an event that         took place in the application and to transport the new data to the stores. Each Action must have a type and an optional payload key that contains the                data.
+
+       ```js
+       {
+       actionType: "UPDATE_TITLE", 
+       payload: "This is a new title." 
+       }
+       ```
+       
+* Reducer:Reducers are pure functions that define how the app state changes. Whenever we dispatch an Action to our store, Redux passes down the Action to the         Reducer. Then, the Reducer updates the state depending upon the Action that was passed. The Reducer function takes two arguments: the previous app                   state, the Action being dispatched and returns the new app state.
+
+       ```js
+       (previousState, action) => newState 
+       ```      
+       
+* store:The Store is the object that brings Action and Reducer together. Store holds the state of the application.This createStore method is used for creating the application’s Store. It accepts three arguments: rootReducer, initialState and Redux middleware constant (the latter two being optional).
+       
+       ```js
+       createStore(rootReducer);
+       ```
+       
 👉Show how the data flows through Redux? 
 <img width="500" height="250" style="text-align=:center" src="https://celestialsys.com/blog/wp-content/uploads/2019/12/data-flow.jpg" >
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### advantages of using Redux
-   -Redux provides extremely easy state transfer between the components.
-   -The states are always predictable in Redux and its maintenance is relatively easy.
-   -Debugging and testing code in Redux is simple through logging behaviour and status.
-   -Redux provides great performance. It might occur to us that keeping the application's state global would result in bad performance. However, usually, that is not      the case as React Redux implements a lot of performance optimizations internally so that our own connected component only re-renders when it actually needs to.
-   -Redux also offers state persistence by storing the application's state to local storage and restoring it after a refresh
+* Redux provides extremely easy state transfer between the components.
+* The states are always predictable in Redux and its maintenance is relatively easy.
+* Debugging and testing code in Redux is simple through logging behaviour and status.
+* Redux provides great performance. It might occur to us that keeping the application's state global would result in bad performance. However, usually, that is not      the case as React Redux implements a lot of performance optimizations internally so that our own connected component only re-renders when it actually needs to.
+* Redux also offers state persistence by storing the application's state to local storage and restoring it after a refresh
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### State the core principles of Redux
--Single source of truth: The global state of our application is always put away in an object tree inside one store.
--The state is read-only: The only way to change the state of our application is by emitting an action, an object explaining what has happened.
--Changes are made with pure functions: This principle means that in order to define how the state tree is being transformed by the actions, we have to write pure     reducers
+* Single source of truth: The global state of our application is always put away in an object tree inside one store.
+* The state is read-only: The only way to change the state of our application is by emitting an action, an object explaining what has happened.
+* Changes are made with pure functions: This principle means that in order to define how the state tree is being transformed by the actions, we have to write pure     reducers
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### action in Redux architecture
 In the Redux architecture, actions are nothing but the plain JavaScript objects which contain a type field. They can be thought of as an event that is used to        describe something which has happened in the application. Actions contain only a tiny bit of information that is required to mention what has happened
 example of the usage of Actions in Redux's architecture 
-                                                  const addingTodoAction = {
-                                                      type: 'ADD',
-                                                      payload: 'Do-homework'
-                                                 }
+       
+       ```js
+       const addingTodoAction = {
+       type: 'ADD',
+       payload: 'Do-homework'
+       }
+       ```
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### reducers in Redux architecture
 Reducers in Redux's architecture are pure functions that are used to take the previous state and an action and return the next  state.
-(previous_state, action) => new_state
+       
+       ```js
+       (previous_state, action) => new_state
+       ```
+       
 example how reducers are used in Redux:-
                                    ![image](https://user-images.githubusercontent.com/92531202/164999808-a5cb45d9-db77-4f87-a5f9-e08c6c0d3624.png)
 
 👉What are the things which we should never do inside a reducer?
--Modify the argument of the reducer
--We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
--We should not call non-pure functions, for instance Date.now(), Math.random(), etc
+* Modify the argument of the reducer
+* We should assure that we do not perform any side operations such as routing transitions, API calls, etc.
+* We should not call non-pure functions, for instance Date.now(), Math.random(), etc
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ### store in Redux
 is used to carry together all the states.reducers, and actions which create the app.
+
 responsibilities of the store are:-
-The state of the current application from inside is held by the Redux Store.
-We can access the current state using store.getState().
-We can update the state using store.dispatch(action).
-We can also register listener callbacks using the store.subscriber(listener)       
+* The state of the current application from inside is held by the Redux Store.
+* We can access the current state using store.getState().
+* We can update the state using store.dispatch(action).
+* We can also register listener callbacks using the store.subscriber(listener)  
+     
 👉how to set the initial state in Redux?
+
 In order to set the initial state in Redux, we have to pass the initial state as the second argument to createStore.
 ![image](https://user-images.githubusercontent.com/92531202/165001538-031c4ff5-2701-46dd-9d0e-f1ed3772fd04.png)
+
 👉Redux Store methods.   
-getState()
-subscribe(listener)
-dispatch(action)
-replaceReducer(nextReducer)
+* getState()
+* subscribe(listener)
+* dispatch(action)
+* replaceReducer(nextReducer)
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -1239,22 +1261,22 @@ In the example given below, we have added Redux Thunk and logger middlewares as 
 
 ### context vs React Redux
 context:
- -Context provides a way to pass data through the component tree without manually passing props down through each nested component.
- -any updateds are made with the Context value.
- -We can change the state in it, very simple.
- -Excellent for more static data Context is NOT designed for handling high-frequency updates.(means not optimized for high frequncy changes ex:state                   changes every seconds or multi times per second)
- -Only little setup is required - create context and sometimes wrapper component
- -There could be more difficult maintenance in more complex-applications.
- -therfore It is better to use with small applications.
+* Context provides a way to pass data through the component tree without manually passing props down through each nested component.
+* any updateds are made with the Context value.
+* We can change the state in it, very simple.
+* Excellent for more static data Context is NOT designed for handling high-frequency updates.(means not optimized for high frequncy changes ex:state                   changes every seconds or multi times per second)
+* Only little setup is required - create context and sometimes wrapper component
+* There could be more difficult maintenance in more complex-applications.
+* therfore It is better to use with small applications.
 
 Redux:
--Redux is a state managing library used in JavaScript apps.It simply manages the state and data of an application.
--any updateds are made with pure functions i.e. reducers.
--The state is read-only. We cannot change them directly.(Redux passes down the Action to the Reducer. Then, the Reducer updates the state depending                    upon the Action that was passed)
--redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
--More setup than Context API (and more terms to understand)
--esay  maintenance in more complex-applications.
--It is perfect for larger applications.
+* Redux is a state managing library used in JavaScript apps.It simply manages the state and data of an application.
+* any updateds are made with pure functions i.e. reducers.
+* The state is read-only. We cannot change them directly.(Redux passes down the Action to the Reducer. Then, the Reducer updates the state depending                    upon the Action that was passed)
+* redux can handles high-frequency updates.(optimized for high frequncy changes ex:state changes every seconds or multi times per second)
+* More setup than Context API (and more terms to understand)
+* esay  maintenance in more complex-applications.
+* It is perfect for larger applications.
 
 ⚖️scaler(The React Hook cannot be considered as a replacement for Redux (It is an open-source, JavaScript library useful in managing the application state) when it comes to the management of the global application state tree in large complex applications, even though the React will provide a useReducer hook that manages state transitions similar to Redux. Redux is very useful at a lower level of component hierarchy to handle the pieces of a state which are dependent on each other, instead of a declaration of multiple useState hooks.
 In commercial web applications which is larger, the complexity will be high, so using only React Hook may not be sufficient. Few developers will try to tackle the challenge with the help of React Hooks and others will combine React Hooks with the Redux.)
