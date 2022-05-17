@@ -4,6 +4,7 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 ### Table of Contents
 
 ***basic questions***
+
 |1  | [what is react](#what-is-react)|                                                       
 |2  | [What are its features](#What-are-its-features)|
 |3  | [virtual DOM means](#virtual-DOM-means)|
@@ -63,6 +64,7 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 |48 | [src](#src)|
 
 ***Interview questions***
+
 |50 | [What are Pure Components](#what-are-pure-components)|
 |51 | [What is the difference between HTML and React event handling](#what-is-the-difference-between-html-and-react-event-handling)|
 |52 | [What are inline conditional expressions?](#what-are-inline-conditional-expressions)|
