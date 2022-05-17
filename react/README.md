@@ -3,6 +3,100 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 
 ### Table of Contents
 
+***basic questions***
+|1  | [what is react](#what-is-react)|                                                       
+|2  | [What are its features](#What-are-its-features)|
+|3  | [virtual DOM means](#virtual-DOM-means)|
+|4  | [SPA](#SPA)| 
+|5  | [JSX](#JSX)|
+|6  | [One-way Data Binding](#One-way-Data-Binding)|
+|7  | [Components](#Components)|
+|8  | [Conditional Statements](#Conditional-Statements)|
+|9  | [React v/s angular?](#React-vs-angular)|
+|10 | [Library v/s Framework](#Library-vs-Framework)|
+|11 | [states v/s props](#states-vs-props)|
+|12 | [How can you update the state of a component](#How-can-you-update-the-state-of-a-component)|
+|13 | [different phases of the component lifecycle](#different-phases-of-the-component-lifecycle)|
+|14 | [lifecycle methods of React components](#lifecycle-methods-of-React-components)|
+|15 | [stateful v/s stateless components](#stateful-vs-stateless-components)|
+|16 | [functional v/s class components](#functional-vs-class-components)|
+|17 | [How to prevent re-renders in React](#How-to-prevent-reRenders-in-React)|
+|18 | [Element v/s Component](#Element-vs-Component)|
+|19 | [What is CRA and its benefits](#What-is-CRA-and-its-benefits)|
+|20 | [What are fragments](#What-are-fragments)|
+|21 | [client v/s server-side rendering](#client-vs-serverSide-rendering)|
+|22 | [What are Higher Order Components(HOC))](#What-are-Higher-Order-Components)|
+|23 | [What are Pure Components](#What-are-Pure-Components)|
+|24 | [Hooks](#Hooks)|
+|24 | [useState](#useState)|
+|24 | [useReducer](#useReducer)|
+|24 | [useRef](#useRef)|
+|24 | [useEffect](#useEffect)|
+|24 | [useContext](#useContext)|
+|24 | [useMemo](#useMemo)|
+|24 | [useCallback](#useCallback)|
+|24 | [The Difference Between useCallback And useMemo](#The-Difference-Between-useCallback-And-useMemo)|
+|24 | [Custom Hooks](#Custom-Hooks)|
+|25 | [types of Hooks in React](#types-of-Hooks-in-React)|
+|26 | [controlled v/s uncontrolled components](#controlled-vs-uncontrolled-components)|
+|27 | [router](#router)|
+|28 | [REDUX](#REDUX)|
+|29 | [Redux Lifecycle for an application](#Redux-Lifecycle-for-an-application)|
+|30 | [advantages of using Redux](#advantages-of-using-Redux)|
+|31 | [State the core principles of Redux](#State-the-core-principles-of-Redux)|
+|32 | [action in Redux architecture](#action-in-Redux-architecture)|
+|33 | [reducers in Redux architecture](#reducers-in-Redux-architecture)|
+|34 | [store in Redux](#store-in-Redux)|
+|35 | [Redux Thunk](#Redux-Thunk)|
+|36 | [Redux Saga](#Redux-Saga)|
+|37 | [How can the addition of multiple middlewares to Redux be done](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|38 | [context vs React Redux](#context-vs-React-Redux)|
+|39 | [keys in React](#keys-in-React)|
+|40 | [What are the different ways to style a React component](#What-are-the-different-ways-to-style-a-React-component)|
+|41 | [Name a few techniques to optimize React app performance](#Name-a-few-techniques-to-optimize-React-app-performance)|
+|42 | [How can the addition of multiple middlewares to Redux be done](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|43 | [packageJson file](#packageJson-file)|
+|44 | [packageLockJson file](#packageLockJson-file)|
+|45 | [packageJson vs packageLockJson](#packageJson-vs-packageLockJson)|
+|46 | [nodeModules](#nodeModules)|
+|47 | [public folder in ReactJS](#public-folder-in-ReactJS)|
+|48 | [src](#src)|
+
+***Interview questions***
+|50 | [What are Pure Components](#what-are-pure-components)|
+|51 | [What is the difference between HTML and React event handling](#what-is-the-difference-between-html-and-react-event-handling)|
+|52 | [What are inline conditional expressions?](#what-are-inline-conditional-expressions)|
+|53 | [What is the use of refs?](#what-is-the-use-of-refs)|
+|54 | [What are forward refs?](#what-are-forward-refs)|
+|55 | [difference between createElement and cloneElement](#what-is-the-difference-between-createelement-and-cloneelement)|
+|56 | [What is Lifting State Up in React?](#what-is-lifting-state-up-in-react)|
+|57 | [What is reconciliation?](#what-is-reconciliation)|
+|58 | [Why React uses className over class attribute?](#why-react-uses-classname-over-class-attribute)|
+|59 | [How to apply validation on props in React?](#how-to-apply-validation-on-props-in-react)|
+|60 | [What are error boundaries in React v16?](#what-are-error-boundaries-in-react-v16)|
+|61 | [How error boundaries handled in React v15?](#how-error-boundaries-handled-in-react-v15)|
+|62 | [What is the use of react-dom package?](#what-is-the-use-of-react-dom-package)|
+|63 | [What is the purpose of render method of react-dom?](#what-is-the-purpose-of-render-method-of-react-dom)|
+|64 | [What is ReactDOMServer?](#what-is-reactdomserver)|
+|65 | [How to use innerHTML in React?](#how-to-use-innerhtml-in-react)|
+|66 | [Is it good to use setState() in componentWillMount() method?](#is-it-good-to-use-setstate-in-componentwillmount-method)|
+|67 | [How do you conditionally render components?](#how-do-you-conditionally-render-components)|
+|68 | [How do you memoize a component?](#how-do-you-memoize-a-component)|
+|69 | [How you implement Server Side Rendering or SSR?](#how-you-implement-server-side-rendering-or-ssr)|
+|70 | [Why should component names start with capital letter?](#why-should-component-names-start-with-capital-letter)|
+|71 | [Can you force a component to re-render without calling setState?](#can-you-force-a-component-to-re-render-without-calling-setstate)|
+|72 | [How to loop inside JSX?](#How-can-the-addition-of-multiple-middlewares-to-Redux-be-done)|
+|73 | [What is the difference between React and ReactDOM?](#what-is-the-difference-between-react-and-reactdom)|
+|74 | [Why ReactDOM is separated from React?](#why-reactdom-is-separated-from-react)|
+|77 | [How to listen to state changes?](#how-to-listen-to-state-changes)|
+|78 | [Is it possible to use React without rendering HTML?](#is-it-possible-to-use-react-without-rendering-html)|
+|79 | [How to pretty print JSON with React?](#how-to-pretty-print-json-with-react)|
+|80 | [How to focus an input element on page load?](#how-to-focus-an-input-element-on-page-load)|
+|81 | [What are the possible ways of updating objects in state?](#what-are-the-possible-ways-of-updating-objects-in-state)|
+|82 | [How to use https instead of http in create-react-app?](#how-to-use-https-instead-of-http-in-create-react-app)|
+|83 | [Why is a component constructor called only once?](#why-is-a-component-constructor-called-only-once)|
+|84 | [What is the benefit of styles modules?](#what-is-the-benefit-of-styles-modules)|
+|85 | [What are the popular React-specific linters?](#what-are-the-popular-react-specific-linters)|
 
 | No. | Questions |
 |---- | ---------
