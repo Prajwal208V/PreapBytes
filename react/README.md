@@ -100,6 +100,26 @@ https://learning.oreilly.com/library/view/simplify-testing-with/9781800564459/B1
 |84 | [What is the benefit of styles modules?](#what-is-the-benefit-of-styles-modules)|
 |85 | [What are the popular React-specific linters?](#what-are-the-popular-react-specific-linters)|
 
+**interview questions from React Testing**
+
+|86 | [What is Shallow Renderer in React testing?](#what-is-shallow-renderer-in-react-testing)|
+|87 | [What is TestRenderer package in React?](#what-is-testrenderer-package-in-react)|
+|88 | [What is the purpose of ReactTestUtils package?](#what-is-the-purpose-of-reacttestutils-package)|
+|89 | [What is Jest?](#what-is-jest)|
+|90 | [What are the advantages of Jest over Jasmine?](#what-are-the-advantages-of-jest-over-jasmine)|
+|91 | [Give a simple example of Jest test case](#give-a-simple-example-of-jest-test-case)|
+
+**interview questions from React Redux** 
+
+|92 | [What is flux?](#what-is-flux)|
+|93 | [Can I dispatch an action in reducer?](#can-i-dispatch-an-action-in-reducer)|
+|94 | [How to reset state in Redux?](#how-to-reset-state-in-redux)|
+|95 | [Why are Redux state functions called reducers?](#why-are-redux-state-functions-called-reducers)|
+|96 | [How to make AJAX request in Redux?](#how-to-make-ajax-request-in-redux)|
+|97 | [What is the mental model of redux-saga?](#what-is-the-mental-model-of-redux-saga)|
+|98 | [What are the differences between call() and put() in redux-saga?](#what-are-the-differences-between-call-and-put-in-redux-saga)|
+|99 | [What are the differences between redux-saga and redux-thunk?](#what-are-the-differences-between-redux-saga-and-redux-thunk)|
+
 | No. | Questions |
 |---- | ---------
 |1  | [what is react](#what-is-react)|                                                       
