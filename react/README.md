@@ -898,12 +898,16 @@ use refs in React:
 
 4. ### useEffect
 It enables for performing the side effects in the functional components.
-The useEffect React Hook is used for performing the side effects in functional components. With the help of useEffect, you will inform React that your component requires something to be done after rendering the component or after a state change. The function you have passed(can be referred to as “effect”) will be remembered by React and call afterwards the performance of DOM updates is over. Using this, we can perform various calculations such as data fetching, setting up document title, manipulating DOM directly, etc, that don’t target the output value. The useEffect hook will run by default after the first render and also after each update of the component. React will guarantee that the DOM will be updated by the time when the effect has run by it.
 
-Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. The second argument dependencies represent an optional array of dependencies. The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+The useEffect React Hook is used for performing the side effects in functional components. With the help of useEffect, we will inform React that your component requires something to be done after rendering the component or after a state change. Using this, we can perform various calculations such as data fetching, setting up document title, manipulating DOM directly, etc. The useEffect hook will run by default after the first render and also after each update of the component. React will guarantee that the DOM will be updated by the time when the effect has run by it.
+
+Where the first argument callback represents the function having the logic of side-effect and it will be immediately executed after changes were being pushed to DOM. The second argument is an optional array of dependencies. The useEffect() will execute the callback only if there is a change in dependencies in between renderings.
+
 There are two types of side effects in React component. They are:
-1.Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser from screen update. It also improves the                      responsiveness of an application. A few common examples are network requests, Logging, manual DOM mutations, etc.
-2.Effects with Cleanup: Some of the Hook effects will require the cleanup after updating of DOM is done. For example, if you want to set up an external data         source subscription, it requires cleaning up the memory else there might be a problem of memory leak. It is a known fact that React will carry out the                 cleanup of memory when the unmounting of components happens. But the effects will run for each render() method rather than for any specific method. Thus we           can say that, before execution of the effects succeeding time the React will also cleanup effects from the preceding render
+
+1. Effects without Cleanup: This side effect will be used in useEffect which does not restrict the browser from screen update. It also improves the                      responsiveness of an application. A few common examples are network requests, Logging, manual DOM mutations, etc.
+ 
+2. Effects with Cleanup: Some of the Hook effects will require the cleanup after updating of DOM is done. For example, if you want to set up an external data         source subscription, it requires cleaning up the memory else there might be a problem of memory leak. It is a known fact that React will carry out the                 cleanup of memory when the unmounting of components happens. But the effects will run for each render() method rather than for any specific method. Thus we           can say that, before execution of the effects succeeding time the React will also cleanup effects from the preceding render
                
 useEffect:-carries out an effect each time there is a state change. By default, it runs after the first render and every time the state is updated. 
 -React useEffect is a function that gets executed for 3 different React component lifecycles.
@@ -1091,22 +1095,22 @@ we are not using onChange function to govern the changes made to the input eleme
 
 ### router    
 👉react router? 🦖  The 'react-router-dom' is the package that is used in React apps for routing. 
--react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
--React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user            navigates.React Router uses component structure to call components, which display the appropriate information.
--React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
--Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
+*  react router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing          the browser URL, and keeps the UI in sync with the URL.
+* React Router is dynamic and  client-side routing, allows us to build a single-page web application with navigation without the page refreshing as the user              navigates.React Router uses component structure to call components, which display the appropriate information.
+* React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple            views in React applications. 
+*  Sometimes a URL like can match more than one route pattern. React Router ranks our routes and picks the best one. this is the router-6 feature 
      
 The main Components of React Router are:
--BrowserRouter:BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState and the popstate event) to keep your UI in            sync with the URL. It is the parent component that is used to store all of the other components.
 
--Routes:The Routes component looks through all of its child routes and it displays ranks  routes and picks the best one one whose path matches the                   current URL.
--switch v/s routes:Routes are chosen based on the best match instead of being traversed in order.
--The switch component looks through all of its child routes and it displays the first one whose path matches the current URL.
--Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
--Link & NavLink: Link component is used to create links to different routes and implement navigation around the application. It works like HTML anchor tag.
->When we use the NavLink as a tag, it automatically inherit an active class when clicked. On the other hand, the Link tag does now have an active class                when clicked.
->The Link component is used to navigate the different routes on the site.But NavLink is used to add the style attributes to the active routes.
->ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
+* BrowserRouter:BrowserRouter is a router implementation that uses the HTML5 history API(pushState, replaceState and the popstate event) to keep your UI in            sync with the URL. It is the parent component that is used to store all of the other components.
+
+* Routes:The Routes component looks through all of its child routes and it displays ranks  routes and picks the best one one whose path matches the                   current URL. switch v/s routes:Routes are chosen based on the best match instead of being traversed in order.  The switch component looks through all of its child routes and it displays the first one whose path matches the current URL.
+
+* Route: Route is the conditionally shown component that renders some UI when its path matches the current URL.
+
+* Link & NavLink: Link component is used to create links to different routes and implement navigation around the application. It works like HTML anchor tag.
+  When we use the NavLink as a tag, it automatically inherit an active class when clicked. On the other hand, the Link tag does now have an active class                 when clicked. The Link component is used to navigate the different routes on the site.But NavLink is used to add the style attributes to the active routes.
+* ability to set an "activeClassName" and "activeStyle" on NavLink, is there any reason to use NavLink over Link
   🦖 <Link to="/">Home</Link>
   🦖 <NavLink exact activeClassName="active" activeStyle={{color:'red',background:'red',}} to="/">Home </NavLink>   it is v5 feature
   
