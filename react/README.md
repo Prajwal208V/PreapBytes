@@ -2514,14 +2514,88 @@ Using this URL to analyis the parts of URL https://www.techtarget.com/whatis/sea
 
 **[⬆ Back to Top](#table-of-contents)**
 
+### webpacke
+* Webpack is a module bundler for modern Java script applications. It takes modules with dependencies and generates static assets representing those modules.
+* When webpack processes the application it recursively builds a dependency graph which includes every module that application needs and then converts all those modules into a small number of bundles — generally only one of those bundles to be loaded in browser. 
+* It can handle not only combination and minification of JavaScript and CSS files, but also other assets such as image files (spriting) through the use of plugins. Webpack is the recommended bundling solution and should be preferred over Cassette or ASP.NET Bundling.
+* major core concepts of webpack  are:
+1. Entry
+2. Output
+3. Loaders
+4. Dev Server (webpack-dev-server)
+5. Plugins
 
+1.entery:
+* This is the starting point of graph which Webpack creates for all application dependencies. This entry point tells webpack where to start and follows the graph of dependencies to know what to bundle.
+* Entry point is define in “webpack.config.js” file using entry attribute of module.exports method .
 
+       ```js
+       module.exports ={   
+       entry: "./src/index.js"   
+       }
+       ```
+       
+2. Output:
+* Once all assets are bundled together, you need to tell webpack where to bundle your application.
+* The output property tells webpack how to treat bundled
 
+       ```js
+       module.exports = {  
+           entry: "./src/index.js"  
+           output: {  
+               path: "Idist/assets",  
+               filename: "bundle.js",  
+               publicPath: "assets"  
+           }  
+       } 
+       ```
 
+3. Loaders
+* Intention to have all the assets in project to be webpack's concern and not the browsers.
+* Webpack treats every file (html, .css, .scss. jpg etc.) as a module, though webpack only understand java script.
+* Loaders have two purposes in webpack.config file
+* Identify what files should be transformed by a certain loader. ("test" property)
+* Transform that file so that it can be added to dependency graph (and eventually bundle). ("loader" property)
+* Loaders in webpack transform every file into modules as those are added to the dependency graph.  
 
+       ```js
+       module.exports = {  
+           module: {  
+               loaders: [{  
+                   test: /\.(js|jsx)$/,  
+                   exclude: /(node_modules)/,  
+                   loader: 'babel-loader',  
+                   query: {  
+                       presets: ('es2015', •react, 'stage-Ol']  
+                   }  
+               }, ]  
+           }  
+       }  
+       ```
+       
+4. Dev server – webpack-dev-server
+* It can be used to quickly develop an application.
+* It provides you with a server and live reloading.
+* By default, it will save the files in the current directory, unless developer manually configure a specific content base. Inline mode (a small webpack-dev-server * * client entry is added to the bundle which refreshes the page on change) 
 
+       ```js
+       module.exports = {  
+           devServer: {  
+               inline: true,  
+               contentBase: './dist',  
+               port: 8080  
+           },  
+       };
+       ```
+5. Plugins
+* Loaders only execute transforms on a per-file basis, plugins are most used (but not limited to) performing actions and custom functionality on "compilations" or "chunks" of your bundled modules.
+* Webpack has a rich plugin interface. Most of the features within webpack itself use this plugin interface. This makes webpack flexible.
 
+       ```js
+       query: {  
+           presets: Ces2015 ', '  
+           react ', •stage-m,  
+           plugins: ['react-html-attrs'],  
+       } 
+       ```
 
-   
-
-   
