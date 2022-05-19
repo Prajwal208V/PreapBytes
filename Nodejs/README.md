@@ -4,6 +4,36 @@
 * *[NodeJS Coding Practice](nodejs-programming.md)*
 * *[NodeJS Commands](nodejs-commands.md)*
 
+|   | **npm in Node.js** |
+|31 | [What is npm in Node.js?](#q-What-is-npm-in-Nodejs) |
+|32 | [NPM](#NPM) |
+|33 | [When should you npm and when yarn?](#q-When-should-you-npm-and-when-yarn) |
+|34 | [What are some of the most popular packages of Node.js?](#q-What-are-some-of-the-most-popular-packages-of-Nodejs) |
+|35 | [package.json file](#packagejson-file) |
+|36 | [Why npm shrinkwrap is useful?](#q-Why-npm-shrinkwrap-is-useful) |
+
+|   | **modules of Node.js** |
+|37 | [What are the core modules of Node.js?](#q-What-are-the-core-modules-of-Nodejs) |
+|030| [modules in Node.js](#modules-in-Nodejs) |
+|030| [purpose of the module.Exports](#purpose-of-the-moduleExports) |
+
+|   | **Express** |
+|46 | [Express](#Express) |
+|47 | [Why to use Express.js?](#q-Why-to-use-Expressjs) |
+|48 | [Write the steps for setting up an Express JS application?](#q-Write-the-steps-for-setting-up-an-Express-JS-application) |
+|49 | [Why should you separate Express 'app' and 'server'?](#q-Why-should-you-separate-Express-app-and-server) |
+|51 | [What are the middleware functions in Node.js?](#q-What-are-the-middleware-functions-in-Nodejs) |
+
+|   | **Express-route** |
+|50 | [Explain the use of next in node.js with example?](#q-Explain-the-use-of-next-in-node.js-with-example) |
+|54 | [How does routing work in Node.js?](#q-How-does-routing-work-in-Nodejs) |
+
+|   | **Tokens** |
+|61 | [How to use JSON Web Token (JWT) for authentication in Node.js?](#q-How-to-use-JSON-Web-Token-JWT-for-authentication-in-Nodejs) |
+|62 | [How to implement asymmetric cryptography when signing and verify JSON Web Token (JWT) for authentication in node js?_](#q-How-to-implement-asymmetric-cryptography-when-signing-and-verify-JSON-Web-Token-JWT-for-authentication-in-node-js) |❗
+
+
+
 |     | **Core Node** |
 
 |     | **Engine ** |
@@ -50,8 +80,6 @@
 |030| [What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-What-is-a-test-pyramid-How-can-you-implement-it-when-talking-about-HTTP-APIs) | ❗
 |030| [How to debug an application in Node.js?](#q-How-to-debug-an-application-in-Nodejs) | 
 |030| [How can you secure your HTTP cookies against XSS attacks?](#q-How-can-you-secure-your-HTTP-cookies-against-XSS-attacks) |
-|030| [modules in Node.js](#modules-in-Nodejs) |
-|030| [purpose of the module.Exports](#purpose-of-the-moduleExports) |
 |030| [different types of HTTP requests](#different-types-of-HTTP-requests) |
 |030| [What is difference between put and patch?](#What-is-difference-between-put-and-patch) |
 |030| [List types of Http requests supported by Node.js?](#List-types-of-Http-requests-supported-by-Nodejs) |
@@ -98,31 +126,8 @@
 |   | **Middleware in Node.js** |
 |030| [Middleware](#Middleware) |
 
-|   | **npm in Node.js** |
-|31 | [What is npm in Node.js?](#q-What-is-npm-in-Nodejs) |
-|32 | [NPM](#NPM) |
-|33 | [When should you npm and when yarn?](#q-When-should-you-npm-and-when-yarn) |
-|34 | [What are some of the most popular packages of Node.js?](#q-What-are-some-of-the-most-popular-packages-of-Nodejs) |
-|35 | [package.json file](#packagejson-file) |
-|36 | [Why npm shrinkwrap is useful?](#q-Why-npm-shrinkwrap-is-useful) |
 
-|   | **modules of Node.js** |
-|37 | [What are the core modules of Node.js?](#q-What-are-the-core-modules-of-Nodejs) |
 
-|   | **Express** |
-|46 | [Express](#Express) |
-|47 | [Why to use Express.js?](#q-Why-to-use-Expressjs) |
-|48 | [Write the steps for setting up an Express JS application?](#q-Write-the-steps-for-setting-up-an-Express-JS-application) |
-|49 | [Why should you separate Express 'app' and 'server'?](#q-Why-should-you-separate-Express-app-and-server) |
-|51 | [What are the middleware functions in Node.js?](#q-What-are-the-middleware-functions-in-Nodejs) |
-
-|   | **Express-route** |
-|50 | [Explain the use of next in node.js with example?](#q-Explain-the-use-of-next-in-node.js-with-example) |
-|54 | [How does routing work in Node.js?](#q-How-does-routing-work-in-Nodejs) |
-
-|   | **Tokens** |
-|61 | [How to use JSON Web Token (JWT) for authentication in Node.js?](#q-How-to-use-JSON-Web-Token-JWT-for-authentication-in-Nodejs) |
-|62 | [How to implement asymmetric cryptography when signing and verify JSON Web Token (JWT) for authentication in node js?_](#q-How-to-implement-asymmetric-cryptography-when-signing-and-verify-JSON-Web-Token-JWT-for-authentication-in-node-js) |❗
 
 |   | **microservices** |
 |63 | [microservices](#q-microservices) |
