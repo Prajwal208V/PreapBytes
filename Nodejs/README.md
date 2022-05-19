@@ -11,6 +11,7 @@
 |34 | [What are some of the most popular packages of Node.js?](#q-What-are-some-of-the-most-popular-packages-of-Nodejs) |
 |35 | [package.json file](#packagejson-file) |
 |36 | [Why npm shrinkwrap is useful?](#q-Why-npm-shrinkwrap-is-useful) |
+|030| [different types of HTTP requests](#different-types-of-HTTP-requests) |
 
 |   | **modules of Node.js** |
 |37 | [What are the core modules of Node.js?](#q-What-are-the-core-modules-of-Nodejs) |
@@ -80,7 +81,6 @@
 |030| [What is a test pyramid? How can you implement it when talking about HTTP APIs?](#q-What-is-a-test-pyramid-How-can-you-implement-it-when-talking-about-HTTP-APIs) | ❗
 |030| [How to debug an application in Node.js?](#q-How-to-debug-an-application-in-Nodejs) | 
 |030| [How can you secure your HTTP cookies against XSS attacks?](#q-How-can-you-secure-your-HTTP-cookies-against-XSS-attacks) |
-|030| [different types of HTTP requests](#different-types-of-HTTP-requests) |
 |030| [What is difference between put and patch?](#What-is-difference-between-put-and-patch) |
 |030| [List types of Http requests supported by Node.js?](#List-types-of-Http-requests-supported-by-Nodejs) |
 |030| [What is EventEmitter in Node.js?](#q-What-is-EventEmitter-in-Nodejs) |
