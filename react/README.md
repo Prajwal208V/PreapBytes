@@ -2463,6 +2463,64 @@ When a component's props or state change, React decides whether an actual DOM up
      ✓ adds 1 + 2 to equal 3 (2ms)
      ```
 
+### URL
+* A URL (Uniform Resource Locator) is a unique identifier used to locate a resource on the Internet. It is also referred to as a web address. URLs consist of multiple parts including a protocol and domain name that tell a web browser how and where to retrieve a resource.
+* End users can use URLs by typing them directly into the address bar of a browser or by clicking a hyperlink found on a webpage, bookmark list, in an email or from another application.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### How is a URL structured
+* The URL contains the name of the protocol needed to access a resource, as well as a resource name. The first part of a URL identifies what protocol to use as the primary access medium. The second part identifies the IP address or domain name -- and possibly subdomain -- where the resource is located.
+* URL protocols include HTTP (Hypertext Transfer Protocol) and HTTPS (HTTP Secure) for web resources, mail to for email addresses, FTP for files on a File Transfer Protocol (FTP) server, and telnet for a session to access remote computers. Most URL protocols are followed by a colon and two forward slashes; "mail to" is followed only by a colon.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### Parts of a URL
+Using this URL to analyis the parts of URL https://www.techtarget.com/whatis/search/query?q=URL
+
+* ***The protocol or scheme*** Used to access a resource on the internet. Protocols include http, https, ftps, mailto and file. The resource is reached through the domain name system (DNS) name. In this example, the protocol is https.
+* ***Host name or domain name*** The unique reference the represents a webpage. For this example, whatis.techtarget.com
+* ***Port name*** Usually not visible in URLs, but necessary. Always following a colon, port 80 is the default port for web servers, but there are other options. For example, :port80.
+* ***Path*** A path refers to a file or location on the web server. For this example, search/query.
+* ***Query*** Found in the URL of dynamic pages. The query consists of a question mark, followed by parameters. For this example, ?.
+* ***Parameters*** Pieces of information in a query string of a URL. Multiple parameters can be separated by ampersands (&). For this example, q=URL.
+* ***Fragment*** This is an internal page reference, which refers to a section within the webpage. It appears at the end of a URL and begins with a hashtag (#). 
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### http vs https
+* Both HTTP and HTTPS are used to retrieve data from a web server to view content in a browser. The difference between them is that HTTPS uses a Secure Sockets Layer (SSL) certificate to encrypt the connection between the end user and the server.
+* HTTPS is vital to protecting sensitive information, such as passwords, credit card numbers and identity data, from unauthorized access.
+* HTTPS uses TCP/IP port number 443 by default, whereas HTTP uses port 80.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### URL vs URI
+* A URL is the most common type of Uniform Resource Identifier (URI). URIs are strings of characters used to identify a resource over a network. URLs are essential to navigating the internet.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### URL shorteners 
+* URL shortening is a technique in which an URL may be made substantially shorter in length and still direct to the required page. A shortener achieves this using a redirect on a domain name that is short.
+* There are many URL shortener services available. While many are free, those that offer capabilities such as Web analytics, charge a fee. Companies that offer URL shorteners include Rebrandly, Bitly, Ow.ly, clicky.me and Budurl.com.
+* Some Web site hosts, such as GoDaddy.com, offer URL shorteners. Other service providers, including search engines, have begun turning away from URL shorteners because they are often subject to abuse by spammers, who hide malware inside shortened URLs.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+### URL history
+* The retention of data related to Web usage has become a huge privacy concern. There has been increased public demand for search engine and application service providers to be transparent in what information they collect, retain and sell.
+* in March 2019, Google updated its Chrome privacy policy. It notes that in its basic browser mode, the search engine stores information locally on your system. This information includes browsing history, including URLs of pages visited, plus a cache of text, images and other resources from those pages.
+* However, Google also collects and retains data for various lengths of time. Some data can be deleted whenever a person wants, some data is deleted automatically, and some data Google retains for longer periods of time when necessary.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+
+
+
+
+
+
+
 
    
 
