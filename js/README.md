@@ -260,7 +260,7 @@
 
 **[⬆ Back to Top](#table-of-contents)**
 
-### ***storage**
+### ***storage***
 
 |34 | [What is IndexedDB](#what-is-indexeddb)|
 |35 | [What is web storage](#what-is-web-storage)|
